@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Search, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
 import Logo from "../icons/Logo";
+import { Link } from "react-router-dom";
 
 export default function EcommerceHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [cartCount] = useState(0);
 
   return (
-    <div className="w-full">
+    <div className="w-full sticky top-0 z-50">
       {/* Top Banner */}
       <div className="bg-black text-white text-center py-2 text-sm flex justify-around items-center h-[38px]">
         <div>Free Shipping Sitewide on Every Order, Don't Miss Out!!</div>
@@ -25,7 +26,9 @@ export default function EcommerceHeader() {
             {/* Logo */}
             <div className="shrink-0">
               <h1 className="text-2xl font-bold tracking-tight">
-                <Logo />
+                <Link to="/">
+                  <Logo />
+                </Link>
               </h1>
             </div>
 
