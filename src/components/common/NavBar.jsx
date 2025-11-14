@@ -53,7 +53,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Plain T-shirts
                           </a>
@@ -61,7 +61,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Printed T-shirts
                           </a>
@@ -69,7 +69,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Regular Fit T-shirts
                           </a>
@@ -77,7 +77,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Oversized T-shirts
                           </a>
@@ -85,7 +85,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Polo T-shirts
                           </a>
@@ -93,7 +93,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Plus Size T-shirts
                           </a>
@@ -101,7 +101,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Full Sleeve T-shirts
                           </a>
@@ -109,7 +109,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors font-semibold"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
                             View All
                           </a>
@@ -126,7 +126,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Plain Shirts
                           </a>
@@ -134,7 +134,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Oxford Shirts
                           </a>
@@ -142,7 +142,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Flannel Shirts
                           </a>
@@ -150,7 +150,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Satin Shirts
                           </a>
@@ -158,7 +158,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Festive Shirts
                           </a>
@@ -166,7 +166,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Cotton Shirts
                           </a>
@@ -174,7 +174,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Shackets
                           </a>
@@ -182,7 +182,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors font-semibold"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
                             View All
                           </a>
@@ -199,7 +199,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors font-semibold"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
                             View All
                           </a>
@@ -216,7 +216,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Topwear
                           </a>
@@ -224,7 +224,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Bottomwear
                           </a>
@@ -232,7 +232,7 @@ export default function EcommerceHeader() {
                         <li>
                           <a
                             href="#"
-                            className="text-sm text-gray-600 hover:text-amber-600 transition-colors font-semibold"
+                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
                             View All
                           </a>
@@ -391,7 +391,7 @@ export default function EcommerceHeader() {
             <div className="px-4 py-4 space-y-3">
               <a
                 href="#"
-                className="block py-2 text-amber-600 hover:text-gray-900 font-bold"
+                className="block py-2 text-gray-900 hover:text-gray-900 font-bold"
               >
                 TOPWEAR
               </a>
