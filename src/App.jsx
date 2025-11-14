@@ -1,5 +1,9 @@
+import Home from "./pages/Home";
+
 const App = () => {
-  return <div className="bg-amber-400 h-200 w-240">App</div>;
+  return <div className="">
+    <Home/>
+  </div>;
 };
 
 export default App;
