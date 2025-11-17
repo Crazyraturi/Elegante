@@ -6,9 +6,9 @@ import ProductDetails from "./components/ProductDetails/ProductDetails";
 
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
+    <BrowserRouter>
+      <NavBar />
+      <Home />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product-details" element={<ProductDetails />} />

@@ -1,6 +1,7 @@
 import React from "react";
 import Herosection from "../components/Home/Herosection";
 import SuperSavingCombos from "../components/Home/SuperSavingCombos";
+import NewArrival from "../components/Home/NewArrival";
 import MostWantedCategories from "../components/Home/MostWantedCategories";
 import Newlaunched from "../components/Home/Newlaunched";
 import Exclusive from "../components/Home/Exclusive";
@@ -11,6 +12,7 @@ const Home = () => {
     <div>
       <Herosection />
       <SuperSavingCombos/>
+      <NewArrival />
       <MostWantedCategories/>
       <Newlaunched/>
       <Exclusive/>
