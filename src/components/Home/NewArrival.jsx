@@ -1,6 +1,35 @@
 import React, { useState } from "react";
 import { Heart, X } from "lucide-react";
 
+import NAFI1 from "../../assets/NAFI1.jpg";
+import NAFI2 from "../../assets/NAFI2.jpg";
+import NAFI3 from "../../assets/NAFI3.jpg";
+import NAFI4 from "../../assets/NAFI4.jpg";
+import NAFI5 from "../../assets/NAFI5.jpg";
+import NAFI6 from "../../assets/NAFI6.jpg";
+import NAFI7 from "../../assets/NAFI7.jpg";
+import NAFI8 from "../../assets/NAFI8.jpg";
+import NAFI9 from "../../assets/NAFI9.jpg";
+import NAFI10 from "../../assets/NAFI10.jpg";
+import NAFI11 from "../../assets/NAFI11.jpg";
+import NAFI12 from "../../assets/NAFI12.jpg";
+
+import NAI1 from "../../assets/NAI1.jpg";
+import NAI2 from "../../assets/NAI2.jpg";
+import NAI3 from "../../assets/NAI3.jpg";
+import NAI4 from "../../assets/NAI4.jpg";
+import NAI5 from "../../assets/NAI5.jpg";
+import NAI6 from "../../assets/NAI6.jpg";
+import NAI7 from "../../assets/NAI7.jpg";
+import NAI8 from "../../assets/NAI8.jpg";
+import NAI9 from "../../assets/NAI9.jpg";
+import NAI10 from "../../assets/NAI10.jpg";
+import NAI11 from "../../assets/NAI11.jpg";
+import NAI12 from "../../assets/NAI12.jpg";
+
+
+
+
 const NewArrival = () => {
   const [activeTab, setActiveTab] = useState("viewAll");
   const [showPopup, setShowPopup] = useState(false);
@@ -20,8 +49,8 @@ const NewArrival = () => {
   // PRODUCT DATA
   const products = [
     {
-      image: "/src/assets/NAFI1.jpg",
-      hoverImage: "/src/assets/NAI1.jpg",
+      image: NAFI1,
+      hoverImage: NAI1,
       title: "Pecan Brown Elbow Patch Sweats...",
       category: "Sweatshirts",
       price: "1199",
@@ -30,8 +59,8 @@ const NewArrival = () => {
       type: "shirts",
     },
     {
-      image: "/src/assets/NAFI2.jpg",
-      hoverImage: "/src/assets/NAI2.jpg",
+      image: NAFI2,
+      hoverImage: NAI2,
       title: "Beign Turtle Neck Sweatshirts",
       category: "Sweatshirts",
       price: "1499",
@@ -40,8 +69,8 @@ const NewArrival = () => {
       type: "tshirt",
     },
     {
-      image: "/src/assets/NAFI3.jpg",
-      hoverImage: "/src/assets/NAI3.jpg",
+      image: NAFI3,
+      hoverImage: NAI3,
       title: "Brown camo Printed Hoodie",
       category: "Hoodies",
       price: "1199",
@@ -50,8 +79,8 @@ const NewArrival = () => {
       type: "tshirt",
     },
     {
-      image: "/src/assets/NAFI4.jpg",
-      hoverImage: "/src/assets/NAI4.jpg",
+      image: NAFI4,
+      hoverImage: NAI4,
       title: "Blue camo Printed Hoodie",
       category: "Hoodies",
       price: "1199",
@@ -60,8 +89,8 @@ const NewArrival = () => {
       type: "trousers",
     },
     {
-      image: "/src/assets/NAFI5.jpg",
-      hoverImage: "/src/assets/NAI5.jpg",
+      image: NAFI5,
+      hoverImage: NAI5,
       title: "Dark Grey Button Down Oxford Shirt",
       category: "Oxford Shirt",
       price: "899",
@@ -70,8 +99,8 @@ const NewArrival = () => {
       type: "shirt",
     },
     {
-      image: "/src/assets/NAFI6.jpg",
-      hoverImage: "/src/assets/NAI6.jpg",
+      image: NAFI6,
+      hoverImage: NAI6,
       title: "Wine Button Down Oxford Shirt",
       category: "Oxford Shirt",
       price: "899",
@@ -80,8 +109,8 @@ const NewArrival = () => {
       type: "shirt",
     },
     {
-      image: "/src/assets/NAFI7.jpg",
-      hoverImage: "/src/assets/NAI7.jpg",
+      image: NAFI7,
+      hoverImage: NAI7,
       title: "Beige Utility Shirt",
       category: "Utility Shirt",
       price: "1199",
@@ -90,8 +119,8 @@ const NewArrival = () => {
       type: "shirt",
     },
     {
-      image: "/src/assets/NAFI8.jpg",
-      hoverImage: "/src/assets/NAI8.jpg",
+      image: NAFI8,
+      hoverImage: NAI8,
       title: "Dusty Olive Utility Shirt",
       category: "Utility Shirt",
       price: "1199",
@@ -100,8 +129,8 @@ const NewArrival = () => {
       type: "shirt",
     },
     {
-      image: "/src/assets/NAFI9.jpg",
-      hoverImage: "/src/assets/NAI9.jpg",
+      image: NAFI9,
+      hoverImage: NAI9,
       title: "Black Printed Varsity Jacket",
       category: "Varsity Jackets",
       price: "2199",
@@ -110,8 +139,8 @@ const NewArrival = () => {
       type: "jacket",
     },
     {
-      image: "/src/assets/NAFI10.jpg",
-      hoverImage: "/src/assets/NAI10.jpg",
+      image: NAFI10,
+      hoverImage: NAI10,
       title: "Cider Brown Printed Varsity Jacket",
       category: "Varsity Jackets",
       price: "2199",
@@ -120,8 +149,8 @@ const NewArrival = () => {
       type: "jacket",
     },
     {
-      image: "/src/assets/NAFI11.jpg",
-      hoverImage: "/src/assets/NAI11.jpg",
+      image: NAFI11,
+      hoverImage: NAI11,
       title: "Navy Utility Shirt",
       category: "Utility Shirt",
       price: "1199",
@@ -130,8 +159,8 @@ const NewArrival = () => {
       type: "shirt",
     },
     {
-      image: "/src/assets/NAFI12.jpg",
-      hoverImage: "/src/assets/NAI12.jpg",
+      image: NAFI12,
+      hoverImage: NAI12,
       title: "Black Waffle Button-Down Cotton Shirt",
       category: "Shirts",
       price: "998",
@@ -140,6 +169,7 @@ const NewArrival = () => {
       type: "shirt",
     },
   ];
+
 
   const filteredProducts =
     activeTab === "viewAll"
