@@ -8,7 +8,14 @@ import centervideo from "../../assets/videos/About_Us_Center_Video.mp4"
 const AboutHero = () => {
   return (
     <>
-    <p className=' text-[12px] text-gray-700 px-32 uppercase flex items-center'>Home <span><ChevronRight className='w-4' /></span> About us</p>
+       {/* Breadcrumb */}
+      <div className="max-w-7xl mx-auto  px-4 py-4">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <span className="hover:text-gray-900 cursor-pointer">HOME</span>
+          <span>›</span>
+          <span className="text-gray-900 font-medium">ABOUT US</span>
+        </div>
+      </div>
 
     <div className='flex flex-col items-center justify-center'>
         <img src={aboutusme} width={400} alt="" />

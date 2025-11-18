@@ -15,6 +15,7 @@ import Aboutus from "./pages/Aboutus";
 import Collaborations from "./pages/Collaborations";
 import More from "./pages/More";
 import Media from "./pages/Media";
+import CareersPage from "./pages/Career";
 
 const App = () => {
   return (
@@ -41,9 +42,16 @@ const App = () => {
 
         {/* Extra Pages */}
         <Route path="/about" element={<Aboutus />} />
+<<<<<<< HEAD
+        <Route path="/collab" element={<Collaborations />} />
+        <Route path="/product-details" element={<ProductDetails />} />
+=======
         <Route path="/collaboration" element={<Collaborations />} />
+>>>>>>> e0176a13ec4a0aa56e8882c2c2f1c645e73ffbb7
         <Route path="/clothing-stores-near-me" element={<More />} />
         <Route path="/in-the-news" element={<Media />} />
+         <Route path="/career" element={<CareersPage/>} />
+
       </Routes>
 
       <Footer />
