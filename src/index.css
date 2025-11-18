@@ -4,3 +4,15 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+/* mobile placeholder */
+.placeholder-mobile::placeholder {
+  content: "Enter Pincode";
+}
+
+/* Desktop placeholder */
+@media (min-width: 640px) {
+  .placeholder-mobile::placeholder {
+    content: "Enter Your city Pincode";
+  }
+}

@@ -96,13 +96,56 @@ export default function ProductPage() {
               </span>
             </div>
 
-            <div className="mt-10 mb-10 border-2 border-gray-100">
-              <div className="p-2 border-gray-100 flex items-center justify-between">
-                <div className="flex items-center gap-1">
+            <div className="mt-10 mb-10 p-2 border-2 rounded-xl border-gray-200 bg-[#ECF2FD]">
+              <div className="mb-2 pl-2 pr-2 flex items-center justify-between">
+                <div className="flex items-baseline-start gap-1">
                   <img src={offer_pop} className="h-[25px] w-[25px]" />
-                  <span>Get at ₹ 1079</span>
+                  <div className="flex flex-col items-end">
+                    <span className="font-semibold text-sm">Get at ₹ 1079</span>
+                    <svg
+                      className="get-of-svg-1"
+                      width="34"
+                      height="7"
+                      viewBox="0 0 34 7"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.20189 5.43868L0.112161 3.90284L33.9421 2.52873e-05L0.291619 6.97452L0.20189 5.43868Z"
+                        fill="url(#paint0_linear_1_206)"
+                      ></path>
+
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_1_206"
+                          x1="-9"
+                          y1="3.99866"
+                          x2="34.0879"
+                          y2="2.49577"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="white" stopOpacity="0.4"></stop>
+                          <stop
+                            offset="0.5"
+                            stopColor="#F1D207"
+                            stopOpacity="0.8"
+                          ></stop>
+                          <stop offset="1" stopColor="#E5C700"></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
                 </div>
-                <span>FLAT 10% OFF</span>
+                <span className="text-sm">FLAT 10% OFF</span>
+              </div>
+              <div className="flex justify-between p-2 bg-white rounded-xl">
+                <input
+                  placeholder="Apply coupon BYNG10"
+                  className="focus:outline-none text-sm pl-2 w-60"
+                />
+                <button className="text-[#2C4F93] font-semibold cursor-pointer">
+                  How?
+                </button>
               </div>
             </div>
 
@@ -179,13 +222,24 @@ export default function ProductPage() {
                 Check Delivery Date
               </div>
               <div className="flex">
+                {/* Mobile Input */}
+                <input
+                  type="text"
+                  placeholder="Enter Pincode"
+                  value={pincode}
+                  onChange={(e) => setPincode(e.target.value)}
+                  className="px-3 py-2 border rounded-l-xl border-gray-300 focus:outline-none sm:hidden w-52"
+                />
+
+                {/* Desktop Input */}
                 <input
                   type="text"
                   placeholder="Enter Your city Pincode"
                   value={pincode}
                   onChange={(e) => setPincode(e.target.value)}
-                  className="flex-1 px-3 py-2 border rounded-l-xl border-gray-300 focus:outline-none"
+                  className="hidden sm:block px-3 py-2 border rounded-l-xl border-gray-300 focus:outline-none w-full"
                 />
+
                 <button className="bg-black text-white font-semibold px-6 py-2 rounded-r-xl cursor-pointer">
                   Check
                 </button>
@@ -203,8 +257,11 @@ export default function ProductPage() {
             </div>
 
             {/* Reward Points */}
-            <div className="mb-4 flex items-center cursor-pointer h-20 w-[520px]">
-              <img src={rewardPoints} />
+            <div className="mb-4 flex items-center cursor-pointer h-20 w-full sm:w-full">
+              <img
+                src={rewardPoints}
+                className="h-full w-full object-contain"
+              />
             </div>
 
             <div className="p-1 bg-[#FAFAFA] mt-5 mb-5 rounded-l"></div>
