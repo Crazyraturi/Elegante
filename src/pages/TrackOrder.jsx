@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Track_order_Image from "../assets/Track_oreder_Image.jpg";
+import Track_order_Image from "../assets/Track_order_image.jpg";
 import { Heart } from "lucide-react";
 
 const TrackOrder = () => {
@@ -82,7 +82,10 @@ const TrackOrder = () => {
         <h1 className="border-2 bg-black text-white text-4xl mt-12 mb-8 px-12 py-8 font-bold">
           <Heart size={24} className="inline-block text-red-500 fill-red-500" />
           Thank you for shopping at Beyoung, keep loving!
-          <Heart size={24} className="inline-block text-red-500 fill-red-500 " />
+          <Heart
+            size={24}
+            className="inline-block text-red-500 fill-red-500 "
+          />
         </h1>
       </div>
     </section>
