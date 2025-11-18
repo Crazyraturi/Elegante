@@ -7,6 +7,7 @@ import Aboutus from "./pages/Aboutus";
 import Collaborations from "./pages/Collaborations";
 import More from "./pages/More";
 import Media from "./pages/Media";
+import CareersPage from "./pages/Career";
 
 const App = () => {
   return (
@@ -15,10 +16,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Aboutus />} />
-        <Route path="/collaboration" element={<Collaborations />} />
+        <Route path="/collab" element={<Collaborations />} />
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/clothing-stores-near-me" element={<More />} />
         <Route path="/in-the-news" element={<Media />} />
+         <Route path="/career" element={<CareersPage/>} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
