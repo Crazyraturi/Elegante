@@ -5,6 +5,7 @@ import { whyChooseUsData } from "../common/whychoosedata";
 import { popularCategories } from "../common/Populardata";
 import { Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
 import { Bell, X, MoreVertical } from "lucide-react";
+import upi_footer from "../../assets/upi_footer.png";
 
 
 const Footer = () => {
@@ -233,7 +234,7 @@ const Footer = () => {
 
             <div className="flex flex-wrap gap-3 items-center">
               <img
-                src="/src/assets/upi_footer.png"
+                src={upi_footer}
                 alt="UPI"
                 className="w-auto h-auto object-contain"
               />
