@@ -16,6 +16,7 @@ import Collaborations from "./pages/Collaborations";
 import More from "./pages/More";
 import Media from "./pages/Media";
 import CareersPage from "./pages/Career";
+import PlainTShirt from "./components/topwear/PlainTShirt";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/clothing-stores-near-me" element={<More />} />
         <Route path="/in-the-news" element={<Media />} />
         <Route path="/career" element={<CareersPage />} />
+        <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
       </Routes>
       <Footer />
     </BrowserRouter>
