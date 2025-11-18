@@ -10,15 +10,21 @@ import indianretailer from "../assets/indian-retailer.png";
 import zeebusiness from "../assets/zee-business_logo1.png";
 
 const NewsItem = ({ logo, title, date }) => (
-  <div className="border-b border-gray-200 py-6 hover:bg-gray-50 transition-colors">
-    <div className="flex items-center justify-between gap-6">
-      <div className="flex items-center gap-6 flex-1">
-        <div className="h-20 w-32 flex items-center justify-center pl-2">
-          <img src={logo} />
+  <div className="border-b border-gray-200 py-4 md:py-6 hover:bg-gray-50 transition-colors">
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6 px-4 md:px-0">
+      <div className="flex items-start sm:items-center gap-4 sm:gap-6 flex-1 w-full">
+        <div className="h-12 w-20 sm:h-16 sm:w-24 md:h-20 md:w-32 flex items-center justify-center shrink-0">
+          <img
+            src={logo}
+            alt="News logo"
+            className="max-w-full max-h-full object-contain"
+          />
         </div>
-        <p className="text-gray-800 text-sm md:text-base flex-1">{title}</p>
+        <p className="text-gray-800 text-xs sm:text-sm md:text-base flex-1 leading-relaxed">
+          {title}
+        </p>
       </div>
-      <span className="text-gray-600 text-sm whitespace-nowrap pr-10">
+      <span className="text-gray-600 text-xs sm:text-sm whitespace-nowrap sm:pr-4 md:pr-10 ml-24 sm:ml-0">
         {date}
       </span>
     </div>
@@ -88,8 +94,8 @@ const Media = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+        <div className="max-w-6xl mx-auto px-4 py-3 md:py-4">
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
             <span className="hover:text-gray-900 cursor-pointer">HOME</span>
             <span>›</span>
             <span className="text-gray-900 font-medium">
@@ -100,18 +106,18 @@ const Media = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="flex gap-8">
+      <div className="max-w-6xl mx-auto px-4 py-4 md:py-8">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
           {/* Sidebar */}
-          <div className="w-48 shrink-0">
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden sticky top-8">
+          <div className="w-full lg:w-48 lg:shrink-0">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden lg:sticky lg:top-8">
               <div className="bg-linear-to-r from-yellow-400 to-yellow-500 px-4 py-3">
-                <h2 className="font-semibold text-gray-800">
+                <h2 className="font-semibold text-gray-800 text-sm md:text-base">
                   All Online Coverage
                 </h2>
               </div>
               <div className="p-4">
-                <button className="text-gray-700 hover:text-gray-900 font-medium">
+                <button className="text-gray-700 hover:text-gray-900 font-medium text-sm md:text-base">
                   2021
                 </button>
               </div>
@@ -119,7 +125,7 @@ const Media = () => {
           </div>
 
           {/* News List */}
-          <div className="flex-1 bg-white rounded-lg shadow-sm">
+          <div className="flex-1 bg-white rounded-lg shadow-sm overflow-hidden">
             <div className="divide-y divide-gray-200">
               {newsItems.map((item, index) => (
                 <NewsItem key={index} {...item} />
