@@ -1,5 +1,4 @@
 import { MapPin, Clock, Navigation } from "lucide-react";
-
 import MainHeaderBanner from "../assets/MainHeaderBanner.jpg";
 import mirzapur_store_offline from "../assets/mirzapur_store_offline.jpg";
 import Ahmedabad_store_offline from "../assets/Ahmedabad_store_offline.jpg";
@@ -79,42 +78,58 @@ const More = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header>
-        <img src={MainHeaderBanner} />
+      <header className="w-full">
+        <img
+          src={MainHeaderBanner}
+          className="w-full h-auto"
+          alt="Header Banner"
+        />
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center mb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mb-12 sm:mb-20">
         {stores.map((data, index) => (
-          <div key={index} className="mt-20 text-center">
-            <h1 className="mb-5 text-[32px] font-semibold uppercase">
+          <div
+            key={index}
+            className="mt-8 sm:mt-12 md:mt-20 text-center w-full"
+          >
+            <h1 className="mb-4 sm:mb-5 text-xl sm:text-2xl md:text-[32px] font-semibold uppercase px-4">
               {data.title}
             </h1>
-            <div className="flex justify-between items-center w-[1170px] h-[491px] bg-[#F4F4F4]">
-              <img src={data.image} className="w-[770px] h-[491px]" />
+            <div className="flex flex-col md:flex-row justify-center items-center w-full max-w-[1170px] mx-auto bg-[#F4F4F4] rounded-lg overflow-hidden">
+              {/* Image - Hidden on mobile, visible on desktop */}
+              <img
+                src={data.image}
+                className="hidden md:block md:w-[770px] md:h-[491px] object-cover"
+                alt={data.title}
+              />
 
-              <div className="w-[376px] h-[243px] bg-white border border-gray-300 rounded-lg mr-3 flex flex-col justify-center items-center">
-                <h3 className="font-medium p-2">{data.title}</h3>
+              {/* Info Card */}
+              <div className="w-full md:w-[376px] bg-white border border-gray-300 rounded-lg m-4 md:mr-3 p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
+                <h3 className="font-medium text-base sm:text-lg">
+                  {data.title}
+                </h3>
 
-                <div className="flex justify-between items-start p-1">
-                  <MapPin className="h-4" />
-                  <div className="text-[#333333] text-[12px]">
+                <div className="flex gap-2 sm:gap-3 items-start text-left">
+                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 mt-1" />
+                  <div className="text-[#333333] text-xs sm:text-sm">
                     {data.address}
                   </div>
                 </div>
 
-                <div className="flex justify-between items-start p-1">
-                  <Clock className="h-4" />
-                  <div className="text-[#333333] text-[12px]">
+                <div className="flex gap-2 sm:gap-3 items-start text-left">
+                  <Clock className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 mt-1" />
+                  <div className="text-[#333333] text-xs sm:text-sm">
                     Timing - {data.hours}
                   </div>
                 </div>
 
-                <div className="text-[#333333] text-[12px] p-2">
-                  Email ID - <span className="underline">{data.email}</span>
+                <div className="text-[#333333] text-xs sm:text-sm text-left">
+                  Email ID -{" "}
+                  <span className="underline break-all">{data.email}</span>
                 </div>
 
-                <button className="w-[334px] h-10 bg-black text-white cursor-pointer flex justify-center items-center gap-4">
-                  <Navigation />
+                <button className="w-full h-10 sm:h-12 bg-black text-white cursor-pointer flex justify-center items-center gap-3 sm:gap-4 rounded hover:bg-gray-800 transition-colors text-sm sm:text-base">
+                  <Navigation className="h-4 w-4 sm:h-5 sm:w-5" />
                   <span>Get Direction</span>
                 </button>
               </div>
