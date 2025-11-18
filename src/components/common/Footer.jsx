@@ -6,36 +6,35 @@ import { popularCategories } from "../common/Populardata";
 import { Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
 import { Bell, X, MoreVertical } from "lucide-react";
 
-
 const Footer = () => {
   const [openWhy, setOpenWhy] = useState(false);
   const [showFull, setShowFull] = useState(false);
   const [openPopular, setOpenPopular] = useState(false);
   const [openBell, setOpenBell] = useState(false);
-   const notifications = [
-     {
-       id: 1,
-       title: "The Beyoung Fashion For Nation Sale Is LIVE🤩",
-       subtitle: "Get FLAT 15% OFF your favorites styles😍",
-       code: "FREEDOM15",
-       buttonText: "Use code: FREEDOM15",
-       timeAgo: "2 days",
-     },
-     {
-       id: 2,
-       title: "Beyoung KOREAN PANTS Restocked!✨",
-       subtitle: "Get yours now at a flat ₹998. 🔥",
-       buttonText: "Check Korean Pants Now",
-       timeAgo: "2 days",
-     },
-     {
-       id: 3,
-       title: "We wish maths was this easy and cool 👇",
-       subtitle: "6+ pockets × 100% style = Our cargos at just ₹799!! 🔥",
-       buttonText: "Check Cargo Pants Now",
-       timeAgo: "3 days",
-     },
-   ];
+  const notifications = [
+    {
+      id: 1,
+      title: "The Beyoung Fashion For Nation Sale Is LIVE🤩",
+      subtitle: "Get FLAT 15% OFF your favorites styles😍",
+      code: "FREEDOM15",
+      buttonText: "Use code: FREEDOM15",
+      timeAgo: "2 days",
+    },
+    {
+      id: 2,
+      title: "Beyoung KOREAN PANTS Restocked!✨",
+      subtitle: "Get yours now at a flat ₹998. 🔥",
+      buttonText: "Check Korean Pants Now",
+      timeAgo: "2 days",
+    },
+    {
+      id: 3,
+      title: "We wish maths was this easy and cool 👇",
+      subtitle: "6+ pockets × 100% style = Our cargos at just ₹799!! 🔥",
+      buttonText: "Check Cargo Pants Now",
+      timeAgo: "3 days",
+    },
+  ];
 
   return (
     <footer className="bg-[#212121] w-full text-white py-15">
@@ -106,7 +105,7 @@ const Footer = () => {
               <Link to="/career">Career</Link>
             </li>
             <li>
-              <Link to="/media">Media</Link>
+              <Link to="/in-the-news">Media</Link>
             </li>
             <li>
               <Link to="/beyoungistan">Beyoungistan</Link>
@@ -131,7 +130,7 @@ const Footer = () => {
             <li>Mirzapur</li>
             <li>Bhilwara</li>
             <li>
-              <Link to="/store/more">More</Link>
+              <Link to="/clothing-stores-near-me">More</Link>
             </li>
           </ul>
         </div>
@@ -323,52 +322,51 @@ const Footer = () => {
             <Bell className="w-5 h-5 text-gray-600" />
           </h2>
 
-         {/* Notifications List */}
-<div className="fixed bottom-24 right-6 w-105 bg-white shadow-xl rounded-lg z-40">
+          {/* Notifications List */}
+          <div className="fixed bottom-24 right-6 w-105 bg-white shadow-xl rounded-lg z-40">
+            {/* Sticky Header */}
+            <div className="flex items-center justify-between p-5 border-b border-gray-200 sticky top-0 bg-white z-50">
+              <h1 className="text-gray-800 font-semibold">Notifications</h1>
+              <Bell className="w-5 h-5 text-gray-600" />
+            </div>
 
-  {/* Sticky Header */}
-  <div className="flex items-center justify-between p-5 border-b border-gray-200 sticky top-0 bg-white z-50">
-    <h1 className="text-gray-800 font-semibold">Notifications</h1>
-    <Bell className="w-5 h-5 text-gray-600" />
-  </div>
+            {/* Scrollable List */}
+            <div className="max-h-110 overflow-y-auto p-4">
+              {notifications.map((notification) => (
+                <div
+                  key={notification.id}
+                  className="py-3 border-b last:border-b-0"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="text-sm font-medium text-gray-800">
+                        {notification.title}
+                      </h3>
 
-  {/* Scrollable List */}
-  <div className="max-h-110 overflow-y-auto p-4">
-    {notifications.map((notification) => (
-      <div
-        key={notification.id}
-        className="py-3 border-b last:border-b-0"
-      >
-        <div className="flex items-start justify-between">
-          <div className="flex-1">
-            <h3 className="text-sm font-medium text-gray-800">
-              {notification.title}
-            </h3>
+                      <p className="text-sm text-gray-600 mt-1">
+                        {notification.subtitle}
+                      </p>
 
-            <p className="text-sm text-gray-600 mt-1">
-              {notification.subtitle}
-            </p>
+                      <button className="mt-3 bg-yellow-400 hover:bg-yellow-500 text-gray-800 text-sm font-medium px-4 py-2 rounded">
+                        {notification.buttonText}
+                      </button>
+                    </div>
 
-            <button className="mt-3 bg-yellow-400 hover:bg-yellow-500 text-gray-800 text-sm font-medium px-4 py-2 rounded">
-              {notification.buttonText}
-            </button>
-          </div>
+                    <div className="flex flex-col items-end ml-4">
+                      <span className="text-xs text-gray-500 mb-2">
+                        {notification.timeAgo}
+                      </span>
 
-          <div className="flex flex-col items-end ml-4">
-            <span className="text-xs text-gray-500 mb-2">
-              {notification.timeAgo}
-            </span>
-
-            <button className="text-gray-400 hover:text-gray-600">
-              <MoreVertical className="w-5 h-5" />
-            </button>
+                      <button className="text-gray-400 hover:text-gray-600">
+                        <MoreVertical className="w-5 h-5" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
-        </div>  
       )}
     </footer>
   );
