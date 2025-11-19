@@ -6,6 +6,7 @@ export default function FAQPage() {
     "My Account & My Order"
   );
   const [openQuestion, setOpenQuestion] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false); // for mobile toggle
 
   const toggleQuestion = (index) => {
     setOpenQuestion(openQuestion === index ? null : index);
@@ -40,23 +41,23 @@ export default function FAQPage() {
       {
         question: "How will I Receive My Order?",
         answer:
-          "Your order will be delivered to your provided address by our courier partner.",
+          "Your order will be shipped to the address you provided. We use trusted courier services to deliver your order directly to your doorstep. All items are packed in fully sealed packages to ensure they arrive in perfect condition.",
       },
       {
         question:
           "How will I get confirmation that my Order is placed successfully?",
         answer:
-          "You will receive an email and SMS confirmation after placing your order.",
+          "Once your order is successfully placed, you will receive a confirmation on whatsapp, email and SMS with your order ID and details. When your order is shipped from our warehouse, you'll also get tracking information via SMS and email.",
       },
       {
-        question: "Money deducted but order not placed. What happened?",
+        question:
+          "I tried placing my order using my debit card/credit card/Net Banking. The order was not successful but my money got deducted. What really happened to my money?",
         answer:
-          "This happens due to payment gateway delay. Your money will be auto-refunded within 2–5 days.",
+          "Don't worry! We'll assist you in resolving this issue. First, check your bank or credit card account to confirm whether the amount was debited. If the payment was deducted but the order didn't go through, the amount will be automatically reversed by your bank within 7-10 business days. For further assistance, please contact us on WhatsApp or email us at support@beyoung.in, and we'll be happy to help",
       },
       {
         question: "How should I check the status of my Order?",
-        answer:
-          "Go to the “My Orders” section in your account to track the current status.",
+        answer: `Click here to <a href="/track-order" class="text-sky-500 underline">Track Your Order</a>. If you encounter any issues or need further assistance, please contact us on WhatsApp or email us at support@beyoung.in.`,
       },
     ],
 
@@ -83,9 +84,9 @@ Note: Once the order is shipped from the warehouse, it cannot be cancelled. If a
       {
         question:
           "Is it safe to shop online if I make payment using net banking, Debit Card, or Credit Card?",
-        answer: `Yes, we use 100% trusted and secure payment gateways. It is completely safe to pay online.
+        answer: `We use 100% trusted and secure payment gateways. It is completely safe to pay online via credit card debit card, and net banking transactions.
 
-Note: Beyoung will never ask for your personal or banking information. Please do not share your details with anyone. Only follow the secure checkout process on the website.`,
+Please Note: The Beyoung team will never ask for your personal information or banking details over the phone or via email. Please do not share your details with anyone. Only follow the secure checkout process on the website.`,
       },
 
       {
@@ -95,52 +96,48 @@ Note: Beyoung will never ask for your personal or banking information. Please do
 1. Our courier partner does not support COD for your address.
 2. The products you ordered are not eligible for COD.`,
       },
+      {
+        question: "Are there any hidden charges?",
+        answer: `There are no hidden charges. You pay only the amount shown in your order summary. All products include taxes.`,
+      },
 
       {
         question: "What should I do if my payment fails?",
-        answer: `Ensure that all details are correct and your internet connection is stable.
+        answer: `Make sure you have entered the correct account details and your internet connection is not disrupted during the payment process.
 
-If the amount has been deducted, it will be auto-refunded within 48–72 business hours.  
-If not received, contact your bank.
-
-For help, contact Beyoung support via WhatsApp or email at support@beyoung.in.`,
+If the amount has been debited after a payment failure, it will be automatically reversed by the respective bank within 48-72 business hours. If you do not receive the refund, please contact your bank. For any other requests or queries regarding this, please contact us on WhatsApp or email us at support@beyoung.in, and we'll be happy to help.`,
       },
 
       {
         question: "What is Beyoung Wallet?",
         answer:
-          "Beyoung Wallet is where COD refunds are credited. You can use this balance for future purchases within 12 months.",
+          "Beyoung Wallet is a digital platform where COD refunds are credited. It is designed to offer flexibility and ease in redeeming benefits on future purchases. You can use this balance to shop from Beyoung within 12 months.",
       },
 
       {
         question: "How do I use my wallet balance?",
         answer:
-          "During checkout, simply select the wallet balance option to pay for your order.",
+          "During checkout, you can choose to use your wallet balance to pay for your order.",
       },
 
       {
         question:
           "Can I use my Beyoung wallet balance for offline store purchases?",
         answer:
-          "No, wallet balance can only be used on the online website/app.",
-      },
-
-      {
-        question: "Why is my payment failing?",
-        answer:
-          "This usually happens due to bank/server downtime or unstable internet.",
+          "No, the Beyoung wallet balance can only be used for online purchases on the Beyoung website or app.",
       },
 
       {
         question: "Does Beyoung wallet balance expire?",
         answer:
-          "Yes, wallet balance is valid for 12 months from the date of credit.",
+          "Yes, the Beyoung wallet balance has a validity period of 12 months from the date of credit.",
       },
 
       {
         question:
-          "Can I transfer my Beyoung wallet balance to someone else's wallet?",
-        answer: "No, wallet balance is non-transferable and non-refundable.",
+          "Can I transfer the Beyoung wallet balance to my friend’s Beyoung Wallet?",
+        answer:
+          "No, the Beyoung wallet balance is non-transferable and non-refundable.",
       },
     ],
 
@@ -160,7 +157,7 @@ In the rest of Bharat, delivery takes 4–7 days after processing.`,
       },
       {
         question: "Do you apply any shipping charges?",
-        answer: `No, we offer free shipping on all orders sitewide.`,
+        answer: `No, since we offer free shipping on the orders sitewide.`,
       },
     ],
 
@@ -174,20 +171,28 @@ To be eligible, products must be in original condition with all tags intact.`,
         question: "How to request for a return?",
         answer: `To initiate a return:
 
-1. Open the app.  
-2. Tap the menu icon.  
-3. Go to “My Account” > “My Orders”.  
-4. Click “Return”.  
-5. Select a reason for return.  
-6. Click “Continue”.  
-7. Confirm pickup address.  
-8. Choose refund method.  
-9. Confirm your request.`,
+1. Open the app.
+2. Tap on the menu icon.
+3. Go to “My Account” > “My Orders”.
+4. Click on the “Return” Button.
+5. Select a reason for return from the dropdown menu.
+6. Click on the “Continue Button”.
+7. Confirm pickup address.
+8. Choose a payment option.
+9. Confirm request.
+Your refund request will be created.`,
+      },
+      {
+        question: "Can I return or exchange an item purchased on sale?",
+        answer: `No, you cannot return or exchange items purchased on sale.`,
       },
       {
         question: "Why has my return request been rejected?",
-        answer: `Your return may be rejected if the product fails quality check or the tags are missing.  
-Please contact customer support for more help.`,
+        answer: `Your return request may be rejected for several reasons, such as failing the quality check or missing tags. Please reach out to our customer support team for assistance.`,
+      },
+      {
+        question: "Can I return an online purchase to the Beyoung Store?",
+        answer: `No, you can not return an online purchase to the Beyoung Store.`,
       },
       {
         question: "What items are eligible for return or exchange?",
@@ -195,23 +200,22 @@ Please contact customer support for more help.`,
       },
       {
         question: "What is your exchange policy?",
-        answer: `We offer a 7-day exchange policy.  
-Products must be unused and have all tags intact.  
-Only one exchange is allowed per order.`,
+        answer: `We offer a hassle-free exchange policy for 7 days from the date of delivery. To be eligible for an exchange product(s) must be in their original condition with all tags intact. All products are eligible for only one-time exchange.`,
       },
       {
         question: "How do I initiate an exchange?",
         answer: `To initiate an exchange:
 
-1. Open the app.  
-2. Tap the menu icon.  
-3. Go to “My Account” > “My Orders”.  
-4. Click “Exchange”.  
-5. Select address.  
-6. Choose a reason.  
-7. Upload images.  
-8. Confirm product is unused with tags intact.  
-9. Review and confirm.`,
+1. Open the app.\n\n
+2. Tap on the menu icon.
+3. Go to “My Account” > “My Orders”.
+4. Click on the “Exchange” Button.
+5. Select the address.
+6. Choose a reason for exchange.
+7. Add Images.
+8. Tick to confirm that the product is unused and tags are intact.
+9. Confirm exchange details.
+10. Click on “Confirm and Pay”.`,
       },
       {
         question: "Can I exchange my product for a different size or color?",
@@ -219,25 +223,20 @@ Only one exchange is allowed per order.`,
       },
       {
         question: "How long does it take to receive the exchange?",
-        answer: `It usually takes 4–7 days after the reverse pickup is completed.`,
+        answer: `Typically, it takes 4-7 days post reverse pickup for the exchange to be delivered.`,
       },
       {
         question: "Is there a cost for exchange shipping?",
-        answer: `No, exchange shipping is free.`,
+        answer: `No, there is no cost for exchange shipping.`,
       },
       {
         question:
           "Can I request an exchange if my item arrives damaged or defective?",
-        answer: `Yes, you can request an exchange within 48 hours.  
-
-We strongly recommend recording a video while opening your package.  
-This is required for verifying damaged/missing items.`,
+        answer: `You can request an exchange within 48 hours of receiving a damaged or defective item. We strongly recommend recording a video while opening/unpacking your order, ensuring all stickers/labels are intact. This video will serve as proof in case of missing or damaged product(s) or parcel(s). Without video proof, it will be difficult for us to proceed with returns or refunds.`,
       },
       {
         question: "What is your refund policy?",
-        answer: `We offer a 7-day refund policy from the date of delivery.  
-Refunds are initiated within 24–48 hours after the product passes quality check.  
-Refunds to your bank take 7–10 business days.`,
+        answer: `We have a hassle-free refund policy valid for 7 days from the delivery date. To qualify, products must be in their original condition with all tags intact and pass a quality check. Refunds are initiated within 24-48 hours after passing the quality check and credited to your bank account within 7-10 days.`,
       },
       {
         question:
@@ -246,36 +245,52 @@ Refunds to your bank take 7–10 business days.`,
       },
       {
         question: "How will I get my refund and how long will it take?",
-        answer: `For prepaid orders:  
-• Refund to original payment method (7–10 days), OR  
-• Instant refund to Beyoung Wallet after QC approval.
+        answer: `For prepaid orders, you can choose between receiving a refund via your original payment method or Beyoung wallet cash. Once the product(s) pass our quality check at the warehouse, we will initiate the refund within 24-48 hours. Refunds to your payment method will be processed within 7-10 business days, depending on your bank's processing times. Alternatively, if you opt for Beyoung wallet cash, it will be credited instantly once the product clears the quality check.
 
-For COD orders:  
-• Refund is issued instantly to Beyoung Wallet after QC approval.`,
+Similarly, for COD orders, once the product passes the quality check and reaches our warehouse, the refund will be issued instantly to your Beyoung Wallet. Beyoung Cash can be used for future purchases on our website or app and is valid for 12 months from the date you receive it.`,
       },
       {
         question: "Can I get a refund for a COD order?",
-        answer: `Yes, COD refunds are credited to your Beyoung Wallet.`,
+        answer: `Yes, you can get a refund for your COD order, which will be credited to your Beyoung wallet for future purchases.`,
       },
       {
         question: "Will I be notified when my refund is processed?",
-        answer: `Yes, you will be notified via Email, WhatsApp, and SMS.`,
+        answer: `Yes, you will be notified when your refund is processed via email, WhatsApp, and SMS.`,
       },
       {
         question: "What should I do if I haven't received my refund?",
-        answer: `Please contact customer support at support@beyoung.in`,
+        answer: `Please reach out to our customer support team via email or WhatsApp. We will promptly resolve your issue. support@beyoung.in`,
       },
       {
         question: "What should I do if an item is missing from my order?",
-        answer: `If an item is missing, contact customer support within 48 hours of delivery.`,
+        answer: `If an item is missing from your order, please reach out to our customer support team within 48 hours of delivery.`,
       },
     ],
 
     "My Wallet": [
       {
-        question: "How to check Wallet Credit balance?",
+        question: "What is Wallet Credit?",
         answer:
-          "To check your Beyoung wallet balance -\n\nLog into your account using your registered mobile number.\nGo to 'My Account' and select 'Beyoung Wallet' from the list.\nYou will see the Available Balance, Total Purchases, and Usage History.",
+          "Wallet Credit is the digital money that can be used for future purchases on Beyoung. All the refunds from COD (Cash on Delivery) returns are credited to this virtual wallet.",
+      },
+      {
+        question:
+          "Can I transfer the Beyoung Wallet balance to my bank account?",
+        answer:
+          "No, credit balance is non-transferable and cannot be withdrawn or transferred to a bank account..",
+      },
+      {
+        question: "Does the Beyoung Wallet balance expire?",
+        answer:
+          "Yes, Credit expires 12 months after it is credited. After this period, any unused balance will automatically lapse.",
+      },
+      {
+        question: "How to check Wallet Credit balance?",
+        answer: `To check your Beyoung wallet balance 
+
+Log into your account using your registered mobile number.
+Go to "My Account" and select "Beyoung Wallet" from the list.
+You will see the Available Balance, Total Purchases, and Usage History.`,
       },
       {
         question:
@@ -285,14 +300,18 @@ For COD orders:
       },
       {
         question: "How to redeem Beyoung wallet balance?",
-        answer:
-          "To redeem Beyoung wallet balance -\n\nAdd your desired product(s) to your cart and proceed to the checkout page.\nClick on 'login to apply'. Once logged in your Beyoung wallet balance will be visible.\nClick on the Wallet Credit option to use it as your preferred payment method.\nThen continue to checkout, confirm your shipping address and place your order.",
+        answer: `To redeem Beyoung wallet balance -
+
+1. Add your desired product(s) to your cart and proceed to the checkout page.
+2. Click on “login to apply”. Once logged in your Beyoung wallet balance will be visible.
+3. Click on the Wallet Credit option to use it as your preferred payment method.
+4. Then continue to checkout, confirm your shipping address and place your order.`,
       },
       {
         question:
           "Can I use my Wallet balance to purchase from Beyoung’s offline store?",
         answer:
-          "No, you cannot use the credit balance to purchase from Beyoung‘s offline stores.",
+          "No, you cannot use the credit balance to purchase from Beyoung ‘s offline stores.",
       },
     ],
 
@@ -356,35 +375,60 @@ For COD orders:
     "Wash Care instructions": [
       {
         question: "How should I care for my Beyoung Plain T-shirt?",
-        answer:
-          "The Beyoung Plain T-shirt is built to last, but only if you show it some love. Here’s how to keep it looking fresh:\n\nGive it a cold and gentle machine wash. No harsh spins; keep it chill.\nSkip the brushes. Your tee doesn’t like rough treatment.\nAvoid bleach or fabric softeners. They are not your t-shirt’s friends.\nAlways dry it in shade. Sun is for your vibe, not your T-shirt’s.\nUse mild detergents only. Strong ones are a big no-no.",
+        answer: `The Beyoung Plain T-shirt is built to last, but only if you show it some love. Here’s how to keep it looking fresh:
+
+1. Give it a cold and gentle machine wash. No harsh spins; keep it chill.
+2. Skip the brushes. Your tee doesn’t like rough treatment.
+3. Avoid bleach or fabric softeners. They are not your t-shirt’s friends.
+4. Always dry it in shade. Sun is for your vibe, not your T-shirt’s.
+5. Use mild detergents only. Strong ones are a big no-no.`,
       },
       {
         question: "How do I wash and maintain my Beyoung Plain Shirt?",
-        answer:
-          "The Beyoung Plain Shirt is made to keep you looking sharp, but only if you give it the right care. Here’s how to keep it crisp and fresh:\n\nGive it a normal machine wash.\nAvoid bleach or fabric softeners. They are not your shirt’s friends.\nIron on low to medium temperature to keep the fabric smooth and stylish.\nAir dry for best results, or use a low tumble dry if you are in a hurry.",
+        answer: `The Beyoung Plain Shirt is made to keep you looking sharp, but only if you give it the right care. Here’s how to keep it crisp and fresh:
+ 
+1. Give it a normal machine wash.
+2. Avoid bleach or fabric softeners. They are not your shirt’s friends.
+3. Iron on low to medium temperature to keep the fabric smooth and stylish.
+4. Air dry for best results, or use a low tumble dry if you are in a hurry.`,
       },
       {
         question: "What should I avoid while washing my Beyoung Polo T-shirt?",
-        answer:
-          "The Beyoung Polo T-shirt deserves a little extra care to keep its classy look intact. Here’s what to avoid while washing:\n\nAvoid hot washes. Stick to cold and gentle machine cycles.\nSkip bleach and fabric softeners, as they harm the fabric and color.\nDo not directly iron the polo t-shirts.\nSay no to harsh detergents. Mild ones will keep it fresh and soft.",
+        answer: `The Beyoung Polo T-shirt deserves a little extra care to keep its classy look intact. Here’s what to avoid while washing:
+
+1. Avoid hot washes. Stick to cold and gentle machine cycles.
+2. Skip bleach and fabric softeners, as they harm the fabric and color.
+3. Do not directly iron the polo t-shirts.
+4. Say no to harsh detergents. Mild ones will keep it fresh and soft.`,
       },
       {
         question:
           "What should I keep in mind while washing my Beyoung Regular Fit Pyjamas?",
-        answer:
-          "The Beyoung Regular Fit Pyjamas are made for everyday comfort, and with the right care they will stay soft and fresh. Here’s what to keep in mind:\n\nGive them a gentle machine wash to maintain the fabric quality.\nDo not tumble dry. Let them air dry naturally for the best comfort.\nIron on low to medium temperature to keep the fabric smooth and stylish.\nDo not use bleach. It can damage the fibers and fade the color.",
+        answer: `The Beyoung Regular Fit Pyjamas are made for everyday comfort, and with the right care they will stay soft and fresh. Here’s what to keep in mind:
+
+1. Give them a gentle machine wash to maintain the fabric quality.
+2. Do not tumble dry. Let them air dry naturally for the best comfort.
+3. Iron on low to medium temperature to keep the fabric smooth and stylish.
+4. Do not use bleach. It can damage the fibers and fade the color.`,
       },
       {
         question: "Will my Beyoung Cargo Joggers lose color and shape?",
-        answer:
-          "Yes, if you wash them the wrong way. To make sure they stay durable and stylish, follow these simple care tips:\n\nGive them a gentle machine wash to maintain fabric strength.\nDo not tumble dry. Air drying helps preserve the shape and color.\nIron on low to medium temperature to keep the fabric smooth and stylish.\nNever use bleach, as it can weaken the fibers and fade the shade.",
+        answer: `Yes, if you wash them the wrong way. To make sure they stay durable and stylish, follow these simple care tips:
+ 
+1. Give them a gentle machine wash to maintain fabric strength.
+2. Do not tumble dry. Air drying helps preserve the shape and color.
+3. Iron on low to medium temperature to keep the fabric smooth and stylish.
+4. Never use bleach, as it can weaken the fibers and fade the shade.`,
       },
       {
         question:
           "Will my Beyoung Loose Fit Pyjamas lose their softness and fit?",
-        answer:
-          "Yes, if you wash them the wrong way. To keep them comfortable and long-lasting, here’s what you should do:\n\nGive them a gentle machine wash to protect the fabric.\nDo not tumble dry. Let them air dry for natural softness.\nIron on low to medium temperature to keep the fabric smooth and stylish.\nNever use bleach, as it can weaken the fibers and dull the color.",
+        answer: `Yes, if you wash them the wrong way. To keep them comfortable and long-lasting, here’s what you should do:
+ 
+1. Give them a gentle machine wash to protect the fabric.
+2. Do not tumble dry. Let them air dry for natural softness.
+3. Iron on low to medium temperature to keep the fabric smooth and stylish
+4. Never use bleach, as it can weaken the fibers and dull the color.`,
       },
     ],
 
@@ -413,13 +457,12 @@ For COD orders:
     ],
   };
 
-
   const currentQuestions = questions[selectedCategory] || [];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-yellow-400 px-6 py-4  max-w-7xl m-auto mt-8 flex items-center gap-4">
+      <div className="bg-yellow-400 px-6 py-4 max-w-7xl m-auto mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-4">
         <span className="text-gray-800 font-medium">Need help :</span>
         <button className="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700 transition-colors">
           Contact Us
@@ -427,45 +470,68 @@ For COD orders:
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">
           Common Questions Asked by Our Customers
         </h1>
 
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* LEFT SIDEBAR */}
-          <div className="w-80 shrink-0">
-            <div className="space-y-2">
-              {categories.map((category) => (
-                <button
-                  key={category.name}
-                  onClick={() => {
-                    setSelectedCategory(category.name);
-                    setOpenQuestion(null);
-                  }}
-                  className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all border-l-4 ${
-                    selectedCategory === category.name
-                      ? "border-yellow-400 bg-yellow-50"
-                      : "border-transparent hover:bg-gray-50"
+          <div className="w-full lg:w-80 shrink-0 relative">
+            {/* Mobile toggle button */}
+            <div className="lg:hidden mb-4">
+              <button
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                className="w-full flex justify-between items-center px-4 py-2 bg-gray-100 rounded-md"
+              >
+                <span>{selectedCategory}</span>
+                <ChevronRight
+                  className={`w-5 h-5 transition-transform ${
+                    sidebarOpen ? "rotate-90" : ""
                   }`}
-                >
-                  <Star className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-700 text-sm underline">
-                    {category.name}
-                  </span>
-                </button>
-              ))}
+                />
+              </button>
+            </div>
+
+            {/* Sidebar */}
+            <div
+              className={`${
+                sidebarOpen ? "block" : "hidden"
+              } lg:block bg-white border lg:border-none rounded-md lg:rounded-none shadow lg:shadow-none`}
+            >
+              <div className="space-y-2">
+                {categories.map((category) => (
+                  <button
+                    key={category.name}
+                    onClick={() => {
+                      setSelectedCategory(category.name);
+                      setOpenQuestion(null);
+                      setSidebarOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all border-l-4 ${
+                      selectedCategory === category.name
+                        ? "border-yellow-400 bg-yellow-50"
+                        : "border-transparent hover:bg-gray-50"
+                    }`}
+                  >
+                    <Star className="w-5 h-5 text-gray-400" />
+                    <span className="text-gray-700 text-sm underline">
+                      {category.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* RIGHT QUESTIONS */}
-          <div className="flex-1 pl-8">
+          <div className="flex-1 pl-0 lg:pl-8">
             <div className="space-y-0">
               {currentQuestions.map((item, index) => (
                 <div key={index} className="border-b border-gray-200">
                   <button
                     onClick={() => toggleQuestion(index)}
-                    className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+                    className="w-full flex items-center justify-between px-4 sm:px-6 py-4 text-left hover:bg-gray-50 transition-colors"
                   >
                     <span className="text-gray-800 text-base pr-4">
                       {item.question}
@@ -479,7 +545,7 @@ For COD orders:
                   </button>
 
                   {openQuestion === index && (
-                    <div className="px-6 pb-4 text-gray-600 text-sm whitespace-pre-line">
+                    <div className="px-4 sm:px-6 pb-4 text-gray-600 text-sm whitespace-pre-line">
                       {item.answer}
                     </div>
                   )}

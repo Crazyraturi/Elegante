@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ReturnOrder = () => {
   return (
@@ -6,7 +7,8 @@ const ReturnOrder = () => {
       {/* Heading */}
       <div>
         <h1 className=" py-2">
-          Home Return  <span className="px-1">{">"}</span>  Refund And Cancellation{" "}
+          Home Return <span className="px-1">{">"}</span> Refund And
+          Cancellation{" "}
         </h1>
         <p className="font-bold text-2xl">
           Return, Exchange, and Refund Policy
@@ -97,17 +99,26 @@ const ReturnOrder = () => {
         </h1>
 
         <p>
-          <span className="font-bold">• Prepaid Orders:&nbsp;</span>You may
-          choose refund to the original payment method or wallet. Once quality
-          check is completed, refund will be initiated within 24–48 hours.
+          <span className="font-bold">• Prepaid Orders:&nbsp;</span>For prepaid
+          orders, you can choose between receiving a refund via your original
+          payment method or wallet. Once the product(s) pass our quality check
+          at the warehouse, we will initiate the refund within 24-48 hours.
+          Refunds to your payment method will be processed within 7-10 business
+          days, depending on your bank's processing times. Alternatively, if you
+          opt for wallet credits, it will be credited instantly once the product
+          clears the quality check.
         </p>
 
         <p>
-          <span className="font-bold">• COD Orders: &nbsp; </span> Refund will
-          be issued instantly in your Beyoung Wallet after quality check.
+          <span className="font-bold">• COD Orders: &nbsp; </span> If the
+          product(s) passes the quality check once it reaches our warehouse, the
+          refund will be issued instantly in your Beyoung Wallet. Credits can be
+          used for future purchases on websites or apps. It is valid for 12
+          months from the date you receive it.
           <br />
           <span className="font-bold">Note:&nbsp; </span>
-          Purchases made using Credits will be refunded as Credits only.
+          Any purchases made using Credits, if and when returned, will be
+          refunded as Credits only.
         </p>
       </div>
 
@@ -118,8 +129,10 @@ const ReturnOrder = () => {
         </h1>
 
         <p>
-          • Orders can be cancelled or modified before they are dispatched.
-          Contact support via WhatsApp or email at support@beyoung.in.
+          • Orders can be cancelled or modified (change number, address, product
+          style or size) if they have not yet been dispatched from our
+          warehouse. Contact us via WhatsApp or email us at support@beyoung.in
+          to request changes.
         </p>
       </div>
 
@@ -130,16 +143,18 @@ const ReturnOrder = () => {
         </h1>
 
         <p>
-          • If you receive a damaged/defective/used/wrong product, contact
-          support within 48 hours with photos or an opening video.
+          • If you receive a damaged/defective/used/tags missing/wrong
+          product(s), please contact our support team within 48 hours with
+          photos or open/unpacking video. We will arrange for a new product to
+          be sent to you at no additional charge.
         </p>
 
         <p>
-          • If you receive a torn/damaged/empty parcel, do not accept it.
-          <br />
-          <span className="font-bold">Note: &nbsp;</span>
-          Always record an opening video for proof. Always record an opening
-          video for proof.
+          • If you receive a torn/damaged/empty parcel, please do not accept it.
+          If you receive any unrelated product(s) or an empty parcel, you are
+          requested to raise a query within 48 hours of delivery. We strongly
+          recommend recording a video while you open/unpack your order, keeping
+          all stickers/labels intact.
         </p>
       </div>
 
@@ -150,29 +165,74 @@ const ReturnOrder = () => {
         </h1>
 
         <p>
-          • Ensure bank details are accurate; errors will not be the
-          responsibility of Beyoung.
+          • Ensure the provided bank account details are accurate as errors will
+          not be the responsibility of Beyoung.
         </p>
         <p>
-          • Customers must take care of the product(s) while in their
-          possession.
+          • Customers must take utmost care of the product(s) while they are in
+          their possession.
         </p>
         <p>• Please check the size guide before placing an order.</p>
-        <p>• Product color may vary due to screen resolution.</p>
-        <p>• COD payment method will incur a ₹100 cash-handling charge.</p>
         <p>
-          • For third-party payment delays or cashback issues, contact the
-          payment provider.
+          • The colour of products may vary according to the customer's screen
+          resolution.
         </p>
         <p>
-          • For prepaid delivery confirmation without receiving the product,
-          contact support within 48 hours.
+          •For orders placed using the Cash on Delivery (COD) payment method, a
+          cash handling charge of INR 100 will be applied per order. This charge
+          covers the additional costs associated with processing and handling
+          cash payments, There are no additional charges for prepaid orders.
+          Customers who choose to pay in advance using credit/debit cards, net
+          banking, or any other prepaid method will not incur any extra fees.
         </p>
         <p>
-          • You can track your order in the{" "}
+          • If payment is made through third-party platforms and you have not
+          received any updates regarding payment or cashback, please contact the
+          respective payment platform. Beyoung is not responsible for such
+          scenarios.
+        </p>
+        <p>
+          • For prepaid orders, if you receive a delivery confirmation via SMS
+          or email but have not received the products, please contact us within
+          48 hours.
+        </p>
+        <p>
+          •You can easily track your order status
+          <Link
+            to={"/track-order"}
+            className="font-bold text-sky-500 cursor-pointer ml-1"
+          >
+            here
+          </Link>
           <span className="font-bold">
             My Account → Track Your Order section.{" "}
           </span>
+        </p>
+      </div>
+
+      {/*Shipping policy */}
+      <div className="py-3 space-y-3">
+        <h1 className="underline underline-offset-4 decoration-yellow-400">
+          Shipping Policy
+        </h1>
+
+        <p>We offer free shipping on the orders sitewide.</p>
+
+        <p>
+          We process orders within 24-48 hours and ship them from Udaipur,
+          Rajasthan.
+        </p>
+
+        <p>
+          We ship PAN India and our mission is to serve every region of Bharat,
+          ensuring accessibility to our products for all.
+        </p>
+
+        <p>
+          <span className="font-semibold">Order Delivery Time:</span> In
+          metropolitan areas, orders are delivered within 1-4 days after
+          processing, while in the rest of Bharat, delivery takes 4-7 days after
+          processing.
         </p>
       </div>
 
