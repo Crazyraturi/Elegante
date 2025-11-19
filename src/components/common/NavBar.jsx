@@ -51,12 +51,12 @@ export default function EcommerceHeader() {
                       </h3>
                       <ul className="space-y-2">
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to="/men-plain-t-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Plain T-shirts
-                          </a>
+                          </Link>
                         </li>
                         <li>
                           <a

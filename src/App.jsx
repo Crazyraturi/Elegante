@@ -16,6 +16,8 @@ import Media from "./pages/Media";
 import CareersPage from "./pages/Career";
 import Blog from "./pages/Blog";
 import BlogDetailPage from "./pages/BlogDetails";
+import PlainTShirt from "./components/topwear/PlainTShirt";
+
 
 const App = () => {
   return (
@@ -39,6 +41,7 @@ const App = () => {
         <Route path="/career" element={<CareersPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/blogdetails" element={<BlogDetailPage />} />
+        <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
       </Routes>
     </BrowserRouter>
   );

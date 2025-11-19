@@ -77,7 +77,7 @@ const More = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <header className="w-full">
         <img
           src={MainHeaderBanner}
