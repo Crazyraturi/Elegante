@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "../utility";
 import MainLayout from "../src/layouts/MainLayout";
+
 import Home from "./pages/Home";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import TrackOrder from "./pages/TrackOrder";
@@ -17,40 +18,46 @@ import Media from "./pages/Media";
 import CareersPage from "./pages/Career";
 import Blog from "./pages/Blog";
 import BlogDetailPage from "./pages/BlogDetails";
+
 import PlainTShirt from "./components/topwear/PlainTShirt";
 import ViewAll from "./components/topwear/ViewAll";
 import Winterwear from "./components/winterwear/Winterwear";
-
 
 const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route  element={<MainLayout/>} />
-        <Route path="/" element={<Home />} />
-        <Route path="/product-details" element={<ProductDetails />} />
-        <Route path="/track-order" element={<TrackOrder />} />
-        <Route path="/returns-exchange" element={<ReturnOrder />} />
-        <Route path="/terms" element={<TermsandCondition />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/shipping" element={<ShippingPolicy />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/faqs" element={<FAQpage />} />
-        <Route path="/about" element={<Aboutus />} />
-        <Route path="/collab" element={<Collaborations />} />
-        <Route path="/clothing-stores-near-me" element={<More />} />
-        <Route path="/in-the-news" element={<Media />} />
-        <Route path="/career" element={<CareersPage />} />
+        
+        {/* ALL ROUTES INSIDE MAINLAYOUT */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/product-details" element={<ProductDetails />} />
+          <Route path="/track-order" element={<TrackOrder />} />
+          <Route path="/returns-exchange" element={<ReturnOrder />} />
+          <Route path="/terms" element={<TermsandCondition />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/shipping" element={<ShippingPolicy />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/faqs" element={<FAQpage />} />
+          <Route path="/about" element={<Aboutus />} />
+          <Route path="/collab" element={<Collaborations />} />
+          <Route path="/clothing-stores-near-me" element={<More />} />
+          <Route path="/in-the-news" element={<Media />} />
+          <Route path="/career" element={<CareersPage />} />
 
-        {/* Topwear dropdrown */}
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/blogdetails" element={<BlogDetailPage />} />
-        <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
-        <Route path="/t-shirts-for-men" element={<ViewAll />} />
+          {/* BLOG */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/details" element={<BlogDetailPage />} />
 
-        {/* WinterWear */}
-        <Route path="/men-winterwear" element={<Winterwear />} />
+          {/* TOPWEAR */}
+          <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
+          <Route path="/t-shirts-for-men" element={<ViewAll />} />
+
+          {/* WINTERWEAR */}
+          <Route path="/men-winterwear" element={<Winterwear />} />
+        </Route>
+
       </Routes>
     </BrowserRouter>
   );

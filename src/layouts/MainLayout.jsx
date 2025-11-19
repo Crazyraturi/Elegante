@@ -6,7 +6,7 @@ import Footer from "../components/common/Footer";
 const MainLayout = ()=>{
     const location = useLocation();
 
-    const noFooterRoutes = ["/blog/blogdetails"];
+    const noFooterRoutes = ["/blog/details"];
 
     const hideFooter = noFooterRoutes.includes(location.pathname)
 
