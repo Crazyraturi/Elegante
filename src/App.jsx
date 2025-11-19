@@ -1,8 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "../utility";
+import MainLayout from "../src/layouts/MainLayout";
 import Home from "./pages/Home";
-import NavBar from "./components/common/NavBar";
-import Footer from "./components/common/Footer";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import TrackOrder from "./pages/TrackOrder";
 import ReturnOrder from "./pages/ReturnOrder";
@@ -16,14 +14,17 @@ import Collaborations from "./pages/Collaborations";
 import More from "./pages/More";
 import Media from "./pages/Media";
 import CareersPage from "./pages/Career";
+import Blog from "./pages/Blog";
+import BlogDetailPage from "./pages/BlogDetails";
 import PlainTShirt from "./components/topwear/PlainTShirt";
+
 
 const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <NavBar />
       <Routes>
+        <Route  element={<MainLayout/>} />
         <Route path="/" element={<Home />} />
         <Route path="/product-details" element={<ProductDetails />} />
         <Route path="/track-order" element={<TrackOrder />} />
@@ -38,9 +39,10 @@ const App = () => {
         <Route path="/clothing-stores-near-me" element={<More />} />
         <Route path="/in-the-news" element={<Media />} />
         <Route path="/career" element={<CareersPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/blogdetails" element={<BlogDetailPage />} />
         <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 };
