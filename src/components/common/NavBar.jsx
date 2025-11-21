@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../../src/context/CartContext";
+
 import { Search, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
 import Logo from "../icons/Logo";
 import { Link } from "react-router-dom";
 
 export default function EcommerceHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [cartCount] = useState(0);
+  const { cartItems } = useContext(CartContext);
 
   return (
     <div className="w-full sticky top-0 z-50">
@@ -364,14 +366,16 @@ export default function EcommerceHeader() {
               </button>
 
               {/* Cart Icon with Badge */}
-              <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-                <ShoppingCart className="w-5 h-5 text-gray-700" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                    {cartCount}
-                  </span>
-                )}
-              </button>
+              <Link to="/cart">
+                <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+                  <ShoppingCart className="w-5 h-5 text-gray-700" />
+                  {cartItems.length > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                      {cartItems.length}
+                    </span>
+                  )}
+                </button>
+              </Link>
 
               {/* Mobile Menu Button */}
               <button

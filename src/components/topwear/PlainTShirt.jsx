@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../../src/context/CartContext";
+import { useNavigate } from "react-router-dom";
 import {
   Search,
   ShoppingCart,
@@ -127,6 +130,8 @@ const App = () => {
   const [sortBy, setSortBy] = useState("popular");
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const { cartItems } = useContext(CartContext);
+
 
   // --- Filter & Sort Logic ---
   useEffect(() => {
@@ -308,7 +313,7 @@ const App = () => {
                 Showing {filteredProducts.length} of {PRODUCTS.length} products
               </div>
 
-              <div className="flex items-center gap-2 ml-auto">
+              <div className="flex items-center gap-4 ml-auto">
                 <span className="text-sm text-gray-500 hidden sm:inline">
                   Sort By:
                 </span>
@@ -321,6 +326,7 @@ const App = () => {
                       : "Price: High to Low"}{" "}
                     <ChevronDown className="w-4 h-4" />
                   </button>
+
                   {/* Dropdown */}
                   <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-100 shadow-lg rounded-md hidden group-hover:block z-10">
                     <button
@@ -343,6 +349,20 @@ const App = () => {
                     </button>
                   </div>
                 </div>
+
+                {/* 🛒 Shopping Cart Icon with Badge */}
+                <button
+                  className="relative p-2 hover:bg-gray-100 rounded-full"
+                  onClick={() => navigate("/cart")}
+                >
+                  <ShoppingCart className="w-6 h-6 text-gray-800" />
+
+                  {cartItems.length > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                      {cartItems.length}
+                    </span>
+                  )}
+                </button>
               </div>
             </div>
 
@@ -380,6 +400,21 @@ const App = () => {
 // --- Product Card Component ---
 const ProductCard = ({ product, setCartCount }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      title: product.name,
+      price: product.price,
+      image: product.image,
+      color: product.color,
+      size: product.size,
+    });
+
+    // navigate("/cart");
+  };
 
   const discount = Math.round(
     ((product.originalPrice - product.price) / product.originalPrice) * 100
@@ -432,7 +467,7 @@ const ProductCard = ({ product, setCartCount }) => {
           </div>
           <button
             className="w-full mt-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-xs py-2 uppercase tracking-wider transition-colors"
-            onClick={() => setCartCount((c) => c + 1)}
+            onClick={handleAddToCart}
           >
             Add To Cart
           </button>
@@ -467,7 +502,7 @@ const ProductCard = ({ product, setCartCount }) => {
       <div className="lg:hidden px-3 pb-3">
         <button
           className="w-full border border-gray-300 py-1.5 text-xs font-bold uppercase rounded-sm"
-          onClick={() => setCartCount((c) => c + 1)}
+          onClick={handleAddToCart}
         >
           Add to Cart
         </button>

@@ -57,7 +57,7 @@ export default function FAQPage() {
       },
       {
         question: "How should I check the status of my Order?",
-        answer: `Click here to <a href="/track-order" class="text-sky-500 underline">Track Your Order</a>. If you encounter any issues or need further assistance, please contact us on WhatsApp or email us at support@beyoung.in.`,
+        answer: `Click here to Track Your Order. If you encounter any issues or need further assistance, please contact us on WhatsApp or email us at support@beyoung.in.`,
       },
     ],
 
