@@ -18,17 +18,19 @@ import Media from "./pages/Media";
 import CareersPage from "./pages/Career";
 import Blog from "./pages/Blog";
 import BlogDetailPage from "./pages/BlogDetails";
-
 import PlainTShirt from "./components/topwear/PlainTShirt";
 import ViewAll from "./components/topwear/ViewAll";
 import Winterwear from "./components/winterwear/Winterwear";
+import CartPage from "./pages/CartPage";
+import AddressPage from "./pages/AddressPage";
+import PaymentPage from "./pages/PaymentPage";
+
 
 const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        
         {/* ALL ROUTES INSIDE MAINLAYOUT */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
@@ -45,6 +47,12 @@ const App = () => {
           <Route path="/clothing-stores-near-me" element={<More />} />
           <Route path="/in-the-news" element={<Media />} />
           <Route path="/career" element={<CareersPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/address" element={<AddressPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+
+
+
 
           {/* BLOG */}
           <Route path="/blog" element={<Blog />} />
@@ -57,7 +65,6 @@ const App = () => {
           {/* WINTERWEAR */}
           <Route path="/men-winterwear" element={<Winterwear />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   );
