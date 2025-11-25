@@ -29,7 +29,6 @@ import Secure from "../assets/Secure.jpeg";
 import Original from "../assets/Original.png";
 import upiLogo from "../assets/upiLogo.svg";
 
-
 import SBI from "../assets/SBI.svg";
 import Kotak from "../assets/Kotak.png";
 import IndusLand from "../assets/Indusland.png";
@@ -223,7 +222,7 @@ export default function PaymentPage() {
             <div className="flex gap-3 mt-2">
               <Lock />
               <div>
-                <p className="font-bold">Cash On Delivery   </p>
+                <p className="font-bold">Cash On Delivery </p>
                 <p className="text-xs text-gray-500">
                   We recommend UPI/prepaid payments to get extra discounts &
                   avoid COD charges (₹50 per order)
