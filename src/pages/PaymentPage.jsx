@@ -32,7 +32,7 @@ import upiLogo from "../assets/upiLogo.svg";
 
 import SBI from "../assets/SBI.svg";
 import Kotak from "../assets/Kotak.png";
-import IndusLand from "../assets/IndusLand.png";
+import IndusLand from "../assets/Indusland.png";
 import ICICI from "../assets/ICICI.png";
 import HDFC from "../assets/HDFC.png";
 import AXIS from "../assets/Axis.png";
