@@ -25,7 +25,6 @@ import CartPage from "./pages/CartPage";
 import AddressPage from "./pages/AddressPage";
 import PaymentPage from "./pages/PaymentPage";
 
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -50,9 +49,6 @@ const App = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/address" element={<AddressPage />} />
           <Route path="/payment" element={<PaymentPage />} />
-
-
-
 
           {/* BLOG */}
           <Route path="/blog" element={<Blog />} />
