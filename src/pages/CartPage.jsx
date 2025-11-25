@@ -79,6 +79,23 @@ export default function CartPage() {
                       alt={item.title}
                       className="w-32 h-40 object-cover rounded-lg"
                     />
+
+                    <div className="mt-3 px-4">
+                      {/* Quantity Dropdown */}
+                      <select
+                        value={item.quantity}
+                        onChange={(e) =>
+                          updateQuantity(item.id, Number(e.target.value))
+                        }
+                        className="border border-gray-300 rounded px-7 py-2"
+                      >
+                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                          <option key={num} value={num}>
+                            {num}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
 
                   <div className="flex-1">
@@ -105,26 +122,11 @@ export default function CartPage() {
                         </span>
                       </div>
                     </div>
-
-                    {/* Quantity Dropdown */}
-                    <select
-                      value={item.quantity}
-                      onChange={(e) =>
-                        updateQuantity(item.id, Number(e.target.value))
-                      }
-                      className="border border-gray-300 rounded px-3 py-2"
-                    >
-                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                        <option key={num} value={num}>
-                          {num}
-                        </option>
-                      ))}
-                    </select>
                   </div>
                 </div>
 
                 {/* Remove / Wishlist */}
-                <div className="flex items-center justify-center gap-8 mt-6 pt-6 border-t border-gray-200">
+                <div className="flex items-center justify-center gap-8 mt-5 pt-5 border-t border-gray-200">
                   <button
                     className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition"
                     onClick={() => removeFromCart(item.id)}
@@ -145,7 +147,7 @@ export default function CartPage() {
           </div>
 
           {/* Price Summary */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div className="bg-white rounded-lg shadow-sm p-4">
               <h3 className="font-semibold text-gray-900 mb-4">
                 PRICE DETAILS ({cartItems.length} Items)

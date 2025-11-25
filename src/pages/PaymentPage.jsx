@@ -12,6 +12,7 @@ import {
   Truck,
   ChevronDown,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { CartContext } from "../context/CartContext";
 
@@ -26,6 +27,8 @@ import amazon from "../assets/amazon.svg";
 import India_map from "../assets/India_map.png";
 import Secure from "../assets/Secure.jpeg";
 import Original from "../assets/Original.png";
+import upiLogo from "../assets/upiLogo.svg";
+
 
 import SBI from "../assets/SBI.svg";
 import Kotak from "../assets/Kotak.png";
@@ -38,6 +41,10 @@ import PNB from "../assets/PNB.png";
 import YesBank from "../assets/Yes_Bank.png";
 import IDFC from "../assets/IDFC.png";
 import BOI from "../assets/BOI.png";
+import Mobikwi from "../assets/Mobikwi.png";
+import OlaMoney from "../assets/OlaMoney.png";
+import Airtel from "../assets/Airtel.png";
+import Jio from "../assets/Jio.png";
 
 export default function PaymentPage() {
   const [active, setActive] = useState("upi");
@@ -62,56 +69,57 @@ export default function PaymentPage() {
       { name: "Bank of India", logo: BOI },
     ];
 
- return (
-   <div className="space-y-5">
-     <div className="bg-green-50 py-2 text-center text-sm font-semibold text-green-700">
-       No Delivery Charges
-     </div>
+    return (
+      <div className="space-y-5">
+        <div className="bg-green-50 py-2 text-center text-sm font-semibold text-green-700">
+          No Delivery Charges
+        </div>
 
-     <p className="font-semibold text-lg">Net Banking</p>
+        <p className="font-semibold text-lg">Net Banking</p>
 
-     {/* ⭐ TOP BANKS GRID (3 x 3) */}
-     <div className="grid grid-cols-3 gap-4">
-       {topBanks.map((bank) => (
-         <div
-           key={bank.name}
-           className="flex flex-col items-center justify-center border p-3 rounded-lg cursor-pointer hover:bg-gray-50"
-         >
-           <img src={bank.logo} className="w-10 h-10" />
-           <p className="text-xs font-semibold text-center mt-1">{bank.name}</p>
-         </div>
-       ))}
-     </div>
+        {/* ⭐ TOP BANKS GRID (3 x 3) */}
+        <div className="grid grid-cols-3 gap-4">
+          {topBanks.map((bank) => (
+            <div
+              key={bank.name}
+              className="flex flex-col items-center justify-center border p-3 rounded-lg cursor-pointer hover:bg-gray-50"
+            >
+              <img src={bank.logo} className="w-10 h-10" />
+              <p className="text-xs font-semibold text-center mt-1">
+                {bank.name}
+              </p>
+            </div>
+          ))}
+        </div>
 
-     {/* BUTTON */}
-     <button
-       onClick={() => setShowMoreBanks(!showMoreBanks)}
-       className="w-full border p-4 rounded-lg text-sm font-semibold flex justify-between items-center"
-     >
-       Select Different Bank
-       {showMoreBanks ? <ChevronDown /> : <ChevronRight />}
-     </button>
+        {/* BUTTON */}
+        <button
+          onClick={() => setShowMoreBanks(!showMoreBanks)}
+          className="w-full border p-4 rounded-lg text-sm font-semibold flex justify-between items-center"
+        >
+          Select Different Bank
+          {showMoreBanks ? <ChevronDown /> : <ChevronRight />}
+        </button>
 
-     {/* ⭐ MORE BANKS SCROLLABLE LIST */}
-     {showMoreBanks && (
-       <div className="max-h-48 overflow-y-auto border rounded-lg p-2 space-y-3">
-         {moreBanks.map((bank) => (
-           <div
-             key={bank.name}
-             className="flex items-center justify-between border p-2 rounded-lg cursor-pointer hover:bg-gray-50"
-           >
-             <div className="flex items-center gap-3">
-               <img src={bank.logo} className="w-8 h-8" />
-               <p className="text-sm font-semibold">{bank.name} Bank</p>
-             </div>
-             <ChevronRight size={18} />
-           </div>
-         ))}
-       </div>
-     )}
-   </div>
- );
-
+        {/* ⭐ MORE BANKS SCROLLABLE LIST */}
+        {showMoreBanks && (
+          <div className="max-h-48 overflow-y-auto border rounded-lg p-2 space-y-3">
+            {moreBanks.map((bank) => (
+              <div
+                key={bank.name}
+                className="flex items-center justify-between border p-2 rounded-lg cursor-pointer hover:bg-gray-50"
+              >
+                <div className="flex items-center gap-3">
+                  <img src={bank.logo} className="w-8 h-8" />
+                  <p className="text-sm font-semibold">{bank.name} Bank</p>
+                </div>
+                <ChevronRight size={18} />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
   }
 
   const totalMRP =
@@ -152,9 +160,13 @@ export default function PaymentPage() {
     <div className="bg-white min-h-screen px-4 py-6 lg:px-10">
       {/* STEP INDICATOR */}
       <div className="max-w-6xl mx-auto px-4 mb-6 flex justify-center gap-4 text-sm">
-        <div className="text-green-600 font-medium">✓ Cart</div>
+        <Link to="/cart">
+          <div className="text-green-600 font-medium">✓ Cart</div>
+        </Link>
         <div className="w-20 border-t"></div>
-        <div className="text-green-600 font-medium">✓ Address</div>
+        <Link to="/address">
+          <div className="text-green-600 font-medium">✓ Address</div>
+        </Link>
         <div className="w-20 border-t"></div>
         <div className="text-gray-400 font-medium">○ Payment</div>
       </div>
@@ -177,10 +189,22 @@ export default function PaymentPage() {
             </div>
 
             <div className="flex gap-3 mt-2">
-              <Phone className="text-green-600" />
+              <img src={upiLogo} alt="upiLogo" className="text-green-600" />
               <div>
-                <p className="font-semibold">Preferred UPI</p>
-                <p className="text-xs text-gray-500">Save handling charges</p>
+                <p className="font-semibold flex justify-between items-center">
+                  <span>Preferred UPI</span>
+
+                  <span className="flex items-center gap-2">
+                    <span className="line-through text-gray-500 text-sm">
+                      {totalMRP}
+                    </span>
+                    <span className="text-black-600 font-bold">{totalMRP}</span>
+                  </span>
+                </p>
+                <p className="text-xs text-gray-500">
+                  We recommend UPI/prepaid payments to get extra discounts &
+                  avoid COD charges (₹50 per order)
+                </p>
               </div>
             </div>
           </div>
@@ -199,8 +223,11 @@ export default function PaymentPage() {
             <div className="flex gap-3 mt-2">
               <Lock />
               <div>
-                <p className="font-bold">Cash On Delivery</p>
-                <p className="text-xs text-gray-500">Avoid COD fees</p>
+                <p className="font-bold">Cash On Delivery   </p>
+                <p className="text-xs text-gray-500">
+                  We recommend UPI/prepaid payments to get extra discounts &
+                  avoid COD charges (₹50 per order)
+                </p>
               </div>
             </div>
           </div>
@@ -327,11 +354,14 @@ export default function PaymentPage() {
                   placeholder="CVV"
                 />
               </div>
+              <button className="bg-black text-white w-full py-3 rounded-lg ">
+                Continue
+              </button>
             </div>
           )}
 
           {/* WALLET UI */}
-          
+
           {active === "wallet" && (
             <div className="space-y-5">
               <div className="bg-green-50 py-1 text-center text-sm font-semibold text-green-700">
@@ -341,19 +371,18 @@ export default function PaymentPage() {
               <p className="font-semibold text-lg">Wallets</p>
 
               {[
-                { name: "PhonePe", img: { src: Phone_pe , alt: "PhonePe"} },
-                { name: "MobiKwik", img: "/images/mobikwik.png" },
-                { name: "AmazonPay", img: "/images/amazonpay.png" },
-                { name: "OlaMoney", img: "/images/olamoney.png" },
-                { name: "AirtelMoney", img: "/images/airtelmoney.png" },
-                { name: "JioMoney", img: "/images/jiomoney.png" },
+                { name: "PhonePe", img: Phone_pe },
+                { name: "MobiKwik", img: Mobikwi },
+                { name: "AmazonPay", img: amazon },
+                { name: "OlaMoney", img: OlaMoney },
+                { name: "AirtelMoney", img: Airtel },
+                { name: "JioMoney", img: Jio },
               ].map((w) => (
                 <div
                   key={w.name}
-                  className="flex items-center justify-between border p-4 rounded-lg cursor-pointer"
+                  className="flex items-center justify-between border p-2 rounded-lg cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    {/* ICON BLOCK – replace src with your image */}
                     <div className="w-8 h-8 flex items-center justify-center">
                       <img
                         src={w.img}
@@ -373,6 +402,29 @@ export default function PaymentPage() {
 
           {/* ⭐ NET BANKING UI (Placed AFTER Wallet as requested) */}
           {active === "netbanking" && <NetBankingSection />}
+
+          {/* ⭐ EPAY UI */}
+          {active === "epay" && (
+            <div className="space-y-5">
+              <div className="bg-green-50 py-2 text-center text-sm font-semibold text-green-700">
+                No Delivery Charges
+              </div>
+
+              <p className="font-semibold text-lg">Pay with EPAY</p>
+
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-40 h-40 bg-gray-200 animate-pulse rounded-lg"></div>
+
+                <button className="bg-black text-white px-6 py-3 rounded-lg w-full">
+                  Proceed with EPAY
+                </button>
+
+                <p className="text-xs text-gray-500 text-center">
+                  Secure & Fast EPAY checkout. You will be redirected safely.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* RIGHT SUMMARY */}
@@ -389,7 +441,10 @@ export default function PaymentPage() {
 
             <div className="flex justify-between">
               <span>Shipping</span>
-              <span className="text-green-600">Free</span>
+              <span className="text-green-600">
+                {" "}
+                <span className="line-through text-gray-700">49</span> Free
+              </span>
             </div>
 
             {active === "cod" ? (

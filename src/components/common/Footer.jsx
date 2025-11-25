@@ -43,7 +43,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center text-center md:text-left">
         <div>
           <p>
-            Xclusive coupons, extra savings, and tons of EVERYDAY deals
+            Exclusive coupons, extra savings, and tons of EVERYDAY deals
             delivered straight to your inbox.
           </p>
         </div>
