@@ -15,7 +15,7 @@ const NewArrival = () => {
         setLoading(true);
         // Your API Endpoint
         const res = await fetch(
-          "https://beyoung-backend.onrender.com/api/product/products"
+          "https://beyoung-backend.onrender.com/api/v1/product/products"
         );
         const data = await res.json();
 
