@@ -552,7 +552,7 @@ export default function ProductPage() {
 
       {/* --- NEW: Product Added Pop-up --- */}
       <div
-        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-300 transform z-[9999] 
+        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-300 transform z-9999 
           ${
             showPopup
               ? "translate-x-0 opacity-100"
