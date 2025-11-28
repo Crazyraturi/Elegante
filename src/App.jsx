@@ -25,6 +25,10 @@ import CartPage from "./pages/CartPage";
 import AddressPage from "./pages/AddressPage";
 import PaymentPage from "./pages/PaymentPage";
 
+// 🔥 STEP 1: Import the new component to handle product listings
+import ProductListingPage from "../src/pages/ProductListingPage";
+// Note: You must ensure this file path is correct.
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -54,7 +58,11 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/details" element={<BlogDetailPage />} />
 
-          {/* TOPWEAR */}
+          {/* 🔥 STEP 2: Add the new dynamic product route 🔥 */}
+          <Route path="/products" element={<ProductListingPage />} />
+          {/* This single route will handle all requests like /products?specificType=... */}
+
+          {/* TOPWEAR (These old, static routes can eventually be removed if all menu links are dynamic) */}
           <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
           <Route path="/t-shirts-for-men" element={<ViewAll />} />
 

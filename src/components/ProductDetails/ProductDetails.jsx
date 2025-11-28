@@ -57,7 +57,7 @@ export default function ProductPage() {
       try {
         setLoading(true);
         const res = await fetch(
-          `https://beyoung-backend.onrender.com/api/product/${id}`
+          `https://beyoung-backend.onrender.com/api/v1/product/${id}`
         );
         const json = await res.json();
 

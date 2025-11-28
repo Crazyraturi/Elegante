@@ -1,9 +1,23 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../../src/context/CartContext";
-
+import { Link } from "react-router-dom"; // Link is used for navigation
 import { Search, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
 import Logo from "../icons/Logo";
-import { Link } from "react-router-dom";
+
+// --- Reusable Menu Link Component (New Addition) ---
+// This component generates a link to the /products page with filter query parameters.
+const MenuLink = ({ filterKey, filterValue, children, className = "" }) => {
+  // Generates URLs like: /products?specificType=Plain%20T-shirts
+  // Note: We use Link from react-router-dom
+  return (
+    <Link
+      to={`/products?${filterKey}=${encodeURIComponent(filterValue)}`}
+      className={className}
+    >
+      {children}
+    </Link>
+  );
+};
 
 export default function EcommerceHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,90 +50,106 @@ export default function EcommerceHeader() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              {/* TOPWEAR with dropdown - NEW CODE GOES HERE */}
+              {/* TOPWEAR with dropdown */}
               <div className="relative group">
                 <button className="flex items-center space-x-1 text-black-700 hover:text-gray-900 transition-colors">
                   <span className="text-[14px] font-semibold">TOPWEAR</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu (Mega Menu) */}
                 <div className="absolute left-0 top-full mt-2 w-[700px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200 ">
                   <div className="grid grid-cols-4 gap-0 p-4">
-                    {/* T-shirts Column */}
+                    {/* T-shirts Column - NOW USING MenuLink */}
                     <div>
-                      <h3 className="font-bold text-gray-900 mb-3 text-sm">
+                      {/* Sub Category Title/Link: Filters by subCategory=T-shirts */}
+                      <MenuLink
+                        filterKey="subCategory"
+                        filterValue="T-shirts"
+                        className="font-bold text-gray-900 mb-3 text-sm block"
+                      >
                         T-shirts
-                      </h3>
+                      </MenuLink>
+
                       <ul className="space-y-2">
                         <li>
-                          <Link
-                            to="/men-plain-t-shirts"
+                          {/* Specific Type Link: Filters by specificType=Plain T-shirts */}
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Plain T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Plain T-shirts
-                          </Link>
+                          </MenuLink>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Printed T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Printed T-shirts
-                          </a>
+                          </MenuLink>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Regular Fit T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Regular Fit T-shirts
-                          </a>
+                          </MenuLink>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Oversized T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Oversized T-shirts
-                          </a>
+                          </MenuLink>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Polo T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Polo T-shirts
-                          </a>
+                          </MenuLink>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Plus Size T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Plus Size T-shirts
-                          </a>
+                          </MenuLink>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Full Sleeve T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                           >
                             Full Sleeve T-shirts
-                          </a>
+                          </MenuLink>
                         </li>
                         <li>
-                          <Link
-                            to="/t-shirts-for-men"
+                          {/* View All Link: Filters by subCategory=T-shirts */}
+                          <MenuLink
+                            filterKey="subCategory"
+                            filterValue="T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
                             View All
-                          </Link>
+                          </MenuLink>
                         </li>
                       </ul>
                     </div>
 
-                    {/* Shirts Column */}
+                    {/* Shirts Column (Still using anchor tags) */}
                     <div>
                       <h3 className="font-bold text-gray-900 mb-3 text-sm">
                         Shirts
@@ -192,7 +222,7 @@ export default function EcommerceHeader() {
                       </ul>
                     </div>
 
-                    {/* Polos Column */}
+                    {/* Polos Column (Still using anchor tags) */}
                     <div>
                       <h3 className="font-bold text-gray-900 mb-3 text-sm">
                         Polos
@@ -209,7 +239,7 @@ export default function EcommerceHeader() {
                       </ul>
                     </div>
 
-                    {/* Shop For Women Column */}
+                    {/* Shop For Women Column (Still using anchor tags) */}
                     <div>
                       <h3 className="font-bold text-gray-900 mb-3 text-sm">
                         Shop For Women
@@ -245,7 +275,7 @@ export default function EcommerceHeader() {
                 </div>
               </div>
 
-              {/* TOPWEAR with dropdown - NEW CODE GOES HERE */}
+              {/* BOTTOMWEAR with dropdown (Still using anchor tags) */}
               <div className="relative group">
                 <button className="flex items-center space-x-1 text-black-700 hover:text-gray-900 transition-colors">
                   <span className="text-[14px] font-semibold">BOTTOMWEAR</span>
@@ -341,7 +371,7 @@ export default function EcommerceHeader() {
                 </div>
               </div>
 
-              {/* Rest of your nav links */}
+              {/* Rest of your nav links (Still using anchor tags or static Link) */}
               <a href="#" className="text-black-700 text-[14px] font-semibold">
                 COMBOS
               </a>

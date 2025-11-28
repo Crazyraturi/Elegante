@@ -14,7 +14,7 @@ const NewArrival = () => {
       try {
         setLoading(true);
         const res = await fetch(
-          "https://beyoung-backend.onrender.com/api/product/products"
+          "https://beyoung-backend.onrender.com/api/v1/product"
         );
         const data = await res.json();
         setProducts(data.data || data.products || []);
