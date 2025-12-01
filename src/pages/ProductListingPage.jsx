@@ -505,15 +505,15 @@ export default function ProductListingPage() {
     // Logic to infer the correct subCategory when only 'specificType' is provided
     if (specificType) {
       const normalizedSpecificType = specificType.toLowerCase();
-
-      // MAPPING LOGIC FIX: Ensures Polo T-shirts map to T-shirts
+      
+      // MAPPING LOGIC FIX: Ensures Polo T-shirts map to T-shirts 
       // and Shackets map to Shirts, matching the DB
       if (
         normalizedSpecificType.includes("t-shirts") ||
         normalizedSpecificType.includes("polo")
       ) {
         // Based on provided data, Polos live under "T-shirts" in the DB
-        actualSubCategoryValue = "T-shirts";
+        actualSubCategoryValue = "T-shirts"; 
       } else if (
         normalizedSpecificType.includes("shirt") ||
         normalizedSpecificType.includes("shacket") // Explicitly check for shacket type
