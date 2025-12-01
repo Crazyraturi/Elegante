@@ -131,12 +131,14 @@ const NewArrival = () => {
                     <img
                       src={mainImage}
                       alt={product.title}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
                     />
 
                     <img
                       src={hoverImage}
                       alt={product.title}
+                      loading="lazy"
                       className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     />
 

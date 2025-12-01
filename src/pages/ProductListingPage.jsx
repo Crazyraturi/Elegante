@@ -10,25 +10,24 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 
-// *** FIX APPLIED: Only CATEGORY_DATA is destructured as it is the only export. ***
-// The price data will be accessed via CATEGORY_DATA['plain-t-shirts'].price_table_data
+// Assuming the correct path to your category data file
 import { CATEGORY_DATA } from "../pages/Detailofmegamenudata/Tshirtdata.js";
 
 const API_BASE_URL = "https://beyoung-backend.onrender.com/api/v1/product";
 
-// --- PriceTableCard Component (NEW) ---
-// Note: If you want to use the last_updated_date from CATEGORY_DATA,
-// pass it as a prop from ProductListingPage and update the const lastUpdated here.
+// === A. HELPER COMPONENTS ===================================================
+
 const PriceTableCard = ({ data }) => {
   if (!data || data.length === 0) return null;
 
-  const lastUpdated = "Nov 28, 2025"; // Hardcoded from image
+  const tableTitle =
+    data.length > 0 && data[0].product.includes("Plain")
+      ? "Buy Plain Tshirts for Men at Best Price"
+      : "Buy Tshirts for Men at Best Price";
 
   return (
     <div className="bg-white border border-gray-300 rounded-lg shadow-md p-5 mb-6">
-      <h3 className="text-xl font-bold mb-4 text-gray-900">
-        Buy Plain Tshirts for Men at Best Price
-      </h3>
+      <h3 className="text-xl font-bold mb-4 text-gray-900">{tableTitle}</h3>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
@@ -37,7 +36,7 @@ const PriceTableCard = ({ data }) => {
                 scope="col"
                 className="px-4 py-3 text-left text-sm font-semibold text-gray-700"
               >
-                Plain Tshirts for Men
+                Product
               </th>
               <th
                 scope="col"
@@ -66,13 +65,11 @@ const PriceTableCard = ({ data }) => {
           </tbody>
         </table>
       </div>
-      
     </div>
   );
 };
-// --- End of PriceTableCard Component ---
 
-// --- BreadcrumbNav Component (No changes) ---
+// --- BreadcrumbNav Component ---
 const BreadcrumbNav = ({ mainCategory, subCategory }) => (
   <div className="max-w-7xl mx-auto px-4 py-3">
     <div className="text-sm text-gray-500">
@@ -104,34 +101,39 @@ const BreadcrumbNav = ({ mainCategory, subCategory }) => (
   </div>
 );
 
-// --- TopButtons Component (No changes) ---
+// --- TopButtons Component ---
 const TopButtons = ({ buttons }) => {
   if (!buttons || buttons.length === 0) return null;
 
   const location = useLocation();
-  const currentPath = location.pathname;
+  const currentPath = location.pathname + location.search; // Use path + query for better matching
 
-  const hasSpecificMatch = buttons.some(
-    (btn) => btn.label !== "View All" && currentPath === btn.url
-  );
+  const enableScrolling = buttons.length > 4;
+
+  const containerClasses = `flex ml-3 gap-3 mb-8 ${
+    enableScrolling ? "overflow-x-auto whitespace-nowrap py-2" : "flex-wrap"
+  }`;
 
   return (
-    <div className="flex flex-wrap ml-3 gap-8 mb-8">
-      {buttons.map((btn) => {
-        let isActive = false;
+    <div
+      className={containerClasses}
+      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+    >
+      {/* Added style for hiding scrollbar in some browsers */}
+      <style>{`.${
+        containerClasses.split(" ")[0]
+      }.overflow-x-auto::-webkit-scrollbar { display: none; }`}</style>
 
-        if (btn.label === "View All") {
-          isActive = !hasSpecificMatch || currentPath === btn.url;
-        } else {
-          isActive = currentPath === btn.url;
-        }
+      {buttons.map((btn) => {
+        // Match logic: Check if the button URL exactly matches the current path/query
+        const isActive = currentPath.includes(btn.url);
 
         return (
           <Link
             key={btn.label}
             to={btn.url}
             className={`
-              px-8 py-3 text-2xl font-medium rounded-full transition-colors whitespace-nowrap
+              px-6 py-2 text-2xl font-medium rounded-full transition-colors shrink-0
               ${
                 isActive
                   ? "bg-black text-yellow-300 border border-black hover:bg-gray-800"
@@ -147,12 +149,12 @@ const TopButtons = ({ buttons }) => {
   );
 };
 
-// --- A. FAQSection Component (No changes) ---
+// --- FAQSection Component ---
 const FAQSection = ({ faqItems }) => {
   if (!faqItems || faqItems.length === 0) return null;
   return (
     <section className="category-faq-section mt-8">
-      <h2 className="text-2xl font-bold mb-4">Plain T shirts | FAQs</h2>
+      <h2 className="text-2xl font-bold mb-4">FAQs</h2>
       <div className="faq-list space-y-2">
         {faqItems.map((item, index) => (
           <details
@@ -173,11 +175,11 @@ const FAQSection = ({ faqItems }) => {
   );
 };
 
-// --- C. FilterSidebar Component (No changes) ---
+// --- FilterSidebar Component ---
 const FilterSidebar = ({ uniqueFilters }) => {
   return (
-    <aside className="filter-sidebar bg-white p-4 space-y-3 border border-gray-400 rounded-lg shadow-sm">
-      <div className="flex items-center space-x-2 text-base font-semibold border-b pb-3 mb-1">
+    <aside className="filter-sidebar bg-white p-2 space-y-3 border border-gray-400 rounded-lg shadow-sm">
+      <div className="flex items-center space-x-2 text-base font-semibold border-b pb-2 mb-1">
         <SlidersHorizontal size={16} className="text-gray-400" />
         <span>Filter</span>
       </div>
@@ -215,46 +217,58 @@ const FilterSidebar = ({ uniqueFilters }) => {
   );
 };
 
-// --- D. CategoryDescription Component (MODIFIED for structure) ---
-const CategoryDescription = ({
-  longDescription,
-  faqs,
-  priceTableData, // <-- Added prop
-}) => {
+// --- CategoryDescription Component ---
+const CategoryDescription = ({ longDescription, faqs, priceTableData }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  if (!longDescription) return null;
-  const paragraphs = longDescription.split("</p>");
+  const paragraphs = longDescription ? longDescription.split("</p>") : [];
   const initialContent =
     paragraphs.slice(0, 2).join("</p>") + (paragraphs.length > 2 ? "</p>" : "");
 
+  if (
+    !longDescription &&
+    (!priceTableData || priceTableData.length === 0) &&
+    (!faqs || faqs.length === 0)
+  )
+    return null;
+
   return (
     <div className="mt-12 pt-6 border-t border-gray-300">
-      <h2 className="text-2xl font-bold mb-4">Detailed Information</h2>
+      <h2 className="text-2xl font-bold mb-4"></h2>
+      {/* ⭐️ PriceTableCard on small screens ⭐️ */}
+      <div className="lg:hidden w-full mb-6">
+        <PriceTableCard data={priceTableData} />
+      </div>
 
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-6">
         {/* Left Side: Long Description / SEO Text (3/4 width on large screens) */}
         <div className="lg:w-3/4 w-full">
-          <div className="text-sm text-gray-700 leading-relaxed overflow-hidden description-area">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: showFullDescription ? longDescription : initialContent,
-              }}
-              className="description-content space-y-4"
-            />
-          </div>
-          {paragraphs.length > 2 && (
-            <button
-              onClick={() => setShowFullDescription(!showFullDescription)}
-              className="mt-4 text-blue-600 font-semibold hover:text-blue-800 transition text-sm"
-            >
-              {showFullDescription ? "See Less" : "Read More"}
-            </button>
+          {longDescription && (
+            <>
+              <div className="text-sm text-gray-700 leading-relaxed overflow-hidden description-area">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: showFullDescription
+                      ? longDescription
+                      : initialContent,
+                  }}
+                  className="description-content space-y-4"
+                />
+              </div>
+              {paragraphs.length > 2 && (
+                <button
+                  onClick={() => setShowFullDescription(!showFullDescription)}
+                  className="mt-4 text-blue-600 font-semibold hover:text-blue-800 transition text-sm"
+                >
+                  {showFullDescription ? "See Less" : "Read More"}
+                </button>
+              )}
+            </>
           )}
         </div>
 
-        {/* Right Side: Price Table Card (1/4 width, visible on large screens) */}
-        <div className="lg:w-2/4 min-w-[280px] hidden lg:block">
+        {/* ⭐️ Price Table Card (Only visible on large screens here) ⭐️ */}
+        <div className="lg:w-2/4 min-w-[280px] hidden lg:block ">
           <PriceTableCard data={priceTableData} />
         </div>
       </div>
@@ -265,26 +279,48 @@ const CategoryDescription = ({
   );
 };
 
-// --- E. Product Card Component (No changes) ---
+// --- Product Card Component (FIXED for all product image URLs) ---
 const ProductCard = ({ product, handleHeartClick }) => {
+  // --- 1. Primary Image Path Lookups (Check common API fields first) ---
+
+  // 1a. Check for a direct 'preview' link
+  let mainImage = product.images?.preview;
+
+  // 1b. Fallback 1: Check for other common image keys on the product root/images object
+  if (!mainImage) {
+    mainImage = product.mainImage || product.image || product.images?.main;
+  }
+
+  // --- 2. Gallery-based Fallbacks (Using the specific gallery logic) ---
   const gallery = product.images?.gallery || [];
-  const previewImage = product.images?.preview;
 
-  const frontViewObj = gallery.find((item) => item.view === "Front View");
-  const hoverViewObj = gallery.find((item) => item.view === "Hover View");
+  // Find 'Front View' and ensure it has a file link
+  const frontViewObj = gallery.find(
+    (item) => item.view === "Front View" && item.file
+  );
+  // Find 'Hover View' and ensure it has a file link
+  const hoverViewObj = gallery.find(
+    (item) => item.view === "Hover View" && item.file
+  );
 
-  let mainImage = previewImage;
+  // Fallback 2: Use the found 'Front View' file if mainImage is still missing
   if (!mainImage && frontViewObj?.file) {
     mainImage = frontViewObj.file;
   }
-  if (!mainImage && gallery.length > 0) {
-    const firstFile = gallery.find((item) => item.file)?.file;
-    if (firstFile) mainImage = firstFile;
-  }
-  if (!mainImage)
-    mainImage = "https://via.placeholder.com/300x400?text=No+Image";
 
-  let hoverImage = hoverViewObj?.file;
+  // Fallback 3: Use the first non-null file in the entire gallery
+  if (!mainImage && gallery.length > 0) {
+    const firstValidFile = gallery.find((item) => item.file)?.file;
+    if (firstValidFile) mainImage = firstValidFile;
+  }
+
+  // --- 3. Set Hover Image and Final Fallback ---
+  // Default hover to the 'Hover View' file, or fall back to mainImage
+  let hoverImage = hoverViewObj?.file || mainImage;
+
+  // Final Fallback: If still no image is found, use a placeholder
+  if (!mainImage)
+    mainImage = "https://via.placeholder.com/300x400?text=No+Image+Found";
   if (!hoverImage) hoverImage = mainImage;
 
   const firstVariant = product.variants?.[0];
@@ -305,12 +341,14 @@ const ProductCard = ({ product, handleHeartClick }) => {
         <img
           src={mainImage}
           alt={product.title || product.name}
+          loading="lazy"
           className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
         />
         {/* Hover Image */}
         <img
           src={hoverImage}
           alt={product.title || product.name}
+          loading="lazy"
           className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         />
         {/* Wishlist Button */}
@@ -353,7 +391,7 @@ const ProductCard = ({ product, handleHeartClick }) => {
   );
 };
 
-// --- F. SortDropdown Component (No changes) ---
+// --- SortDropdown Component ---
 const SORT_OPTIONS = [
   { label: "Recommended", value: "Recommended" },
   { label: "Newly Launched", value: "Newly Launched" },
@@ -366,7 +404,6 @@ const SortDropdown = ({ selectedSort, onSortChange }) => {
   return (
     <div className="flex items-center space-x-2 text-sm">
       <span className="text-gray-600 font-medium hidden">Sort By</span>
-      {/* Container for the select input, styled to look like the image's dropdown */}
       <div className="relative">
         <select
           value={selectedSort}
@@ -379,7 +416,6 @@ const SortDropdown = ({ selectedSort, onSortChange }) => {
             </option>
           ))}
         </select>
-        {/* Dropdown icon placed absolutely inside the container */}
         <ChevronDown
           size={16}
           className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500"
@@ -389,19 +425,16 @@ const SortDropdown = ({ selectedSort, onSortChange }) => {
   );
 };
 
-// ===========================================================================
-// === 2. MAIN PRODUCT LISTING PAGE COMPONENT (FIXED) ========================
-// ===========================================================================
+// === B. MAIN PRODUCT LISTING PAGE COMPONENT =================================
 
 export default function ProductListingPage() {
   const [searchParams] = useSearchParams();
+  const location = useLocation();
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // === Sorting State ===
-
-  const [sortOption, setSortOption] = useState("Recommended"); // Default sort // === Popup State and Handlers from NewArrival ===
-
+  const [error, setError] = useState(null);
+  const [sortOption, setSortOption] = useState("Recommended");
   const [showPopup, setShowPopup] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -416,35 +449,107 @@ export default function ProductListingPage() {
   const handleLogin = () => {
     console.log("Login with phone:", phoneNumber);
     handleClosePopup();
-  }; // ================================================
-  const apiCategoryValue = "T-shirts";
-  const apiCategoryKey = "subCategory";
-  const internalDataSlug = "plain-t-shirts";
+  };
 
+  // Get filter values from URL
+  const specificType = searchParams.get("specificType");
+  const subCategoryQuery = searchParams.get("subCategory");
+  const categoryQuery = searchParams.get("category"); // For major categories like 'Bottomwear'
+
+  // ⭐️ CRITICAL: Determine internalDataSlug dynamically ⭐️
+  const internalDataSlug = useMemo(() => {
+    // 1. Prioritize specificType for slug
+    if (specificType) {
+      return specificType.toLowerCase().replace(/ /g, "-");
+    }
+    // 2. Fallback to subCategory
+    if (subCategoryQuery) {
+      return subCategoryQuery.toLowerCase().replace(/ /g, "-");
+    }
+    // 3. Fallback to category (e.g., Topwear/Bottomwear)
+    if (categoryQuery) {
+      return categoryQuery.toLowerCase().replace(/ /g, "-");
+    }
+    // 4. Final default (e.g., if navigated to /products with no params)
+    return "t-shirts";
+  }, [specificType, subCategoryQuery, categoryQuery]);
+
+  // Load the page content based on the determined slug
   const pageContent = useMemo(() => {
-    // Access all category data via the slug
     return CATEGORY_DATA[internalDataSlug];
   }, [internalDataSlug]);
 
-  // *** RETRIEVE price_table_data and last_updated_date from pageContent ***
+  // Handle case where content is not found for the current URL filter
+  const isContentNotFound = !pageContent;
+
   const finalPriceTableData = pageContent?.price_table_data || [];
 
-  // === UPDATED: Fetch function to include sorting ===
+  // === Fetch function to include dynamic filtering and sorting (FIXED LOGIC) ===
   const fetchFilteredProducts = async () => {
     setLoading(true);
     setError(null);
 
-    const params = Object.fromEntries(searchParams.entries());
-    const filterParams = new URLSearchParams(); // 1. Set the ONLY necessary filter for BASE LOAD
+    // If content is not found, stop loading and return early
+    if (isContentNotFound) {
+      setLoading(false);
+      setError(`Content data not found for category slug: ${internalDataSlug}`);
+      setProducts([]);
+      return;
+    }
 
-    filterParams.append(apiCategoryKey, apiCategoryValue); // subCategory=T-shirts // 2. Add remaining URL params
+    const filterParams = new URLSearchParams();
 
-    Object.entries(params).forEach(([key, value]) => {
-      if (key !== apiCategoryKey) {
+    // 1. Determine the correct subCategory for the API (CRITICAL FIX)
+    let actualSubCategoryValue = subCategoryQuery || "T-shirts";
+
+    // Logic to infer the correct subCategory when only 'specificType' is provided
+    // (This usually happens when clicking a mega-menu link like "Plain Shirts")
+    if (specificType) {
+      const normalizedSpecificType = specificType.toLowerCase();
+
+      if (
+        normalizedSpecificType.includes("t-shirts") ||
+        normalizedSpecificType.includes("polo")
+      ) {
+        // T-shirts, Polo T-shirts, Full Sleeve T-shirts all belong to subCategory: 'T-shirts' or 'Polos'
+        // We'll use the subCategory from the URL or default it.
+        if (normalizedSpecificType.includes("polo")) {
+          actualSubCategoryValue = "Polos";
+        } else {
+          actualSubCategoryValue = "T-shirts";
+        }
+      } else if (
+        normalizedSpecificType.includes("shirt") &&
+        !normalizedSpecificType.includes("t-shirt")
+      ) {
+        // Plain Shirts, Oxford Shirts, Shackets belong to subCategory: 'Shirts'
+        actualSubCategoryValue = "Shirts";
+      } else if (
+        normalizedSpecificType.includes("joggers") ||
+        normalizedSpecificType.includes("pants") ||
+        normalizedSpecificType.includes("trousers")
+      ) {
+        // Bottomwear items
+        actualSubCategoryValue = "Bottomwear";
+      }
+    }
+
+    // Ensure actualSubCategoryValue is used in the filter
+    filterParams.append("subCategory", actualSubCategoryValue);
+
+    // 2. Add specific product type filter
+    if (specificType) {
+      filterParams.append("specificType", specificType);
+    }
+
+    // 3. Add remaining URL params for general filtering (Color, Size, etc.)
+    for (const [key, value] of searchParams.entries()) {
+      if (key !== "subCategory" && key !== "specificType") {
         filterParams.append(key, value);
       }
-    }); // 3. Add Sorting Parameter
+    }
 
+    // 4. Add Sorting Parameter
     if (sortOption && sortOption !== "Recommended") {
       if (sortOption === "price_asc") {
         filterParams.append("sort", "price");
@@ -463,28 +568,31 @@ export default function ProductListingPage() {
 
     const queryString = filterParams.toString();
     const finalApiUrl = `${API_BASE_URL}?${queryString}`;
+    console.log("Final API URL:", finalApiUrl); // Debugging line
 
     try {
       const response = await axios.get(finalApiUrl);
       setProducts(response.data.data);
     } catch (err) {
       console.error("Error fetching filtered products:", err);
-      setError("Failed to fetch products. Check API configuration.");
+      setError(
+        "Failed to fetch products. Check API configuration or URL filters."
+      );
       setProducts([]);
     } finally {
       setLoading(false);
     }
-  }; // ⭐️ FIX: Scroll to Top on Page Load and URL Change ⭐️
+  };
 
-  const location = useLocation();
+  // ⭐️ Scroll to Top on Page Load and URL Change ⭐️
   useEffect(() => {
-    // This ensures the page always starts at the top when the URL changes (e.g., navigating to another filter/category)
     window.scrollTo(0, 0);
-  }, [location.pathname]); // Depend on pathname, so it runs on navigation // === UPDATED useEffect dependency to include sortOption ===
+  }, [location.pathname, internalDataSlug]);
 
+  // === useEffect dependency to run fetch logic ===
   useEffect(() => {
     fetchFilteredProducts();
-  }, [searchParams, sortOption]);
+  }, [searchParams, sortOption, internalDataSlug]);
 
   if (loading) {
     return (
@@ -495,41 +603,45 @@ export default function ProductListingPage() {
     );
   }
 
-  if (error) {
+  if (error || isContentNotFound) {
     return (
       <div className="p-8 text-center text-red-600 font-bold border border-red-300 bg-red-50 rounded-lg">
-        🚨 {error}
+        🚨
+        {error ||
+          `Content not found for type: "${
+            specificType || subCategoryQuery || categoryQuery || "Default"
+          }".`}
       </div>
     );
   }
 
-  const pageTitle = pageContent ? pageContent.title : "All Products";
-  const shortDescription = pageContent ? pageContent.description_short : ""; // --- Inferred Breadcrumb Data (Using "TOPWEAR" as requested) ---
+  // Content is guaranteed to be available here due to the check above
+  const pageTitle = pageContent.title;
+  const shortDescription = pageContent.description_short;
 
-  const inferredMainCategory = "TOPWEAR";
-  const inferredSubCategory = pageContent?.title || apiCategoryValue;
+  // Inferred Breadcrumb Categories
+  const inferredMainCategory = "TOPWEAR"; // Assuming this page is always under Topwear
+  const inferredSubCategory = pageContent.title;
 
   return (
     <div className="bg-white min-h-screen">
-      {/* --- BREADCRUMB NAVIGATION (HOME / TOPWEAR / T-SHIRTS) --- */}
+      {/* --- BREADCRUMB NAVIGATION --- */}
       <BreadcrumbNav
         mainCategory={inferredMainCategory}
         subCategory={inferredSubCategory}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <hr className="my-2" />
-        {/* --- 1. Top Navigation Buttons (LOADED DYNAMICALLY from pageContent) --- */}
-        {pageContent && <TopButtons buttons={pageContent.buttons} />}
-        {/* --- 2. Main Content Area (Relative positioning for sticky sidebar) --- */}
+        {/* --- 1. Top Navigation Buttons --- */}
+        <TopButtons buttons={pageContent.buttons} />
+        {/* --- 2. Main Content Area --- */}
         <div className="flex gap-6 relative">
-          {/* --- LEFT SIDEBAR: DYNAMIC FILTERS (Sticky, 1/4 width) --- */}
-          {pageContent && (
-            <div className="w-1/4 min-w-60 hidden lg:block sticky top-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
-              <FilterSidebar uniqueFilters={pageContent.filters} />
-            </div>
-          )}
-          {/* --- RIGHT SIDE: PRODUCT LISTING & DETAILS (3/4 width) --- */}
-          <div className={pageContent ? "lg:w-3/4 w-full" : "w-full"}>
+          {/* --- LEFT SIDEBAR: DYNAMIC FILTERS --- */}
+          <div className="w-1/4 min-w-60 hidden lg:block sticky top-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <FilterSidebar uniqueFilters={pageContent.filters} />
+          </div>
+          {/* --- RIGHT SIDE: PRODUCT LISTING & DETAILS --- */}
+          <div className="lg:w-3/4 w-full">
             {/* --- Title, Description --- */}
             <div className="mb-6">
               <h2 className="text-2xl font-bold mb-2 uppercase">{pageTitle}</h2>
@@ -540,7 +652,7 @@ export default function ProductListingPage() {
             {/* --- Sort and Count Header --- */}
             <div className="flex justify-between items-center py-4 border-t border-b border-gray-200 mb-6">
               <p className="text-gray-600 text-sm">
-                {/* Found **{products.length}** items matching your selection. */}
+                Showing {products.length} Products
               </p>
               <div className="flex items-center space-x-4">
                 <span className="text-sm font-medium text-gray-600">
@@ -552,7 +664,7 @@ export default function ProductListingPage() {
                 />
               </div>
             </div>
-            {/* --- Product Grid (3 Columns on Large Screens) --- */}
+            {/* --- Product Grid --- */}
             {products.length > 0 ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 **lg:grid-cols-3** gap-6">
                 {products.map((product) => (
@@ -570,14 +682,12 @@ export default function ProductListingPage() {
             )}
           </div>
         </div>
-        {/* --- BOTTOM SEO CONTENT / FAQs (MODIFIED TO DISPLAY PRICE TABLE) --- */}
-        {pageContent && (
-          <CategoryDescription
-            longDescription={pageContent.description_long}
-            faqs={pageContent.faq}
-            priceTableData={finalPriceTableData} // <-- Correctly passes the data retrieved from pageContent
-          />
-        )}
+        {/* --- BOTTOM SEO CONTENT / FAQs (Includes the price table visibility fix) --- */}
+        <CategoryDescription
+          longDescription={pageContent.description_long}
+          faqs={pageContent.faq}
+          priceTableData={finalPriceTableData}
+        />
       </div>
       {/* --- Login Popup (Modal) from NewArrival --- */}
       {showPopup && (
