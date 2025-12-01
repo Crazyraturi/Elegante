@@ -559,34 +559,34 @@ export default function ProductListingPage() {
     let actualSubCategoryValue = subCategoryQuery || "T-shirts";
 
     // Logic to infer the correct subCategory when only 'specificType' is provided
-    // (This usually happens when clicking a mega-menu link like "Plain Shirts")
     if (specificType) {
       const normalizedSpecificType = specificType.toLowerCase();
-
+      
+      // MAPPING LOGIC FIX: Ensures Polo T-shirts map to T-shirts 
+      // and Shackets map to Shirts, matching the DB
       if (
         normalizedSpecificType.includes("t-shirts") ||
         normalizedSpecificType.includes("polo")
       ) {
-        // T-shirts, Polo T-shirts, Full Sleeve T-shirts all belong to subCategory: 'T-shirts' or 'Polos'
-        // We'll use the subCategory from the URL or default it.
-        if (normalizedSpecificType.includes("polo")) {
-          actualSubCategoryValue = "Polos";
-        } else {
-          actualSubCategoryValue = "T-shirts";
-        }
+        // Based on provided data, Polos live under "T-shirts" in the DB
+        actualSubCategoryValue = "T-shirts"; 
       } else if (
-        normalizedSpecificType.includes("shirt") &&
-        !normalizedSpecificType.includes("t-shirt")
+        normalizedSpecificType.includes("shirt") ||
+        normalizedSpecificType.includes("shacket") // Explicitly check for shacket type
       ) {
-        // Plain Shirts, Oxford Shirts, Shackets belong to subCategory: 'Shirts'
+        // All Shirts and Shackets live under "Shirts" in the DB
         actualSubCategoryValue = "Shirts";
       } else if (
         normalizedSpecificType.includes("joggers") ||
         normalizedSpecificType.includes("pants") ||
-        normalizedSpecificType.includes("trousers")
+        normalizedSpecificType.includes("trousers") ||
+        normalizedSpecificType.includes("shorts")
       ) {
-        // Bottomwear items
+        // Bottomwear items (Defaulting to the most common DB category)
         actualSubCategoryValue = "Bottomwear";
+      } else {
+        // Default to a sensible value if specificType is vague
+        actualSubCategoryValue = "T-shirts";
       }
     }
 

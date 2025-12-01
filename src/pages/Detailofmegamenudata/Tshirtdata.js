@@ -3045,5 +3045,108 @@ export const CATEGORY_DATA = {
         ]
       }
     ]
+  },
+  
+  "womens-topwear": {
+    "title": "Women's Clothing Collection",
+   
+    "price_table_data": [
+      { "product": "Dark Purple Rock and Roll HD Printed Oversized Tshirt for Women", "price": "₹699" },
+      { "product": "Mustard Striped Knitted T-Shirt for Women", "price": "₹749" },
+      { "product": "Black Striped Knitted T-Shirt for Women", "price": "₹749" },
+      { "product": "Dark Violet Blooming Puff Printed Oversized T-Shirt for Women", "price": "₹749" },
+      { "product": "Pink Oversized Zipper Polo T-shirt for Women", "price": "₹799" },
+      { "product": "Dark Blue Denim Jacket Shacket for Women", "price": "₹998" },
+      { "product": "Purple Cut And Sew Polo T-shirt for Women", "price": "₹899" },
+      { "product": "Teach Peace Printed Oversized T-shirt for Women", "price": "₹549" },
+      { "product": "Plain Burgundy Women Full Sleeves T-shirt", "price": "₹499" },
+      { "product": "Plain Navy Blue Women Full Sleeves T-shirt", "price": "₹499" },
+      { "product": "Black Womens Plain T-shirt", "price": "₹349" },
+      { "product": "Illusional Thoughts Printed Oversized T-shirt for Women", "price": "₹549" }
+    ],
+    "buttons": [
+      { "label": "View All", "url": "/womens-clothing/all" },
+      { "label": "Topwear", "url": "/womens-clothing/topwear" },
+      { "label": "Bottomwear", "url": "/womens-clothing/bottomwear" }
+    ],
+    "filters": [
+      {
+        "id": "clothing_type",
+        "label": "Type",
+        "options": ["Topwear", "Bottomwear"]
+      },
+      {
+        "id": "variants.color",
+        "label": "Color",
+        "options": [
+          "Black",
+          "Blue",
+          "Brown",
+          "Green",
+          "Grey",
+          "Maroon",
+          "Orange",
+          "Pink",
+          "Purple",
+          "Red",
+          "White",
+          "Yellow",
+          "Beige",
+          "Lilac"
+        ]
+      },
+      {
+        "id": "variants.sizes.size",
+        "label": "Size",
+        "options": ["S", "M", "L", "XL", "XXL", "4XL", "5XL"]
+      },
+      {
+        "id": "category",
+        "label": "Product Category",
+        "options": ["Boxers", "Full Sleeves", "Oversized", "Plain T-shirts", "Patterns", "Plain"]
+      },
+      { "id": "fabric", "label": "Fabric", "options": ["Cotton"] },
+      { "id": "neck", "label": "Neck/Collar", "options": ["Round Neck"] },
+      {
+        "id": "sleeves",
+        "label": "Sleeves",
+        "options": ["Half", "Full"]
+      },
+      { "id": "fit", "label": "Fit", "options": ["Regular Fit", "Relaxed Fit"] },
+      {
+        "id": "occasion",
+        "label": "Occasion",
+        "options": ["Casual Wear", "Lounge Wear"]
+      },
+      {
+        "id": "combos",
+        "label": "Combos",
+        "options": ["Pack of 2", "Pack of 3", "Pick Any 2", "Pick Any 3", "Pick Any 4"]
+      },
+      {
+        "id": "price_range",
+        "label": "Price Range",
+        "options": ["₹1000-1499", "₹299-499", "₹800-999"]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is the best way to care for my printed oversized T-shirts?",
+        "a": "To keep your printed oversized T-shirts looking new, always wash them inside out on a gentle cycle with cold water. Avoid using harsh bleaches and skip the iron directly on the print. Air drying is recommended to maintain the fabric and the print integrity."
+      },
+      {
+        "q": "Do you offer plus sizes in women's clothing?",
+        "a": "Yes! We believe fashion is for everyone. Our women's clothing collection is size-inclusive, and many of our items, especially t-shirts and outerwear, are available up to size 5XL."
+      },
+      {
+        "q": "What is a Shacket and how can I style it?",
+        "a": "A Shacket is a combination of a shirt and a jacket (Shirt + Jacket). It's a versatile layering piece, typically made from heavier material like denim. You can style it over a simple t-shirt or tank top with jeans for a trendy, casual look, or use it as a light outer layer on cooler evenings."
+      },
+      {
+        "q": "Are the listed prices final?",
+        "a": "The prices listed, such as ₹699 or ₹749, are the current best prices. However, keep an eye out for our combo offers and special seasonal sales for additional savings, especially on our pack options like 'Pick Any 3'."
+      }
+    ]
   }
-};
+}
+;
