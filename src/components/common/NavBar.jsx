@@ -272,7 +272,9 @@ export default function EcommerceHeader() {
                             filterValue="Polos"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
-                            View All
+                            <Link to="/products?specificType=Polo%20T-shirts">
+                              View All
+                            </Link>
                           </MenuLink>
                         </li>
                       </ul>

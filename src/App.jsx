@@ -68,6 +68,10 @@ const App = () => {
 
           {/* WINTERWEAR */}
           <Route path="/men-winterwear" element={<Winterwear />} />
+          <Route
+            path="/products?specificType=Polo%20T-shirts"
+            element={<ProductListingPage />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
