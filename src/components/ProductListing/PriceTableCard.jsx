@@ -1,10 +1,18 @@
-const PriceTableCard = ({ data }) => {
-  if (!data || data.length === 0) return null;
+import React from "react";
 
-  const tableTitle =
-    data.length > 0 && data[0].product.includes("Plain")
-      ? "Buy Plain Tshirts for Men at Best Price"
-      : "Buy Tshirts for Men at Best Price";
+const PriceTableCard = ({ data }) => {
+  // 1. Ensure 'data' is treated as an object, not null/undefined
+  const priceData = data || {};
+
+  // 2. Safely extract the 'items' array, defaulting to an empty array
+  // This is the core fix to prevent the "data.map is not a function" error.
+  const items =
+    priceData.items && Array.isArray(priceData.items) ? priceData.items : [];
+
+  if (items.length === 0) return null;
+
+  // 3. Use the 'heading' property for the table title, or a default fallback
+  const tableTitle = priceData.heading || "Product Pricing";
 
   const currentDate = new Date();
   const options = {
@@ -17,6 +25,7 @@ const PriceTableCard = ({ data }) => {
   return (
     <>
       <div className="bg-white border border-gray-300 rounded-lg shadow-md p-5 mb-3">
+        {/* Use the dynamically resolved tableTitle */}
         <h3 className="text-xl font-bold mb-4 text-gray-900">{tableTitle}</h3>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
@@ -37,7 +46,8 @@ const PriceTableCard = ({ data }) => {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">
-              {data.map((item, index) => (
+              {/* Use the safe 'items' array for mapping */}
+              {items.map((item, index) => (
                 <tr
                   key={index}
                   className="hover:bg-yellow-50/50 transition-colors"

@@ -2930,55 +2930,73 @@ export const CATEGORY_DATA = {
     ],
   },
 
-  "womens-topwear": {
-    title: "Women's Clothing Collection",
-
-    price_table_data: [
-      {
-        product:
-          "Dark Purple Rock and Roll HD Printed Oversized Tshirt for Women",
-        price: "₹699",
-      },
-      { product: "Mustard Striped Knitted T-Shirt for Women", price: "₹749" },
-      { product: "Black Striped Knitted T-Shirt for Women", price: "₹749" },
-      {
-        product:
-          "Dark Violet Blooming Puff Printed Oversized T-Shirt for Women",
-        price: "₹749",
-      },
-      {
-        product: "Pink Oversized Zipper Polo T-shirt for Women",
-        price: "₹799",
-      },
-      { product: "Dark Blue Denim Jacket Shacket for Women", price: "₹998" },
-      { product: "Purple Cut And Sew Polo T-shirt for Women", price: "₹899" },
-      {
-        product: "Teach Peace Printed Oversized T-shirt for Women",
-        price: "₹549",
-      },
-      { product: "Plain Burgundy Women Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Navy Blue Women Full Sleeves T-shirt", price: "₹499" },
-      { product: "Black Womens Plain T-shirt", price: "₹349" },
-      {
-        product: "Illusional Thoughts Printed Oversized T-shirt for Women",
-        price: "₹549",
-      },
-    ],
+  "women-topwear": {
+    title: "Women's Clothing",
+    description_short:
+      "Explore Beyoung's comprehensive collection for Women, featuring both stylish Topwear and essential Bottomwear. Filter by color, size, category, and fit to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our latest selection of comfy full-sleeve, oversized, and boxer styles.",
+    description_long: "",
     buttons: [
-      { label: "View All", url: "/womens-clothing/all" },
-      { label: "Topwear", url: "/womens-clothing/topwear" },
-      { label: "Bottomwear", url: "/womens-clothing/bottomwear" },
+      {
+        label: "View All Topwear",
+        url: "/women/topwear/all",
+      },
+      {
+        label: "View All Bottomwear",
+        url: "/women/bottomwear/all",
+      },
     ],
+    price_table_data: {
+      heading: "Buy Women's Clothing at Best Price",
+      items: [
+        {
+          product: "Beige Oversized Camo Cargo Pants for Women",
+          price: "₹1399",
+        },
+        {
+          product: "Black Rugged Hem Denim Jorts for Women",
+          price: "₹1199",
+        },
+        {
+          product: "Dark Blue Rugged Hem Denim Jorts for Women",
+          price: "₹1199",
+        },
+        {
+          product: "Plain Navy Blue Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Grizzle Gray Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Burgundy Womens Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Sage Green Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Bottle Green Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Black Women Boxer",
+          price: "₹349",
+        },
+      ],
+    },
     filters: [
       {
-        id: "clothing_type",
+        id: "type",
         label: "Type",
-        options: ["Topwear", "Bottomwear"],
+        options: ["Bottomwear", "Topwear"],
       },
       {
         id: "variants.color",
         label: "Color",
         options: [
+          "Beige",
           "Black",
           "Blue",
           "Brown",
@@ -2991,38 +3009,46 @@ export const CATEGORY_DATA = {
           "Red",
           "White",
           "Yellow",
-          "Beige",
-          "Lilac",
         ],
       },
       {
         id: "variants.sizes.size",
         label: "Size",
-        options: ["S", "M", "L", "XL", "XXL", "4XL", "5XL"],
+        options: ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
       },
       {
         id: "category",
-        label: "Product Category",
-        options: [
-          "Boxers",
-          "Full Sleeves",
-          "Oversized",
-          "Plain T-shirts",
-          "Patterns",
-          "Plain",
-        ],
+        label: "Category",
+        options: ["Boxer", "Full Sleeves", "Oversize", "Plain T-shirts"],
       },
-      { id: "fabric", label: "Fabric", options: ["Cotton"] },
-      { id: "neck", label: "Neck/Collar", options: ["Round Neck"] },
+      {
+        id: "pattern",
+        label: "Pattern",
+        options: ["Plain"],
+      },
+      {
+        id: "fabric",
+        label: "Fabric",
+        options: ["Cotton"],
+      },
+      {
+        id: "neck_collar",
+        label: "Neck/Collar",
+        options: ["Round Neck"],
+      },
       {
         id: "sleeves",
         label: "Sleeves",
-        options: ["Half", "Full"],
+        options: ["Half Sleeves", "Full Sleeves"],
       },
-      { id: "fit", label: "Fit", options: ["Regular Fit", "Relaxed Fit"] },
       {
-        id: "occasion",
-        label: "Occasion",
+        id: "fit",
+        label: "Fit",
+        options: ["Regular Fit", "Relaxed Fit"],
+      },
+      {
+        id: "occasions",
+        label: "Occasions",
         options: ["Casual Wear", "Lounge Wear"],
       },
       {
@@ -3039,26 +3065,286 @@ export const CATEGORY_DATA = {
       {
         id: "price_range",
         label: "Price Range",
-        options: ["₹1000-1499", "₹299-499", "₹800-999"],
+        options: ["₹1000 - ₹1499", "₹299 - ₹499", "₹800 - ₹999"],
       },
     ],
-    faq: [
+  },
+  "women-bottomwear": {
+    title: "Women's Bottomwear",
+    description_short:
+      "Explore Beyoung's essential collection of **Women's Bottomwear**, featuring versatile pieces like Cargo Pants, Denim Jorts, and comfortable Boxers. Filter by color, size, fit, and pattern to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our selection of stylish and comfy bottoms.",
+    description_long: "",
+    buttons: [
       {
-        q: "What is the best way to care for my printed oversized T-shirts?",
-        a: "To keep your printed oversized T-shirts looking new, always wash them inside out on a gentle cycle with cold water. Avoid using harsh bleaches and skip the iron directly on the print. Air drying is recommended to maintain the fabric and the print integrity.",
+        label: "View All Topwear",
+        url: "/women/topwear/all",
       },
       {
-        q: "Do you offer plus sizes in women's clothing?",
-        a: "Yes! We believe fashion is for everyone. Our women's clothing collection is size-inclusive, and many of our items, especially t-shirts and outerwear, are available up to size 5XL.",
-      },
-      {
-        q: "What is a Shacket and how can I style it?",
-        a: "A Shacket is a combination of a shirt and a jacket (Shirt + Jacket). It's a versatile layering piece, typically made from heavier material like denim. You can style it over a simple t-shirt or tank top with jeans for a trendy, casual look, or use it as a light outer layer on cooler evenings.",
-      },
-      {
-        q: "Are the listed prices final?",
-        a: "The prices listed, such as ₹699 or ₹749, are the current best prices. However, keep an eye out for our combo offers and special seasonal sales for additional savings, especially on our pack options like 'Pick Any 3'.",
+        label: "View All Bottomwear",
+        url: "/women/bottomwear/all",
       },
     ],
+    price_table_data: {
+      heading: "Buy Women's Clothing at Best Price",
+      items: [
+        {
+          product: "Beige Oversized Camo Cargo Pants for Women",
+          price: "₹1399",
+        },
+        {
+          product: "Black Rugged Hem Denim Jorts for Women",
+          price: "₹1199",
+        },
+        {
+          product: "Dark Blue Rugged Hem Denim Jorts for Women",
+          price: "₹1199",
+        },
+        {
+          product: "Plain Navy Blue Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Grizzle Gray Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Burgundy Womens Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Sage Green Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Bottle Green Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Black Women Boxer",
+          price: "₹349",
+        },
+      ],
+    },
+    filters: [
+      {
+        id: "type",
+        label: "Type",
+        options: ["Bottomwear", "Topwear"],
+      },
+      {
+        id: "variants.color",
+        label: "Color",
+        options: [
+          "Beige",
+          "Black",
+          "Blue",
+          "Brown",
+          "Green",
+          "Grey",
+          "Maroon",
+          "Orange",
+          "Pink",
+          "Purple",
+          "Red",
+          "White",
+          "Yellow",
+        ],
+      },
+      {
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
+      },
+      {
+        id: "category",
+        label: "Category",
+        options: ["Boxer", "Full Sleeves", "Oversize", "Plain T-shirts"],
+      },
+      {
+        id: "pattern",
+        label: "Pattern",
+        options: ["Plain"],
+      },
+      {
+        id: "fabric",
+        label: "Fabric",
+        options: ["Cotton"],
+      },
+      {
+        id: "neck_collar",
+        label: "Neck/Collar",
+        options: ["Round Neck"],
+      },
+      {
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Half Sleeves", "Full Sleeves"],
+      },
+      {
+        id: "fit",
+        label: "Fit",
+        options: ["Regular Fit", "Relaxed Fit"],
+      },
+      {
+        id: "occasions",
+        label: "Occasions",
+        options: ["Casual Wear", "Lounge Wear"],
+      },
+      {
+        id: "combos",
+        label: "Combos",
+        options: [
+          "Pack of 2",
+          "Pack of 3",
+          "Pick Any 2",
+          "Pick Any 3",
+          "Pick Any 4",
+        ],
+      },
+      {
+        id: "price_range",
+        label: "Price Range",
+        options: ["₹1000 - ₹1499", "₹299 - ₹499", "₹800 - ₹999"],
+      },
+    ],
+  },
+  "women-clothing-view-all": {
+    title: "Women's Clothing | View All",
+    description_short:
+      "Explore Beyoung's complete collection of trendy and comfortable Women's Clothing. Find everything from stylish topwear like oversized tees and full-sleeve shirts to essential bottomwear like cargo pants, denim jorts, and comfortable boxers. Our collection is designed for a perfect blend of casual and lounge wear, available in all popular sizes and colors.",
+    buttons: [
+      {
+        label: "View All Topwear",
+        url: "/women/topwear/all",
+      },
+      {
+        label: "View All Bottomwear",
+        url: "/women/bottomwear/all",
+      },
+    ],
+    price_table_data: {
+      heading: "Buy Women's Clothing at Best Price",
+      items: [
+        {
+          product: "Beige Oversized Camo Cargo Pants for Women",
+          price: "₹1399",
+        },
+        {
+          product: "Black Rugged Hem Denim Jorts for Women",
+          price: "₹1199",
+        },
+        {
+          product: "Dark Blue Rugged Hem Denim Jorts for Women",
+          price: "₹1199",
+        },
+        {
+          product: "Plain Navy Blue Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Grizzle Gray Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Burgundy Womens Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Sage Green Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Bottle Green Women Boxer",
+          price: "₹349",
+        },
+        {
+          product: "Plain Black Women Boxer",
+          price: "₹349",
+        },
+      ],
+    },
+    filters: [
+      {
+        id: "type",
+        label: "Type",
+        options: ["Bottomwear", "Topwear"],
+      },
+      {
+        id: "variants.color",
+        label: "Color",
+        options: [
+          "Beige",
+          "Black",
+          "Blue",
+          "Brown",
+          "Green",
+          "Grey",
+          "Maroon",
+          "Orange",
+          "Pink",
+          "Purple",
+          "Red",
+          "White",
+          "Yellow",
+        ],
+      },
+      {
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
+      },
+      {
+        id: "category",
+        label: "Category",
+        options: ["Boxer", "Full Sleeves", "Oversize", "Plain T-shirts"],
+      },
+      {
+        id: "pattern",
+        label: "Pattern",
+        options: ["Plain"],
+      },
+      {
+        id: "fabric",
+        label: "Fabric",
+        options: ["Cotton"],
+      },
+      {
+        id: "neck_collar",
+        label: "Neck/Collar",
+        options: ["Round Neck"],
+      },
+      {
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Half Sleeves", "Full Sleeves"],
+      },
+      {
+        id: "fit",
+        label: "Fit",
+        options: ["Regular Fit", "Relaxed Fit"],
+      },
+      {
+        id: "occasions",
+        label: "Occasions",
+        options: ["Casual Wear", "Lounge Wear"],
+      },
+      {
+        id: "combos",
+        label: "Combos",
+        options: [
+          "Pack of 2",
+          "Pack of 3",
+          "Pick Any 2",
+          "Pick Any 3",
+          "Pick Any 4",
+        ],
+      },
+      {
+        id: "price_range",
+        label: "Price Range",
+        options: ["₹1000 - ₹1499", "₹299 - ₹499", "₹800 - ₹999"],
+      },
+    ],
+    description_long: "",
   },
 };

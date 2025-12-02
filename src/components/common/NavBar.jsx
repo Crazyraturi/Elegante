@@ -311,9 +311,10 @@ export default function EcommerceHeader() {
                           </MenuLink>
                         </li>
                         <li>
+                          {/* FIX: Use 'category=women' to correctly trigger the 'women-clothing-view-all' slug */}
                           <MenuLink
-                            filterKey="gender"
-                            filterValue="Women"
+                            filterKey="category" // <-- FIX IS HERE
+                            filterValue="women" // <-- FIX IS HERE
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
                             View All
@@ -324,7 +325,6 @@ export default function EcommerceHeader() {
                   </div>
                 </div>
               </div>
-
               {/* BOTTOMWEAR with dropdown - CONVERTED TO MenuLink */}
               <div className="relative group">
                 {/* BOTTOMWEAR button: Use a MenuLink to filter by Category=Bottomwear */}
@@ -341,10 +341,10 @@ export default function EcommerceHeader() {
                 <div className="absolute left-0 top-full mt-2 w-[150px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200">
                   <div className="p-4">
                     <ul className="space-y-2">
-                      {/* CONVERTED ALL BOTTOMWEAR LINKS */}
+                      {/* FIXED ALL BOTTOMWEAR LINKS to use filterKey="subCategory" */}
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Cargo Joggers"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -353,7 +353,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Cargo Pants"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -362,7 +362,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Trousers"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -371,7 +371,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Japanese Pants"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -380,7 +380,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Gurkha Pants"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -389,7 +389,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Korean Pants"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -398,7 +398,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Pyjamas"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -407,7 +407,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Jeans"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -416,7 +416,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Shorts"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -425,7 +425,7 @@ export default function EcommerceHeader() {
                       </li>
                       <li>
                         <MenuLink
-                          filterKey="specificType"
+                          filterKey="subCategory" // <-- FIX APPLIED
                           filterValue="Boxers"
                           className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         >
@@ -436,8 +436,6 @@ export default function EcommerceHeader() {
                   </div>
                 </div>
               </div>
-
-              {/* Rest of your nav links - CONVERTED TO NavLink or MenuLink */}
               {/* Assuming COMBOS and NEW ARRIVALS might link to a filtered products page */}
               <MenuLink
                 filterKey="category"
@@ -446,7 +444,6 @@ export default function EcommerceHeader() {
               >
                 COMBOS
               </MenuLink>
-
               <MenuLink
                 filterKey="category"
                 filterValue="New Arrivals"
@@ -454,7 +451,6 @@ export default function EcommerceHeader() {
               >
                 NEW ARRIVALS
               </MenuLink>
-
               <Link
                 to="/men-winterwear"
                 className="text-black-700 text-[14px] font-semibold"

@@ -10,7 +10,9 @@ import CategoryDescription from "./CategoryDescription";
 import ProductCard from "./ProductCard";
 import SortDropdown from "./SortDropdown";
 
-import { CATEGORY_DATA } from "./Tshirtdata.js";
+// 1. --- NEW IMPORTS AND DATA RENAMING ---
+import { CATEGORY_DATA as TOPWEAR_DATA } from "./Tshirtdata.js";
+import { BOTTOMWEAR_DATA } from "./Bottomwear.js";
 
 const API_BASE_URL = "https://beyoung-backend.onrender.com/api/v1/product";
 
@@ -42,25 +44,50 @@ export default function ProductListingPage() {
   const subCategoryQuery = searchParams.get("subCategory");
   const categoryQuery = searchParams.get("category");
 
+  // Logic to determine the content slug (e.g., 'women-topwear' or 'women-clothing-view-all')
   const internalDataSlug = useMemo(() => {
+    const normalize = (str) => str.toLowerCase().replace(/ /g, "-");
+
     if (specificType) {
-      return specificType.toLowerCase().replace(/ /g, "-");
+      return normalize(specificType);
     }
+
     if (subCategoryQuery) {
-      return subCategoryQuery.toLowerCase().replace(/ /g, "-");
+      const normalizedSubCategory = normalize(subCategoryQuery);
+      // Correctly match the two-part slugs from the navigation
+      if (
+        normalizedSubCategory === "women-topwear" ||
+        normalizedSubCategory === "women-bottomwear"
+      ) {
+        return normalizedSubCategory;
+      }
+      // Fallback for men's subcategories (e.g., 't-shirts', 'shirts', 'trousers', 'jeans')
+      return normalizedSubCategory;
     }
+
     if (categoryQuery) {
-      return categoryQuery.toLowerCase().replace(/ /g, "-");
+      // Correctly maps 'category=women' to the view-all slug
+      if (normalize(categoryQuery) === "women") {
+        return "women-clothing-view-all";
+      }
+      return normalize(categoryQuery);
     }
-    return "t-shirts";
+    return "t-shirts"; // Default slug (Men's)
   }, [specificType, subCategoryQuery, categoryQuery]);
 
+  // 2. --- MERGE TOPWEAR AND BOTTOMWEAR DATA ---
   const pageContent = useMemo(() => {
-    return CATEGORY_DATA[internalDataSlug];
+    const ALL_CATEGORY_DATA = {
+      ...TOPWEAR_DATA,
+      ...BOTTOMWEAR_DATA, // Merge your new data here
+    };
+    return ALL_CATEGORY_DATA[internalDataSlug];
   }, [internalDataSlug]);
+  // ---------------------------------------------
 
   const isContentNotFound = !pageContent;
-  const finalPriceTableData = pageContent?.price_table_data || [];
+
+  const finalPriceTableData = pageContent?.price_table_data || {};
 
   const fetchFilteredProducts = async () => {
     setLoading(true);
@@ -74,10 +101,29 @@ export default function ProductListingPage() {
     }
 
     const filterParams = new URLSearchParams();
-    let actualSubCategoryValue = subCategoryQuery || "T-shirts";
 
-    if (specificType) {
+    // ------------------------------------------------------------------
+    // API FILTER LOGIC START
+    // ------------------------------------------------------------------
+
+    if (
+      internalDataSlug.startsWith("women-") ||
+      categoryQuery?.toLowerCase() === "women"
+    ) {
+      // Logic for Women's Sections (Unchanged)
+      filterParams.append("gender", "Women");
+      filterParams.append("subCategory", "Shop For Women");
+
+      if (internalDataSlug.includes("topwear")) {
+        filterParams.append("specificType", "Topwear");
+      } else if (internalDataSlug.includes("bottomwear")) {
+        filterParams.append("specificType", "Bottomwear");
+      }
+    } else if (specificType) {
+      // Logic for Men's/General specificType slugs (ONLY used for Topwear detailed links now)
+      let actualSubCategoryValue;
       const normalizedSpecificType = specificType.toLowerCase();
+
       if (
         normalizedSpecificType.includes("t-shirts") ||
         normalizedSpecificType.includes("polo")
@@ -88,30 +134,57 @@ export default function ProductListingPage() {
         normalizedSpecificType.includes("shacket")
       ) {
         actualSubCategoryValue = "Shirts";
-      } else if (
-        normalizedSpecificType.includes("joggers") ||
-        normalizedSpecificType.includes("pants") ||
-        normalizedSpecificType.includes("trousers") ||
-        normalizedSpecificType.includes("shorts")
-      ) {
-        actualSubCategoryValue = "Bottomwear";
       } else {
+        // Fallback for any other specificType that isn't clearly Topwear or Bottomwear
         actualSubCategoryValue = "T-shirts";
       }
-    }
 
-    filterParams.append("subCategory", actualSubCategoryValue);
-
-    if (specificType) {
+      filterParams.append("subCategory", actualSubCategoryValue);
       filterParams.append("specificType", specificType);
+    } else if (subCategoryQuery) {
+      // 🚨 FIXED LOGIC: This now handles all Men's links that use subCategory,
+      // including specific items like 'Trousers' and 'Jeans' from the NavBar.
+
+      // The API is expected to use the value of subCategoryQuery (e.g., "Cargo Joggers")
+      // to filter the products.
+      filterParams.append("subCategory", subCategoryQuery);
+    } else if (categoryQuery) {
+      // Logic for broad category queries (like category=Bottomwear, category=Combos)
+      // The API must be able to handle these broad queries (e.g., returning all bottomwear)
+      const normalizedCategory = categoryQuery.toLowerCase();
+
+      if (normalizedCategory === "bottomwear") {
+        filterParams.append("mainCategory", "Bottomwear");
+      } else if (
+        normalizedCategory === "combos" ||
+        normalizedCategory === "new arrivals"
+      ) {
+        filterParams.append("category", categoryQuery);
+      } else {
+        // Default to Topwear or similar if category is unknown
+        filterParams.append("subCategory", "T-shirts");
+      }
+    } else {
+      // Fallback for non-specific calls (default Men's category)
+      filterParams.append("subCategory", "T-shirts");
     }
 
+    // Append other search params, making sure not to duplicate main filters already set
     for (const [key, value] of searchParams.entries()) {
-      if (key !== "subCategory" && key !== "specificType") {
+      // Exclude main category filters already determined above
+      if (
+        key !== "subCategory" &&
+        key !== "specificType" &&
+        key !== "category" &&
+        key !== "gender" &&
+        key !== "mainCategory"
+      ) {
         filterParams.append(key, value);
       }
     }
+    // ------------------------------------------------------------------
 
+    // Sorting Logic (Unchanged)
     if (sortOption && sortOption !== "Recommended") {
       if (sortOption === "price_asc") {
         filterParams.append("sort", "price");
@@ -176,7 +249,10 @@ export default function ProductListingPage() {
 
   const pageTitle = pageContent.title;
   const shortDescription = pageContent.description_short;
-  const inferredMainCategory = "TOPWEAR";
+  // Inferred category needs to be dynamic for breadcrumb
+  const inferredMainCategory = internalDataSlug.startsWith("women-")
+    ? "WOMEN"
+    : "MEN";
   const inferredSubCategory = pageContent.title;
 
   return (
@@ -216,7 +292,7 @@ export default function ProductListingPage() {
               </div>
             </div>
             {products.length > 0 ? (
-              <div className="grid grid-cols-2 sm:grid-cols-3 **lg:grid-cols-3** gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
                 {products.map((product) => (
                   <ProductCard
                     key={product._id}
@@ -239,7 +315,7 @@ export default function ProductListingPage() {
         />
       </div>
 
-      {/* Login Popup */}
+      {/* Login Popup (Unchanged) */}
       {showPopup && (
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4"
