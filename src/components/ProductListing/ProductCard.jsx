@@ -2,35 +2,45 @@ import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 
 const ProductCard = ({ product, handleHeartClick }) => {
-  let mainImage = product.images?.preview;
+  // Ensure product.images exists, otherwise set to an empty object for safe destructuring
+  const images = product.images || {};
 
+  // Safely determine main and hover images using gallery/files array
+  const findImageByView = (view) =>
+    images.gallery?.find((item) => item.view === view)?.file;
+
+  // Primary Image Logic: Prioritize preview, then main, then front view.
+  let mainImage =
+    images.preview || images.main || findImageByView("Front View");
+
+  // Hover Image Logic: Use specific hover view, or fall back.
+  let hoverImage = findImageByView("Hover View");
+
+  // --- START OF ROBUST FALLBACK LOGIC ---
+
+  // 1. Fallback logic for main image: Find the first item in the gallery that HAS a file URL.
   if (!mainImage) {
-    mainImage = product.mainImage || product.image || product.images?.main;
+    mainImage = images.gallery?.find((item) => item.file)?.file;
   }
 
-  const gallery = product.images?.gallery || [];
-
-  const frontViewObj = gallery.find(
-    (item) => item.view === "Front View" && item.file
-  );
-  const hoverViewObj = gallery.find(
-    (item) => item.view === "Hover View" && item.file
-  );
-
-  if (!mainImage && frontViewObj?.file) {
-    mainImage = frontViewObj.file;
+  // 2. Fallback logic for hover image: Find the first VALID gallery image that isn't the main image.
+  if (!hoverImage) {
+    hoverImage = images.gallery?.find(
+      (item) => item.file && item.file !== mainImage
+    )?.file;
   }
 
-  if (!mainImage && gallery.length > 0) {
-    const firstValidFile = gallery.find((item) => item.file)?.file;
-    if (firstValidFile) mainImage = firstValidFile;
+  // 3. If no separate hover image is found, use the main image for the hover state.
+  if (!hoverImage) {
+    hoverImage = mainImage;
   }
 
-  let hoverImage = hoverViewObj?.file || mainImage;
+  // --- END OF ROBUST FALLBACK LOGIC ---
 
-  if (!mainImage)
-    mainImage = "https://via.placeholder.com/300x400?text=No+Image+Found";
-  if (!hoverImage) hoverImage = mainImage;
+  // Final fallback to prevent broken image icons
+  const fallbackUrl = "https://via.placeholder.com/300x400?text=No+Image+Found";
+  mainImage = mainImage || fallbackUrl;
+  hoverImage = hoverImage || mainImage;
 
   const firstVariant = product.variants?.[0];
   const priceInfo = firstVariant?.price || {};
@@ -46,20 +56,6 @@ const ProductCard = ({ product, handleHeartClick }) => {
       className="bg-white rounded-lg overflow-hidden block group"
     >
       <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
-        {/* Main Image */}
-        <img
-          src={mainImage}
-          alt={product.title || product.name}
-          loading="lazy"
-          className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-        />
-        {/* Hover Image */}
-        <img
-          src={hoverImage}
-          alt={product.title || product.name}
-          loading="lazy"
-          className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        />
         {/* Wishlist Button */}
         <button
           onClick={(e) => {
@@ -71,6 +67,22 @@ const ProductCard = ({ product, handleHeartClick }) => {
         >
           <Heart className="w-4 h-4 text-gray-700" />
         </button>
+        {/* Main Image */}
+        <img
+          src={mainImage}
+          alt={product.title || product.name}
+          loading="lazy"
+          className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+        />
+        {/* Hover Image */}
+        {hoverImage && hoverImage !== mainImage && (
+          <img
+            src={hoverImage}
+            alt={product.title || product.name}
+            loading="lazy"
+            className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          />
+        )}
       </div>
       <div className="pt-4 px-1">
         <h3 className="text-gray-900 font-semibold text-base mb-1 line-clamp-1">
