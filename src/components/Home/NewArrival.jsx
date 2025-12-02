@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Heart, X, Loader2 } from "lucide-react";
 
@@ -8,6 +8,8 @@ const NewArrival = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(12);
+  const observerTarget = useRef(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -37,6 +39,33 @@ const NewArrival = () => {
             : "";
           return category.includes(activeTab.toLowerCase());
         });
+
+  useEffect(() => {
+    setVisibleCount(12);
+  }, [activeTab]);
+
+  const displayedProducts = filteredProducts.slice(0, visibleCount);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => prev + 8);
+        }
+      },
+      { threshold: 1.0 }
+    );
+
+    if (observerTarget.current) {
+      observer.observe(observerTarget.current);
+    }
+
+    return () => {
+      if (observerTarget.current) {
+        observer.unobserve(observerTarget.current);
+      }
+    };
+  }, [observerTarget, filteredProducts]);
 
   const handleHeartClick = () => setShowPopup(true);
 
@@ -89,7 +118,7 @@ const NewArrival = () => {
       ) : (
         <div className="max-w-7xl mx-auto p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => {
+            {displayedProducts.map((product) => {
               const gallery = product.images?.gallery || [];
               const previewImage = product.images?.preview;
 
@@ -184,6 +213,15 @@ const NewArrival = () => {
               );
             })}
           </div>
+
+          {displayedProducts.length < filteredProducts.length && (
+            <div
+              ref={observerTarget}
+              className="h-20 flex justify-center items-center w-full mt-4"
+            >
+              <Loader2 className="w-6 h-6 animate-spin text-gray-400" />
+            </div>
+          )}
         </div>
       )}
 
