@@ -18,28 +18,17 @@ import Media from "./pages/Media";
 import CareersPage from "./pages/Career";
 import Blog from "./pages/Blog";
 import BlogDetailPage from "./pages/BlogDetails";
-import PlainTShirt from "./components/topwear/PlainTShirt";
-import ViewAll from "./components/topwear/ViewAll";
-import Winterwear from "./components/winterwear/Winterwear";
 import CartPage from "./pages/CartPage";
 import AddressPage from "./pages/AddressPage";
 import PaymentPage from "./pages/PaymentPage";
 
-// 🔥 STEP 1: Import the new component to handle product listings
-import ProductListingPage from "../src/pages/ProductListingPage";
-import Login from "./auth/Login";
-import Signup from "./auth/Signup";
-import Verify from "./auth/Verify";
-import Verifyemail from "./auth/VerifyEmail";
-import MyAccount from "./pages/MyAccount";
-// Note: You must ensure this file path is correct.
+import ProductListingPage from "../src/components/ProductListing/ProductListingPage";
 
 const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        {/* ALL ROUTES INSIDE MAINLAYOUT */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
@@ -58,26 +47,20 @@ const App = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/address" element={<AddressPage />} />
           <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/signup" element={<Signup/> } />
-          <Route path="/verify" element={<Verify/>} />
-          <Route path="/verify/:token" element={<Verifyemail/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/verify" element={<Verify />} />
+          <Route path="/verify/:token" element={<Verifyemail />} />
 
-          {/* BLOG */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/details" element={<BlogDetailPage />} />
 
-          {/* 🔥 STEP 2: Add the new dynamic product route 🔥 */}
           <Route path="/products" element={<ProductListingPage />} />
-          {/* This single route will handle all requests like /products?specificType=... */}
 
-          {/* TOPWEAR (These old, static routes can eventually be removed if all menu links are dynamic) */}
-          <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
-          <Route path="/t-shirts-for-men" element={<ViewAll />} />
-
-          {/* WINTERWEAR */}
-          <Route path="/men-winterwear" element={<Winterwear />} />
-           <Route path="/my-account" element={<MyAccount/>} />
+          <Route
+            path="/products?specificType=Polo%20T-shirts"
+            element={<ProductListingPage />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
