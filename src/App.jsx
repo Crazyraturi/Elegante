@@ -18,23 +18,17 @@ import Media from "./pages/Media";
 import CareersPage from "./pages/Career";
 import Blog from "./pages/Blog";
 import BlogDetailPage from "./pages/BlogDetails";
-import PlainTShirt from "./components/topwear/PlainTShirt";
-import ViewAll from "./components/topwear/ViewAll";
-import Winterwear from "./components/winterwear/Winterwear";
 import CartPage from "./pages/CartPage";
 import AddressPage from "./pages/AddressPage";
 import PaymentPage from "./pages/PaymentPage";
 
-// 🔥 STEP 1: Import the new component to handle product listings
-import ProductListingPage from "../src/pages/ProductListingPage";
-// Note: You must ensure this file path is correct.
+import ProductListingPage from "../src/components/ProductListing/ProductListingPage";
 
 const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        {/* ALL ROUTES INSIDE MAINLAYOUT */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
@@ -54,20 +48,11 @@ const App = () => {
           <Route path="/address" element={<AddressPage />} />
           <Route path="/payment" element={<PaymentPage />} />
 
-          {/* BLOG */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/details" element={<BlogDetailPage />} />
 
-          {/* 🔥 STEP 2: Add the new dynamic product route 🔥 */}
           <Route path="/products" element={<ProductListingPage />} />
-          {/* This single route will handle all requests like /products?specificType=... */}
 
-          {/* TOPWEAR (These old, static routes can eventually be removed if all menu links are dynamic) */}
-          <Route path="/men-plain-t-shirts" element={<PlainTShirt />} />
-          <Route path="/t-shirts-for-men" element={<ViewAll />} />
-
-          {/* WINTERWEAR */}
-          <Route path="/men-winterwear" element={<Winterwear />} />
           <Route
             path="/products?specificType=Polo%20T-shirts"
             element={<ProductListingPage />}

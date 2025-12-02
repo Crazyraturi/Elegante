@@ -1923,98 +1923,96 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-  
+
   "cotton-shirts": {
-    "title": "Cotton Shirts for Men",
-    
-    "buttons": [
+    title: "Cotton Shirts for Men",
+
+    buttons: [
       {
-        "label": "View All",
-        "url": "/products?specificType=Cotton%20Shirts&subCategory=Shirts"
+        label: "View All",
+        url: "/products?specificType=Cotton%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Plain",
-        "url": "/products?specificType=Plain%20Shirts&subCategory=Shirts"
+        label: "Plain",
+        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Oxford",
-        "url": "/products?specificType=Oxford%20Shirts&subCategory=Shirts"
+        label: "Oxford",
+        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Flannel",
-        "url": "/products?specificType=Flannel%20Shirts&subCategory=Shirts"
+        label: "Flannel",
+        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Satin",
-        "url": "/products?specificType=Satin%20Shirts&subCategory=Shirts"
+        label: "Satin",
+        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "New Drops",
-        "url": "/shirts/new-drops"
-      }
+        label: "New Drops",
+        url: "/shirts/new-drops",
+      },
     ],
-    "price_table_data": [
+    price_table_data: [
       {
-        "product": "Pick Any 3 - Plain Cotton Shirts Combo",
-        "price": "₹1998"
+        product: "Pick Any 3 - Plain Cotton Shirts Combo",
+        price: "₹1998",
       },
       {
-        "product": "Pick Any 2 - Plain Cotton Shirts Combo",
-        "price": "₹1499"
+        product: "Pick Any 2 - Plain Cotton Shirts Combo",
+        price: "₹1499",
       },
       {
-        "product": "Military Green Waffle Button-Down Cotton Shirt",
-        "price": "₹998"
+        product: "Military Green Waffle Button-Down Cotton Shirt",
+        price: "₹998",
       },
       {
-        "product": "Lilac Dual Over Dyed Patch Pocket Shirt",
-        "price": "₹1299"
+        product: "Lilac Dual Over Dyed Patch Pocket Shirt",
+        price: "₹1299",
       },
       {
-        "product": "Grey - Plain Cotton Shirts",
-        "price": "₹799"
+        product: "Grey - Plain Cotton Shirts",
+        price: "₹799",
       },
       {
-        "product": "Black Denim Zipper Shacket",
-        "price": "₹1498"
+        product: "Black Denim Zipper Shacket",
+        price: "₹1498",
       },
       {
-        "product": "Sky Blue Denim Zipper Shacket",
-        "price": "₹1498"
+        product: "Sky Blue Denim Zipper Shacket",
+        price: "₹1498",
       },
       {
-        "product": "Grey Mandarin Collar Textured Shirt",
-        "price": "₹1199"
+        product: "Grey Mandarin Collar Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Mist Grey Mandarin Collar Textured Shirt",
-        "price": "₹1199"
+        product: "Mist Grey Mandarin Collar Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Brown Waffle Button-Down Cotton Shirt",
-        "price": "₹998"
+        product: "Brown Waffle Button-Down Cotton Shirt",
+        price: "₹998",
       },
       {
-        "product": "Beige Mandarin Collar Textured Shirt",
-        "price": "₹1199"
+        product: "Beige Mandarin Collar Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "White Waffle Button-Down Cotton Shirt",
-        "price": "₹998"
-      }
+        product: "White Waffle Button-Down Cotton Shirt",
+        price: "₹998",
+      },
     ],
-    "filters": [
+    filters: [
       {
-        "id": "collection",
-        "label": "Collection",
-        "options": [
-          "Shirts Reimagined"
-        ]
+        id: "collection",
+        label: "Collection",
+        options: ["Shirts Reimagined"],
       },
       {
-        "id": "variants.color",
-        "label": "Color",
-        "options": [
+        id: "variants.color",
+        label: "Color",
+        options: [
           "Black",
           "Blue",
           "Brown",
@@ -2026,170 +2024,141 @@ export const CATEGORY_DATA = {
           "Purple",
           "Red",
           "White",
-          "Yellow"
-        ]
+          "Yellow",
+        ],
       },
       {
-        "id": "variants.sizes.size",
-        "label": "Size",
-        "options": [
-          "S",
-          "M",
-          "L",
-          "XL",
-          "XXL"
-        ]
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL"],
       },
       {
-        "id": "pattern",
-        "label": "Pattern",
-        "options": [
-          "Plain",
-          "Solid",
-          "Striped",
-          "Checked",
-          "Printed"
-        ]
+        id: "pattern",
+        label: "Pattern",
+        options: ["Plain", "Solid", "Striped", "Checked", "Printed"],
       },
       {
-        "id": "fabric",
-        "label": "Fabric",
-        "options": [
-          "Oxford",
-          "Cotton",
-          "Linen Blend",
-          "Cotton Twill"
-        ]
+        id: "fabric",
+        label: "Fabric",
+        options: ["Oxford", "Cotton", "Linen Blend", "Cotton Twill"],
       },
       {
-        "id": "neck",
-        "label": "Neck/Collar",
-        "options": [
+        id: "neck",
+        label: "Neck/Collar",
+        options: [
           "Button Down Collar",
           "Classic Collar",
           "Stand Collar",
-          "Spread Collar"
-        ]
+          "Spread Collar",
+        ],
       },
       {
-        "id": "sleeves",
-        "label": "Sleeves",
-        "options": [
-          "Half Sleeves",
-          "Full Sleeves"
-        ]
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Half Sleeves", "Full Sleeves"],
       },
       {
-        "id": "fit",
-        "label": "Fit",
-        "options": [
-          "Regular Fit",
-          "Slim Fit"
-        ]
+        id: "fit",
+        label: "Fit",
+        options: ["Regular Fit", "Slim Fit"],
       },
       {
-        "id": "price_range",
-        "label": "Price Range",
-        "options": [
-          "₹800 - ₹999",
-          "₹1000 - ₹1499",
-          "₹500 - ₹799"
-        ]
-      }
-    ]
+        id: "price_range",
+        label: "Price Range",
+        options: ["₹800 - ₹999", "₹1000 - ₹1499", "₹500 - ₹799"],
+      },
+    ],
   },
-  
+
   "flannel-shirts": {
-    "title": "Flannel Shirts for Men",
-   
-    "buttons": [
+    title: "Flannel Shirts for Men",
+
+    buttons: [
       {
-        "label": "View All",
-        "url": "/products?specificType=Flannel%20Shirts&subCategory=Shirts"
+        label: "View All",
+        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Plaid",
-        "url": "/products?specificType=Plaid%20Flannel%20Shirts&subCategory=Shirts"
+        label: "Plaid",
+        url: "/products?specificType=Plaid%20Flannel%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Solid",
-        "url": "/products?specificType=Solid%20Flannel%20Shirts&subCategory=Shirts"
+        label: "Solid",
+        url: "/products?specificType=Solid%20Flannel%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Plain",
-        "url": "/products?specificType=Plain%20Shirts&subCategory=Shirts"
+        label: "Plain",
+        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "New Drops",
-        "url": "/shirts/new-drops"
+        label: "New Drops",
+        url: "/shirts/new-drops",
       },
       {
-        "label": "Shackets",
-        "url": "/products?specificType=Shackets"
-      }
+        label: "Shackets",
+        url: "/products?specificType=Shackets",
+      },
     ],
-    "price_table_data": [
+    price_table_data: [
       {
-        "product": "Beige Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Beige Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Maroon Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Maroon Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Navy Recycled Solid Flannel Shirt",
-        "price": "₹899"
+        product: "Navy Recycled Solid Flannel Shirt",
+        price: "₹899",
       },
       {
-        "product": "Beige Recycled Solid Flannel Shirt",
-        "price": "₹899"
+        product: "Beige Recycled Solid Flannel Shirt",
+        price: "₹899",
       },
       {
-        "product": "Fawn Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Fawn Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Black Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Black Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Caramel Brown Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Caramel Brown Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Olive Green Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Olive Green Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Dark Green Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Dark Green Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Black Recycled Solid Flannel Shirt",
-        "price": "₹899"
+        product: "Black Recycled Solid Flannel Shirt",
+        price: "₹899",
       },
       {
-        "product": "Off White Recycled Solid Flannel Shirt",
-        "price": "₹899"
+        product: "Off White Recycled Solid Flannel Shirt",
+        price: "₹899",
       },
       {
-        "product": "Pink Recycled Plaid Flannel Shirt",
-        "price": "₹1199"
-      }
+        product: "Pink Recycled Plaid Flannel Shirt",
+        price: "₹1199",
+      },
     ],
-    "filters": [
+    filters: [
       {
-        "id": "collection",
-        "label": "Collection",
-        "options": [
-          "Shirts Reimagined"
-        ]
+        id: "collection",
+        label: "Collection",
+        options: ["Shirts Reimagined"],
       },
       {
-        "id": "variants.color",
-        "label": "Color",
-        "options": [
+        id: "variants.color",
+        label: "Color",
+        options: [
           "Black",
           "Blue",
           "Brown",
@@ -2201,171 +2170,147 @@ export const CATEGORY_DATA = {
           "Purple",
           "Red",
           "White",
-          "Yellow"
-        ]
+          "Yellow",
+        ],
       },
       {
-        "id": "variants.sizes.size",
-        "label": "Size",
-        "options": [
-          "S",
-          "M",
-          "L",
-          "XL",
-          "XXL"
-        ]
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL"],
       },
       {
-        "id": "pattern",
-        "label": "Pattern",
-        "options": [
-          "Plaid",
-          "Checked",
-          "Solid",
-          "Striped",
-          "Plain",
-          "Printed"
-        ]
+        id: "pattern",
+        label: "Pattern",
+        options: ["Plaid", "Checked", "Solid", "Striped", "Plain", "Printed"],
       },
       {
-        "id": "fabric",
-        "label": "Fabric",
-        "options": [
+        id: "fabric",
+        label: "Fabric",
+        options: [
           "Flannel",
           "Cotton Flannel",
           "Recycled Cotton Flannel",
           "Cotton",
-          "Wool"
-        ]
+          "Wool",
+        ],
       },
       {
-        "id": "neck",
-        "label": "Neck/Collar",
-        "options": [
+        id: "neck",
+        label: "Neck/Collar",
+        options: [
           "Button Down Collar",
           "Classic Collar",
           "Stand Collar",
-          "Spread Collar"
-        ]
+          "Spread Collar",
+        ],
       },
       {
-        "id": "sleeves",
-        "label": "Sleeves",
-        "options": [
-          "Full Sleeves"
-        ]
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Full Sleeves"],
       },
       {
-        "id": "fit",
-        "label": "Fit",
-        "options": [
-          "Regular Fit",
-          "Relaxed Fit"
-        ]
+        id: "fit",
+        label: "Fit",
+        options: ["Regular Fit", "Relaxed Fit"],
       },
       {
-        "id": "price_range",
-        "label": "Price Range",
-        "options": [
-          "₹800 - ₹999",
-          "₹1000 - ₹1499"
-        ]
-      }
-    ]
+        id: "price_range",
+        label: "Price Range",
+        options: ["₹800 - ₹999", "₹1000 - ₹1499"],
+      },
+    ],
   },
-  
+
   "festive-shirts": {
-    "title": "Festive Shirts for Men",
-    
-    "buttons": [
+    title: "Festive Shirts for Men",
+
+    buttons: [
       {
-        "label": "View All",
-        "url": "/products?specificType=Festive%20Shirts&subCategory=Shirts"
+        label: "View All",
+        url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Jacquard",
-        "url": "/products?specificType=Jacquard%20Shirts&subCategory=Shirts"
+        label: "Jacquard",
+        url: "/products?specificType=Jacquard%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Textured",
-        "url": "/products?specificType=Textured%20Shirts&subCategory=Shirts"
+        label: "Textured",
+        url: "/products?specificType=Textured%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Satin",
-        "url": "/products?specificType=Satin%20Shirts&subCategory=Shirts"
+        label: "Satin",
+        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Mandarin Collar",
-        "url": "/products?specificType=Mandarin%20Shirts&subCategory=Shirts"
+        label: "Mandarin Collar",
+        url: "/products?specificType=Mandarin%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Partywear",
-        "url": "/products?specificType=Partywear%20Shirts&subCategory=Shirts"
-      }
+        label: "Partywear",
+        url: "/products?specificType=Partywear%20Shirts&subCategory=Shirts",
+      },
     ],
-    "price_table_data": [
+    price_table_data: [
       {
-        "product": "White Fur Wave Textured Shirt",
-        "price": "₹1199"
+        product: "White Fur Wave Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Mid Grey Jacquard Round Textured Shirt",
-        "price": "₹1199"
+        product: "Mid Grey Jacquard Round Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Olive Fur Wave Textured Shirt",
-        "price": "₹1199"
+        product: "Olive Fur Wave Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Brown Jacquard Round Textured Shirt",
-        "price": "₹1199"
+        product: "Brown Jacquard Round Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Grey Mandarin Collar Textured Shirt",
-        "price": "₹1199"
+        product: "Grey Mandarin Collar Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Mist Grey Mandarin Collar Textured Shirt",
-        "price": "₹1199"
+        product: "Mist Grey Mandarin Collar Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Black Textured Western Shirt",
-        "price": "₹998"
+        product: "Black Textured Western Shirt",
+        price: "₹998",
       },
       {
-        "product": "Brown Jacquard Cuban Shirt",
-        "price": "₹997"
+        product: "Brown Jacquard Cuban Shirt",
+        price: "₹997",
       },
       {
-        "product": "Black Jacquard Round Textured Shirt",
-        "price": "₹1199"
+        product: "Black Jacquard Round Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Beige Mandarin Collar Textured Shirt",
-        "price": "₹1199"
+        product: "Beige Mandarin Collar Textured Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Pale Grey Terry Textured Shirt",
-        "price": "₹1299"
+        product: "Pale Grey Terry Textured Shirt",
+        price: "₹1299",
       },
       {
-        "product": "Olive Green Jacquard Round Textured Shirt",
-        "price": "₹1199"
-      }
+        product: "Olive Green Jacquard Round Textured Shirt",
+        price: "₹1199",
+      },
     ],
-    "filters": [
+    filters: [
       {
-        "id": "collection",
-        "label": "Collection",
-        "options": [
-          "Shirts Reimagined",
-          "Festive"
-        ]
+        id: "collection",
+        label: "Collection",
+        options: ["Shirts Reimagined", "Festive"],
       },
       {
-        "id": "variants.color",
-        "label": "Color",
-        "options": [
+        id: "variants.color",
+        label: "Color",
+        options: [
           "Black",
           "Blue",
           "Brown",
@@ -2379,188 +2324,160 @@ export const CATEGORY_DATA = {
           "White",
           "Yellow",
           "Beige",
-          "Olive"
-        ]
+          "Olive",
+        ],
       },
       {
-        "id": "variants.sizes.size",
-        "label": "Size",
-        "options": [
-          "S",
-          "M",
-          "L",
-          "XL",
-          "XXL"
-        ]
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL"],
       },
       {
-        "id": "pattern",
-        "label": "Pattern",
-        "options": [
-          "Jacquard",
-          "Textured",
-          "Solid",
-          "Fur Wave",
-          "Printed"
-        ]
+        id: "pattern",
+        label: "Pattern",
+        options: ["Jacquard", "Textured", "Solid", "Fur Wave", "Printed"],
       },
       {
-        "id": "fabric",
-        "label": "Fabric",
-        "options": [
+        id: "fabric",
+        label: "Fabric",
+        options: [
           "Satin",
           "Jacquard",
           "Fur Wave",
           "Terry",
           "Velvet",
-          "Silk Blend"
-        ]
+          "Silk Blend",
+        ],
       },
       {
-        "id": "neck",
-        "label": "Neck/Collar",
-        "options": [
+        id: "neck",
+        label: "Neck/Collar",
+        options: [
           "Mandarin Collar",
           "Classic Collar",
           "Cuban Collar",
-          "Spread Collar"
-        ]
+          "Spread Collar",
+        ],
       },
       {
-        "id": "sleeves",
-        "label": "Sleeves",
-        "options": [
-          "Full Sleeves",
-          "Half Sleeves"
-        ]
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Full Sleeves", "Half Sleeves"],
       },
       {
-        "id": "fit",
-        "label": "Fit",
-        "options": [
-          "Regular Fit",
-          "Slim Fit",
-          "Relaxed Fit"
-        ]
+        id: "fit",
+        label: "Fit",
+        options: ["Regular Fit", "Slim Fit", "Relaxed Fit"],
       },
       {
-        "id": "price_range",
-        "label": "Price Range",
-        "options": [
-          "₹800 - ₹999",
-          "₹1000 - ₹1499",
-          "₹500 - ₹799"
-        ]
+        id: "price_range",
+        label: "Price Range",
+        options: ["₹800 - ₹999", "₹1000 - ₹1499", "₹500 - ₹799"],
       },
       {
-        "id": "occasion",
-        "label": "Occasion",
-        "options": [
-          "Festive Wear",
-          "Party Wear",
-          "Wedding Events"
-        ]
-      }
-    ]
+        id: "occasion",
+        label: "Occasion",
+        options: ["Festive Wear", "Party Wear", "Wedding Events"],
+      },
+    ],
   },
-  
-  "shackets": {
-    "title": "Shackets for Men",
-    "description_short": "Explore Beyoung's cutting-edge Shacket collection. Blending the style of a shirt with the warmth of a light jacket, these versatile pieces are perfect for layering. Find trendy designs in denim, flannel, and unique textured fabrics.",
-    "description_long": "",
-    "faq": [],
-    "buttons": [
+
+  shackets: {
+    title: "Shackets for Men",
+    description_short:
+      "Explore Beyoung's cutting-edge Shacket collection. Blending the style of a shirt with the warmth of a light jacket, these versatile pieces are perfect for layering. Find trendy designs in denim, flannel, and unique textured fabrics.",
+    description_long: "",
+    faq: [],
+    buttons: [
       {
-        "label": "View All",
-        "url": "/products?specificType=shackets&subCategory=Shirts"
+        label: "View All",
+        url: "/products?specificType=shackets&subCategory=Shirts",
       },
       {
-        "label": "Plain",
-        "url": "/products?specificType=Plain%20Shirts&subCategory=Shirts"
+        label: "Plain",
+        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Oxford",
-        "url": "/products?specificType=Oxford%20Shirts&subCategory=Shirts"
+        label: "Oxford",
+        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Flannel",
-        "url": "/products?specificType=Flannel%20Shirts&subCategory=Shirts"
+        label: "Flannel",
+        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "New Drops",
-        "url": "/shirts/new-drops"
+        label: "New Drops",
+        url: "/shirts/new-drops",
       },
       {
-        "label": "Corduroy",
-        "url": "/shirts/corduroy"
+        label: "Corduroy",
+        url: "/shirts/corduroy",
       },
       {
-        "label": "Festive",
-        "url": "/products?specificType=Festive%20Shirts&subCategory=Shirts"
-      }
+        label: "Festive",
+        url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
+      },
     ],
-    "price_table_data": [
+    price_table_data: [
       {
-        "product": "Sky Blue Denim Zipper Shacket",
-        "price": "₹1498"
+        product: "Sky Blue Denim Zipper Shacket",
+        price: "₹1498",
       },
       {
-        "product": "Black Denim Zipper Shacket",
-        "price": "₹1498"
+        product: "Black Denim Zipper Shacket",
+        price: "₹1498",
       },
       {
-        "product": "Blue Zipper Cotton Flannel Shacket",
-        "price": "₹1299"
+        product: "Blue Zipper Cotton Flannel Shacket",
+        price: "₹1299",
       },
       {
-        "product": "Sand Brown Chevron Printed Shacket",
-        "price": "₹1199"
+        product: "Sand Brown Chevron Printed Shacket",
+        price: "₹1199",
       },
       {
-        "product": "Airforce Blue Color Blast Shacket",
-        "price": "₹1399"
+        product: "Airforce Blue Color Blast Shacket",
+        price: "₹1399",
       },
       {
-        "product": "Green And Blue Abstract Printed Shacket",
-        "price": "₹1199"
+        product: "Green And Blue Abstract Printed Shacket",
+        price: "₹1199",
       },
       {
-        "product": "Brown Dye Effect Printed Shacket",
-        "price": "₹1199"
+        product: "Brown Dye Effect Printed Shacket",
+        price: "₹1199",
       },
       {
-        "product": "Savoy Blue Crush Print Shacket",
-        "price": "₹1199"
+        product: "Savoy Blue Crush Print Shacket",
+        price: "₹1199",
       },
       {
-        "product": "Brown Crush Print Shacket",
-        "price": "₹1199"
+        product: "Brown Crush Print Shacket",
+        price: "₹1199",
       },
       {
-        "product": "Mauve Color Blast Shacket",
-        "price": "₹1399"
+        product: "Mauve Color Blast Shacket",
+        price: "₹1399",
       },
       {
-        "product": "Navy Chevron Printed Shacket",
-        "price": "₹1199"
+        product: "Navy Chevron Printed Shacket",
+        price: "₹1199",
       },
       {
-        "product": "Blue Denim Zipper Shacket",
-        "price": "₹1498"
-      }
+        product: "Blue Denim Zipper Shacket",
+        price: "₹1498",
+      },
     ],
-    "filters": [
+    filters: [
       {
-        "id": "collection",
-        "label": "Collection",
-        "options": [
-          "Shirts Reimagined"
-        ]
+        id: "collection",
+        label: "Collection",
+        options: ["Shirts Reimagined"],
       },
       {
-        "id": "variants.color",
-        "label": "Color",
-        "options": [
+        id: "variants.color",
+        label: "Color",
+        options: [
           "Black",
           "Blue",
           "Brown",
@@ -2571,24 +2488,18 @@ export const CATEGORY_DATA = {
           "Pink",
           "Purple",
           "Red",
-          "White"
-        ]
+          "White",
+        ],
       },
       {
-        "id": "variants.sizes.size",
-        "label": "Size",
-        "options": [
-          "S",
-          "M",
-          "L",
-          "XL",
-          "XXL"
-        ]
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL"],
       },
       {
-        "id": "pattern",
-        "label": "Pattern",
-        "options": [
+        id: "pattern",
+        label: "Pattern",
+        options: [
           "Camouflage",
           "Checked",
           "Color Blast",
@@ -2600,13 +2511,13 @@ export const CATEGORY_DATA = {
           "Plain",
           "Printed",
           "Striped",
-          "Textured"
-        ]
+          "Textured",
+        ],
       },
       {
-        "id": "fabric",
-        "label": "Fabric",
-        "options": [
+        id: "fabric",
+        label: "Fabric",
+        options: [
           "Corduroy",
           "Cotton",
           "Cotton Twill",
@@ -2626,57 +2537,50 @@ export const CATEGORY_DATA = {
           "Satin",
           "Suede",
           "Textured",
-          "Waffle"
-        ]
+          "Waffle",
+        ],
       },
       {
-        "id": "neck",
-        "label": "Neck/Collar",
-        "options": [
+        id: "neck",
+        label: "Neck/Collar",
+        options: [
           "Button Down Collar",
           "Classic Collar",
           "Cuban Collar",
           "Printed Collar",
           "Single Collar",
           "Spread Collar",
-          "Stand Collar"
-        ]
+          "Stand Collar",
+        ],
       },
       {
-        "id": "sleeves",
-        "label": "Sleeves",
-        "options": [
-          "Half Sleeves",
-          "Full Sleeves"
-        ]
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Half Sleeves", "Full Sleeves"],
       },
       {
-        "id": "fit",
-        "label": "Fit",
-        "options": [
-          "Oversized Fit",
-          "Regular Fit",
-          "Relaxed Fit",
-          "Shacket Fit"
-        ]
+        id: "fit",
+        label: "Fit",
+        options: ["Oversized Fit", "Regular Fit", "Relaxed Fit", "Shacket Fit"],
       },
       {
-        "id": "price_range",
-        "label": "Price Range",
-        "options": [
+        id: "price_range",
+        label: "Price Range",
+        options: [
           "₹1000 - ₹1499",
           "₹1500 - ₹1999",
           "₹500 - ₹799",
-          "₹800 - ₹999"
-        ]
-      }
-    ]
+          "₹800 - ₹999",
+        ],
+      },
+    ],
   },
-  
-  "shirts": {
-    "title": "Shirts for Men",
-    "description_short": "Shirts for men at just ₹699 - Buy best Shirts for men online in India at affordable prices with Beyoung. Explore a range of stylish shirts for men, from classic Oxford men’s shirts to rugged denim shirts and cozy flannel options that never go out of fashion. Our collection of branded shirts for men, including XXL sizes, offers a wide range of designs, fits, and styles perfect for any occasion. Get ₹50 OFF on men’s shirts when you spend more than ₹999, use code \"BEYOUNG50\". Shop now!",
-    "description_long": `
+
+  shirts: {
+    title: "Shirts for Men",
+    description_short:
+      'Shirts for men at just ₹699 - Buy best Shirts for men online in India at affordable prices with Beyoung. Explore a range of stylish shirts for men, from classic Oxford men’s shirts to rugged denim shirts and cozy flannel options that never go out of fashion. Our collection of branded shirts for men, including XXL sizes, offers a wide range of designs, fits, and styles perfect for any occasion. Get ₹50 OFF on men’s shirts when you spend more than ₹999, use code "BEYOUNG50". Shop now!',
+    description_long: `
             <h3 class="seo-h3">Best Stylish Shirts for Men Online</h3>
             <h4 class="seo-h4">Buy Men’s Trendy Shirts: Casual, Oversized & Printed</h4>
             <p>Buy shirts for men and revamp your style with Beyoung's latest collection of men's shirts online, where fashion meets affordability. Starting at just ₹699, our diverse range of men’s shirts caters to every occasion, ensuring you look your best without breaking the bank. The era when men’s shirts were limited to formal wear is long gone. Today, in a rapidly evolving fashion world, shirts have become one of the most versatile wardrobe choices. Men’s shirts, especially, have won fashion lovers with their refined style and perfect fit.</p>
@@ -2789,153 +2693,153 @@ export const CATEGORY_DATA = {
             <h4 class="seo-h4">Get Exciting Offers on Men’s Shirts at Beyoung</h4>
             <p>Buy shirts for men at Beyoung and enjoy up to 60% off! Along with that, enjoy free shipping, easy returns, secure payments, and unbeatable deals. With a wide range of colors, sizes, and styles, you're sure to find your new favorite shirt. Explore our collection today and discover men's trendy shirts at your fingertips. Beyoung also offers a combo deal. Make your own combo—pick any 2, 3, or 4 shirts in your favorite colors and sizes. For instance, the \"Pick Any 2 - Satin Shirts Combo\" is available at ₹1,649, reduced from ₹3,599, a 54% discount. Additionally, use the code \"BEYOUNG100\" to get ₹100 off on men's shirts when you spend more than ₹999. Our deals and coupons ensure you always get the best value while shopping. Find slim-fit, stylish shirts that match your unique style, all from the best online shopping site for clothes in India—Beyoung! See Less</p>
         `,
-    "faq": [
+    faq: [
       {
-        "q": "What sizes are available for Beyoung men's shirts?",
-        "a": "Beyoung Men’s shirts are typically available in sizes ranging from S to 2XL and beyond, ensuring options for a comfortable and tailored fit for every body type."
+        q: "What sizes are available for Beyoung men's shirts?",
+        a: "Beyoung Men’s shirts are typically available in sizes ranging from S to 2XL and beyond, ensuring options for a comfortable and tailored fit for every body type.",
       },
       {
-        "q": "What types of shirts are available at Beyoung?",
-        "a": "At Beyoung, you will get various types of shirts, including embroidered shirts, casual button-downs, flannel shirts, and linen shirts, offering options for both formal and casual occasions."
+        q: "What types of shirts are available at Beyoung?",
+        a: "At Beyoung, you will get various types of shirts, including embroidered shirts, casual button-downs, flannel shirts, and linen shirts, offering options for both formal and casual occasions.",
       },
       {
-        "q": "Which fabric is best for men’s shirts?",
-        "a": "Cotton is often considered one of the best fabrics for men’s shirts due to its breathability, comfort, and durability. Linen is also ideal for warmer climates, while blends offer wrinkle resistance."
+        q: "Which fabric is best for men’s shirts?",
+        a: "Cotton is often considered one of the best fabrics for men’s shirts due to its breathability, comfort, and durability. Linen is also ideal for warmer climates, while blends offer wrinkle resistance.",
       },
       {
-        "q": "What types of shirts are essential for a man’s wardrobe?",
-        "a": "Every man should own classic white and blue dress shirts. A versatile chambray or denim shirt, a short-sleeve button-up, and a timeless black shirt for versatile styling."
+        q: "What types of shirts are essential for a man’s wardrobe?",
+        a: "Every man should own classic white and blue dress shirts. A versatile chambray or denim shirt, a short-sleeve button-up, and a timeless black shirt for versatile styling.",
       },
       {
-        "q": "What are the different types of collars in shirts for men?",
-        "a": "Shirt collars include the classic point collar, spread collar, button-down collar, mandarin collar, and cutaway collar each adding a unique style to any outfit."
+        q: "What are the different types of collars in shirts for men?",
+        a: "Shirt collars include the classic point collar, spread collar, button-down collar, mandarin collar, and cutaway collar each adding a unique style to any outfit.",
       },
       {
-        "q": "Where can I buy stylish yet affordable shirts for men?",
-        "a": "You can buy trendy shirts online on Beyoung, which offers a wide range of stylish and affordable options."
+        q: "Where can I buy stylish yet affordable shirts for men?",
+        a: "You can buy trendy shirts online on Beyoung, which offers a wide range of stylish and affordable options.",
       },
       {
-        "q": "Are Beyoung shirts for men good for daily wear?",
-        "a": "Yes, Beyoung’s shirts are made with soft, breathable fabrics that make them perfect for daily wear whether you’re at work, college, or on a casual outing."
+        q: "Are Beyoung shirts for men good for daily wear?",
+        a: "Yes, Beyoung’s shirts are made with soft, breathable fabrics that make them perfect for daily wear whether you’re at work, college, or on a casual outing.",
       },
       {
-        "q": "Can I wear Beyoung shirts for both casual and formal occasions?",
-        "a": "Yes! Beyoung’s collection includes shirts suitable for office wear, weekend getaways, or festive looks, making them versatile wardrobe essentials."
+        q: "Can I wear Beyoung shirts for both casual and formal occasions?",
+        a: "Yes! Beyoung’s collection includes shirts suitable for office wear, weekend getaways, or festive looks, making them versatile wardrobe essentials.",
       },
       {
-        "q": "How do I care for my Beyoung shirts?",
-        "a": "Machine wash in cold water, avoid bleach, and dry in shade to keep your Beyoung shirts looking fresh and lasting longer."
+        q: "How do I care for my Beyoung shirts?",
+        a: "Machine wash in cold water, avoid bleach, and dry in shade to keep your Beyoung shirts looking fresh and lasting longer.",
       },
       {
-        "q": "Are Beyoung shirts for men affordable?",
-        "a": "Yes, Beyoung combines quality with affordability, offering stylish men’s shirts at pocket-friendly prices without compromising on comfort or design."
+        q: "Are Beyoung shirts for men affordable?",
+        a: "Yes, Beyoung combines quality with affordability, offering stylish men’s shirts at pocket-friendly prices without compromising on comfort or design.",
       },
       {
-        "q": "Where can I buy Beyoung shirts for men online?",
-        "a": "You can shop the latest collection of men’s shirts by Beyoung directly, where you’ll find exclusive offers and fast delivery options."
-      }
+        q: "Where can I buy Beyoung shirts for men online?",
+        a: "You can shop the latest collection of men’s shirts by Beyoung directly, where you’ll find exclusive offers and fast delivery options.",
+      },
     ],
-    "buttons": [
+    buttons: [
       {
-        "label": "View All",
-        "url": "/products?subCategory=Shirts"
+        label: "View All",
+        url: "/products?subCategory=Shirts",
       },
       {
-        "label": "Plain",
-        "url": "/products?specificType=Plain%20Shirts&subCategory=Shirts"
+        label: "Plain",
+        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Oxford",
-        "url": "/products?specificType=Oxford%20Shirts&subCategory=Shirts"
+        label: "Oxford",
+        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Flannel",
-        "url": "/products?specificType=Flannel%20Shirts&subCategory=Shirts"
+        label: "Flannel",
+        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Satin",
-        "url": "/products?specificType=Satin%20Shirts&subCategory=Shirts"
+        label: "Satin",
+        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "New Drops",
-        "url": "/shirts/new-drops"
+        label: "New Drops",
+        url: "/shirts/new-drops",
       },
       {
-        "label": "Festive",
-        "url": "/products?specificType=Festive%20Shirts&subCategory=Shirts"
+        label: "Festive",
+        url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
       },
       {
-        "label": "Corduroy",
-        "url": "/shirts/corduroy"
-      }
+        label: "Corduroy",
+        url: "/shirts/corduroy",
+      },
     ],
-    "price_table_data": [
+    price_table_data: [
       {
-        "product": "Pick Any 3 - Plain Cotton Shirts Combo",
-        "price": "₹1998"
+        product: "Pick Any 3 - Plain Cotton Shirts Combo",
+        price: "₹1998",
       },
       {
-        "product": "Pick Any 2 - Plain Cotton Shirts Combo",
-        "price": "₹1499"
+        product: "Pick Any 2 - Plain Cotton Shirts Combo",
+        price: "₹1499",
       },
       {
-        "product": "Navy Button Down Oxford Shirts",
-        "price": "₹899"
+        product: "Navy Button Down Oxford Shirts",
+        price: "₹899",
       },
       {
-        "product": "Dark Grey Button Down Oxford Shirts",
-        "price": "₹899"
+        product: "Dark Grey Button Down Oxford Shirts",
+        price: "₹899",
       },
       {
-        "product": "Beige Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Beige Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Maroon Recycled Checked Flannel Shirt",
-        "price": "₹998"
+        product: "Maroon Recycled Checked Flannel Shirt",
+        price: "₹998",
       },
       {
-        "product": "Beige Utility Shirt",
-        "price": "₹1199"
+        product: "Beige Utility Shirt",
+        price: "₹1199",
       },
       {
-        "product": "Military Green Waffle Button-Down Cotton Shirt",
-        "price": "₹998"
+        product: "Military Green Waffle Button-Down Cotton Shirt",
+        price: "₹998",
       },
       {
-        "product": "Lilac Dual Over Dyed Patch Pocket Shirt",
-        "price": "₹1299"
+        product: "Lilac Dual Over Dyed Patch Pocket Shirt",
+        price: "₹1299",
       },
       {
-        "product": "Navy Recycled Solid Flannel Shirt",
-        "price": "₹899"
+        product: "Navy Recycled Solid Flannel Shirt",
+        price: "₹899",
       },
       {
-        "product": "Beige Recycled Solid Flannel Shirt",
-        "price": "₹899"
+        product: "Beige Recycled Solid Flannel Shirt",
+        price: "₹899",
       },
       {
-        "product": "Mid Grey Jacquard Round Textured Shirt",
-        "price": "₹1199"
-      }
+        product: "Mid Grey Jacquard Round Textured Shirt",
+        price: "₹1199",
+      },
     ],
-    "filters": [
+    filters: [
       {
-        "id": "collection",
-        "label": "Collection",
-        "options": [
+        id: "collection",
+        label: "Collection",
+        options: [
           "Shirts Reimagined",
           "Flannel",
           "Oxford",
           "Satin",
           "Festive",
-          "Casual"
-        ]
+          "Casual",
+        ],
       },
       {
-        "id": "variants.color",
-        "label": "Color",
-        "options": [
+        id: "variants.color",
+        label: "Color",
+        options: [
           "Black",
           "Blue",
           "Brown",
@@ -2949,27 +2853,18 @@ export const CATEGORY_DATA = {
           "White",
           "Yellow",
           "Beige",
-          "Lilac"
-        ]
+          "Lilac",
+        ],
       },
       {
-        "id": "variants.sizes.size",
-        "label": "Size",
-        "options": [
-          "S",
-          "M",
-          "L",
-          "XL",
-          "XXL",
-          "XXXL",
-          "4XL",
-          "5XL"
-        ]
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
       },
       {
-        "id": "pattern",
-        "label": "Pattern",
-        "options": [
+        id: "pattern",
+        label: "Pattern",
+        options: [
           "Plain",
           "Solid",
           "Striped",
@@ -2978,13 +2873,13 @@ export const CATEGORY_DATA = {
           "Waffle",
           "Denim",
           "Flannel",
-          "Jacquard"
-        ]
+          "Jacquard",
+        ],
       },
       {
-        "id": "fabric",
-        "label": "Fabric",
-        "options": [
+        id: "fabric",
+        label: "Fabric",
+        options: [
           "Oxford",
           "Cotton",
           "Linen Blend",
@@ -2992,93 +2887,98 @@ export const CATEGORY_DATA = {
           "Satin",
           "Flannel",
           "Denim",
-          "Corduroy"
-        ]
+          "Corduroy",
+        ],
       },
       {
-        "id": "neck",
-        "label": "Neck/Collar",
-        "options": [
+        id: "neck",
+        label: "Neck/Collar",
+        options: [
           "Button Down Collar",
           "Classic Collar",
           "Stand Collar",
           "Spread Collar",
           "Mandarin Collar",
-          "Cuban Collar"
-        ]
+          "Cuban Collar",
+        ],
       },
       {
-        "id": "sleeves",
-        "label": "Sleeves",
-        "options": [
-          "Half Sleeves",
-          "Full Sleeves"
-        ]
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Half Sleeves", "Full Sleeves"],
       },
       {
-        "id": "fit",
-        "label": "Fit",
-        "options": [
-          "Regular Fit",
-          "Slim Fit",
-          "Oversized Fit",
-          "Shacket Fit"
-        ]
+        id: "fit",
+        label: "Fit",
+        options: ["Regular Fit", "Slim Fit", "Oversized Fit", "Shacket Fit"],
       },
       {
-        "id": "price_range",
-        "label": "Price Range",
-        "options": [
+        id: "price_range",
+        label: "Price Range",
+        options: [
           "₹800 - ₹999",
           "₹1000 - ₹1499",
           "₹500 - ₹799",
-          "₹1500 - ₹1999"
-        ]
+          "₹1500 - ₹1999",
+        ],
       },
       {
-        "id": "occasion",
-        "label": "Occasion",
-        "options": [
-          "Casual Wear",
-          "Formal Wear",
-          "Semi Casual"
-        ]
-      }
-    ]
+        id: "occasion",
+        label: "Occasion",
+        options: ["Casual Wear", "Formal Wear", "Semi Casual"],
+      },
+    ],
   },
-  
+
   "womens-topwear": {
-    "title": "Women's Clothing Collection",
-   
-    "price_table_data": [
-      { "product": "Dark Purple Rock and Roll HD Printed Oversized Tshirt for Women", "price": "₹699" },
-      { "product": "Mustard Striped Knitted T-Shirt for Women", "price": "₹749" },
-      { "product": "Black Striped Knitted T-Shirt for Women", "price": "₹749" },
-      { "product": "Dark Violet Blooming Puff Printed Oversized T-Shirt for Women", "price": "₹749" },
-      { "product": "Pink Oversized Zipper Polo T-shirt for Women", "price": "₹799" },
-      { "product": "Dark Blue Denim Jacket Shacket for Women", "price": "₹998" },
-      { "product": "Purple Cut And Sew Polo T-shirt for Women", "price": "₹899" },
-      { "product": "Teach Peace Printed Oversized T-shirt for Women", "price": "₹549" },
-      { "product": "Plain Burgundy Women Full Sleeves T-shirt", "price": "₹499" },
-      { "product": "Plain Navy Blue Women Full Sleeves T-shirt", "price": "₹499" },
-      { "product": "Black Womens Plain T-shirt", "price": "₹349" },
-      { "product": "Illusional Thoughts Printed Oversized T-shirt for Women", "price": "₹549" }
-    ],
-    "buttons": [
-      { "label": "View All", "url": "/womens-clothing/all" },
-      { "label": "Topwear", "url": "/womens-clothing/topwear" },
-      { "label": "Bottomwear", "url": "/womens-clothing/bottomwear" }
-    ],
-    "filters": [
+    title: "Women's Clothing Collection",
+
+    price_table_data: [
       {
-        "id": "clothing_type",
-        "label": "Type",
-        "options": ["Topwear", "Bottomwear"]
+        product:
+          "Dark Purple Rock and Roll HD Printed Oversized Tshirt for Women",
+        price: "₹699",
+      },
+      { product: "Mustard Striped Knitted T-Shirt for Women", price: "₹749" },
+      { product: "Black Striped Knitted T-Shirt for Women", price: "₹749" },
+      {
+        product:
+          "Dark Violet Blooming Puff Printed Oversized T-Shirt for Women",
+        price: "₹749",
       },
       {
-        "id": "variants.color",
-        "label": "Color",
-        "options": [
+        product: "Pink Oversized Zipper Polo T-shirt for Women",
+        price: "₹799",
+      },
+      { product: "Dark Blue Denim Jacket Shacket for Women", price: "₹998" },
+      { product: "Purple Cut And Sew Polo T-shirt for Women", price: "₹899" },
+      {
+        product: "Teach Peace Printed Oversized T-shirt for Women",
+        price: "₹549",
+      },
+      { product: "Plain Burgundy Women Full Sleeves T-shirt", price: "₹499" },
+      { product: "Plain Navy Blue Women Full Sleeves T-shirt", price: "₹499" },
+      { product: "Black Womens Plain T-shirt", price: "₹349" },
+      {
+        product: "Illusional Thoughts Printed Oversized T-shirt for Women",
+        price: "₹549",
+      },
+    ],
+    buttons: [
+      { label: "View All", url: "/womens-clothing/all" },
+      { label: "Topwear", url: "/womens-clothing/topwear" },
+      { label: "Bottomwear", url: "/womens-clothing/bottomwear" },
+    ],
+    filters: [
+      {
+        id: "clothing_type",
+        label: "Type",
+        options: ["Topwear", "Bottomwear"],
+      },
+      {
+        id: "variants.color",
+        label: "Color",
+        options: [
           "Black",
           "Blue",
           "Brown",
@@ -3092,61 +2992,73 @@ export const CATEGORY_DATA = {
           "White",
           "Yellow",
           "Beige",
-          "Lilac"
-        ]
+          "Lilac",
+        ],
       },
       {
-        "id": "variants.sizes.size",
-        "label": "Size",
-        "options": ["S", "M", "L", "XL", "XXL", "4XL", "5XL"]
+        id: "variants.sizes.size",
+        label: "Size",
+        options: ["S", "M", "L", "XL", "XXL", "4XL", "5XL"],
       },
       {
-        "id": "category",
-        "label": "Product Category",
-        "options": ["Boxers", "Full Sleeves", "Oversized", "Plain T-shirts", "Patterns", "Plain"]
+        id: "category",
+        label: "Product Category",
+        options: [
+          "Boxers",
+          "Full Sleeves",
+          "Oversized",
+          "Plain T-shirts",
+          "Patterns",
+          "Plain",
+        ],
       },
-      { "id": "fabric", "label": "Fabric", "options": ["Cotton"] },
-      { "id": "neck", "label": "Neck/Collar", "options": ["Round Neck"] },
+      { id: "fabric", label: "Fabric", options: ["Cotton"] },
+      { id: "neck", label: "Neck/Collar", options: ["Round Neck"] },
       {
-        "id": "sleeves",
-        "label": "Sleeves",
-        "options": ["Half", "Full"]
+        id: "sleeves",
+        label: "Sleeves",
+        options: ["Half", "Full"],
       },
-      { "id": "fit", "label": "Fit", "options": ["Regular Fit", "Relaxed Fit"] },
+      { id: "fit", label: "Fit", options: ["Regular Fit", "Relaxed Fit"] },
       {
-        "id": "occasion",
-        "label": "Occasion",
-        "options": ["Casual Wear", "Lounge Wear"]
-      },
-      {
-        "id": "combos",
-        "label": "Combos",
-        "options": ["Pack of 2", "Pack of 3", "Pick Any 2", "Pick Any 3", "Pick Any 4"]
+        id: "occasion",
+        label: "Occasion",
+        options: ["Casual Wear", "Lounge Wear"],
       },
       {
-        "id": "price_range",
-        "label": "Price Range",
-        "options": ["₹1000-1499", "₹299-499", "₹800-999"]
-      }
+        id: "combos",
+        label: "Combos",
+        options: [
+          "Pack of 2",
+          "Pack of 3",
+          "Pick Any 2",
+          "Pick Any 3",
+          "Pick Any 4",
+        ],
+      },
+      {
+        id: "price_range",
+        label: "Price Range",
+        options: ["₹1000-1499", "₹299-499", "₹800-999"],
+      },
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What is the best way to care for my printed oversized T-shirts?",
-        "a": "To keep your printed oversized T-shirts looking new, always wash them inside out on a gentle cycle with cold water. Avoid using harsh bleaches and skip the iron directly on the print. Air drying is recommended to maintain the fabric and the print integrity."
+        q: "What is the best way to care for my printed oversized T-shirts?",
+        a: "To keep your printed oversized T-shirts looking new, always wash them inside out on a gentle cycle with cold water. Avoid using harsh bleaches and skip the iron directly on the print. Air drying is recommended to maintain the fabric and the print integrity.",
       },
       {
-        "q": "Do you offer plus sizes in women's clothing?",
-        "a": "Yes! We believe fashion is for everyone. Our women's clothing collection is size-inclusive, and many of our items, especially t-shirts and outerwear, are available up to size 5XL."
+        q: "Do you offer plus sizes in women's clothing?",
+        a: "Yes! We believe fashion is for everyone. Our women's clothing collection is size-inclusive, and many of our items, especially t-shirts and outerwear, are available up to size 5XL.",
       },
       {
-        "q": "What is a Shacket and how can I style it?",
-        "a": "A Shacket is a combination of a shirt and a jacket (Shirt + Jacket). It's a versatile layering piece, typically made from heavier material like denim. You can style it over a simple t-shirt or tank top with jeans for a trendy, casual look, or use it as a light outer layer on cooler evenings."
+        q: "What is a Shacket and how can I style it?",
+        a: "A Shacket is a combination of a shirt and a jacket (Shirt + Jacket). It's a versatile layering piece, typically made from heavier material like denim. You can style it over a simple t-shirt or tank top with jeans for a trendy, casual look, or use it as a light outer layer on cooler evenings.",
       },
       {
-        "q": "Are the listed prices final?",
-        "a": "The prices listed, such as ₹699 or ₹749, are the current best prices. However, keep an eye out for our combo offers and special seasonal sales for additional savings, especially on our pack options like 'Pick Any 3'."
-      }
-    ]
-  }
-}
-;
+        q: "Are the listed prices final?",
+        a: "The prices listed, such as ₹699 or ₹749, are the current best prices. However, keep an eye out for our combo offers and special seasonal sales for additional savings, especially on our pack options like 'Pick Any 3'.",
+      },
+    ],
+  },
+};
