@@ -268,15 +268,14 @@ export default function EcommerceHeader() {
                       </MenuLink>
                       <ul className="space-y-2">
                         <li>
-                          <MenuLink
+                          <NavLink
                             filterKey="subCategory"
                             filterValue="Polos"
+                            to="/products?specificType=Polo%20T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
-                            <Link to="/products?specificType=Polo%20T-shirts">
-                              View All
-                            </Link>
-                          </MenuLink>
+                            View All
+                          </NavLink>
                         </li>
                       </ul>
                     </div>
