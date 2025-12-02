@@ -23,6 +23,10 @@ import AddressPage from "./pages/AddressPage";
 import PaymentPage from "./pages/PaymentPage";
 
 import ProductListingPage from "../src/components/ProductListing/ProductListingPage";
+import Login from "./auth/Login";
+import Signup from "./auth/Signup";
+import Verify from "./auth/Verify";
+import Verifyemail from "./auth/VerifyEmail";
 
 const App = () => {
   return (
