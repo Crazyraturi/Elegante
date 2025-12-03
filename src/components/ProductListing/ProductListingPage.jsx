@@ -8,12 +8,9 @@ import FilterSidebar from "./FilterSidebar";
 import CategoryDescription from "./CategoryDescription";
 import ProductCard from "./ProductCard";
 import SortDropdown from "./SortDropdown";
-
-// 1. --- NEW IMPORTS AND DATA RENAMING ---
 import { CATEGORY_DATA as TOPWEAR_DATA } from "./Tshirtdata.js";
 import { BOTTOMWEAR_DATA } from "./Bottomwear.js";
 import { Combos_DATA } from "./Combos.js";
-// 🚨 FIX 1: Import WinterWear_DATA and NewArrival_DATA
 import { WinterWear_DATA } from "./WinterWear.js";
 import { NewArrival_DATA } from "./NewArrival.js";
 
@@ -132,11 +129,6 @@ export default function ProductListingPage() {
 
     const filterParams = new URLSearchParams();
 
-    // ------------------------------------------------------------------
-    // API FILTER LOGIC START
-    // ------------------------------------------------------------------
-
-    // 1. Logic for Women's Sections
     if (
       internalDataSlug.startsWith("women-") ||
       categoryQuery?.toLowerCase() === "women"
@@ -149,25 +141,17 @@ export default function ProductListingPage() {
       } else if (internalDataSlug.includes("bottomwear")) {
         filterParams.append("specificType", "Bottomwear");
       }
-    }
-    // 2. Logic for Men's/General specificType slugs (includes New Arrivals buttons that use specificType)
-    else if (specificType) {
-      // 🚨 NEW LOGIC: Apply 15-day filter if specificType is New_Arrival (from top buttons)
+    } else if (specificType) {
       if (specificType.toLowerCase() === "new_arrival") {
         const fifteenDaysAgo = new Date(
           Date.now() - 15 * 24 * 60 * 60 * 1000
         ).toISOString();
         filterParams.append("createdAt_gte", fifteenDaysAgo);
-
-        // Use mainCategory to target the broad New Arrivals collection
         filterParams.append("mainCategory", "New Arrivals");
-
-        // Apply productType filter (e.g., Shirt) if present
         if (productTypeQuery) {
           filterParams.append("subCategory", productTypeQuery);
         }
       } else {
-        // Existing logic for Topwear specific types (Plain T-shirts, Flannel Shirts, etc.)
         let actualSubCategoryValue;
         const normalizedSpecificType = specificType.toLowerCase();
 

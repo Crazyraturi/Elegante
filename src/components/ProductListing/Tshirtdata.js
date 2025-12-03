@@ -1,5 +1,3 @@
-// File: Tshirtdata.js
-
 export const CATEGORY_DATA = {
   "plain-t-shirts": {
     title: "Plain Tshirts for Men",

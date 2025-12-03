@@ -3,7 +3,7 @@ import SuperSavingCombos from "../components/Home/SuperSavingCombos";
 import MostWantedCategories from "../components/Home/MostWantedCategories";
 import Newlaunched from "../components/Home/Newlaunched";
 import Exclusive from "../components/Home/Exclusive";
-import Testemonials from "../components/Home/Testemonials";
+import Testimonials from "../components/Home/Testimonials";
 import NewArrival from "../components/Home/NewArrival";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
       <MostWantedCategories />
       <Newlaunched />
       <Exclusive />
-      <Testemonials />
+      <Testimonials />
       <NewArrival />
     </div>
   );
