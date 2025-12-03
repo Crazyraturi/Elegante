@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import c1 from "../../assets/Combos.png";
 import c2 from "../../assets/Flannel_Shirts.png";
 import c3 from "../../assets/Korean_Pants.png";
@@ -21,7 +20,6 @@ const CarouselSlide = ({ slide }) => (
 export default function FlannelCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Placeholder images - replace with your actual image imports
   const slides = [
     { image: c1, alt: "Combos" },
     { image: c2, alt: "Flannel Shirts" },
@@ -49,9 +47,7 @@ export default function FlannelCarousel() {
       {/* Carousel */}
       <div className="relative">
         <CarouselSlide slide={slides[currentSlide]} />
-        
-  
-        
+
         {/* Dots Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
           {slides.map((_, index) => (
