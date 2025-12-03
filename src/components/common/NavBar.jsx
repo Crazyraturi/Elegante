@@ -10,12 +10,17 @@ import { useAuth } from "../../../src/context/AuthContext";
 ------------------------------------------------------------------ */
 
 // Generic link wrapper
-const MenuLink = ({ filterKey, filterValue, children, className = "", onClick }) => (
+const MenuLink = ({
+  filterKey,
+  filterValue,
+  children,
+  className = "",
+  onClick,
+}) => (
   <Link
     to={`/products?${filterKey}=${encodeURIComponent(filterValue)}`}
     className={className}
-    onClick={onClick}
-  >
+    onClick={onClick}>
     {children}
   </Link>
 );
@@ -103,20 +108,25 @@ export default function EcommerceHeader() {
     <div className="text-[14px] font-medium">
       {isAuthenticated ? (
         <>
-          <NavLink to="/my-account" className="hover:underline">MY ACCOUNT</NavLink>
+          <NavLink to="/my-account" className="hover:underline">
+            MY ACCOUNT
+          </NavLink>
           <span> / </span>
           <button
             onClick={handleLogout}
-            className="hover:underline bg-transparent p-0"
-          >
+            className="hover:underline bg-transparent p-0">
             LOGOUT
           </button>
         </>
       ) : (
         <>
-          <NavLink to="/login" className="hover:underline">LOG IN</NavLink>
+          <NavLink to="/login" className="hover:underline">
+            LOG IN
+          </NavLink>
           <span> / </span>
-          <NavLink to="/signup" className="hover:underline">SIGNUP</NavLink>
+          <NavLink to="/signup" className="hover:underline">
+            SIGNUP
+          </NavLink>
         </>
       )}
     </div>
@@ -127,7 +137,6 @@ export default function EcommerceHeader() {
   ------------------------------------------------------------------ */
   return (
     <div className="w-full sticky top-0 z-50">
-
       {/* Top Banner */}
       <div className="bg-black text-white py-2 flex justify-around items-center h-[38px] text-sm">
         <div>Free Shipping Sitewide on Every Order, Don't Miss Out!!</div>
@@ -138,7 +147,6 @@ export default function EcommerceHeader() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-
             {/* Logo */}
             <Link to="/" className="text-2xl font-bold">
               <Logo />
@@ -146,23 +154,24 @@ export default function EcommerceHeader() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-
               {/* TOPWEAR DROPDOWN */}
               <div className="relative group">
-                <MenuLink filterKey="category" filterValue="Topwear" className="flex items-center text-sm font-semibold">
-                  TOPWEAR <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
+                <MenuLink
+                  filterKey="category"
+                  filterValue="Topwear"
+                  className="flex items-center text-sm font-semibold">
+                  TOPWEAR{" "}
+                  <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
                 </MenuLink>
 
                 <div className="absolute left-0 mt-2 w-[700px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                   <div className="grid grid-cols-4 gap-4 p-4">
-
                     {topwearData.map((col, idx) => (
                       <div key={idx}>
                         <MenuLink
                           filterKey={col.key}
                           filterValue={col.title}
-                          className="font-bold mb-3 block text-sm"
-                        >
+                          className="font-bold mb-3 block text-sm">
                           {col.title}
                         </MenuLink>
 
@@ -170,10 +179,13 @@ export default function EcommerceHeader() {
                           {col.items.map((item, i) => (
                             <li key={i}>
                               <MenuLink
-                                filterKey={col.key === "gender" ? "subCategory" : "specificType"}
+                                filterKey={
+                                  col.key === "gender"
+                                    ? "subCategory"
+                                    : "specificType"
+                                }
                                 filterValue={item}
-                                className="text-sm text-gray-600 hover:text-gray-900"
-                              >
+                                className="text-sm text-gray-600 hover:text-gray-900">
                                 {item}
                               </MenuLink>
                             </li>
@@ -182,23 +194,25 @@ export default function EcommerceHeader() {
                             <MenuLink
                               filterKey={col.key}
                               filterValue={col.title}
-                              className="text-sm text-gray-600 font-semibold"
-                            >
+                              className="text-sm text-gray-600 font-semibold">
                               View All
                             </MenuLink>
                           </li>
                         </ul>
                       </div>
                     ))}
-
                   </div>
                 </div>
               </div>
 
               {/* BOTTOMWEAR DROPDOWN */}
               <div className="relative group">
-                <MenuLink filterKey="category" filterValue="Bottomwear" className="flex items-center text-sm font-semibold">
-                  BOTTOMWEAR <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
+                <MenuLink
+                  filterKey="category"
+                  filterValue="Bottomwear"
+                  className="flex items-center text-sm font-semibold">
+                  BOTTOMWEAR{" "}
+                  <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
                 </MenuLink>
 
                 <div className="absolute left-0 mt-2 w-[180px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
@@ -208,8 +222,7 @@ export default function EcommerceHeader() {
                         <MenuLink
                           filterKey="subCategory"
                           filterValue={type}
-                          className="text-sm text-gray-600 hover:text-gray-900"
-                        >
+                          className="text-sm text-gray-600 hover:text-gray-900">
                           {type}
                         </MenuLink>
                       </li>
@@ -224,12 +237,10 @@ export default function EcommerceHeader() {
                   key={cat}
                   filterKey="category"
                   filterValue={cat}
-                  className="text-sm font-semibold"
-                >
+                  className="text-sm font-semibold">
                   {cat.toUpperCase()}
                 </MenuLink>
               ))}
-
             </nav>
 
             {/* Right Icons */}
@@ -238,7 +249,9 @@ export default function EcommerceHeader() {
                 <Search className="w-5 h-5 text-gray-700" />
               </Link>
 
-              <Link to="/cart" className="relative p-2 hover:bg-gray-100 rounded-full">
+              <Link
+                to="/cart"
+                className="relative p-2 hover:bg-gray-100 rounded-full">
                 <ShoppingCart className="w-5 h-5 text-gray-700" />
                 {cartItems.length > 0 && (
                   <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex justify-center items-center">
@@ -250,8 +263,7 @@ export default function EcommerceHeader() {
               {/* Mobile Toggle */}
               <button
                 className="md:hidden p-2"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                 {mobileMenuOpen ? <X /> : <Menu />}
               </button>
             </div>
@@ -262,19 +274,22 @@ export default function EcommerceHeader() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t">
             <div className="px-4 py-4 space-y-3">
-              {["Topwear", "Bottomwear", "Combos", "New Arrivals", "Winterwear"].map(
-                (cat) => (
-                  <MenuLink
-                    key={cat}
-                    filterKey="category"
-                    filterValue={cat}
-                    onClick={closeMenu}
-                    className="block py-2 font-medium"
-                  >
-                    {cat.toUpperCase()}
-                  </MenuLink>
-                )
-              )}
+              {[
+                "Topwear",
+                "Bottomwear",
+                "Combos",
+                "New Arrivals",
+                "Winterwear",
+              ].map((cat) => (
+                <MenuLink
+                  key={cat}
+                  filterKey="category"
+                  filterValue={cat}
+                  onClick={closeMenu}
+                  className="block py-2 font-medium">
+                  {cat.toUpperCase()}
+                </MenuLink>
+              ))}
 
               <div className="pt-3 border-t">
                 {isAuthenticated ? (
@@ -282,15 +297,13 @@ export default function EcommerceHeader() {
                     <NavLink
                       to="/my-account"
                       onClick={closeMenu}
-                      className="block py-2 text-sm"
-                    >
+                      className="block py-2 text-sm">
                       MY ACCOUNT
                     </NavLink>
 
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left py-2 text-sm"
-                    >
+                      className="block w-full text-left py-2 text-sm">
                       LOGOUT
                     </button>
                   </>
@@ -298,8 +311,7 @@ export default function EcommerceHeader() {
                   <NavLink
                     to="/login"
                     onClick={closeMenu}
-                    className="block py-2 text-sm"
-                  >
+                    className="block py-2 text-sm">
                     LOG IN / SIGNUP
                   </NavLink>
                 )}
