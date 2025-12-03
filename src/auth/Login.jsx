@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 import {
   Card,
   CardContent,
@@ -15,7 +18,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
 
-
 const Login = () => {
   const [showPassword, setshowPassword] = useState(false);
   const [loading, setloading] = useState(false);
@@ -24,6 +26,7 @@ const Login = () => {
     password: "",
   });
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,23 +35,36 @@ const Login = () => {
       [name]: value,
     }));
   };
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+
+    if (params.get("verifyEmail") === "sent") {
+      toast.success(
+        "A verification email has been sent. Please check your inbox."
+      );
+    }
+
+    if (params.get("verified") === "true") {
+      toast.success("Your email has been verified! You can now login.");
+    }
+  }, [location]);
 
   const submitHandler = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
     // console.log(formData);
     // Simple client-side validation check
     if (!formData.email || !formData.password) {
-        toast.error("All fields are required.");
-        return;
+      toast.error("All fields are required.");
+      return;
     }
 
     // Basic password strength check (can be enhanced)
     if (formData.password.length < 6) {
-        toast.error("Password must be at least 6 characters long.");
-        return;
+      toast.error("Password must be at least 6 characters long.");
+      return;
     }
     try {
-      setloading(true)
+      setloading(true);
       const res = await axios.post(
         `https://beyoung-backend.onrender.com/api/v1/user/login`,
         formData,
@@ -59,33 +75,37 @@ const Login = () => {
         }
       );
       if (res.data.success) {
-          toast.success(res.data.message || "Registration successful! Check your email for verification.");
-          navigate("/");
+        toast.success(res.data.message || "Login successful!");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message
-)
-   
-    }
-    finally{
-      setloading(false)
+      toast.error(error.response.data.message);
+
+      if (
+        error.response?.data?.message ===
+        "Please verify your email before logging in."
+      ) {
+        toast.error("Please verify your email before logging in.");
+      } else {
+        toast.error(error.response?.data?.message || "Something went wrong.");
+      }
+    } finally {
+      setloading(false);
     }
   };
 
   return (
-       <div className="flex justify-center items-center min-h-screen bg-amber-50">
+    <div className="flex justify-center items-center min-h-screen bg-amber-50">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle>Login  your account</CardTitle>
+          <CardTitle>Login your account</CardTitle>
           <CardDescription>
             Enter given details below to Login your account
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-6">
-         
-
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -133,7 +153,14 @@ const Login = () => {
             onClick={submitHandler}
             type="submit"
             className="w-full cursor-pointer bg-amber-300 hover:bg-amber-400 ">
-            {loading?<><Loader2 className="h-4 w-4 animate-spin mr-2"/>please wait</>:"login"} 
+            {loading ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                please wait
+              </>
+            ) : (
+              "login"
+            )}
           </Button>
           <p className="text-grey-600 text-sm">
             Don't have an account ?{" "}
@@ -146,7 +173,7 @@ const Login = () => {
         </CardFooter>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

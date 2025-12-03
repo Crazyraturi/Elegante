@@ -61,7 +61,7 @@ const Signup = () => {
       );
       if (res.data.success) {
           toast.success(res.data.message || "Registration successful! Check your email for verification.");
-          navigate("/verify");
+          navigate("/login?verifyEmail=sent");
       }
     } catch (error) {
       console.log(error);
