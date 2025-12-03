@@ -9,12 +9,12 @@ import re6 from "../../assets/rohit_review.png";
 import re7 from "../../assets/manoj_review.png";
 import re8 from "../../assets/harsul_review.png";
 import re9 from "../../assets/ayan_review.png";
-import logo1 from "../../assets/ist_logo.png"
-import logo2 from "../../assets/inc42_logo.png"
-import logo3 from "../../assets/bwdisrupt_logo.png"
-import logo4 from "../../assets/theeconomics_logo.png"
-import logo5 from "../../assets/timesofindia_logo.png"
-import logo6 from "../../assets/fasionnetwork_logo.png"
+import logo1 from "../../assets/ist_logo.png";
+import logo2 from "../../assets/inc42_logo.png";
+import logo3 from "../../assets/bwdisrupt_logo.png";
+import logo4 from "../../assets/theeconomics_logo.png";
+import logo5 from "../../assets/timesofindia_logo.png";
+import logo6 from "../../assets/fasionnetwork_logo.png";
 
 const Testemonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -81,7 +81,8 @@ const Testemonials = () => {
         <button
           onClick={prevSlide}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
-          aria-label="Previous review">
+          aria-label="Previous review"
+        >
           <ChevronLeft className="w-6 h-6" />
         </button>
 
@@ -91,9 +92,8 @@ const Testemonials = () => {
             {getVisibleReviews().map((review, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-         
-
+                className="bg-white border border-gray-200 rounded-lg overflow-hidden"
+              >
                 {/* Product Image */}
                 <div className=" bg-gray-100">
                   <img
@@ -111,7 +111,8 @@ const Testemonials = () => {
         <button
           onClick={nextSlide}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
-          aria-label="Next review">
+          aria-label="Next review"
+        >
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
@@ -128,19 +129,19 @@ const Testemonials = () => {
             <span className="w-[8vw]">
               <img src={logo1} alt="" />
             </span>
-           <span className="w-[5vw]">
+            <span className="w-[5vw]">
               <img src={logo2} alt="" />
             </span>
             <span className="w-[5vw]">
               <img src={logo3} alt="" />
             </span>
-           <span className="w-[8vw]">
+            <span className="w-[8vw]">
               <img src={logo4} alt="" />
             </span>
-               <span className="w-[8vw]">
+            <span className="w-[8vw]">
               <img src={logo5} alt="" />
             </span>
-               <span className="w-[8vw]">
+            <span className="w-[8vw]">
               <img src={logo6} alt="" />
             </span>
           </div>

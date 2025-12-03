@@ -3,566 +3,318 @@ import { CartContext } from "../../../src/context/CartContext";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
 import Logo from "../icons/Logo";
+import { useAuth } from "../../../src/context/AuthContext";
 
-// --- Reusable Menu Link Component ---
+/* ------------------------------------------------------------------
+   REUSABLE COMPONENTS
+------------------------------------------------------------------ */
+
+// Generic link wrapper
 const MenuLink = ({
   filterKey,
   filterValue,
   children,
   className = "",
   onClick,
-}) => {
-  // Generates URLs like: /products?specificType=Plain%20T-shirts
-  return (
-    <Link
-      to={`/products?${filterKey}=${encodeURIComponent(filterValue)}`}
-      className={className}
-      onClick={onClick}
-    >
-      {children}
-    </Link>
-  );
-};
+}) => (
+  <Link
+    to={`/products?${filterKey}=${encodeURIComponent(filterValue)}`}
+    className={className}
+    onClick={onClick}>
+    {children}
+  </Link>
+);
 
-// --- Standard Nav Link Component for static routes (New) ---
-const NavLink = ({ to, children, className = "", onClick }) => {
-  return (
-    <Link to={to} className={className} onClick={onClick}>
-      {children}
-    </Link>
-  );
-};
+// Static route link
+const NavLink = ({ to, children, className = "", onClick }) => (
+  <Link to={to} className={className} onClick={onClick}>
+    {children}
+  </Link>
+);
+
+/* ------------------------------------------------------------------
+   DROPDOWN DATA (removes repetitive JSX)
+------------------------------------------------------------------ */
+
+const topwearData = [
+  {
+    title: "T-shirts",
+    key: "subCategory",
+    items: [
+      "Plain T-shirts",
+      "Printed T-shirts",
+      "Regular Fit T-shirts",
+      "Oversized T-shirts",
+      "Polo T-shirts",
+      "Plus Size T-shirts",
+      "Full Sleeve T-shirts",
+    ],
+  },
+  {
+    title: "Shirts",
+    key: "subCategory",
+    items: [
+      "Plain Shirts",
+      "Shackets",
+      "Oxford Shirts",
+      "Flannel Shirts",
+      "Satin Shirts",
+      "Festive Shirts",
+      "Cotton Shirts",
+    ],
+  },
+  {
+    title: "Polos",
+    key: "subCategory",
+    items: ["Polo T-shirts"],
+  },
+  {
+    title: "Shop For Women",
+    key: "gender",
+    items: ["Women-Topwear", "Women-Bottomwear"],
+  },
+];
+
+const bottomwearTypes = [
+  "Cargo Joggers",
+  "Cargo Pants",
+  "Trousers",
+  "Japanese Pants",
+  "Gurkha Pants",
+  "Korean Pants",
+  "Pyjamas",
+  "Jeans",
+  "Shorts",
+  "Boxers",
+];
+
+/* ------------------------------------------------------------------
+   MAIN HEADER COMPONENT
+------------------------------------------------------------------ */
 
 export default function EcommerceHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { cartItems } = useContext(CartContext);
+  const { isAuthenticated, logout } = useAuth();
 
-  // Helper function to close the mobile menu after navigation
-  const handleLinkClick = () => {
-    setMobileMenuOpen(false);
+  const closeMenu = () => setMobileMenuOpen(false);
+
+  const handleLogout = () => {
+    logout();
+    closeMenu();
   };
 
+  const TopBannerLinks = () => (
+    <div className="text-[14px] font-medium">
+      {isAuthenticated ? (
+        <>
+          <NavLink to="/my-account" className="hover:underline">
+            MY ACCOUNT
+          </NavLink>
+          <span> / </span>
+          <button
+            onClick={handleLogout}
+            className="hover:underline bg-transparent p-0">
+            LOGOUT
+          </button>
+        </>
+      ) : (
+        <>
+          <NavLink to="/login" className="hover:underline">
+            LOG IN
+          </NavLink>
+          <span> / </span>
+          <NavLink to="/signup" className="hover:underline">
+            SIGNUP
+          </NavLink>
+        </>
+      )}
+    </div>
+  );
+
+  /* ------------------------------------------------------------------
+      RENDER START
+  ------------------------------------------------------------------ */
   return (
     <div className="w-full sticky top-0 z-50">
       {/* Top Banner */}
-      <div className="bg-black text-white text-center py-2 text-sm flex justify-around items-center h-[38px]">
+      <div className="bg-black text-white py-2 flex justify-around items-center h-[38px] text-sm">
         <div>Free Shipping Sitewide on Every Order, Don't Miss Out!!</div>
-        <div className="text-[14px] font-medium">
-          {/* Converted to Link for LOG IN/SIGNUP */}
-          <Link to="/login" className="cursor-pointer">
-            LOG IN
-          </Link>
-          <span> / </span>
-          <Link to="/signup" className="cursor-pointer">
-            SIGNUP
-          </Link>
-        </div>
+        <TopBannerLinks />
       </div>
 
       {/* Main Header */}
       <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="shrink-0">
-              <h1 className="text-2xl font-bold tracking-tight">
-                <Link to="/">
-                  <Logo />
-                </Link>
-              </h1>
-            </div>
+            <Link to="/" className="text-2xl font-bold">
+              <Logo />
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              {/* TOPWEAR with dropdown */}
+              {/* TOPWEAR DROPDOWN */}
               <div className="relative group">
-                {/* TOPWEAR button: Use a MenuLink to filter by Category=Topwear */}
                 <MenuLink
                   filterKey="category"
                   filterValue="Topwear"
-                  className="flex items-center space-x-1 text-black-700 hover:text-gray-900 transition-colors"
-                >
-                  <span className="text-[14px] font-semibold">TOPWEAR</span>
-                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                  className="flex items-center text-sm font-semibold">
+                  TOPWEAR{" "}
+                  <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
                 </MenuLink>
 
-                {/* Dropdown Menu (Mega Menu) */}
-                <div className="absolute left-0 top-full mt-2 w-[700px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200 ">
-                  <div className="grid grid-cols-4 gap-0 p-4">
-                    {/* T-shirts Column - ALREADY USING MenuLink */}
-                    <div>
-                      {/* Sub Category Title/Link: Filters by subCategory=T-shirts */}
-                      <MenuLink
-                        filterKey="subCategory"
-                        filterValue="T-shirts"
-                        className="font-bold text-gray-900 mb-3 text-sm block"
-                      >
-                        T-shirts
-                      </MenuLink>
+                <div className="absolute left-0 mt-2 w-[700px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <div className="grid grid-cols-4 gap-4 p-4">
+                    {topwearData.map((col, idx) => (
+                      <div key={idx}>
+                        <MenuLink
+                          filterKey={col.key}
+                          filterValue={col.title}
+                          className="font-bold mb-3 block text-sm">
+                          {col.title}
+                        </MenuLink>
 
-                      <ul className="space-y-2">
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Plain T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Plain T-shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Printed T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Printed T-shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Regular Fit T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Regular Fit T-shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Oversized T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Oversized T-shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Polo T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Polo T-shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Plus Size T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Plus Size T-shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Full Sleeve T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Full Sleeve T-shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="subCategory"
-                            filterValue="T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
-                          >
-                            View All
-                          </MenuLink>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* Shirts Column - CONVERTED TO MenuLink */}
-                    <div>
-                      {/* Title/Link: Filters by subCategory=Shirts */}
-                      <MenuLink
-                        filterKey="subCategory"
-                        filterValue="Shirts"
-                        className="font-bold text-gray-900 mb-3 text-sm block"
-                      >
-                        Shirts
-                      </MenuLink>
-                      <ul className="space-y-2">
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Plain Shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Plain Shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Shackets"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Shackets
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Oxford Shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Oxford Shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Flannel Shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Flannel Shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Satin Shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Satin Shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Festive Shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Festive Shirts
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Cotton Shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Cotton Shirts
-                          </MenuLink>
-                        </li>
-
-                        <li>
-                          <MenuLink
-                            filterKey="subCategory"
-                            filterValue="Shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
-                          >
-                            View All
-                          </MenuLink>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* Polos Column - CONVERTED TO MenuLink */}
-                    <div>
-                      {/* Title/Link: Filters by subCategory=Polos */}
-                      <MenuLink
-                        filterKey="subCategory"
-                        filterValue="Polos"
-                        className="font-bold text-gray-900 mb-3 text-sm block"
-                      >
-                        Polos
-                      </MenuLink>
-                      <ul className="space-y-2">
-                        <li>
-                          {/* FIX: Convert NavLink to MenuLink for filter consistency */}
-                          <MenuLink
-                            filterKey="specificType"
-                            filterValue="Polo T-shirts"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
-                          >
-                            View All
-                          </MenuLink>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* Shop For Women Column - CONVERTED TO MenuLink */}
-                    <div>
-                      {/* Title/Link: Filters by gender=Women */}
-                      <MenuLink
-                        filterKey="gender"
-                        filterValue="Women"
-                        className="font-bold text-gray-900 mb-3 text-sm block"
-                      >
-                        Shop For Women
-                      </MenuLink>
-                      <ul className="space-y-2">
-                        <li>
-                          <MenuLink
-                            filterKey="subCategory"
-                            filterValue="Women-Topwear"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Topwear
-                          </MenuLink>
-                        </li>
-                        <li>
-                          <MenuLink
-                            filterKey="subCategory"
-                            filterValue="Women-Bottomwear"
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                          >
-                            Bottomwear
-                          </MenuLink>
-                        </li>
-                        <li>
-                          {/* FIX: Use 'category=women' to correctly trigger the 'women-clothing-view-all' slug */}
-                          <MenuLink
-                            filterKey="category" // <-- FIX IS HERE
-                            filterValue="women" // <-- FIX IS HERE
-                            className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
-                          >
-                            View All
-                          </MenuLink>
-                        </li>
-                      </ul>
-                    </div>
+                        <ul className="space-y-2">
+                          {col.items.map((item, i) => (
+                            <li key={i}>
+                              <MenuLink
+                                filterKey={
+                                  col.key === "gender"
+                                    ? "subCategory"
+                                    : "specificType"
+                                }
+                                filterValue={item}
+                                className="text-sm text-gray-600 hover:text-gray-900">
+                                {item}
+                              </MenuLink>
+                            </li>
+                          ))}
+                          <li>
+                            <MenuLink
+                              filterKey={col.key}
+                              filterValue={col.title}
+                              className="text-sm text-gray-600 font-semibold">
+                              View All
+                            </MenuLink>
+                          </li>
+                        </ul>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-              {/* BOTTOMWEAR with dropdown - CONVERTED TO MenuLink */}
+
+              {/* BOTTOMWEAR DROPDOWN */}
               <div className="relative group">
-                {/* BOTTOMWEAR button: Use a MenuLink to filter by Category=Bottomwear */}
                 <MenuLink
                   filterKey="category"
                   filterValue="Bottomwear"
-                  className="flex items-center space-x-1 text-black-700 hover:text-gray-900 transition-colors"
-                >
-                  <span className="text-[14px] font-semibold">BOTTOMWEAR</span>
-                  <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                  className="flex items-center text-sm font-semibold">
+                  BOTTOMWEAR{" "}
+                  <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform" />
                 </MenuLink>
 
-                {/* Dropdown Menu */}
-                <div className="absolute left-0 top-full mt-2 w-[150px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200">
-                  <div className="p-4">
-                    <ul className="space-y-2">
-                      {/* FIXED ALL BOTTOMWEAR LINKS to use filterKey="subCategory" */}
-                      <li>
+                <div className="absolute left-0 mt-2 w-[180px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <ul className="p-4 space-y-2">
+                    {bottomwearTypes.map((type) => (
+                      <li key={type}>
                         <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Cargo Joggers"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Cargo Joggers
+                          filterKey="subCategory"
+                          filterValue={type}
+                          className="text-sm text-gray-600 hover:text-gray-900">
+                          {type}
                         </MenuLink>
                       </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Cargo Pants"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Cargo Pants
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Trousers"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Trousers
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Japanese Pants"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Japanese Pants
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Gurkha Pants"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Gurkha Pants
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Korean Pants"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Korean Pants
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Pyjamas"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Pyjamas
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Jeans"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Jeans
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Shorts"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Shorts
-                        </MenuLink>
-                      </li>
-                      <li>
-                        <MenuLink
-                          filterKey="subCategory" // <-- FIX APPLIED
-                          filterValue="Boxers"
-                          className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                          Boxers
-                        </MenuLink>
-                      </li>
-                    </ul>
-                  </div>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              {/* COMBOS */}
-              <MenuLink
-                filterKey="category"
-                filterValue="Combos"
-                className="text-black-700 text-[14px] font-semibold"
-              >
-                COMBOS
-              </MenuLink>
-              {/* NEW ARRIVALS */}
-              <MenuLink
-                filterKey="category"
-                filterValue="New Arrivals"
-                className="text-black-700 text-[14px] font-semibold"
-              >
-                NEW ARRIVALS
-              </MenuLink>
-              {/* WINTERWEAR - Changed from <Link> to MenuLink to use category filter */}
-              <MenuLink
-                filterKey="category"
-                filterValue="Winterwear" // This value will map to the 'winter_wear' slug in PLP
-                className="text-black-700 text-[14px] font-semibold"
-              >
-                WINTERWEAR
-              </MenuLink>
+
+              {/* SINGLE LINKS */}
+              {["Combos", "New Arrivals", "Winterwear"].map((cat) => (
+                <MenuLink
+                  key={cat}
+                  filterKey="category"
+                  filterValue={cat}
+                  className="text-sm font-semibold">
+                  {cat.toUpperCase()}
+                </MenuLink>
+              ))}
             </nav>
 
-            {/* Right Side Actions - Link to /search added */}
+            {/* Right Icons */}
             <div className="flex items-center space-x-4">
-              {/* Search Icon */}
-              <Link
-                to="/search"
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-              >
+              <Link to="/search" className="p-2 hover:bg-gray-100 rounded-full">
                 <Search className="w-5 h-5 text-gray-700" />
               </Link>
 
-              {/* Cart Icon with Badge */}
-              <Link to="/cart">
-                <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-                  <ShoppingCart className="w-5 h-5 text-gray-700" />
-                  {cartItems.length > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                      {cartItems.length}
-                    </span>
-                  )}
-                </button>
+              <Link
+                to="/cart"
+                className="relative p-2 hover:bg-gray-100 rounded-full">
+                <ShoppingCart className="w-5 h-5 text-gray-700" />
+                {cartItems.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex justify-center items-center">
+                    {cartItems.length}
+                  </span>
+                )}
               </Link>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Toggle */}
               <button
-                className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? (
-                  <X className="w-6 h-6 text-gray-700" />
-                ) : (
-                  <Menu className="w-6 h-6 text-gray-700" />
-                )}
+                className="md:hidden p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                {mobileMenuOpen ? <X /> : <Menu />}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Menu - CONVERTED ALL LINKS AND ADDED handleLinkClick */}
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200">
+          <div className="md:hidden border-t">
             <div className="px-4 py-4 space-y-3">
-              {/* TOPWEAR */}
-              <MenuLink
-                filterKey="category"
-                filterValue="Topwear"
-                onClick={handleLinkClick} // Close menu on navigation
-                className="block py-2 text-gray-900 hover:text-gray-900 font-bold"
-              >
-                TOPWEAR
-              </MenuLink>
-              {/* BOTTOMWEAR */}
-              <MenuLink
-                filterKey="category"
-                filterValue="Bottomwear"
-                onClick={handleLinkClick}
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
-              >
-                BOTTOMWEAR
-              </MenuLink>
-              {/* COMBOS */}
-              <MenuLink
-                filterKey="category"
-                filterValue="Combos"
-                onClick={handleLinkClick}
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
-              >
-                COMBOS
-              </MenuLink>
-              {/* NEW ARRIVALS */}
-              <MenuLink
-                filterKey="category"
-                filterValue="New Arrivals"
-                onClick={handleLinkClick}
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
-              >
-                NEW ARRIVALS
-              </MenuLink>
-              {/* WINTERWEAR - Changed from NavLink to MenuLink */}
-              <MenuLink
-                filterKey="category"
-                filterValue="Winterwear"
-                onClick={handleLinkClick}
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
-              >
-                WINTERWEAR
-              </MenuLink>
-              <div className="pt-3 border-t border-gray-200">
-                {/* LOG IN / SIGNUP */}
-                <NavLink
-                  to="/login"
-                  onClick={handleLinkClick}
-                  className="block py-2 text-sm text-gray-700 hover:text-gray-900"
-                >
-                  LOG IN / SIGNUP
-                </NavLink>
+              {[
+                "Topwear",
+                "Bottomwear",
+                "Combos",
+                "New Arrivals",
+                "Winterwear",
+              ].map((cat) => (
+                <MenuLink
+                  key={cat}
+                  filterKey="category"
+                  filterValue={cat}
+                  onClick={closeMenu}
+                  className="block py-2 font-medium">
+                  {cat.toUpperCase()}
+                </MenuLink>
+              ))}
+
+              <div className="pt-3 border-t">
+                {isAuthenticated ? (
+                  <>
+                    <NavLink
+                      to="/my-account"
+                      onClick={closeMenu}
+                      className="block py-2 text-sm">
+                      MY ACCOUNT
+                    </NavLink>
+
+                    <button
+                      onClick={handleLogout}
+                      className="block w-full text-left py-2 text-sm">
+                      LOGOUT
+                    </button>
+                  </>
+                ) : (
+                  <NavLink
+                    to="/login"
+                    onClick={closeMenu}
+                    className="block py-2 text-sm">
+                    LOG IN / SIGNUP
+                  </NavLink>
+                )}
               </div>
             </div>
           </div>

@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { useAuth } from "@/context/AuthContext"; // Import remains correct
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,6 +28,7 @@ const Login = () => {
   });
   const navigate = useNavigate();
   const location = useLocation();
+  const { login } = useAuth(); // Correctly accessing the login function
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +37,7 @@ const Login = () => {
       [name]: value,
     }));
   };
+  
   useEffect(() => {
     const params = new URLSearchParams(location.search);
 
@@ -51,14 +54,14 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // console.log(formData);
+    
     // Simple client-side validation check
     if (!formData.email || !formData.password) {
       toast.error("All fields are required.");
       return;
     }
 
-    // Basic password strength check (can be enhanced)
+    // Basic password strength check 
     if (formData.password.length < 6) {
       toast.error("Password must be at least 6 characters long.");
       return;
@@ -74,21 +77,28 @@ const Login = () => {
           },
         }
       );
+      
       if (res.data.success) {
         toast.success(res.data.message || "Login successful!");
-        navigate("/");
+        
+        // 🔑 KEY CHANGE: Call the context's login function 
+        // with the token (accessToken) and user data.
+        if (res.data.accessToken && res.data.user) {
+            login(res.data.accessToken, res.data.user);
+        }
+
+        navigate("/"); // Redirect to the home page
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message);
+      
+      // Improved error handling
+      const errorMessage = error.response?.data?.message || "Something went wrong.";
 
-      if (
-        error.response?.data?.message ===
-        "Please verify your email before logging in."
-      ) {
+      if (errorMessage.includes("verify your account")) {
         toast.error("Please verify your email before logging in.");
       } else {
-        toast.error(error.response?.data?.message || "Something went wrong.");
+        toast.error(errorMessage);
       }
     } finally {
       setloading(false);
@@ -135,13 +145,13 @@ const Login = () => {
                 />
                 {showPassword ? (
                   <EyeOff
-                    className="w-5 h-5 text-grey-700 absolute bottom-2 right-5  "
+                    className="w-5 h-5 text-grey-700 absolute bottom-2 right-5"
                     onClick={() => setshowPassword(false)}
                   />
                 ) : (
                   <Eye
                     onClick={() => setshowPassword(true)}
-                    className="w-5 h-5 text-grey-700 absolute bottom-2 right-5  "
+                    className="w-5 h-5 text-grey-700 absolute bottom-2 right-5"
                   />
                 )}
               </div>

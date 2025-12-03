@@ -27,6 +27,7 @@ import Login from "./auth/Login";
 import Signup from "./auth/Signup";
 import Verify from "./auth/Verify";
 import Verifyemail from "./auth/VerifyEmail";
+import MyAccount from "./pages/MyAccount";
 
 const App = () => {
   return (
@@ -53,13 +54,13 @@ const App = () => {
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/verify" element={<Verify />} />
           <Route path="/verify/:token" element={<Verifyemail />} />
 
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/details" element={<BlogDetailPage />} />
 
           <Route path="/products" element={<ProductListingPage />} />
+          <Route path="/my-account" element={<MyAccount />} />
 
           <Route
             path="/products?specificType=Polo%20T-shirts"
