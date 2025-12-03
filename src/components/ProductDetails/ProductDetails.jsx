@@ -7,7 +7,7 @@ import {
   Wallet,
   ChevronDown,
   ChevronUp,
-  CheckCircle, // Added for the success pop-up icon
+  CheckCircle,
 } from "lucide-react";
 
 // --- Asset Imports (Assumed Paths) ---
@@ -33,10 +33,196 @@ const StarIcon = (props) => (
   </svg>
 );
 
+// --- NEW: ComboSelector Component ---
+function ComboSelector({ product, addToCart, navigate }) {
+  // Determine the number of selections needed based on the combo title (e.g., "Pick Any 4")
+  const comboCountMatch = product.title.match(/Pick Any (\d+)/i);
+  const comboCount = comboCountMatch ? parseInt(comboCountMatch[1], 10) : 4;
+
+  const initialSelections = Array.from({ length: comboCount }, (_, i) => ({
+    color: "",
+    size: "",
+    productId: product._id,
+  }));
+
+  const [selections, setSelections] = useState(initialSelections);
+  const allColors = product.variants.map((v) => v.color);
+
+  // Collect all unique sizes available across all variants
+  const uniqueSizes = [
+    ...new Set(product.variants.flatMap((v) => v.sizes.map((s) => s.size))),
+  ].sort((a, b) => {
+    // Basic sorting: S, M, L, XL, XXL
+    const order = ["S", "M", "L", "XL", "XXL", "XXXL"];
+    const indexA = order.indexOf(a.toUpperCase());
+    const indexB = order.indexOf(b.toUpperCase());
+    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+    return a.localeCompare(b);
+  });
+
+  const handleChange = (index, field, value) => {
+    setSelections((prev) =>
+      prev.map((item, i) => (i === index ? { ...item, [field]: value } : item))
+    );
+  };
+
+  const isComboValid = selections.every((sel) => sel.color && sel.size);
+
+  const handleAddToCartCombo = () => {
+    if (!isComboValid) {
+      alert("Please select a Color and Size for all items in the combo.");
+      return;
+    }
+
+    // Find the price data (using the first variant as combo prices are usually uniform)
+    const priceData = product.variants[0]?.price || {};
+    const totalDiscountedPrice = priceData.discounted;
+    const totalOriginalPrice = priceData.original;
+
+    // Calculate price per item
+    const pricePerItem = totalDiscountedPrice / comboCount;
+    const originalPricePerItem = totalOriginalPrice / comboCount;
+
+    const comboItems = selections.map((selection, index) => {
+      const variantImage = product.images.preview;
+      const uniqueId = `${selection.productId}-${selection.color}-${selection.size}-${index}`;
+
+      return {
+        id: uniqueId,
+        productId: selection.productId,
+        title: `${product.title} - Item ${index + 1} (${selection.color}, ${
+          selection.size
+        })`,
+        price: pricePerItem,
+        originalPrice: originalPricePerItem,
+        image: variantImage,
+        color: selection.color,
+        size: selection.size,
+        isComboItem: true,
+        parentComboId: product._id,
+      };
+    });
+
+    comboItems.forEach((item) => addToCart(item));
+
+    // Show a success pop-up (This requires passing setShowPopup from ProductPage)
+    // Since setShowPopup is not passed down, we use the simple alert for functionality
+    // alert(`${comboCount} items added to cart!`);
+
+    // Re-trigger the parent's pop-up state if needed (not implemented here for simplicity)
+  };
+
+  const itemNumbers = Array.from({ length: comboCount }, (_, i) => i + 1);
+
+  return (
+    <div className="p-4 border-2 rounded-xl border-dashed border-gray-300 bg-gray-50 mb-6">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl font-semibold text-gray-800">
+          Select Your {comboCount} Items
+        </h2>
+        <button className="text-blue-600 hover:text-blue-700 flex items-center gap-1 text-sm">
+          Size Guide
+          <span className="text-lg">›</span>
+        </button>
+      </div>
+
+      {/* Selection Grid */}
+      <div className="space-y-4 mb-6">
+        {itemNumbers.map((num, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-2 gap-4 border-b pb-4 last:border-b-0 last:pb-0"
+          >
+            <h3 className="col-span-2 text-md font-medium text-gray-700">
+              Item {num}
+            </h3>
+
+            {/* Color Select */}
+            <div>
+              <label className="block text-sm font-medium text-gray-500 mb-1">
+                Color
+              </label>
+              <div className="relative">
+                <select
+                  value={selections[index].color}
+                  onChange={(e) => handleChange(index, "color", e.target.value)}
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm"
+                >
+                  <option value="">Select Color</option>
+                  {allColors.map((color) => (
+                    <option key={color} value={color}>
+                      {color}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <ChevronDown className="w-4 h-4 text-gray-400" />
+                </div>
+              </div>
+            </div>
+
+            {/* Size Select */}
+            <div>
+              <label className="block text-sm font-medium text-gray-500 mb-1">
+                Size
+              </label>
+              <div className="relative">
+                <select
+                  value={selections[index].size}
+                  onChange={(e) => handleChange(index, "size", e.target.value)}
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm"
+                >
+                  <option value="">Select Size</option>
+                  {uniqueSizes.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <ChevronDown className="w-4 h-4 text-gray-400" />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Action Buttons */}
+      <div className="flex gap-2">
+        <button
+          onClick={handleAddToCartCombo}
+          disabled={!isComboValid}
+          className={`flex-1 text-white py-3 font-semibold rounded-lg transition ${
+            !isComboValid
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-[#212121] hover:bg-black"
+          }`}
+        >
+          <ShoppingCart className="inline w-5 h-5 mr-2" />
+          {`ADD ${comboCount} ITEMS TO CART`}
+        </button>
+
+        <button
+          disabled={!isComboValid}
+          className={`flex-1 text-[#212121] py-3 font-semibold rounded-lg transition ${
+            !isComboValid
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-[#ffdd00] hover:bg-[#e6c700]"
+          }`}
+        >
+          BUY NOW
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function ProductPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addToCart, cartItems } = useContext(CartContext); // Added cartItems for potential badge context
+  const { addToCart, cartItems } = useContext(CartContext);
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -45,7 +231,7 @@ export default function ProductPage() {
   const [selectedSize, setSelectedSize] = useState("");
   const [pincode, setPincode] = useState("");
   const [openSection, setOpenSection] = useState(null);
-  const [showPopup, setShowPopup] = useState(false); // NEW: State for the success pop-up
+  const [showPopup, setShowPopup] = useState(false);
 
   const toggle = (key) => {
     setOpenSection(openSection === key ? null : key);
@@ -65,7 +251,11 @@ export default function ProductPage() {
           const productData = json.data;
           setProduct(productData);
 
-          if (productData.variants?.length > 0) {
+          // Only set default color/size for non-combo products
+          if (
+            productData.mainCategory !== "Combos" &&
+            productData.variants?.length > 0
+          ) {
             const defaultVariant = productData.variants[0];
             setSelectedColor(defaultVariant.color);
 
@@ -99,6 +289,9 @@ export default function ProductPage() {
       </div>
     );
 
+  // Combo check
+  const isComboProduct = product.mainCategory === "Combos";
+
   const rawGallery = product.images?.gallery || [];
   const validGalleryImages = rawGallery
     .map((item) => item.file)
@@ -108,6 +301,7 @@ export default function ProductPage() {
     Boolean
   );
 
+  // If it's a combo, we use the first variant's details as a general reference for price/sizes
   const activeVariant =
     product.variants.find((v) => v.color === selectedColor) ||
     product.variants[0];
@@ -115,18 +309,18 @@ export default function ProductPage() {
   const priceData = activeVariant?.price || {};
   const availableSizes = activeVariant?.sizes || [];
 
-  // Check if a size is selected and available
+  // Logic for non-combo products
   const isSizeSelected = selectedSize !== "";
   const isSelectedSizeInStock =
     availableSizes.find((s) => s.size === selectedSize)?.stock > 0;
   const isAvailable = isSizeSelected && isSelectedSizeInStock;
 
-  // Find the unique ID for the specific variant/size combination (Optional, but good practice)
+  // Find the unique ID for the specific variant/size combination
   const selectedVariantId =
     availableSizes.find((s) => s.size === selectedSize)?._id?.$oid ||
     `${id}-${selectedColor}-${selectedSize}`;
 
-  // --- ADD TO CART HANDLER FUNCTION ---
+  // --- ADD TO CART HANDLER FUNCTION (FOR NON-COMBO PRODUCTS) ---
   const handleAddToCart = () => {
     // 1. Validation check
     if (!selectedColor) {
@@ -262,91 +456,109 @@ export default function ProductPage() {
               <img src={PDI} className="w-full h-auto object-contain" />
             </div>
 
-            {/* Colors */}
-            <div className="mb-6">
-              <div className="flex justify-between items-center mb-2">
-                <label className="text-sm font-medium">
-                  Color:{" "}
-                  <span className="text-gray-600 font-bold">
-                    {selectedColor}
-                  </span>
-                </label>
-              </div>
+            {/* --- Conditional Rendering for Combo vs. Single Product --- */}
+            {isComboProduct ? (
+              // RENDER COMBO SELECTOR
+              <ComboSelector
+                product={product}
+                addToCart={addToCart}
+                navigate={navigate}
+              />
+            ) : (
+              // RENDER STANDARD SELECTORS AND BUTTONS
+              <>
+                {/* Colors */}
+                <div className="mb-6">
+                  <div className="flex justify-between items-center mb-2">
+                    <label className="text-sm font-medium">
+                      Color:{" "}
+                      <span className="text-gray-600 font-bold">
+                        {selectedColor}
+                      </span>
+                    </label>
+                  </div>
 
-              <div className="flex gap-3">
-                {product.variants.map((variant) => (
+                  <div className="flex gap-3">
+                    {product.variants.map((variant) => (
+                      <button
+                        key={variant._id.$oid}
+                        onClick={() => {
+                          setSelectedColor(variant.color);
+                          setSelectedSize(
+                            variant.sizes?.length > 0
+                              ? variant.sizes[0].size
+                              : ""
+                          );
+                          setSelectedImageIndex(0);
+                        }}
+                        className={`w-10 h-10 rounded-full border-2 ${
+                          selectedColor === variant.color
+                            ? "border-black ring-2 ring-offset-1 ring-gray-300"
+                            : "border-gray-300"
+                        }`}
+                        style={{ backgroundColor: variant.color.toLowerCase() }}
+                      ></button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Sizes */}
+                <div className="mb-6">
+                  <label className="text-sm font-medium mb-2 block">
+                    Size:
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {availableSizes.length > 0 ? (
+                      availableSizes.map((sizeObj) => (
+                        <button
+                          key={sizeObj._id?.$oid || sizeObj.size}
+                          onClick={() => setSelectedSize(sizeObj.size)}
+                          disabled={sizeObj.stock <= 0}
+                          className={`px-6 py-2 border rounded transition-all ${
+                            selectedSize === sizeObj.size
+                              ? "border-black bg-black text-white"
+                              : "border-gray-300 hover:border-black"
+                          } ${
+                            sizeObj.stock <= 0
+                              ? "opacity-50 cursor-not-allowed bg-gray-100 line-through"
+                              : ""
+                          }`}
+                        >
+                          {sizeObj.size}
+                        </button>
+                      ))
+                    ) : (
+                      <span className="text-red-500 text-sm">
+                        No sizes available for this color
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-2 mb-6">
                   <button
-                    key={variant._id.$oid}
-                    onClick={() => {
-                      setSelectedColor(variant.color);
-                      setSelectedSize(
-                        variant.sizes?.length > 0 ? variant.sizes[0].size : ""
-                      );
-                      setSelectedImageIndex(0);
-                    }}
-                    className={`w-10 h-10 rounded-full border-2 ${
-                      selectedColor === variant.color
-                        ? "border-black ring-2 ring-offset-1 ring-gray-300"
-                        : "border-gray-300"
+                    onClick={handleAddToCart}
+                    disabled={!isAvailable}
+                    className={`flex-1 text-white py-3 font-semibold rounded-lg transition ${
+                      !isAvailable
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-[#212121] hover:bg-black"
                     }`}
-                    style={{ backgroundColor: variant.color.toLowerCase() }}
-                  ></button>
-                ))}
-              </div>
-            </div>
+                  >
+                    <ShoppingCart className="inline w-5 h-5 mr-2" />
+                    {isAvailable ? "ADD TO CART" : "SELECT SIZE"}
+                  </button>
 
-            {/* Sizes */}
-            <div className="mb-6">
-              <label className="text-sm font-medium mb-2 block">Size:</label>
-              <div className="flex flex-wrap gap-2">
-                {availableSizes.length > 0 ? (
-                  availableSizes.map((sizeObj) => (
-                    <button
-                      key={sizeObj._id?.$oid || sizeObj.size}
-                      onClick={() => setSelectedSize(sizeObj.size)}
-                      disabled={sizeObj.stock <= 0}
-                      className={`px-6 py-2 border rounded transition-all ${
-                        selectedSize === sizeObj.size
-                          ? "border-black bg-black text-white"
-                          : "border-gray-300 hover:border-black"
-                      } ${
-                        sizeObj.stock <= 0
-                          ? "opacity-50 cursor-not-allowed bg-gray-100 line-through"
-                          : ""
-                      }`}
-                    >
-                      {sizeObj.size}
-                    </button>
-                  ))
-                ) : (
-                  <span className="text-red-500 text-sm">
-                    No sizes available for this color
-                  </span>
-                )}
-              </div>
-            </div>
+                  <button className="flex-1 bg-[#ffdd00] text-[#212121] py-3 font-semibold rounded-lg hover:bg-[#e6c700] transition">
+                    BUY NOW
+                  </button>
+                </div>
+              </>
+            )}
+            {/* --- End Conditional Rendering --- */}
 
-            {/* Buttons */}
-            <div className="flex gap-2 mb-6">
-              <button
-                onClick={handleAddToCart}
-                disabled={!isAvailable}
-                className={`flex-1 text-white py-3 font-semibold rounded-lg transition ${
-                  !isAvailable
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-[#212121] hover:bg-black"
-                }`}
-              >
-                <ShoppingCart className="inline w-5 h-5 mr-2" />
-                {isAvailable ? "ADD TO CART" : "SELECT SIZE"}
-              </button>
-
-              <button className="flex-1 bg-[#ffdd00] text-[#212121] py-3 font-semibold rounded-lg hover:bg-[#e6c700] transition">
-                BUY NOW
-              </button>
-            </div>
-
-            {/* Delivery */}
+            {/* Delivery (This now follows EITHER the ComboSelector OR the standard buttons) */}
             <div className="mt-6 p-4 rounded-lg bg-gray-50">
               <div className="font-medium mb-2">Check Delivery Date</div>
               <div className="flex gap-2">
@@ -387,7 +599,7 @@ export default function ProductPage() {
               <img src={Reward} alt="Reward Image" />
             </div>
 
-            {/* PRODUCT DETAILS Sections (omitted for brevity) */}
+            {/* PRODUCT DETAILS Sections */}
             {/* ... (Sections 1-5 here) ... */}
             <div className="mt-10">
               <h2 className="text-xl font-bold mb-4">Product Details</h2>
@@ -550,7 +762,7 @@ export default function ProductPage() {
         <RecentlyViewed />
       </div>
 
-      {/* --- NEW: Product Added Pop-up --- */}
+      {/* --- Product Added Pop-up --- */}
       <div
         className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-300 transform z-9999 
           ${
