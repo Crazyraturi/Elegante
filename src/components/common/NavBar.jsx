@@ -5,12 +5,19 @@ import { Search, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
 import Logo from "../icons/Logo";
 
 // --- Reusable Menu Link Component ---
-const MenuLink = ({ filterKey, filterValue, children, className = "" }) => {
+const MenuLink = ({
+  filterKey,
+  filterValue,
+  children,
+  className = "",
+  onClick,
+}) => {
   // Generates URLs like: /products?specificType=Plain%20T-shirts
   return (
     <Link
       to={`/products?${filterKey}=${encodeURIComponent(filterValue)}`}
       className={className}
+      onClick={onClick}
     >
       {children}
     </Link>
@@ -18,9 +25,9 @@ const MenuLink = ({ filterKey, filterValue, children, className = "" }) => {
 };
 
 // --- Standard Nav Link Component for static routes (New) ---
-const NavLink = ({ to, children, className = "" }) => {
+const NavLink = ({ to, children, className = "", onClick }) => {
   return (
-    <Link to={to} className={className}>
+    <Link to={to} className={className} onClick={onClick}>
       {children}
     </Link>
   );
@@ -268,14 +275,14 @@ export default function EcommerceHeader() {
                       </MenuLink>
                       <ul className="space-y-2">
                         <li>
-                          <NavLink
-                            filterKey="subCategory"
-                            filterValue="Polos"
-                            to="/products?specificType=Polo%20T-shirts"
+                          {/* FIX: Convert NavLink to MenuLink for filter consistency */}
+                          <MenuLink
+                            filterKey="specificType"
+                            filterValue="Polo T-shirts"
                             className="text-sm text-gray-600 hover:text-gray-900 transition-colors font-semibold"
                           >
                             View All
-                          </NavLink>
+                          </MenuLink>
                         </li>
                       </ul>
                     </div>
@@ -435,7 +442,7 @@ export default function EcommerceHeader() {
                   </div>
                 </div>
               </div>
-              {/* Assuming COMBOS and NEW ARRIVALS might link to a filtered products page */}
+              {/* COMBOS */}
               <MenuLink
                 filterKey="category"
                 filterValue="Combos"
@@ -443,6 +450,7 @@ export default function EcommerceHeader() {
               >
                 COMBOS
               </MenuLink>
+              {/* NEW ARRIVALS */}
               <MenuLink
                 filterKey="category"
                 filterValue="New Arrivals"
@@ -450,12 +458,14 @@ export default function EcommerceHeader() {
               >
                 NEW ARRIVALS
               </MenuLink>
-              <Link
-                to="/men-winterwear"
+              {/* WINTERWEAR - Changed from <Link> to MenuLink to use category filter */}
+              <MenuLink
+                filterKey="category"
+                filterValue="Winterwear" // This value will map to the 'winter_wear' slug in PLP
                 className="text-black-700 text-[14px] font-semibold"
               >
                 WINTERWEAR
-              </Link>
+              </MenuLink>
             </nav>
 
             {/* Right Side Actions - Link to /search added */}
@@ -535,14 +545,15 @@ export default function EcommerceHeader() {
               >
                 NEW ARRIVALS
               </MenuLink>
-              {/* WINTERWEAR */}
-              <NavLink
-                to="/men-winterwear"
+              {/* WINTERWEAR - Changed from NavLink to MenuLink */}
+              <MenuLink
+                filterKey="category"
+                filterValue="Winterwear"
                 onClick={handleLinkClick}
                 className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
               >
                 WINTERWEAR
-              </NavLink>
+              </MenuLink>
               <div className="pt-3 border-t border-gray-200">
                 {/* LOG IN / SIGNUP */}
                 <NavLink
