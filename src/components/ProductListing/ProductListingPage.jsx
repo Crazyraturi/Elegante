@@ -12,6 +12,10 @@ import SortDropdown from "./SortDropdown";
 // 1. --- NEW IMPORTS AND DATA RENAMING ---
 import { CATEGORY_DATA as TOPWEAR_DATA } from "./Tshirtdata.js";
 import { BOTTOMWEAR_DATA } from "./Bottomwear.js";
+import { Combos_DATA } from "./Combos.js";
+// 🚨 FIX 1: Import WinterWear_DATA and NewArrival_DATA
+import { WinterWear_DATA } from "./WinterWear.js";
+import { NewArrival_DATA } from "./NewArrival.js";
 
 const API_BASE_URL = "https://beyoung-backend.onrender.com/api/v1/product";
 
@@ -67,8 +71,8 @@ export default function ProductListingPage() {
   const specificType = searchParams.get("specificType");
   const subCategoryQuery = searchParams.get("subCategory");
   const categoryQuery = searchParams.get("category");
+  const productTypeQuery = searchParams.get("productType");
 
-  // Logic to determine the content slug (e.g., 'women-topwear' or 'women-clothing-view-all')
   const internalDataSlug = useMemo(() => {
     if (specificType) return specificType.toLowerCase().replace(/ /g, "-");
     if (subCategoryQuery)
@@ -81,9 +85,29 @@ export default function ProductListingPage() {
   const pageContent = useMemo(() => {
     const ALL_CATEGORY_DATA = {
       ...TOPWEAR_DATA,
-      ...BOTTOMWEAR_DATA, // Merge your new data here
+      ...BOTTOMWEAR_DATA,
+      ...Combos_DATA,
+      // 🚨 FIX 2: Merge the new data objects to make their slugs available
+      ...WinterWear_DATA,
+      ...NewArrival_DATA,
     };
-    return ALL_CATEGORY_DATA[internalDataSlug];
+
+    const normalizedSlug = internalDataSlug.replace(/-/g, "_");
+
+    // Check for "New Arrivals" specifically, which comes as `category=new arrivals`
+    if (normalizedSlug === "new_arrivals") {
+      return ALL_CATEGORY_DATA["new_arrival"];
+    }
+
+    // Check for "Winterwear" specifically, which comes as `category=winterwear` or `specificType=winter_wear` (from TopButtons)
+    if (normalizedSlug === "winter_wear" || normalizedSlug === "winterwear") {
+      return ALL_CATEGORY_DATA["winter_wear"];
+    }
+
+    // Use the normalized slug for all other lookups (e.g., 'plain_t-shirts')
+    return (
+      ALL_CATEGORY_DATA[normalizedSlug] || ALL_CATEGORY_DATA[internalDataSlug]
+    );
   }, [internalDataSlug]);
   // ---------------------------------------------
 
@@ -112,11 +136,11 @@ export default function ProductListingPage() {
     // API FILTER LOGIC START
     // ------------------------------------------------------------------
 
+    // 1. Logic for Women's Sections
     if (
       internalDataSlug.startsWith("women-") ||
       categoryQuery?.toLowerCase() === "women"
     ) {
-      // Logic for Women's Sections (Unchanged)
       filterParams.append("gender", "Women");
       filterParams.append("subCategory", "Shop For Women");
 
@@ -125,53 +149,80 @@ export default function ProductListingPage() {
       } else if (internalDataSlug.includes("bottomwear")) {
         filterParams.append("specificType", "Bottomwear");
       }
-    } else if (specificType) {
-      // Logic for Men's/General specificType slugs (ONLY used for Topwear detailed links now)
-      let actualSubCategoryValue;
-      const normalizedSpecificType = specificType.toLowerCase();
+    }
+    // 2. Logic for Men's/General specificType slugs (includes New Arrivals buttons that use specificType)
+    else if (specificType) {
+      // 🚨 NEW LOGIC: Apply 15-day filter if specificType is New_Arrival (from top buttons)
+      if (specificType.toLowerCase() === "new_arrival") {
+        const fifteenDaysAgo = new Date(
+          Date.now() - 15 * 24 * 60 * 60 * 1000
+        ).toISOString();
+        filterParams.append("createdAt_gte", fifteenDaysAgo);
 
-      if (
-        normalizedSpecificType.includes("t-shirts") ||
-        normalizedSpecificType.includes("polo")
-      ) {
-        actualSubCategoryValue = "T-shirts";
-      } else if (
-        normalizedSpecificType.includes("shirt") ||
-        normalizedSpecificType.includes("shacket")
-      ) {
-        actualSubCategoryValue = "Shirts";
+        // Use mainCategory to target the broad New Arrivals collection
+        filterParams.append("mainCategory", "New Arrivals");
+
+        // Apply productType filter (e.g., Shirt) if present
+        if (productTypeQuery) {
+          filterParams.append("subCategory", productTypeQuery);
+        }
       } else {
-        // Fallback for any other specificType that isn't clearly Topwear or Bottomwear
-        actualSubCategoryValue = "T-shirts";
+        // Existing logic for Topwear specific types (Plain T-shirts, Flannel Shirts, etc.)
+        let actualSubCategoryValue;
+        const normalizedSpecificType = specificType.toLowerCase();
+
+        if (
+          normalizedSpecificType.includes("t-shirts") ||
+          normalizedSpecificType.includes("polo")
+        ) {
+          actualSubCategoryValue = "T-shirts";
+        } else if (
+          normalizedSpecificType.includes("shirt") ||
+          normalizedSpecificType.includes("shacket")
+        ) {
+          actualSubCategoryValue = "Shirts";
+        } else {
+          actualSubCategoryValue = "T-shirts";
+        }
+
+        filterParams.append("subCategory", actualSubCategoryValue);
+        filterParams.append("specificType", specificType);
       }
-
-      filterParams.append("subCategory", actualSubCategoryValue);
-      filterParams.append("specificType", specificType);
-    } else if (subCategoryQuery) {
-      // 🚨 FIXED LOGIC: This now handles all Men's links that use subCategory,
-      // including specific items like 'Trousers' and 'Jeans' from the NavBar.
-
-      // The API is expected to use the value of subCategoryQuery (e.g., "Cargo Joggers")
-      // to filter the products.
+    }
+    // 3. Logic for subCategory queries (Bottomwear specific items)
+    else if (subCategoryQuery) {
       filterParams.append("subCategory", subCategoryQuery);
-    } else if (categoryQuery) {
-      // Logic for broad category queries (like category=Bottomwear, category=Combos)
-      // The API must be able to handle these broad queries (e.g., returning all bottomwear)
+    }
+    // 4. Logic for broad category queries (like category=Bottomwear, category=Combos, category=New Arrivals)
+    else if (categoryQuery) {
       const normalizedCategory = categoryQuery.toLowerCase();
 
       if (normalizedCategory === "bottomwear") {
         filterParams.append("mainCategory", "Bottomwear");
       } else if (
         normalizedCategory === "combos" ||
-        normalizedCategory === "new arrivals"
+        // 🚨 ADDED LOGIC: Handle "New Arrivals" and "Winterwear" category queries
+        normalizedCategory === "new arrivals" ||
+        normalizedCategory === "winterwear"
       ) {
-        filterParams.append("category", categoryQuery);
+        // FIX: Use 'mainCategory' instead of 'category' to align with the product data structure
+        filterParams.append("mainCategory", categoryQuery);
+
+        // 🚨 NEW LOGIC: Apply 15-day filter for main New Arrivals category link
+        // Temporarily set to 30 days to bypass the time zone error
+        const thirtyDaysAgo = new Date(
+          Date.now() - 30 * 24 * 60 * 60 * 1000
+        ).toISOString();
+        filterParams.append("createdAt_gte", thirtyDaysAgo);
+
+        // The restrictive 'subCategory' filter for Winterwear has been removed.
       } else {
         // Default to Topwear or similar if category is unknown
         filterParams.append("subCategory", "T-shirts");
       }
-    } else {
-      // Fallback for non-specific calls (default Men's category)
+    }
+    // 5. Fallback
+    else {
       filterParams.append("subCategory", "T-shirts");
     }
 
@@ -183,7 +234,8 @@ export default function ProductListingPage() {
         key !== "specificType" &&
         key !== "category" &&
         key !== "gender" &&
-        key !== "mainCategory"
+        key !== "mainCategory" &&
+        key !== "productType"
       ) {
         filterParams.append(key, value);
       }
@@ -223,8 +275,8 @@ export default function ProductListingPage() {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname, internalDataSlug]);
+    setSelectedFilters({});
+  }, [internalDataSlug]);
 
   useEffect(() => {
     fetchFilteredProducts();
@@ -402,7 +454,42 @@ export default function ProductListingPage() {
         <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4"
           onClick={handleClosePopup}
-        ></div>
+        >
+          <div
+            className="bg-white p-8 rounded-lg shadow-2xl max-w-sm w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-bold text-gray-900">
+                Login/Signup Required
+              </h3>
+              <button
+                onClick={handleClosePopup}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <p className="mb-4 text-sm text-gray-600">
+              Please enter your phone number to login or signup and add items to
+              your wishlist.
+            </p>
+            <input
+              type="tel"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              placeholder="Enter 10-digit Phone Number"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 mb-4"
+            />
+            <button
+              onClick={handleLogin}
+              disabled={phoneNumber.length !== 10}
+              className="w-full bg-yellow-400 text-gray-900 font-semibold py-3 rounded-lg hover:bg-yellow-500 transition-colors disabled:opacity-60"
+            >
+              CONTINUE
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
