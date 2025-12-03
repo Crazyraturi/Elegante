@@ -1,5 +1,3 @@
-// File: Tshirtdata.js
-
 export const CATEGORY_DATA = {
   "plain-t-shirts": {
     title: "Plain Tshirts for Men",
@@ -1567,14 +1565,12 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-
   "plain-shirts": {
     title: "Plain Shirts",
     description_short:
       "Explore Beyoung's complete collection of men's shirts. Crafted from diverse fabrics and tailored in multiple fits, find everything from essential Plain shirts and classic Oxfords to trend-forward Flannels and Shackets. Effortlessly stylish and always comfortable.",
     description_long: "", // Empty as per request structure
     faq: [], // Empty as per request structure
-
     buttons: [
       { label: "View All", url: "/products?subCategory=Shirts" },
       { label: "Plain", url: "/products?specificType=Plain%20Shirts" },
@@ -1593,8 +1589,6 @@ export const CATEGORY_DATA = {
         url: "/products?specificType=Plain%20Shirts&sleeves=Full%20Sleeves",
       },
     ],
-
-    // ⭐️ Price Table Data Array (Master List) ⭐️
     price_table_data: [
       { product: "Pick Any 3 - Plain Cotton Shirts Combo", price: "₹1998" },
       { product: "Pick Any 2 - Plain Cotton Shirts Combo", price: "₹1499" },
@@ -2000,7 +1994,6 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-
   "cotton-shirts": {
     title: "Cotton Shirts for Men",
 
@@ -2154,7 +2147,6 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-
   "flannel-shirts": {
     title: "Flannel Shirts for Men",
 
@@ -2311,7 +2303,6 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-
   "festive-shirts": {
     title: "Festive Shirts for Men",
 
@@ -2479,7 +2470,6 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-
   shackets: {
     title: "Shackets for Men",
     description_short:
@@ -2678,7 +2668,6 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-
   shirts: {
     title: "Shirts for Men",
     description_short:
@@ -3040,7 +3029,6 @@ export const CATEGORY_DATA = {
       },
     ],
   },
-
   "women-topwear": {
     title: "Women's Clothing",
     description_short:
