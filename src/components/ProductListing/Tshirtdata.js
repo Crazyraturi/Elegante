@@ -1,3 +1,5 @@
+// File: Tshirtdata.js
+
 export const CATEGORY_DATA = {
   "plain-t-shirts": {
     title: "Plain Tshirts for Men",
@@ -44,8 +46,14 @@ export const CATEGORY_DATA = {
     ],
     buttons: [
       { label: "View All", url: "/t-shirts/plain/all" },
-      { label: "Half Sleeve", url: "/t-shirts/plain/half-sleeve" },
-      { label: "Full Sleeve", url: "/t-shirts/plain/full-sleeve" },
+      {
+        label: "Half Sleeve",
+        url: "/products?specificType=Plain%20T-shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeve",
+        url: "/products?specificType=Plain%20T-shirts&sleeves=Full%20Sleeves",
+      },
       { label: "Polo T-shirt", url: "/t-shirts/polo/plain" },
     ],
     filters: [
@@ -335,11 +343,21 @@ export const CATEGORY_DATA = {
       { label: "View All", url: "/products?subCategory=T-shirts" },
       { label: "New Drops", url: "/t-shirts/new-drops" },
       { label: "Polo", url: "/t-shirts/polo" },
-      { label: "Regular Fit", url: "/t-shirts/regular-fit" },
+      {
+        label: "Regular Fit",
+        url: "/products?specificType=Regular%20Fit%20T-shirts&fit=Regular%20Fit",
+      },
       { label: "Oversized Fit", url: "/t-shirts/oversized-fit" },
-      { label: "Full Sleeves", url: "/t-shirts/full-sleeves" },
-      { label: "Plain", url: "/products?specificType=Plain T-shirts" },
-      { label: "Printed", url: "/products?specificType=Printed T-shirts" },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Regular%20Fit%20T-shirts&sleeves=Full%20Sleeves",
+      },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Regular%20Fit%20T-shirts&sleeves=Half%20Sleeves",
+      },
+      { label: "Plain", url: "/products?specificType=Plain%20T-shirts" },
+      { label: "Printed", url: "/products?specificType=Printed%20T-shirts" },
       { label: "Plus Size", url: "/t-shirts/plus-size" },
     ],
     filters: [
@@ -516,7 +534,16 @@ export const CATEGORY_DATA = {
     `,
 
     // ❌ No Top Buttons requested
-    buttons: [],
+    buttons: [
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Oversized%20T-shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Oversized%20T-shirts&sleeves=Full%20Sleeves",
+      },
+    ],
 
     // ⭐️ Price Table Data Array ⭐️
     price_table_data: [
@@ -702,6 +729,14 @@ export const CATEGORY_DATA = {
       { label: "New Drops", url: "/polo-t-shirts/new-drops" },
       { label: "Plain", url: "/products?specificType=Plain%20Polo%20T-shirts" }, // Assuming a specific Plain Polo page
       { label: "Melange", url: "/polo-t-shirts/melange" },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Polo%20T%20shirts%20For%20Men&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Polo%20T%20shirts%20For%20Men&sleeves=Full%20Sleeves",
+      },
     ],
 
     // ⭐️ Price Table Data Array ⭐️
@@ -884,7 +919,14 @@ export const CATEGORY_DATA = {
       { label: "Polo", url: "/products?specificType=Plus%20Size%20Polo" },
       { label: "Regular Fit", url: "/plus-size/regular-fit" },
       { label: "Oversized Fit", url: "/plus-size/oversized-fit" },
-      { label: "Full Sleeve", url: "/plus-size/full-sleeve" },
+      {
+        label: "Full Sleeve",
+        url: "/products?specificType=Plus%20Size%20T-shirts&sleeves=Full%20Sleeves",
+      },
+      {
+        label: "Half Sleeve",
+        url: "/products?specificType=Plus%20Size%20T-shirts&sleeves=Half%20Sleeves",
+      },
       { label: "Plain", url: "/products?specificType=Plus%20Size%20Plain" },
       { label: "Printed", url: "/products?specificType=Plus%20Size%20Printed" },
       {
@@ -1091,11 +1133,15 @@ export const CATEGORY_DATA = {
     buttons: [
       {
         label: "View All",
-        url: "/products?specificType=Full%20Sleeve%20T-shirts",
+        url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Full%20Sleeves",
       },
       { label: "Plain", url: "/full-sleeve/plain" },
       { label: "Printed", url: "/full-sleeve/printed" },
       { label: "Raglan", url: "/full-sleeve/raglan" },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Half%20Sleeves",
+      },
     ],
 
     // ⭐️ Price Table Data Array ⭐️
@@ -1344,19 +1390,26 @@ export const CATEGORY_DATA = {
       { label: "Polo", url: "/products?specificType=Polo T-shirts" },
       {
         label: "Regular Fit",
-        url: "/products?specificType=Regular Fit T-shirts",
+        url: "/products?specificType=Regular%20Fit%20T-shirts",
       },
       {
         label: "Oversized Fit",
-        url: "/products?specificType=Oversized T-shirts",
+        url: "/products?specificType=Oversized%20T-shirts",
       },
       {
         label: "Full Sleeve",
-        url: "/products?specificType=Full Sleeve T-shirts",
+        url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Full%20Sleeves",
       },
-      { label: "Plain", url: "/products?specificType=Plain T-shirts" },
-      { label: "Printed", url: "/products?specificType=Printed T-shirts" },
-      { label: "Plus Size", url: "/products?specificType=Plus Size T-shirts" },
+      {
+        label: "Half Sleeve",
+        url: "/products?subCategory=T-shirts&sleeves=Half%20Sleeves",
+      },
+      { label: "Plain", url: "/products?specificType=Plain%20T-shirts" },
+      { label: "Printed", url: "/products?specificType=Printed%20T-shirts" },
+      {
+        label: "Plus Size",
+        url: "/products?specificType=Plus%20Size%20T-shirts",
+      },
     ],
 
     // ⭐️ Price Table Data Array ⭐️
@@ -1524,13 +1577,21 @@ export const CATEGORY_DATA = {
 
     buttons: [
       { label: "View All", url: "/products?subCategory=Shirts" },
-      { label: "Plain", url: "/products?specificType=Plain Shirts" },
+      { label: "Plain", url: "/products?specificType=Plain%20Shirts" },
       { label: "Shackets", url: "/products?specificType=Shackets" },
-      { label: "Oxford", url: "/products?specificType=Oxford Shirts" },
-      { label: "Flannel", url: "/products?specificType=Flannel Shirts" },
+      { label: "Oxford", url: "/products?specificType=Oxford%20Shirts" },
+      { label: "Flannel", url: "/products?specificType=Flannel%20Shirts" },
       { label: "New Drops", url: "/shirts/new-drops" },
       { label: "Corduroy", url: "/shirts/corduroy" },
       { label: "Festive", url: "/shirts/festive" },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Plain%20Shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Plain%20Shirts&sleeves=Full%20Sleeves",
+      },
     ],
 
     // ⭐️ Price Table Data Array (Master List) ⭐️
@@ -1694,6 +1755,14 @@ export const CATEGORY_DATA = {
         label: "Kurta Style",
         url: "/products?specificType=Oxford%20Kurta%20Shirt&subCategory=Shirts",
       },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Oxford%20Shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Oxford%20Shirts&sleeves=Full%20Sleeves",
+      },
     ],
 
     // ⭐️ Price Table Data Array ⭐️
@@ -1805,6 +1874,14 @@ export const CATEGORY_DATA = {
       {
         label: "Festive",
         url: "/shirts/festive",
+      },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Satin%20Shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Satin%20Shirts&sleeves=Full%20Sleeves",
       },
     ],
     price_table_data: [
@@ -1952,6 +2029,14 @@ export const CATEGORY_DATA = {
         label: "New Drops",
         url: "/shirts/new-drops",
       },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Cotton%20Shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Cotton%20Shirts&sleeves=Full%20Sleeves",
+      },
     ],
     price_table_data: [
       {
@@ -2097,6 +2182,11 @@ export const CATEGORY_DATA = {
       {
         label: "Shackets",
         url: "/products?specificType=Shackets",
+      },
+      // Flannel is usually full sleeve, but adding the button for consistency
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Flannel%20Shirts&sleeves=Full%20Sleeves",
       },
     ],
     price_table_data: [
@@ -2249,6 +2339,14 @@ export const CATEGORY_DATA = {
       {
         label: "Partywear",
         url: "/products?specificType=Partywear%20Shirts&subCategory=Shirts",
+      },
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=Festive%20Shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Festive%20Shirts&sleeves=Full%20Sleeves",
       },
     ],
     price_table_data: [
@@ -2416,6 +2514,11 @@ export const CATEGORY_DATA = {
       {
         label: "Festive",
         url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
+      },
+      // Shackets are usually full sleeve, but adding the button for consistency
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=Shackets&sleeves=Full%20Sleeves",
       },
     ],
     price_table_data: [
@@ -2772,6 +2875,14 @@ export const CATEGORY_DATA = {
         label: "Corduroy",
         url: "/shirts/corduroy",
       },
+      {
+        label: "Half Sleeves",
+        url: "/products?subCategory=Shirts&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?subCategory=Shirts&sleeves=Full%20Sleeves",
+      },
     ],
     price_table_data: [
       {
@@ -2944,6 +3055,15 @@ export const CATEGORY_DATA = {
         label: "View All Bottomwear",
         url: "/women/bottomwear/all",
       },
+      // Added sleeve buttons for women's topwear
+      {
+        label: "Half Sleeves",
+        url: "/products?specificType=women-topwear&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?specificType=women-topwear&sleeves=Full%20Sleeves",
+      },
     ],
     price_table_data: {
       heading: "Buy Women's Clothing at Best Price",
@@ -3083,6 +3203,7 @@ export const CATEGORY_DATA = {
         label: "View All Bottomwear",
         url: "/women/bottomwear/all",
       },
+      // Bottomwear does not have sleeve buttons, keeping other logical filters here for completeness
     ],
     price_table_data: {
       heading: "Buy Women's Clothing at Best Price",
@@ -3220,6 +3341,15 @@ export const CATEGORY_DATA = {
       {
         label: "View All Bottomwear",
         url: "/women/bottomwear/all",
+      },
+      // Added sleeve buttons for women's view all
+      {
+        label: "Half Sleeves",
+        url: "/products?category=women&sleeves=Half%20Sleeves",
+      },
+      {
+        label: "Full Sleeves",
+        url: "/products?category=women&sleeves=Full%20Sleeves",
       },
     ],
     price_table_data: {
