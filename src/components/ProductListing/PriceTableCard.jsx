@@ -5,7 +5,6 @@ const PriceTableCard = ({ data }) => {
   const priceData = data || {};
 
   // 2. Safely extract the 'items' array, defaulting to an empty array
-  // This is the core fix to prevent the "data.map is not a function" error.
   const items =
     priceData.items && Array.isArray(priceData.items) ? priceData.items : [];
 
@@ -21,6 +20,8 @@ const PriceTableCard = ({ data }) => {
     day: "numeric",
   };
   const formattedDate = currentDate.toLocaleDateString("en-US", options);
+
+  // NOTE: generateSlug helper function is removed as ID-based linking is used.
 
   return (
     <>
@@ -47,21 +48,44 @@ const PriceTableCard = ({ data }) => {
             </thead>
             <tbody className="bg-white divide-y divide-gray-100">
               {/* Use the safe 'items' array for mapping */}
-              {items.map((item, index) => (
-                <tr
-                  key={index}
-                  className="hover:bg-yellow-50/50 transition-colors"
-                >
-                  <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
-                    <span className="text-blue-600 hover:text-blue-800 cursor-pointer">
-                      {item.product}
-                    </span>
-                  </td>
-                  <td className="px-4 py-2 whitespace-nowrap text-right text-sm font-medium text-gray-900">
-                    {item.price}
-                  </td>
-                </tr>
-              ))}
+              {items.map((item, index) => {
+                // 🚨 CRITICAL MODIFICATION: Strictly use item.id.
+                const identifier = item.id;
+
+                if (!identifier) {
+                  // This ensures rows without IDs are skipped to prevent errors.
+                  console.warn(
+                    `Product at index ${index} (${item.product}) skipped: Missing unique ID for linking.`
+                  );
+                  return null;
+                }
+
+                // The URL pattern remains consistent: /product/:id
+                const detailPageUrl = `/product/${identifier}`;
+
+                return (
+                  <tr
+                    key={index}
+                    // Make the entire row clickable and visually responsive
+                    className="hover:bg-yellow-50/50 transition-colors cursor-pointer"
+                    onClick={() => {
+                      // Use window.location.href for immediate navigation
+                      // In a real React app, you might prefer the useNavigate hook from react-router-dom
+                      window.location.href = detailPageUrl;
+                    }}
+                  >
+                    <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
+                      {/* Use a <span> for the title. The <a> tag is removed as navigation is handled by the row's onClick. */}
+                      <span className="text-blue-600 hover:text-blue-800 font-medium">
+                        {item.product}
+                      </span>
+                    </td>
+                    <td className="px-4 py-2 whitespace-nowrap text-right text-sm font-medium text-gray-900">
+                      {item.price}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
