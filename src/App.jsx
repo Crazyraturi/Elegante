@@ -33,7 +33,10 @@ const App = () => {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/product-details/:id" element={<ProductDetails />} />
+
+          {/* FINAL FIX: This route is now correct */}
+          <Route path="/product/:id" element={<ProductDetails />} />
+
           <Route path="/track-order" element={<TrackOrder />} />
           <Route path="/returns-exchange" element={<ReturnOrder />} />
           <Route path="/terms" element={<TermsandCondition />} />

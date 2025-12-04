@@ -51,7 +51,8 @@ const ProductCard = ({ product, handleHeartClick }) => {
 
   return (
     <Link
-      to={`/product-details/${product._id}`}
+      // 🚨 FINAL FIX: Changed the path from /product-details/:id to /product/:id
+      to={`/product/${product._id}`}
       key={product._id}
       className="bg-white rounded-lg overflow-hidden block group"
     >

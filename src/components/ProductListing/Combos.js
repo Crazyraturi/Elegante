@@ -123,10 +123,12 @@ export const Combos_DATA = {
         {
           product: "Pick Any 4 - Plain T-shirt Combo 2.0",
           price: "₹1099",
+          id: "692fd86a296ae5da82f8b111",
         },
         {
           product: "Pick Any 3 - Plain Cotton Shirts Combo",
           price: "₹1998",
+          id: "69301c92cb3a871f0fb70383",
         },
         {
           product: "Pick Any 3- Polo T-shirt Combo",
