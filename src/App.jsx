@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "../utility";
 import MainLayout from "../src/layouts/MainLayout";
-
 import Home from "./pages/Home";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import TrackOrder from "./pages/TrackOrder";
@@ -21,11 +20,9 @@ import BlogDetailPage from "./pages/BlogDetails";
 import CartPage from "./pages/CartPage";
 import AddressPage from "./pages/AddressPage";
 import PaymentPage from "./pages/PaymentPage";
-
 import ProductListingPage from "../src/components/ProductListing/ProductListingPage";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
-import Verify from "./auth/Verify";
 import Verifyemail from "./auth/VerifyEmail";
 import MyAccount from "./pages/MyAccount";
 
