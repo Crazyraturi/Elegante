@@ -72,7 +72,11 @@ export const BOTTOMWEAR_DATA = {
           price: "₹1998",
         },
         { product: "Crocodile Green Heavy Gauge Cargo Joggers", price: "₹998" },
-        { product: "Black Heavy Gauge Cargo Joggers", price: "₹998" },
+        {
+          product: "Black Heavy Gauge Cargo Joggers",
+          price: "₹998",
+          id: "692d3a88ffdf0c0351954e34",
+        },
         { product: "Pick Any 2 - Heavy Gauge Joggers Combo", price: "₹1799" },
         { product: "Coffee Brown Double Pleated Cargos", price: "₹799" },
         { product: "Matte Grey Heavy Gauge Cargo Joggers", price: "₹998" },
@@ -234,7 +238,11 @@ export const BOTTOMWEAR_DATA = {
     price_table_data: {
       heading: "Buy Cargo Pants For Men at Best Price",
       items: [
-        { product: "Mist Grey Solid Cargo Pants For Men", price: "₹998" },
+        {
+          product: "Mist Grey Solid Cargo Pants For Men",
+          price: "₹998",
+          id: "692d3b3affdf0c0351954f06",
+        },
         { product: "Crocodile Green Solid Cargo Pants for Men", price: "₹998" },
         {
           product: "Pick Any 3 - Double Pleated Cargo Joggers Combo",
@@ -398,7 +406,11 @@ export const BOTTOMWEAR_DATA = {
     price_table_data: {
       heading: "Buy Trousers For Men at Best Price",
       items: [
-        { product: "Rich Black Slim-Fit Trousers", price: "₹998" },
+        {
+          product: "Rich Black Slim-Fit Trousers",
+          price: "₹998",
+          id: "692d3c26ffdf0c0351954f95",
+        },
         { product: "Midnight Blue Slim-Fit Trousers", price: "₹998" },
         { product: "Silver Cloud Solid Korean Pants", price: "₹998" },
         { product: "Olive Mist Solid Korean Pants", price: "₹998" },
@@ -543,7 +555,11 @@ export const BOTTOMWEAR_DATA = {
     price_table_data: {
       heading: "Buy Trousers For Men at Best Price",
       items: [
-        { product: "Beige Japanese Fit Pants", price: "₹1199" },
+        {
+          product: "Beige Japanese Fit Pants",
+          price: "₹1199",
+          id: "692d3cdeffdf0c0351955026",
+        },
         { product: "Brown Japanese Fit Pants", price: "₹1199" },
         { product: "Warm Grey Japanese Fit Pants", price: "₹1199" },
         { product: "Grey Japanese Fit Pants", price: "₹1199" },
@@ -660,7 +676,11 @@ export const BOTTOMWEAR_DATA = {
     price_table_data: {
       heading: "Buy Trousers For Men at Best Price",
       items: [
-        { product: "Beige Stretch Gurkha Pants", price: "₹1299" },
+        {
+          product: "Beige Stretch Gurkha Pants",
+          price: "₹1299",
+          id: "692d3d8dffdf0c03519550b9",
+        },
         { product: "Dark Blue Stretch Gurkha Pants", price: "₹1299" },
         { product: "Dark Grey Stretch Gurkha Pants", price: "₹1299" },
         { product: "Light Grey Stretch Gurkha Pants", price: "₹1299" },
@@ -778,7 +798,11 @@ export const BOTTOMWEAR_DATA = {
     price_table_data: {
       heading: "Buy Trousers For Men at Best Price",
       items: [
-        { product: "Silver Cloud Solid Korean Pants", price: "₹998" },
+        {
+          product: "Silver Cloud Solid Korean Pants",
+          price: "₹998",
+          id: "692d3ecfffdf0c035195514e",
+        },
         { product: "Olive Mist Solid Korean Pants", price: "₹998" },
         { product: "Deep Slate Solid Korean Pants", price: "₹998" },
         {
@@ -872,7 +896,11 @@ export const BOTTOMWEAR_DATA = {
           price: "₹1599",
         },
         { product: "Pick Any 3 - Regular-fit Pyjama Combo", price: "₹1599" },
-        { product: "Light Grey Loose-fit Pyjama Pants", price: "₹899" },
+        {
+          product: "Light Grey Loose-fit Pyjama Pants",
+          price: "₹899",
+          id: "692d3f89ffdf0c03519551e5",
+        },
         { product: "Dark Grey Loose-fit Pyjama Pants", price: "₹899" },
         { product: "White Loose-Fit Pyjama Pants", price: "₹899" },
         { product: "Pick Any 2 - Regular-fit Pyjama Combo", price: "₹1199" },
@@ -992,7 +1020,11 @@ export const BOTTOMWEAR_DATA = {
     price_table_data: {
       heading: "Buy Jeans for Men at Best Price",
       items: [
-        { product: "Beige Over Dyed Baggy Fit Jeans", price: "₹1199" },
+        {
+          product: "Beige Over Dyed Baggy Fit Jeans",
+          price: "₹1199",
+          id: "692d404fffdf0c035195527e",
+        },
         { product: "Tinted Brown Over Dyed Baggy Fit Jeans", price: "₹1199" },
         { product: "Dark Navy Blue Regular Fit Mens Jeans", price: "₹998" },
         { product: "Indigo Blue Over Dyed Baggy Fit Jeans", price: "₹1199" },
@@ -1106,7 +1138,11 @@ export const BOTTOMWEAR_DATA = {
     price_table_data: {
       heading: "Buy Shorts for Men at Best Price",
       items: [
-        { product: "Black Carpenter Denim Jorts", price: "₹1199" },
+        {
+          product: "Black Carpenter Denim Jorts",
+          price: "₹1199",
+          id: "692d40fbffdf0c0351955319",
+        },
         { product: "Black Rugged Hem Denim Jorts", price: "₹1199" },
         { product: "Dark Blue Rugged Hem Denim Jorts", price: "₹1199" },
         { product: "Pick Any 2- Plain Mens Boxers Combo", price: "₹599" },
@@ -1179,7 +1215,11 @@ export const BOTTOMWEAR_DATA = {
         { product: "Pick Any 3- Plain Mens Boxers Combo", price: "₹799" },
         { product: "Pick Any 2- Plain Mens Boxers Combo", price: "₹599" },
         { product: "Plain Grizzle Grey Mens Boxer", price: "₹349" },
-        { product: "Plain Black Mens Boxer", price: "₹349" },
+        {
+          product: "Plain Black Mens Boxer",
+          price: "₹349",
+          id: "692d41b3ffdf0c03519553b6",
+        },
         { product: "Plain Light Grey Mens Boxer", price: "₹349" },
         { product: "Plain Army Green Mens Boxer", price: "₹349" },
         { product: "Plain Sage Green Mens Boxer", price: "₹349" },

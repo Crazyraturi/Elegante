@@ -145,6 +145,7 @@ export const Combos_DATA = {
         {
           product: "Pick Any 2 - Plain Full Sleeve T-shirts Combo",
           price: "₹699",
+          id: "69301b73cb3a871f0fb70227",
         },
         {
           product: "Pick Any 3 - Cotton Cargo Joggers Combo",

@@ -76,7 +76,7 @@ export default function ProductListingPage() {
       return subCategoryQuery.toLowerCase().replace(/ /g, "-");
     if (categoryQuery) return categoryQuery.toLowerCase().replace(/ /g, "-");
     return "t-shirts";
-  }, [specificType, subCategoryQuery, categoryQuery]);
+  }, [specificType, subCategoryQuery, categoryQuery]); //
 
   // 2. --- MERGE TOPWEAR AND BOTTOMWEAR DATA ---
   const pageContent = useMemo(() => {
@@ -84,7 +84,6 @@ export default function ProductListingPage() {
       ...TOPWEAR_DATA,
       ...BOTTOMWEAR_DATA,
       ...Combos_DATA,
-      // 🚨 FIX 2: Merge the new data objects to make their slugs available
       ...WinterWear_DATA,
       ...NewArrival_DATA,
     };
@@ -101,11 +100,17 @@ export default function ProductListingPage() {
       return ALL_CATEGORY_DATA["winter_wear"];
     }
 
-    // Use the normalized slug for all other lookups (e.g., 'plain_t-shirts')
+    // 🚨 FIX 1: Map the general 'women' slug (from category=Women in URL) to the specific view-all content key.
+    if (internalDataSlug === "women") {
+      //
+      return ALL_CATEGORY_DATA["women-clothing-view-all"]; //
+    }
+
+    // Use the normalized slug for all other lookups (e.g., 'plain_t-shirts' or 'women-topwear')
     return (
       ALL_CATEGORY_DATA[normalizedSlug] || ALL_CATEGORY_DATA[internalDataSlug]
     );
-  }, [internalDataSlug]);
+  }, [internalDataSlug]); //
   // ---------------------------------------------
 
   const isContentNotFound = !pageContent;
@@ -136,11 +141,16 @@ export default function ProductListingPage() {
       filterParams.append("gender", "Women");
       filterParams.append("subCategory", "Shop For Women");
 
+      // 🚨 FIX 2: Re-add restrictive specificType filter for *specific* Women's pages
+      // to segregate topwear and bottomwear products.
       if (internalDataSlug.includes("topwear")) {
         filterParams.append("specificType", "Topwear");
       } else if (internalDataSlug.includes("bottomwear")) {
         filterParams.append("specificType", "Bottomwear");
       }
+
+      // NOTE: If the slug is just "women" (from categoryQuery), we only apply the gender and subCategory filters,
+      // correctly achieving the *unrestricted* "View All" product list.
     } else if (specificType) {
       if (specificType.toLowerCase() === "new_arrival") {
         const fifteenDaysAgo = new Date(

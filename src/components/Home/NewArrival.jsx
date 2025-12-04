@@ -152,7 +152,8 @@ const NewArrival = () => {
 
               return (
                 <Link
-                  to={`/product-details/${product._id}`}
+                  // 🚨 FIX APPLIED HERE: Change the path to the correct, working route
+                  to={`/product/${product._id}`}
                   key={product._id}
                   className="bg-white rounded-lg overflow-hidden block group"
                 >
