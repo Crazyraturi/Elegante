@@ -29,7 +29,7 @@ const MostWantedCategories = () => {
       id: 3,
       name: "WINTERWEAR",
       image: mw3,
-      route: "/men-winterwear",
+      route: "/products?category=Winterwear",
     },
     {
       id: 4,

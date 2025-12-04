@@ -78,6 +78,7 @@ const bottomwearTypes = [
   "Shorts",
   "Boxers",
 ];
+
 export default function EcommerceHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { cartItems } = useContext(CartContext);
@@ -118,6 +119,7 @@ export default function EcommerceHeader() {
       )}
     </div>
   );
+
   return (
     <div className="w-full sticky top-0 z-50">
       <div className="bg-black text-white py-2 flex justify-around items-center h-[38px] text-sm">
@@ -153,8 +155,6 @@ export default function EcommerceHeader() {
                           {col.items.map((item, i) => (
                             <li key={i}>
                               <MenuLink
-                                // The sub-items for 'Shop For Women' (col.key === 'gender') should use 'specificType'
-                                // to match the Women-Topwear/Bottomwear slugs/content.
                                 filterKey={
                                   col.key === "gender"
                                     ? "specificType"
@@ -169,15 +169,18 @@ export default function EcommerceHeader() {
                           ))}
                           <li>
                             <MenuLink
-                              // 🚨 FIX: For "Shop For Women", use 'category=Women' to force the general filter.
                               filterKey={
                                 col.title === "Shop For Women"
                                   ? "category"
+                                  : col.title === "Polos"
+                                  ? "specificType"
                                   : col.key
                               }
                               filterValue={
                                 col.title === "Shop For Women"
                                   ? "Women"
+                                  : col.title === "Polos"
+                                  ? "Polo T-shirts"
                                   : col.title
                               }
                               className="text-sm text-gray-600 font-semibold"
