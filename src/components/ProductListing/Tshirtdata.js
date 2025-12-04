@@ -42,18 +42,18 @@ export const CATEGORY_DATA = {
       { product: "French Wine Polo T-shirt", price: "₹549" },
       { product: "Plain Black Full Sleeves T-shirt", price: "₹499" },
     ],
-    buttons: [
-      { label: "View All", url: "/t-shirts/plain/all" },
-      {
-        label: "Half Sleeve",
-        url: "/products?specificType=Plain%20T-shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeve",
-        url: "/products?specificType=Plain%20T-shirts&sleeves=Full%20Sleeves",
-      },
-      { label: "Polo T-shirt", url: "/t-shirts/polo/plain" },
-    ],
+    // buttons: [
+    //   { label: "View All", url: "/t-shirts/plain/all" },
+    //   {
+    //     label: "Half Sleeve",
+    //     url: "/products?specificType=Plain%20T-shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeve",
+    //     url: "/products?specificType=Plain%20T-shirts&sleeves=Full%20Sleeves",
+    //   },
+    //   { label: "Polo T-shirt", url: "/t-shirts/polo/plain" },
+    // ],
     filters: [
       {
         id: "variants.color",
@@ -239,11 +239,11 @@ export const CATEGORY_DATA = {
     ],
 
     // --- Quick Links / Top Buttons (Omitted for brevity) ---
-    buttons: [
-      { label: "View All", url: "/t-shirts/printed/all" },
-      { label: "Regular Fit", url: "/t-shirts/printed/regular-fit" },
-      { label: "Oversized Fit", url: "/t-shirts/printed/oversized-fit" },
-    ],
+    // buttons: [
+    //   { label: "View All", url: "/t-shirts/printed/all" },
+    //   { label: "Regular Fit", url: "/t-shirts/printed/regular-fit" },
+    //   { label: "Oversized Fit", url: "/t-shirts/printed/oversized-fit" },
+    // ],
     // ⭐️ --- CORRECTED UNIQUE FILTERS --- ⭐️
     filters: [
       {
@@ -337,27 +337,27 @@ export const CATEGORY_DATA = {
       { product: "Typography Printed T-shirt for Men", price: "₹399" },
       { product: "No Risk No Story Printed T-shirt for Men", price: "₹399" },
     ],
-    buttons: [
-      { label: "View All", url: "/products?subCategory=T-shirts" },
-      { label: "New Drops", url: "/t-shirts/new-drops" },
-      { label: "Polo", url: "/t-shirts/polo" },
-      {
-        label: "Regular Fit",
-        url: "/products?specificType=Regular%20Fit%20T-shirts&fit=Regular%20Fit",
-      },
-      { label: "Oversized Fit", url: "/t-shirts/oversized-fit" },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Regular%20Fit%20T-shirts&sleeves=Full%20Sleeves",
-      },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Regular%20Fit%20T-shirts&sleeves=Half%20Sleeves",
-      },
-      { label: "Plain", url: "/products?specificType=Plain%20T-shirts" },
-      { label: "Printed", url: "/products?specificType=Printed%20T-shirts" },
-      { label: "Plus Size", url: "/t-shirts/plus-size" },
-    ],
+    // buttons: [
+    //   { label: "View All", url: "/products?subCategory=T-shirts" },
+    //   { label: "New Drops", url: "/t-shirts/new-drops" },
+    //   { label: "Polo", url: "/t-shirts/polo" },
+    //   {
+    //     label: "Regular Fit",
+    //     url: "/products?specificType=Regular%20Fit%20T-shirts&fit=Regular%20Fit",
+    //   },
+    //   { label: "Oversized Fit", url: "/t-shirts/oversized-fit" },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Regular%20Fit%20T-shirts&sleeves=Full%20Sleeves",
+    //   },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Regular%20Fit%20T-shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   { label: "Plain", url: "/products?specificType=Plain%20T-shirts" },
+    //   { label: "Printed", url: "/products?specificType=Printed%20T-shirts" },
+    //   { label: "Plus Size", url: "/t-shirts/plus-size" },
+    // ],
     filters: [
       { id: "offers", label: "Offers", options: ["3 T-shirts at ₹988"] },
       {
@@ -532,16 +532,16 @@ export const CATEGORY_DATA = {
     `,
 
     // ❌ No Top Buttons requested
-    buttons: [
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Oversized%20T-shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Oversized%20T-shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Oversized%20T-shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Oversized%20T-shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
 
     // ⭐️ Price Table Data Array ⭐️
     price_table_data: [
@@ -719,23 +719,23 @@ export const CATEGORY_DATA = {
     `,
 
     // --- Quick Links / Top Buttons ---
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Polo%20T%20shirts%20For%20Men",
-      },
-      { label: "New Drops", url: "/polo-t-shirts/new-drops" },
-      { label: "Plain", url: "/products?specificType=Plain%20Polo%20T-shirts" }, // Assuming a specific Plain Polo page
-      { label: "Melange", url: "/polo-t-shirts/melange" },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Polo%20T%20shirts%20For%20Men&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Polo%20T%20shirts%20For%20Men&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Polo%20T%20shirts%20For%20Men",
+    //   },
+    //   { label: "New Drops", url: "/polo-t-shirts/new-drops" },
+    //   { label: "Plain", url: "/products?specificType=Plain%20Polo%20T-shirts" }, // Assuming a specific Plain Polo page
+    //   { label: "Melange", url: "/polo-t-shirts/melange" },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Polo%20T%20shirts%20For%20Men&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Polo%20T%20shirts%20For%20Men&sleeves=Full%20Sleeves",
+    //   },
+    // ],
 
     // ⭐️ Price Table Data Array ⭐️
     price_table_data: [
@@ -908,30 +908,30 @@ export const CATEGORY_DATA = {
     faq: [],
 
     // --- Quick Links / Top Buttons ---
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Plus%20Size%20T-shirts",
-      },
-      { label: "New Drops", url: "/plus-size/new-drops" },
-      { label: "Polo", url: "/products?specificType=Plus%20Size%20Polo" },
-      { label: "Regular Fit", url: "/plus-size/regular-fit" },
-      { label: "Oversized Fit", url: "/plus-size/oversized-fit" },
-      {
-        label: "Full Sleeve",
-        url: "/products?specificType=Plus%20Size%20T-shirts&sleeves=Full%20Sleeves",
-      },
-      {
-        label: "Half Sleeve",
-        url: "/products?specificType=Plus%20Size%20T-shirts&sleeves=Half%20Sleeves",
-      },
-      { label: "Plain", url: "/products?specificType=Plus%20Size%20Plain" },
-      { label: "Printed", url: "/products?specificType=Plus%20Size%20Printed" },
-      {
-        label: "Plus Size",
-        url: "/products?specificType=Plus%20Size%20T-shirts",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Plus%20Size%20T-shirts",
+    //   },
+    //   { label: "New Drops", url: "/plus-size/new-drops" },
+    //   { label: "Polo", url: "/products?specificType=Plus%20Size%20Polo" },
+    //   { label: "Regular Fit", url: "/plus-size/regular-fit" },
+    //   { label: "Oversized Fit", url: "/plus-size/oversized-fit" },
+    //   {
+    //     label: "Full Sleeve",
+    //     url: "/products?specificType=Plus%20Size%20T-shirts&sleeves=Full%20Sleeves",
+    //   },
+    //   {
+    //     label: "Half Sleeve",
+    //     url: "/products?specificType=Plus%20Size%20T-shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   { label: "Plain", url: "/products?specificType=Plus%20Size%20Plain" },
+    //   { label: "Printed", url: "/products?specificType=Plus%20Size%20Printed" },
+    //   {
+    //     label: "Plus Size",
+    //     url: "/products?specificType=Plus%20Size%20T-shirts",
+    //   },
+    // ],
 
     // ⭐️ Price Table Data Array ⭐️
     price_table_data: [
@@ -1128,19 +1128,19 @@ export const CATEGORY_DATA = {
 
     // --- Quick Links / Top Buttons ---
     // Buttons are derived from other pages, not specified here, so we will use a reasonable default.
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Full%20Sleeves",
-      },
-      { label: "Plain", url: "/full-sleeve/plain" },
-      { label: "Printed", url: "/full-sleeve/printed" },
-      { label: "Raglan", url: "/full-sleeve/raglan" },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Half%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Full%20Sleeves",
+    //   },
+    //   { label: "Plain", url: "/full-sleeve/plain" },
+    //   { label: "Printed", url: "/full-sleeve/printed" },
+    //   { label: "Raglan", url: "/full-sleeve/raglan" },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Half%20Sleeves",
+    //   },
+    // ],
 
     // ⭐️ Price Table Data Array ⭐️
     price_table_data: [
@@ -1382,33 +1382,33 @@ export const CATEGORY_DATA = {
     `,
 
     // --- Quick Links / Top Buttons ---
-    buttons: [
-      { label: "View All", url: "/products?subCategory=T-shirts" }, // Default for this page
-      { label: "New Drops", url: "/t-shirts/new-drops" },
-      { label: "Polo", url: "/products?specificType=Polo T-shirts" },
-      {
-        label: "Regular Fit",
-        url: "/products?specificType=Regular%20Fit%20T-shirts",
-      },
-      {
-        label: "Oversized Fit",
-        url: "/products?specificType=Oversized%20T-shirts",
-      },
-      {
-        label: "Full Sleeve",
-        url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Full%20Sleeves",
-      },
-      {
-        label: "Half Sleeve",
-        url: "/products?subCategory=T-shirts&sleeves=Half%20Sleeves",
-      },
-      { label: "Plain", url: "/products?specificType=Plain%20T-shirts" },
-      { label: "Printed", url: "/products?specificType=Printed%20T-shirts" },
-      {
-        label: "Plus Size",
-        url: "/products?specificType=Plus%20Size%20T-shirts",
-      },
-    ],
+    // buttons: [
+    //   { label: "View All", url: "/products?subCategory=T-shirts" }, // Default for this page
+    //   { label: "New Drops", url: "/t-shirts/new-drops" },
+    //   { label: "Polo", url: "/products?specificType=Polo T-shirts" },
+    //   {
+    //     label: "Regular Fit",
+    //     url: "/products?specificType=Regular%20Fit%20T-shirts",
+    //   },
+    //   {
+    //     label: "Oversized Fit",
+    //     url: "/products?specificType=Oversized%20T-shirts",
+    //   },
+    //   {
+    //     label: "Full Sleeve",
+    //     url: "/products?specificType=Full%20Sleeve%20T-shirts&sleeves=Full%20Sleeves",
+    //   },
+    //   {
+    //     label: "Half Sleeve",
+    //     url: "/products?subCategory=T-shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   { label: "Plain", url: "/products?specificType=Plain%20T-shirts" },
+    //   { label: "Printed", url: "/products?specificType=Printed%20T-shirts" },
+    //   {
+    //     label: "Plus Size",
+    //     url: "/products?specificType=Plus%20Size%20T-shirts",
+    //   },
+    // ],
 
     // ⭐️ Price Table Data Array ⭐️
     price_table_data: [
@@ -1571,24 +1571,24 @@ export const CATEGORY_DATA = {
       "Explore Beyoung's complete collection of men's shirts. Crafted from diverse fabrics and tailored in multiple fits, find everything from essential Plain shirts and classic Oxfords to trend-forward Flannels and Shackets. Effortlessly stylish and always comfortable.",
     description_long: "", // Empty as per request structure
     faq: [], // Empty as per request structure
-    buttons: [
-      { label: "View All", url: "/products?subCategory=Shirts" },
-      { label: "Plain", url: "/products?specificType=Plain%20Shirts" },
-      { label: "Shackets", url: "/products?specificType=Shackets" },
-      { label: "Oxford", url: "/products?specificType=Oxford%20Shirts" },
-      { label: "Flannel", url: "/products?specificType=Flannel%20Shirts" },
-      { label: "New Drops", url: "/shirts/new-drops" },
-      { label: "Corduroy", url: "/shirts/corduroy" },
-      { label: "Festive", url: "/shirts/festive" },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Plain%20Shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Plain%20Shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   { label: "View All", url: "/products?subCategory=Shirts" },
+    //   { label: "Plain", url: "/products?specificType=Plain%20Shirts" },
+    //   { label: "Shackets", url: "/products?specificType=Shackets" },
+    //   { label: "Oxford", url: "/products?specificType=Oxford%20Shirts" },
+    //   { label: "Flannel", url: "/products?specificType=Flannel%20Shirts" },
+    //   { label: "New Drops", url: "/shirts/new-drops" },
+    //   { label: "Corduroy", url: "/shirts/corduroy" },
+    //   { label: "Festive", url: "/shirts/festive" },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Plain%20Shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Plain%20Shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: [
       { product: "Pick Any 3 - Plain Cotton Shirts Combo", price: "₹1998" },
       { product: "Pick Any 2 - Plain Cotton Shirts Combo", price: "₹1499" },
@@ -1727,37 +1727,37 @@ export const CATEGORY_DATA = {
     faq: [],
 
     // --- Quick Links / Top Buttons (Fixed with subCategory=Shirts) ---
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Plain",
-        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Flannel",
-        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Satin",
-        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
-      },
-      { label: "New Drops", url: "/shirts/new-drops" },
-      {
-        label: "Kurta Style",
-        url: "/products?specificType=Oxford%20Kurta%20Shirt&subCategory=Shirts",
-      },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Oxford%20Shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Oxford%20Shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Plain",
+    //     url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Flannel",
+    //     url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Satin",
+    //     url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
+    //   },
+    //   { label: "New Drops", url: "/shirts/new-drops" },
+    //   {
+    //     label: "Kurta Style",
+    //     url: "/products?specificType=Oxford%20Kurta%20Shirt&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Oxford%20Shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Oxford%20Shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
 
     // ⭐️ Price Table Data Array ⭐️
     price_table_data: [
@@ -1844,40 +1844,40 @@ export const CATEGORY_DATA = {
     description_short: "",
     description_long: "",
     faq: [],
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Plain",
-        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Oxford",
-        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Flannel",
-        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "New Drops",
-        url: "/shirts/new-drops",
-      },
-      {
-        label: "Festive",
-        url: "/shirts/festive",
-      },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Satin%20Shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Satin%20Shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Plain",
+    //     url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Oxford",
+    //     url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Flannel",
+    //     url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "New Drops",
+    //     url: "/shirts/new-drops",
+    //   },
+    //   {
+    //     label: "Festive",
+    //     url: "/shirts/festive",
+    //   },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Satin%20Shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Satin%20Shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: [
       {
         product: "Pick Any 3 - Plain Cotton Shirts Combo",
@@ -1997,40 +1997,40 @@ export const CATEGORY_DATA = {
   "cotton-shirts": {
     title: "Cotton Shirts for Men",
 
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Cotton%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Plain",
-        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Oxford",
-        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Flannel",
-        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Satin",
-        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "New Drops",
-        url: "/shirts/new-drops",
-      },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Cotton%20Shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Cotton%20Shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Cotton%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Plain",
+    //     url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Oxford",
+    //     url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Flannel",
+    //     url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Satin",
+    //     url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "New Drops",
+    //     url: "/shirts/new-drops",
+    //   },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Cotton%20Shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Cotton%20Shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: [
       {
         product: "Pick Any 3 - Plain Cotton Shirts Combo",
@@ -2150,37 +2150,37 @@ export const CATEGORY_DATA = {
   "flannel-shirts": {
     title: "Flannel Shirts for Men",
 
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Plaid",
-        url: "/products?specificType=Plaid%20Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Solid",
-        url: "/products?specificType=Solid%20Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Plain",
-        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "New Drops",
-        url: "/shirts/new-drops",
-      },
-      {
-        label: "Shackets",
-        url: "/products?specificType=Shackets",
-      },
-      // Flannel is usually full sleeve, but adding the button for consistency
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Flannel%20Shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Plaid",
+    //     url: "/products?specificType=Plaid%20Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Solid",
+    //     url: "/products?specificType=Solid%20Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Plain",
+    //     url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "New Drops",
+    //     url: "/shirts/new-drops",
+    //   },
+    //   {
+    //     label: "Shackets",
+    //     url: "/products?specificType=Shackets",
+    //   },
+    //   // Flannel is usually full sleeve, but adding the button for consistency
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Flannel%20Shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: [
       {
         product: "Beige Recycled Checked Flannel Shirt",
@@ -2306,40 +2306,40 @@ export const CATEGORY_DATA = {
   "festive-shirts": {
     title: "Festive Shirts for Men",
 
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Jacquard",
-        url: "/products?specificType=Jacquard%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Textured",
-        url: "/products?specificType=Textured%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Satin",
-        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Mandarin Collar",
-        url: "/products?specificType=Mandarin%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Partywear",
-        url: "/products?specificType=Partywear%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=Festive%20Shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Festive%20Shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Jacquard",
+    //     url: "/products?specificType=Jacquard%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Textured",
+    //     url: "/products?specificType=Textured%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Satin",
+    //     url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Mandarin Collar",
+    //     url: "/products?specificType=Mandarin%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Partywear",
+    //     url: "/products?specificType=Partywear%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=Festive%20Shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Festive%20Shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: [
       {
         product: "White Fur Wave Textured Shirt",
@@ -2476,41 +2476,41 @@ export const CATEGORY_DATA = {
       "Explore Beyoung's cutting-edge Shacket collection. Blending the style of a shirt with the warmth of a light jacket, these versatile pieces are perfect for layering. Find trendy designs in denim, flannel, and unique textured fabrics.",
     description_long: "",
     faq: [],
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?specificType=shackets&subCategory=Shirts",
-      },
-      {
-        label: "Plain",
-        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Oxford",
-        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Flannel",
-        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "New Drops",
-        url: "/shirts/new-drops",
-      },
-      {
-        label: "Corduroy",
-        url: "/shirts/corduroy",
-      },
-      {
-        label: "Festive",
-        url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
-      },
-      // Shackets are usually full sleeve, but adding the button for consistency
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=Shackets&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?specificType=shackets&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Plain",
+    //     url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Oxford",
+    //     url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Flannel",
+    //     url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "New Drops",
+    //     url: "/shirts/new-drops",
+    //   },
+    //   {
+    //     label: "Corduroy",
+    //     url: "/shirts/corduroy",
+    //   },
+    //   {
+    //     label: "Festive",
+    //     url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
+    //   },
+    //   // Shackets are usually full sleeve, but adding the button for consistency
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=Shackets&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: [
       {
         product: "Sky Blue Denim Zipper Shacket",
@@ -2831,48 +2831,48 @@ export const CATEGORY_DATA = {
         a: "You can shop the latest collection of men’s shirts by Beyoung directly, where you’ll find exclusive offers and fast delivery options.",
       },
     ],
-    buttons: [
-      {
-        label: "View All",
-        url: "/products?subCategory=Shirts",
-      },
-      {
-        label: "Plain",
-        url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Oxford",
-        url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Flannel",
-        url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Satin",
-        url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "New Drops",
-        url: "/shirts/new-drops",
-      },
-      {
-        label: "Festive",
-        url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
-      },
-      {
-        label: "Corduroy",
-        url: "/shirts/corduroy",
-      },
-      {
-        label: "Half Sleeves",
-        url: "/products?subCategory=Shirts&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?subCategory=Shirts&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All",
+    //     url: "/products?subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Plain",
+    //     url: "/products?specificType=Plain%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Oxford",
+    //     url: "/products?specificType=Oxford%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Flannel",
+    //     url: "/products?specificType=Flannel%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Satin",
+    //     url: "/products?specificType=Satin%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "New Drops",
+    //     url: "/shirts/new-drops",
+    //   },
+    //   {
+    //     label: "Festive",
+    //     url: "/products?specificType=Festive%20Shirts&subCategory=Shirts",
+    //   },
+    //   {
+    //     label: "Corduroy",
+    //     url: "/shirts/corduroy",
+    //   },
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?subCategory=Shirts&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?subCategory=Shirts&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: [
       {
         product: "Pick Any 3 - Plain Cotton Shirts Combo",
@@ -3034,25 +3034,25 @@ export const CATEGORY_DATA = {
     description_short:
       "Explore Beyoung's comprehensive collection for Women, featuring both stylish Topwear and essential Bottomwear. Filter by color, size, category, and fit to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our latest selection of comfy full-sleeve, oversized, and boxer styles.",
     description_long: "",
-    buttons: [
-      {
-        label: "View All Topwear",
-        url: "/women/topwear/all",
-      },
-      {
-        label: "View All Bottomwear",
-        url: "/women/bottomwear/all",
-      },
-      // Added sleeve buttons for women's topwear
-      {
-        label: "Half Sleeves",
-        url: "/products?specificType=women-topwear&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?specificType=women-topwear&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All Topwear",
+    //     url: "/women/topwear/all",
+    //   },
+    //   {
+    //     label: "View All Bottomwear",
+    //     url: "/women/bottomwear/all",
+    //   },
+    //   // Added sleeve buttons for women's topwear
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?specificType=women-topwear&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?specificType=women-topwear&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: {
       heading: "Buy Women's Clothing at Best Price",
       items: [
@@ -3182,17 +3182,17 @@ export const CATEGORY_DATA = {
     description_short:
       "Explore Beyoung's essential collection of **Women's Bottomwear**, featuring versatile pieces like Cargo Pants, Denim Jorts, and comfortable Boxers. Filter by color, size, fit, and pattern to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our selection of stylish and comfy bottoms.",
     description_long: "",
-    buttons: [
-      {
-        label: "View All Topwear",
-        url: "/women/topwear/all",
-      },
-      {
-        label: "View All Bottomwear",
-        url: "/women/bottomwear/all",
-      },
-      // Bottomwear does not have sleeve buttons, keeping other logical filters here for completeness
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All Topwear",
+    //     url: "/women/topwear/all",
+    //   },
+    //   {
+    //     label: "View All Bottomwear",
+    //     url: "/women/bottomwear/all",
+    //   },
+    //   // Bottomwear does not have sleeve buttons, keeping other logical filters here for completeness
+    // ],
     price_table_data: {
       heading: "Buy Women's Clothing at Best Price",
       items: [
@@ -3321,25 +3321,25 @@ export const CATEGORY_DATA = {
     title: "Women's Clothing | View All",
     description_short:
       "Explore Beyoung's complete collection of trendy and comfortable Women's Clothing. Find everything from stylish topwear like oversized tees and full-sleeve shirts to essential bottomwear like cargo pants, denim jorts, and comfortable boxers. Our collection is designed for a perfect blend of casual and lounge wear, available in all popular sizes and colors.",
-    buttons: [
-      {
-        label: "View All Topwear",
-        url: "/women/topwear/all",
-      },
-      {
-        label: "View All Bottomwear",
-        url: "/women/bottomwear/all",
-      },
-      // Added sleeve buttons for women's view all
-      {
-        label: "Half Sleeves",
-        url: "/products?category=women&sleeves=Half%20Sleeves",
-      },
-      {
-        label: "Full Sleeves",
-        url: "/products?category=women&sleeves=Full%20Sleeves",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "View All Topwear",
+    //     url: "/women/topwear/all",
+    //   },
+    //   {
+    //     label: "View All Bottomwear",
+    //     url: "/women/bottomwear/all",
+    //   },
+    //   // Added sleeve buttons for women's view all
+    //   {
+    //     label: "Half Sleeves",
+    //     url: "/products?category=women&sleeves=Half%20Sleeves",
+    //   },
+    //   {
+    //     label: "Full Sleeves",
+    //     url: "/products?category=women&sleeves=Full%20Sleeves",
+    //   },
+    // ],
     price_table_data: {
       heading: "Buy Women's Clothing at Best Price",
       items: [

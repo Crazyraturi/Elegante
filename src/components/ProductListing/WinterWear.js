@@ -3,28 +3,28 @@ export const WinterWear_DATA = {
     title: "Winterwear For Men",
     description_short:
       "As the weather turns colder, winterwear for men becomes the perfect way to stay warm while keeping your style on point. Beyoung brings a versatile collection of cozy hoodies, pullovers, jackets, and sweatshirts designed for both comfort and fashion. Each piece of men’s winter wear adds a touch of effortless charm to your everyday look, making it easy to layer up without sacrificing style. Explore trendy winter clothes for men that suit every occasion, from casual outings to workdays. Shop now at Beyoung for the latest winterwear for men and enjoy free shipping along with cash on delivery options.",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Winter_Wear",
-      },
-      {
-        label: "SWEATSHIRTS",
-        url: "/products?specificType=Winter_Wear&category=Sweatshirts",
-      },
-      {
-        label: "JACKETS",
-        url: "/products?specificType=Winter_Wear&category=Jackets",
-      },
-      {
-        label: "HOODIES",
-        url: "/products?specificType=Winter_Wear&category=Hoodies",
-      },
-      {
-        label: "SHACKETS",
-        url: "/products?specificType=Winter_Wear&category=Shackets",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Winter_Wear",
+    //   },
+    //   {
+    //     label: "SWEATSHIRTS",
+    //     url: "/products?specificType=Winter_Wear&category=Sweatshirts",
+    //   },
+    //   {
+    //     label: "JACKETS",
+    //     url: "/products?specificType=Winter_Wear&category=Jackets",
+    //   },
+    //   {
+    //     label: "HOODIES",
+    //     url: "/products?specificType=Winter_Wear&category=Hoodies",
+    //   },
+    //   {
+    //     label: "SHACKETS",
+    //     url: "/products?specificType=Winter_Wear&category=Shackets",
+    //   },
+    // ],
     filters: [
       {
         id: "collection",

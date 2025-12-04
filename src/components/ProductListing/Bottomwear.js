@@ -3,21 +3,21 @@ export const BOTTOMWEAR_DATA = {
     title: "JOOGERS FOR MEN",
     description_short:
       "Joggers for Men & Jogger Pants for Men – Shop the best joggers for men at Beyoung and experience unmatched comfort and style, with prices starting at just ₹599. Choose from our versatile collection of men’s jogger pants, including cargo joggers and breathable cotton jogger pants, perfect to pair with t-shirts or shirts. Shop the best joggers for men in India, starting at just ₹599. Get up to 70% off on stylish jogger pants for men, including cotton joggers & cargo track pants for men.",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Cargo%20Joggers",
-      },
-      {
-        label: "REGULAR FIT",
-        // Note: The URL must match the filter key used in FilterSidebar.jsx
-        url: "/products?specificType=Cargo%20Joggers&fit=Regular%20Fit",
-      },
-      {
-        label: "RELAXED FIT",
-        url: "/products?specificType=Cargo%20Joggers&fit=Relaxed%20Fit",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Cargo%20Joggers",
+    //   },
+    //   {
+    //     label: "REGULAR FIT",
+    //     // Note: The URL must match the filter key used in FilterSidebar.jsx
+    //     url: "/products?specificType=Cargo%20Joggers&fit=Regular%20Fit",
+    //   },
+    //   {
+    //     label: "RELAXED FIT",
+    //     url: "/products?specificType=Cargo%20Joggers&fit=Relaxed%20Fit",
+    //   },
+    // ],
     filters: [
       {
         id: "Color",
@@ -138,36 +138,36 @@ export const BOTTOMWEAR_DATA = {
     title: "Cargo Pants For Men",
     description_short:
       "Our cargo pants for men are perfect for casual, streetwear looks. We offer regular, baggy fit, relaxed fit, oversized, and tapered fits. Shop the stylish Beyoung men’s cargo pants online, starting at just ₹799, designed for durability and effortless fashion. With cool colors, various styles, and multiple pockets, we provide everything you need to level up your style. Upgrade to 10X stronger, comfortable, and stylish men's cargo pants designed for durability and style. Enjoy Free Shipping and extra discounts on your favorite best-quality cotton cargo pants for men, available in 4, 5, 6, and 7-pocket designs, only at Beyoung! Explore our collection of the best cargos for men and grab amazing deals on stylish, durable, and comfortable men's cargo combos at affordable prices in India.",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Cargo%20Pants",
-      },
-      {
-        label: "REGULAR FIT",
-        url: "/products?specificType=Cargo%20Pants&fit=Regular%20Fit",
-      },
-      {
-        label: "RELAXED FIT",
-        url: "/products?specificType=Cargo%20Pants&fit=Relaxed%20Fit",
-      },
-      {
-        label: "BAGGY FIT",
-        url: "/products?specificType=Cargo%20Pants&fit=Baggy%20Fit",
-      },
-      {
-        label: "BLACK",
-        url: "/products?specificType=Cargo%20Pants&color=Black",
-      },
-      {
-        label: "BEIGE",
-        url: "/products?specificType=Cargo%20Pants&color=Beige",
-      },
-      {
-        label: "GREY",
-        url: "/products?specificType=Cargo%20Pants&color=Grey",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Cargo%20Pants",
+    //   },
+    //   {
+    //     label: "REGULAR FIT",
+    //     url: "/products?specificType=Cargo%20Pants&fit=Regular%20Fit",
+    //   },
+    //   {
+    //     label: "RELAXED FIT",
+    //     url: "/products?specificType=Cargo%20Pants&fit=Relaxed%20Fit",
+    //   },
+    //   {
+    //     label: "BAGGY FIT",
+    //     url: "/products?specificType=Cargo%20Pants&fit=Baggy%20Fit",
+    //   },
+    //   {
+    //     label: "BLACK",
+    //     url: "/products?specificType=Cargo%20Pants&color=Black",
+    //   },
+    //   {
+    //     label: "BEIGE",
+    //     url: "/products?specificType=Cargo%20Pants&color=Beige",
+    //   },
+    //   {
+    //     label: "GREY",
+    //     url: "/products?specificType=Cargo%20Pants&color=Grey",
+    //   },
+    // ],
     filters: [
       {
         id: "Offers",
@@ -304,40 +304,40 @@ export const BOTTOMWEAR_DATA = {
     title: "Trousers For Men",
     description_short:
       "Step up your fashion game with our formal trousers for men that offer the perfect combination of style, comfort, and durability. Whether it's for a boardroom meeting, a formal dinner, or simply upgrading your everyday workwear, pick from our wide range of men's trousers online in India to ensure you look your best for every occasion. Buy online from our expertly crafted cotton formal trousers for men that cater to your style and upgrade your wardrobe with formal attire.",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Trousers",
-      },
-      {
-        label: "CHINO PANTS",
-        url: "/products?specificType=Trousers&categories=Chinos",
-      },
-      {
-        label: "KOREAN PANTS",
-        url: "/products?specificType=Trousers&categories=Korean%20Pants",
-      },
-      {
-        label: "GURKHA PANTS",
-        url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
-      },
-      {
-        label: "STRAIGHT FIT",
-        url: "/products?specificType=Trousers&fit=Straight%20Fit",
-      },
-      {
-        label: "JAPANEES PANTS",
-        url: "/products?specificType=Trousers&categories=Japanees%20Pants",
-      },
-      {
-        label: "CARGO TROUSERS",
-        url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
-      },
-      {
-        label: "BLACK",
-        url: "/products?specificType=Trousers&color=Black",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Trousers",
+    //   },
+    //   {
+    //     label: "CHINO PANTS",
+    //     url: "/products?specificType=Trousers&categories=Chinos",
+    //   },
+    //   {
+    //     label: "KOREAN PANTS",
+    //     url: "/products?specificType=Trousers&categories=Korean%20Pants",
+    //   },
+    //   {
+    //     label: "GURKHA PANTS",
+    //     url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
+    //   },
+    //   {
+    //     label: "STRAIGHT FIT",
+    //     url: "/products?specificType=Trousers&fit=Straight%20Fit",
+    //   },
+    //   {
+    //     label: "JAPANEES PANTS",
+    //     url: "/products?specificType=Trousers&categories=Japanees%20Pants",
+    //   },
+    //   {
+    //     label: "CARGO TROUSERS",
+    //     url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
+    //   },
+    //   {
+    //     label: "BLACK",
+    //     url: "/products?specificType=Trousers&color=Black",
+    //   },
+    // ],
     filters: [
       {
         id: "Color",
@@ -439,40 +439,40 @@ export const BOTTOMWEAR_DATA = {
       "Explore the unique style and comfortable fit of Japanese Fit Pants. These modern trousers offer a relaxed silhouette and come in versatile colors, perfect for a contemporary streetwear or smart-casual look.",
 
     // --- UPDATED BUTTONS ---
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Trousers",
-      },
-      {
-        label: "CHINO PANTS",
-        url: "/products?specificType=Trousers&categories=Chinos",
-      },
-      {
-        label: "KOREAN PANTS",
-        url: "/products?specificType=Trousers&categories=Korean%20Pants",
-      },
-      {
-        label: "GURKHA PANTS",
-        url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
-      },
-      {
-        label: "STRAIGHT FIT",
-        url: "/products?specificType=Trousers&fit=Straight%20Fit",
-      },
-      {
-        label: "JAPANEES PANTS",
-        url: "/products?specificType=Trousers&categories=Japanees%20Pants",
-      },
-      {
-        label: "CARGO TROUSERS",
-        url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
-      },
-      {
-        label: "BLACK",
-        url: "/products?specificType=Trousers&color=Black",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Trousers",
+    //   },
+    //   {
+    //     label: "CHINO PANTS",
+    //     url: "/products?specificType=Trousers&categories=Chinos",
+    //   },
+    //   {
+    //     label: "KOREAN PANTS",
+    //     url: "/products?specificType=Trousers&categories=Korean%20Pants",
+    //   },
+    //   {
+    //     label: "GURKHA PANTS",
+    //     url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
+    //   },
+    //   {
+    //     label: "STRAIGHT FIT",
+    //     url: "/products?specificType=Trousers&fit=Straight%20Fit",
+    //   },
+    //   {
+    //     label: "JAPANEES PANTS",
+    //     url: "/products?specificType=Trousers&categories=Japanees%20Pants",
+    //   },
+    //   {
+    //     label: "CARGO TROUSERS",
+    //     url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
+    //   },
+    //   {
+    //     label: "BLACK",
+    //     url: "/products?specificType=Trousers&color=Black",
+    //   },
+    // ],
 
     // Reusing the filters from the main 'trousers' category as requested
     filters: [
@@ -557,40 +557,40 @@ export const BOTTOMWEAR_DATA = {
     title: "Trousers For Men",
     description_short:
       "Discover the unique, timeless style of Gurkha Pants. Known for their high-waisted design and distinctive buckle closure, these trousers offer a comfortable, elegant, and structured fit. Perfect for blending classic military aesthetics with modern sophistication.",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Trousers",
-      },
-      {
-        label: "CHINO PANTS",
-        url: "/products?specificType=Trousers&categories=Chinos",
-      },
-      {
-        label: "KOREAN PANTS",
-        url: "/products?specificType=Trousers&categories=Korean%20Pants",
-      },
-      {
-        label: "GURKHA PANTS",
-        url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
-      },
-      {
-        label: "STRAIGHT FIT",
-        url: "/products?specificType=Trousers&fit=Straight%20Fit",
-      },
-      {
-        label: "JAPANEES PANTS",
-        url: "/products?specificType=Trousers&categories=Japanees%20Pants",
-      },
-      {
-        label: "CARGO TROUSERS",
-        url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
-      },
-      {
-        label: "BLACK",
-        url: "/products?specificType=Trousers&color=Black",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Trousers",
+    //   },
+    //   {
+    //     label: "CHINO PANTS",
+    //     url: "/products?specificType=Trousers&categories=Chinos",
+    //   },
+    //   {
+    //     label: "KOREAN PANTS",
+    //     url: "/products?specificType=Trousers&categories=Korean%20Pants",
+    //   },
+    //   {
+    //     label: "GURKHA PANTS",
+    //     url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
+    //   },
+    //   {
+    //     label: "STRAIGHT FIT",
+    //     url: "/products?specificType=Trousers&fit=Straight%20Fit",
+    //   },
+    //   {
+    //     label: "JAPANEES PANTS",
+    //     url: "/products?specificType=Trousers&categories=Japanees%20Pants",
+    //   },
+    //   {
+    //     label: "CARGO TROUSERS",
+    //     url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
+    //   },
+    //   {
+    //     label: "BLACK",
+    //     url: "/products?specificType=Trousers&color=Black",
+    //   },
+    // ],
     filters: [
       {
         id: "Color",
@@ -674,40 +674,40 @@ export const BOTTOMWEAR_DATA = {
     title: "Trousers For Men",
     description_short:
       "Discover the latest trend in men's fashion with Korean Pants. These trousers feature modern fits, often relaxed or tapered, and are ideal for creating a contemporary, stylish, and comfortable look. Shop solid colors perfect for casual or semi-formal wear.",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Trousers",
-      },
-      {
-        label: "CHINO PANTS",
-        url: "/products?specificType=Trousers&categories=Chinos",
-      },
-      {
-        label: "KOREAN PANTS",
-        url: "/products?specificType=Trousers&categories=Korean%20Pants",
-      },
-      {
-        label: "GURKHA PANTS",
-        url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
-      },
-      {
-        label: "STRAIGHT FIT",
-        url: "/products?specificType=Trousers&fit=Straight%20Fit",
-      },
-      {
-        label: "JAPANEES PANTS",
-        url: "/products?specificType=Trousers&categories=Japanees%20Pants",
-      },
-      {
-        label: "CARGO TROUSERS",
-        url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
-      },
-      {
-        label: "BLACK",
-        url: "/products?specificType=Trousers&color=Black",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Trousers",
+    //   },
+    //   {
+    //     label: "CHINO PANTS",
+    //     url: "/products?specificType=Trousers&categories=Chinos",
+    //   },
+    //   {
+    //     label: "KOREAN PANTS",
+    //     url: "/products?specificType=Trousers&categories=Korean%20Pants",
+    //   },
+    //   {
+    //     label: "GURKHA PANTS",
+    //     url: "/products?specificType=Trousers&categories=Gurkha%20Pants",
+    //   },
+    //   {
+    //     label: "STRAIGHT FIT",
+    //     url: "/products?specificType=Trousers&fit=Straight%20Fit",
+    //   },
+    //   {
+    //     label: "JAPANEES PANTS",
+    //     url: "/products?specificType=Trousers&categories=Japanees%20Pants",
+    //   },
+    //   {
+    //     label: "CARGO TROUSERS",
+    //     url: "/products?specificType=Trousers&categories=Cargo%20Trouser",
+    //   },
+    //   {
+    //     label: "BLACK",
+    //     url: "/products?specificType=Trousers&color=Black",
+    //   },
+    // ],
     filters: [
       {
         id: "Color",
@@ -802,28 +802,28 @@ export const BOTTOMWEAR_DATA = {
     title: "Pyjamas For Men",
     description_short:
       "Buy Pyjamas for men online at best price from Beyoung that bring ultimate comfort and style, ensuring a restful and stylish night’s sleep. Our loose, soft, relaxed and lightweight pure cotton pyjamas are perfect for summer. Our cotton nightpants for men features comfortable elastic waistband and 2 pockets for added convenience. Shop now for amazing discounts on mens pajama pants.",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Pyjamas",
-      },
-      {
-        label: "LOOSE FIT",
-        url: "/products?specificType=Pyjamas&fit=Loose%20Fit",
-      },
-      {
-        label: "REGULAR FIT",
-        url: "/products?specificType=Pyjamas&fit=Regular%20Fit",
-      },
-      {
-        label: "COTTON PYJAMAS",
-        url: "/products?specificType=Pyjamas&fabric=Cotton",
-      },
-      {
-        label: "COMBOS",
-        url: "/products?specificType=Pyjamas&combos=true",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Pyjamas",
+    //   },
+    //   {
+    //     label: "LOOSE FIT",
+    //     url: "/products?specificType=Pyjamas&fit=Loose%20Fit",
+    //   },
+    //   {
+    //     label: "REGULAR FIT",
+    //     url: "/products?specificType=Pyjamas&fit=Regular%20Fit",
+    //   },
+    //   {
+    //     label: "COTTON PYJAMAS",
+    //     url: "/products?specificType=Pyjamas&fabric=Cotton",
+    //   },
+    //   {
+    //     label: "COMBOS",
+    //     url: "/products?specificType=Pyjamas&combos=true",
+    //   },
+    // ],
     // Filters adjusted to be relevant for Pyjamas
     filters: [
       {
@@ -911,32 +911,32 @@ export const BOTTOMWEAR_DATA = {
     title: "Jeans for Men",
     description_short:
       "Beyoung's latest denim jeans for men let you step out in confidence. Our collection of comfortable and stylish jeans for men has everything from regular fit to baggy jeans for men. Made from high-quality fabric, they are designed to keep your everyday needs in mind. Style our top denim men's jeans with a fun oversized or printed t-shirt to amp up any outfit. Plus, buy any 2 stylish men's jeans and get ₹250 off – the perfect time to upgrade your wardrobe! Shop the perfect pair of men's jeans now and ace your denim game, starting at just ₹998. Check out our new regular fit and over-dyed baggy jeans!",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Jeans",
-      },
-      {
-        label: "REGULAR FIT",
-        url: "/products?specificType=Jeans&fit=Regular%20Fit",
-      },
-      {
-        label: "BAGGY FIT",
-        url: "/products?specificType=Jeans&fit=Baggy%20Fit",
-      },
-      {
-        label: "BOOTCUT",
-        url: "/products?specificType=Jeans&fit=Bootcut",
-      },
-      {
-        label: "BLACK",
-        url: "/products?specificType=Jeans&color=Black",
-      },
-      {
-        label: "WHITE",
-        url: "/products?specificType=Jeans&color=White",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Jeans",
+    //   },
+    //   {
+    //     label: "REGULAR FIT",
+    //     url: "/products?specificType=Jeans&fit=Regular%20Fit",
+    //   },
+    //   {
+    //     label: "BAGGY FIT",
+    //     url: "/products?specificType=Jeans&fit=Baggy%20Fit",
+    //   },
+    //   {
+    //     label: "BOOTCUT",
+    //     url: "/products?specificType=Jeans&fit=Bootcut",
+    //   },
+    //   {
+    //     label: "BLACK",
+    //     url: "/products?specificType=Jeans&color=Black",
+    //   },
+    //   {
+    //     label: "WHITE",
+    //     url: "/products?specificType=Jeans&color=White",
+    //   },
+    // ],
     filters: [
       {
         id: "Color",
@@ -1049,7 +1049,7 @@ export const BOTTOMWEAR_DATA = {
     title: "Shorts for men",
     description_short:
       "Shop stylish men’s denim Jorts at flat ₹998; FREE shipping, exchanges, and easy returns.",
-    buttons: [], // No buttons requested
+    // buttons: [], // No buttons requested
     filters: [
       {
         id: "Type",
@@ -1117,11 +1117,10 @@ export const BOTTOMWEAR_DATA = {
     faq: [], // No FAQ requested
   },
   boxers: {
-
     title: "Boxers for men",
     description_short:
       "Stylish boxer shorts for men – ease into comfort with our premium collection. With the quirkiest range of men's boxers, Beyoung is your one-stop destination. Our cotton boxers are as light as a feather, featuring playful shades and convenient pockets. Check out our collection of comfortable cotton boxers for men, men's boxers, and boxer shorts for men below with soft fabrics and perfect fits for all-day comfort and style, and don't miss the crazy deals! Don’t forget to explore our awesome men's boxer combos online in India! Get yours now!",
-    
+
     filters: [
       {
         id: "Color",

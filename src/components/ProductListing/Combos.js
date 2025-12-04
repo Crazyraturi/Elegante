@@ -3,36 +3,36 @@ export const Combos_DATA = {
     title: "Combo Products",
     description_short:
       "When in doubt, a combo for mens is always a smart choice. Explore Beyoung’s latest collection of combo clothes for men online. We offer you a quality combo offers, including t-shirts, shirts, joggers, polo t-shirts, pajamas, and boxers. The discounts are hard to resist. Pick any of the 2, 3, and 4 combo for mens featuring shirts, t-shirts, boxers, joggers, and more. Shop now!",
-    buttons: [
-      {
-        label: "VIEW ALL",
-        url: "/products?specificType=Combo_Products",
-      },
-      {
-        label: "T-SHIRT",
-        url: "/products?specificType=Combo_Products&productType=T-shirt",
-      },
-      {
-        label: "JOGGERS",
-        url: "/products?specificType=Combo_Products&productType=Joggers",
-      },
-      {
-        label: "SHIRT",
-        url: "/products?specificType=Combo_Products&productType=Shirt",
-      },
-      {
-        label: "POLO T-SHIRT",
-        url: "/products?specificType=Combo_Products&productType=Polo%20T-shirt",
-      },
-      {
-        label: "PYJAMAS",
-        url: "/products?specificType=Combo_Products&productType=Pyjamas",
-      },
-      {
-        label: "BOXERS",
-        url: "/products?specificType=Combo_Products&productType=Boxers",
-      },
-    ],
+    // buttons: [
+    //   {
+    //     label: "VIEW ALL",
+    //     url: "/products?specificType=Combo_Products",
+    //   },
+    //   {
+    //     label: "T-SHIRT",
+    //     url: "/products?specificType=Combo_Products&productType=T-shirt",
+    //   },
+    //   {
+    //     label: "JOGGERS",
+    //     url: "/products?specificType=Combo_Products&productType=Joggers",
+    //   },
+    //   {
+    //     label: "SHIRT",
+    //     url: "/products?specificType=Combo_Products&productType=Shirt",
+    //   },
+    //   {
+    //     label: "POLO T-SHIRT",
+    //     url: "/products?specificType=Combo_Products&productType=Polo%20T-shirt",
+    //   },
+    //   {
+    //     label: "PYJAMAS",
+    //     url: "/products?specificType=Combo_Products&productType=Pyjamas",
+    //   },
+    //   {
+    //     label: "BOXERS",
+    //     url: "/products?specificType=Combo_Products&productType=Boxers",
+    //   },
+    // ],
     filters: [
       {
         id: "type",
