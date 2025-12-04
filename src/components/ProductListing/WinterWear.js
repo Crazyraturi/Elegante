@@ -126,6 +126,7 @@ export const WinterWear_DATA = {
         {
           product: "Navy Recycled Yarn Oversized Sweatshirt",
           price: "₹799",
+          id: "6930004fe93d41d916ffd04e",
         },
         {
           product: "Brown Recycled Yarn Oversized Sweatshirt",
