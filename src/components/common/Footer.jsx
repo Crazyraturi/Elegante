@@ -109,9 +109,6 @@ const Footer = () => {
               <Link to="/in-the-news">Media</Link>
             </li>
             <li>
-              <Link to="/beyoungistan">Beyoungistan</Link>
-            </li>
-            <li>
               <Link to="/blog">Beyoung Blog</Link>
             </li>
             <li>
