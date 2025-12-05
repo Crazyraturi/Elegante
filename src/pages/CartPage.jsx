@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import Cart from "../assets/Add to Cart-cuate.svg";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../src/context/CartContext";
 import { Check, Trash2, Heart } from "lucide-react";
@@ -13,7 +12,7 @@ export default function CartPage() {
           <div className="w-full flex justify-center mb-12">
             <div className="w-120 h-120 bg-gray-200 rounded-lg flex items-center justify-center">
               <img
-                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931279/Cart_d9z9b6.png"
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934044/Add_to_Cart-cuate_mue6ko.svg"
                 alt="Cart Empty"
               />
             </div>
