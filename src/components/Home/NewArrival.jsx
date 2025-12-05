@@ -11,6 +11,15 @@ const NewArrival = () => {
   const [visibleCount, setVisibleCount] = useState(12);
   const observerTarget = useRef(null);
 
+  const shuffleArray = (array) => {
+    let shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -19,7 +28,9 @@ const NewArrival = () => {
           "https://beyoung-backend.onrender.com/api/v1/product"
         );
         const data = await res.json();
-        setProducts(data.data || data.products || []);
+        const rawProducts = data.data || data.products || [];
+        const randomProducts = shuffleArray(rawProducts);
+        setProducts(randomProducts);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -30,15 +41,30 @@ const NewArrival = () => {
     fetchProducts();
   }, []);
 
-  const filteredProducts =
-    activeTab === "viewAll"
-      ? products
-      : products.filter((item) => {
-          const category = item.subCategory
-            ? item.subCategory.toLowerCase()
-            : "";
-          return category.includes(activeTab.toLowerCase());
-        });
+  const filteredProducts = products.filter((item) => {
+    const subCat = item.subCategory ? item.subCategory.toLowerCase() : "";
+    const specType = item.specificType ? item.specificType.toLowerCase() : "";
+
+    switch (activeTab) {
+      case "viewAll":
+        return true;
+
+      case "polo":
+        return specType.includes("polo");
+
+      case "t-shirt":
+        return subCat.includes("t-shirt") && !specType.includes("polo");
+
+      case "shirt":
+        return subCat.includes("shirt") && !subCat.includes("t-shirt");
+
+      case "trousers":
+        return subCat.includes("trouser");
+
+      default:
+        return subCat.includes(activeTab.toLowerCase());
+    }
+  });
 
   useEffect(() => {
     setVisibleCount(12);
