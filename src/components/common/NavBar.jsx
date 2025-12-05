@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { CartContext } from "../../../src/context/CartContext";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
-import Logo from "../icons/Logo"
+import Logo from "../icons/Logo";
 import { useAuth } from "../../../src/context/AuthContext";
 
 const MenuLink = ({
@@ -123,7 +123,10 @@ export default function EcommerceHeader() {
   return (
     <div className="w-full sticky top-0 z-50">
       <div className="bg-black text-white py-2 flex justify-around items-center h-[38px] text-sm">
-        <div>This website is for internal educational use only and will not be publicly published.</div>
+        <div>
+          This website is for internal educational use only and will not be
+          publicly published.
+        </div>
         <TopBannerLinks />
       </div>
       <header className="bg-white shadow-sm">

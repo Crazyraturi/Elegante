@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Heart, X, Loader2 } from "lucide-react";
+import { Heart, X } from "lucide-react";
 import Loader from "../common/Loder";
 
-const RecentlyViewed= () => {
+const RecentlyViewed = () => {
   const [activeTab, setActiveTab] = useState("viewAll");
   const [showPopup, setShowPopup] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -70,14 +70,11 @@ const RecentlyViewed= () => {
         <h1 className="text-2xl pl-6 font-bold tracking-wide text-gray-800">
           Recently Viewed
         </h1>
-        
       </div>
-
-     
 
       {loading ? (
         <div className="flex justify-center items-center h-64">
-      <Loader />
+          <Loader />
         </div>
       ) : (
         <div className="max-w-7xl mx-auto p-6">

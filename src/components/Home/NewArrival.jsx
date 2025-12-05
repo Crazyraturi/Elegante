@@ -140,7 +140,7 @@ const NewArrival = () => {
 
       {loading ? (
         <div className="flex justify-center items-center h-64">
-       <Loader className="item-center"/>
+          <Loader className="item-center" />
         </div>
       ) : (
         <div className="max-w-7xl mx-auto p-6">

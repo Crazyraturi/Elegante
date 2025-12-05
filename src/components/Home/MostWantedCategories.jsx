@@ -1,14 +1,4 @@
 import React from "react";
-import mw1 from "../../assets/Shirts.png";
-import mw2 from "../../assets/Trousers.png";
-import mw3 from "../../assets/Winterwear.png";
-import mw4 from "../../assets/Cargos.png";
-import mw5 from "../../assets/Polo.png";
-import mw6 from "../../assets/Jeans.png";
-import mw7 from "../../assets/Joggers.png";
-import mw8 from "../../assets/Oversize.png";
-import mw9 from "../../assets/imPrinted_Tees.png";
-import mw10 from "../../assets/Plain_Tees.png";
 import { Link } from "react-router-dom";
 
 const MostWantedCategories = () => {
@@ -16,61 +6,71 @@ const MostWantedCategories = () => {
     {
       id: 1,
       name: "SHIRTS",
-      image: mw1,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924251/Shirts_i4eefg.png",
       route: "/products?specificType=Plain%20Shirts",
     },
     {
       id: 2,
       name: "TROUSERS",
-      image: mw2,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924306/Trousers_u17bux.png",
       route: "/products?subCategory=Trousers",
     },
     {
       id: 3,
       name: "WINTERWEAR",
-      image: mw3,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924333/Winterwear_gask4h.png",
       route: "/products?category=Winterwear",
     },
     {
       id: 4,
       name: "CARGOS",
-      image: mw4,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924356/Cargos_kq9nqm.png",
       route: "/products?subCategory=Cargo%20Pants",
     },
     {
       id: 5,
       name: "POLOS",
-      image: mw5,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924377/Polo_jfkjix.png",
       route: "/products?specificType=Polo%20T-shirts",
     },
     {
       id: 6,
       name: "JEANS",
-      image: mw6,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924398/Jeans_niajhe.png",
       route: "/products?subCategory=Jeans",
     },
     {
       id: 7,
       name: "JOGGERS",
-      image: mw7,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924422/Joggers_vusobi.png",
       route: "/products?subCategory=Cargo%20Joggers",
     },
     {
       id: 8,
       name: "OVERSIZED T-SHIRTS",
-      image: mw8,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924447/Oversize_pg9qyc.png",
       route: "/products?specificType=Oversized%20T-shirts",
     },
     {
       id: 9,
       name: "PRINTED T-SHIRTS",
-      image: mw9,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924481/imPrinted_Tees_j3lfpx.png",
       route: "/products?specificType=Printed%20T-shirts",
     },
     {
       id: 10,
       name: "PLAIN T-SHIRTS",
-      image: mw10,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924512/Plain_Tees_ihnaek.png",
       route: "/products?specificType=Plain%20T-shirts",
     },
   ];

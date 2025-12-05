@@ -5,7 +5,6 @@ import { whyChooseUsData } from "../common/whychoosedata";
 import { popularCategories } from "../common/Populardata";
 import { Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
 import { Bell, X, MoreVertical } from "lucide-react";
-import upi_footer from "../../assets/upi_footer.png";
 
 const Footer = () => {
   const [openWhy, setOpenWhy] = useState(false);
@@ -230,7 +229,7 @@ const Footer = () => {
 
             <div className="flex flex-wrap gap-3 items-center">
               <img
-                src={upi_footer}
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923498/upi_footer_asjgxl.png"
                 alt="UPI"
                 className="w-auto h-auto object-contain"
               />
@@ -298,7 +297,7 @@ const Footer = () => {
         {/* COPYRIGHT */}
         <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-sm">
-            Copyright © 2025  Elegante Folks Pvt Ltd. All rights reserved.
+            Copyright © 2025 Elegante Folks Pvt Ltd. All rights reserved.
           </p>
         </div>
       </div>

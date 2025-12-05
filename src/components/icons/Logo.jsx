@@ -1,5 +1,5 @@
 const Logo = () => (
- <svg
+  <svg
     width="200"
     height="60"
     viewBox="0 0 800 200"
@@ -18,7 +18,6 @@ const Logo = () => (
     >
       ELEGANTE
     </text>
-
   </svg>
 );
 

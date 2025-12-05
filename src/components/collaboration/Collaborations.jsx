@@ -1,40 +1,39 @@
-import c1 from "../../assets/cred-mobi-freecharge.jpg";
-import c2 from "../../assets/11HDFC-strip.jpg";
-import c3 from "../../assets/cred-mobi-freecharge2.jpg";
-import c4 from "../../assets/Freecharge-UPI11.jpg";
-import c5 from "../../assets/flash.co.jpg";
-
 export default function CollaborationsPage() {
   const collaborations = [
     {
       id: 1,
-      image: c1,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923187/cred-mobi-freecharge_cgnfr7.jpg",
       title: "Get mystery cashback upto Rs. 500 on MOV Rs.499 and above",
       bgColor: "bg-black",
     },
     {
       id: 2,
-      image: c2,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923360/11HDFC-strip_tatiiz.jpg",
       title: "Get Flat Rs 150/- Instant Discount.",
       bgColor: "bg-gray-100",
     },
     {
       id: 3,
-      image: c3,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923394/cred-mobi-freecharge2_cvczbu.jpg",
       title:
         "Get Additional Cashback Upto ₹250 on transactions via the MobiKwik Wallet",
       bgColor: "bg-blue-700",
     },
     {
       id: 4,
-      image: c4,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923410/Freecharge-UPI11_hyemnj.jpg",
       title:
         "Get Upto Rs.50/- cashback On using Freecharge UPI Minimum Shopping of Rs.999/-",
       bgColor: "bg-orange-50",
     },
     {
       id: 5,
-      image: c5,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923434/flash.co_svkxik.jpg",
       title: "Get Cashback Rs.100/ Cashback",
       bgColor: "bg-purple-500",
     },

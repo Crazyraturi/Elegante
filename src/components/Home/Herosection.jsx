@@ -1,10 +1,4 @@
 import React, { useState, useEffect } from "react";
-import c1 from "../../assets/Combos.png";
-import c2 from "../../assets/Flannel_Shirts.png";
-import c3 from "../../assets/Korean_Pants.png";
-import c4 from "../../assets/Mens_Pyjama_Banner.png";
-import c5 from "../../assets/Oxford.png";
-import c6 from "../../assets/Winter.png";
 
 const CarouselSlide = ({ slide }) => (
   <div className="relative w-full h-[600px] overflow-hidden">
@@ -21,12 +15,36 @@ export default function FlannelCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { image: c1, alt: "Combos" },
-    { image: c2, alt: "Flannel Shirts" },
-    { image: c3, alt: "Korean Pants" },
-    { image: c4, alt: "Mens Pyjama" },
-    { image: c5, alt: "Oxford" },
-    { image: c6, alt: "Winter" },
+    {
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923932/Combos_fgsauz.png",
+      alt: "Combos",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923963/Flannel_Shirts_tjishq.png",
+      alt: "Flannel Shirts",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924076/Korean_Pants_wr14gp.png",
+      alt: "Korean Pants",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924101/Mens_Pyjama_Banner_wtetog.png",
+      alt: "Mens Pyjama",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924130/Oxford_qjw0wc.png",
+      alt: "Oxford",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924157/Winter_grahqe.png",
+      alt: "Winter",
+    },
   ];
 
   const nextSlide = () => {

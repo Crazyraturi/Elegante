@@ -38,13 +38,13 @@ const Teams = () => {
       </div>
 
       <p className="text-center max-w-6xl m-auto">
-        But now, I have grown up into 300+ passionate  Elegantesters. All with the
-        same aspiration as you - to look unique and stylish without compromising
-        on quality and of course, not breaking the bank. In fact, everything is
-        made in Bharat only, and the team is really proud of it. Even more proud
-        of being trusted by 5 Million  Elegantesters (YOU guys). P.S. The team
-        strives to make your shopping experience comfortable and satisfactory,
-        and even COOLER!!{" "}
+        But now, I have grown up into 300+ passionate Elegantesters. All with
+        the same aspiration as you - to look unique and stylish without
+        compromising on quality and of course, not breaking the bank. In fact,
+        everything is made in Bharat only, and the team is really proud of it.
+        Even more proud of being trusted by 5 Million Elegantesters (YOU guys).
+        P.S. The team strives to make your shopping experience comfortable and
+        satisfactory, and even COOLER!!{" "}
       </p>
 
       <div className="m-auto max-w-6xl mt-5">

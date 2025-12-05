@@ -1,12 +1,5 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import s1 from "../../assets/image1.png";
-import s2 from "../../assets/image2.png";
-import s3 from "../../assets/image3.png";
-import s4 from "../../assets/image4.png";
-import s5 from "../../assets/image5.png";
-import s6 from "../../assets/image6.png";
-import s7 from "../../assets/image7.png";
 
 const ComboCard = ({ title, image }) => (
   <div className="shrink-0 w-72 mx-3">
@@ -21,40 +14,41 @@ const ComboCard = ({ title, image }) => (
 );
 
 const SuperSavingCombos = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
   const combos = [
     {
       title: "BOXERS",
-      image: s1,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924644/image1_beuckl.png",
     },
     {
       title: "MELANGE POLOS",
-      image: s2,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924689/image2_rpgbcg.png",
     },
     {
       title: "SATIN SHIRTS",
-      image: s3,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924725/image3_qcbxpp.png",
     },
     {
       title: "SATIN SHIRTS",
-      image: s4,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924726/image4_yz46ts.png",
     },
     {
       title: "REGULAR-FIT JEANS",
-      image: s5,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924727/image5_qmo2cg.png",
     },
     {
       title: "REGULAR-FIT JEANS",
-      image: s6,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924727/image6_otonuy.png",
     },
     {
       title: "REGULAR-FIT JEANS",
-      image: s7,
-    },
-    {
-      title: "REGULAR-FIT JEANS",
-      image: s5,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924727/image7_pg2v0r.png",
     },
   ];
 

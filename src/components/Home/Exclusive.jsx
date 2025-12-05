@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import BE1 from "../../assets/trendingTrousers.png";
-import BE2 from "../../assets/Replay.png";
-import BE3 from "../../assets/shirtreimagined.jpg";
-import BE4 from "../../assets/mancargo10x.jpg";
-import BE5 from "../../assets/iBack_to_college.png";
 
 export default function Exclusive() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const images = [BE1, BE2, BE3, BE4, BE5];
+  const images = [
+    "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923642/trendingTrousers_zgkmuj.png",
+    "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923691/Replay_ymylh3.png",
+    "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923720/shirtreimagined_lhppsy.jpg",
+    "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923741/mancargo10x_tkltnx.jpg",
+    "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764923781/iBack_to_college_jihldw.png",
+  ];
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -32,7 +32,7 @@ export default function Exclusive() {
       {/* Header */}
       <div className="text-center py-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-2">
-           Elegante Exclusive
+          Elegante Exclusive
         </h1>
         <p className="text-gray-600 text-lg">
           Trendy Global Styles For Extraordinary You
