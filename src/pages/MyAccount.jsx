@@ -12,9 +12,6 @@ import {
   Plus,
   Trash2,
 } from "lucide-react";
-import empty_order from "../assets/Empty-cuate.svg"
-import wishlist from "../assets/Online wishes list-cuate.svg"
-import contact_svg from "../assets/brand communication-cuate.svg"
 import { useAuth } from "@/context/AuthContext";
 import { useEffect } from "react";
 
@@ -140,7 +137,10 @@ const MyAccount = () => {
         return (
           <div className="bg-white rounded-lg p-8 flex flex-col items-center justify-center min-h-[570px]">
             <div className="w-64 h-64 mb-6 relative">
-              <img src={empty_order} alt="" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934070/Empty-cuate_ax4cwi.svg"
+                alt=""
+              />
             </div>
             <h2 className="text-2xl font-semibold mb-3">No Order Placed Yet</h2>
             <p className="text-gray-600 text-center mb-6 max-w-md">
@@ -198,7 +198,10 @@ const MyAccount = () => {
           <div className="bg-white rounded-lg p-8">
             <div className="flex flex-col items-center justify-center mb-8">
               <div className="w-48 h-48 mb-6">
-                <img src={wishlist} alt="wishlist_items" />
+                <img
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934077/Online_wishes_list-cuate_n0yxrb.svg"
+                  alt="wishlist_items"
+                />
               </div>
               <p className="text-gray-700 text-center italic mb-8">
                 "Add your must-have clothes to your favorites and never miss a
@@ -259,7 +262,7 @@ const MyAccount = () => {
                   className="border border-gray-300 rounded-lg p-4 flex items-center gap-4"
                 >
                   <div className="bg-yellow-400 text-black font-bold px-3 py-8 rounded  transform -rotate-90 origin-center whitespace-nowrap text-sm">
-                     ELEGANTE
+                    ELEGANTE
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-1">{coupon.code}</h3>
@@ -290,7 +293,10 @@ const MyAccount = () => {
                 </p>
               </div>
               <div className="w-32 h-32">
-               <img src={contact_svg} alt="contact_svg_img" />
+                <img
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934065/brand_communication-cuate_o3pkkf.svg"
+                  alt="contact_svg_img"
+                />
               </div>
             </div>
 
