@@ -128,50 +128,50 @@ export const WinterWear_DATA = {
           price: "₹799",
           id: "6930004fe93d41d916ffd04e",
         },
-        {
-          product: "Brown Recycled Yarn Oversized Sweatshirt",
-          price: "₹799",
-        },
-        {
-          product: "Off White Elbow Patch Sweatshirt",
-          price: "₹1199",
-        },
-        {
-          product: "Blue BYNG Printed Hoodie",
-          price: "₹998",
-        },
-        {
-          product: "Sand Brown Chevron Printed Shacket",
-          price: "₹1199",
-        },
-        {
-          product: "Lavender Striped Polo Sweatshirt",
-          price: "₹899",
-        },
-        {
-          product: "Pink Recycled Plaid Flannel Shirt",
-          price: "₹1199",
-        },
-        {
-          product: "Yellow Recycled Plaid Flannel Shirt",
-          price: "₹1199",
-        },
-        {
-          product: "Airforce Blue Color Blast Shacket",
-          price: "₹1399",
-        },
-        {
-          product: "Mauve Color Blast Shacket",
-          price: "₹1399",
-        },
-        {
-          product: "Rust Orange Mission Doodle Printed Hoodie",
-          price: "₹1199",
-        },
-        {
-          product: "Cider Brown Printed Varsity Jacket for Men",
-          price: "₹2199",
-        },
+        // {
+        //   product: "Brown Recycled Yarn Oversized Sweatshirt",
+        //   price: "₹799",
+        // },
+        // {
+        //   product: "Off White Elbow Patch Sweatshirt",
+        //   price: "₹1199",
+        // },
+        // {
+        //   product: "Blue BYNG Printed Hoodie",
+        //   price: "₹998",
+        // },
+        // {
+        //   product: "Sand Brown Chevron Printed Shacket",
+        //   price: "₹1199",
+        // },
+        // {
+        //   product: "Lavender Striped Polo Sweatshirt",
+        //   price: "₹899",
+        // },
+        // {
+        //   product: "Pink Recycled Plaid Flannel Shirt",
+        //   price: "₹1199",
+        // },
+        // {
+        //   product: "Yellow Recycled Plaid Flannel Shirt",
+        //   price: "₹1199",
+        // },
+        // {
+        //   product: "Airforce Blue Color Blast Shacket",
+        //   price: "₹1399",
+        // },
+        // {
+        //   product: "Mauve Color Blast Shacket",
+        //   price: "₹1399",
+        // },
+        // {
+        //   product: "Rust Orange Mission Doodle Printed Hoodie",
+        //   price: "₹1199",
+        // },
+        // {
+        //   product: "Cider Brown Printed Varsity Jacket for Men",
+        //   price: "₹2199",
+        // },
       ],
     },
     faq: [

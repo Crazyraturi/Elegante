@@ -108,58 +108,58 @@ export const NewArrival_DATA = {
       },
     ],
 
-    price_table_data: {
-      heading: "Buy Men's New Arrival at Best Price",
-      items: [
-        {
-          product: "Off-white Recycled Yarn Oversized Sweatshirt",
-          price: "₹799",
-        },
-        {
-          product: "Brown Recycled Yarn Oversized Sweatshirt",
-          price: "₹799",
-        },
-        {
-          product: "Indigo Blue Over Dyed Baggy Fit Jeans",
-          price: "₹1199",
-        },
-        {
-          product: "Tinted Brown Over Dyed Baggy Fit Jeans",
-          price: "₹1199",
-        },
-        {
-          product: "Off White Elbow Patch Sweatshirt",
-          price: "₹1199",
-        },
-        {
-          product: "Beige Turtle Neck Sweatshirt",
-          price: "₹1499",
-        },
-        {
-          product: "Brown Camo Printed Hoodie",
-          price: "₹1199",
-        },
-        {
-          product: "Blue Camo Printed Hoodie",
-          price: "₹1199",
-        },
-        {
-          product: "Dark Grey Button Down Oxford Shirts",
-          price: "₹899",
-        },
-        {
-          product: "Navy Button Down Oxford Shirts",
-          price: "₹899",
-        },
-        {
-          product: "Beige Utility Shirt",
-          price: "₹1199",
-        },
-        {
-          product: "Dusty Olive Utility Shirt",
-          price: "₹1199",
-        },
-      ],
-    },
+    // price_table_data: {
+    //   heading: "Buy Men's New Arrival at Best Price",
+    //   items: [
+    //     {
+    //       product: "Off-white Recycled Yarn Oversized Sweatshirt",
+    //       price: "₹799",
+    //     },
+    //     {
+    //       product: "Brown Recycled Yarn Oversized Sweatshirt",
+    //       price: "₹799",
+    //     },
+    //     {
+    //       product: "Indigo Blue Over Dyed Baggy Fit Jeans",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Tinted Brown Over Dyed Baggy Fit Jeans",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Off White Elbow Patch Sweatshirt",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Beige Turtle Neck Sweatshirt",
+    //       price: "₹1499",
+    //     },
+    //     {
+    //       product: "Brown Camo Printed Hoodie",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Blue Camo Printed Hoodie",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Dark Grey Button Down Oxford Shirts",
+    //       price: "₹899",
+    //     },
+    //     {
+    //       product: "Navy Button Down Oxford Shirts",
+    //       price: "₹899",
+    //     },
+    //     {
+    //       product: "Beige Utility Shirt",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Dusty Olive Utility Shirt",
+    //       price: "₹1199",
+    //     },
+    //   ],
+    // },
   },
 };

@@ -130,47 +130,47 @@ export const Combos_DATA = {
           price: "₹1998",
           id: "69301c92cb3a871f0fb70383",
         },
-        {
-          product: "Pick Any 3- Polo T-shirt Combo",
-          price: "₹1399",
-        },
-        {
-          product: "Pick Any 2 - Loose-fit Pyjama Pants Combo",
-          price: "₹1599",
-        },
-        {
-          product: "Pick Any 3 - Double Pleated Cargo Joggers Combo",
-          price: "₹1998",
-        },
-        {
-          product: "Pick Any 2 - Plain Full Sleeve T-shirts Combo",
-          price: "₹699",
-          id: "69301b73cb3a871f0fb70227",
-        },
-        {
-          product: "Pick Any 3 - Cotton Cargo Joggers Combo",
-          price: "₹1998",
-        },
-        {
-          product: "Pick Any 4- Plain Mens Boxers Combo",
-          price: "₹998",
-        },
-        {
-          product: "Pick Any 3 - Regular-fit Pyjama Combo",
-          price: "₹1599",
-        },
-        {
-          product: "Pick Any 3- Plain T-shirt Combo 2.0",
-          price: "₹899",
-        },
-        {
-          product: "Pick Any 3- Melange Polo T-shirt Combo",
-          price: "₹1599",
-        },
-        {
-          product: "Pick Any 2 - Satin Shirts Combo",
-          price: "₹1599",
-        },
+        // {
+        //   product: "Pick Any 3- Polo T-shirt Combo",
+        //   price: "₹1399",
+        // },
+        // {
+        //   product: "Pick Any 2 - Loose-fit Pyjama Pants Combo",
+        //   price: "₹1599",
+        // },
+        // {
+        //   product: "Pick Any 3 - Double Pleated Cargo Joggers Combo",
+        //   price: "₹1998",
+        // },
+        // {
+        //   product: "Pick Any 2 - Plain Full Sleeve T-shirts Combo",
+        //   price: "₹699",
+        //   id: "69301b73cb3a871f0fb70227",
+        // },
+        // {
+        //   product: "Pick Any 3 - Cotton Cargo Joggers Combo",
+        //   price: "₹1998",
+        // },
+        // {
+        //   product: "Pick Any 4- Plain Mens Boxers Combo",
+        //   price: "₹998",
+        // },
+        // {
+        //   product: "Pick Any 3 - Regular-fit Pyjama Combo",
+        //   price: "₹1599",
+        // },
+        // {
+        //   product: "Pick Any 3- Plain T-shirt Combo 2.0",
+        //   price: "₹899",
+        // },
+        // {
+        //   product: "Pick Any 3- Melange Polo T-shirt Combo",
+        //   price: "₹1599",
+        // },
+        // {
+        //   product: "Pick Any 2 - Satin Shirts Combo",
+        //   price: "₹1599",
+        // },
       ],
     },
     faq: [

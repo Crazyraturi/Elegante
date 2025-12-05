@@ -28,20 +28,20 @@ export const CATEGORY_DATA = {
             <h3 class="seo-h3">Why Choose Beyoung High Quality Plain T shirts for Men?</h3>
             [The rest of the final descriptive paragraphs are included here...]
         `,
-    price_table_data: [
-      { product: "Pick Any 4 - Plain T-shirt Combo 2.0", price: "₹1099" },
-      { product: "Pick Any 3- Polo T-shirt Combo", price: "₹1399" },
-      { product: "Pick Any 3- Plain T-shirt Combo 2.0", price: "₹899" },
-      { product: "Black Plain T-Shirt 2.0", price: "₹379" },
-      { product: "White Plain T-shirt 2.0", price: "₹379" },
-      { product: "Olive Green Plain T-shirt 2.0", price: "₹379" },
-      { product: "Brown Plain T-shirt 2.0", price: "₹379" },
-      { product: "Mauve Polo T-shirt", price: "₹549" },
-      { product: "Lush Green Polo T-shirt", price: "₹549" },
-      { product: "Thunder Grey Polo T-shirt", price: "₹549" },
-      { product: "French Wine Polo T-shirt", price: "₹549" },
-      { product: "Plain Black Full Sleeves T-shirt", price: "₹499" },
-    ],
+    // price_table_data: [
+    //   { product: "Pick Any 4 - Plain T-shirt Combo 2.0", price: "₹1099" },
+    //   { product: "Pick Any 3- Polo T-shirt Combo", price: "₹1399" },
+    //   { product: "Pick Any 3- Plain T-shirt Combo 2.0", price: "₹899" },
+    //   { product: "Black Plain T-Shirt 2.0", price: "₹379" },
+    //   { product: "White Plain T-shirt 2.0", price: "₹379" },
+    //   { product: "Olive Green Plain T-shirt 2.0", price: "₹379" },
+    //   { product: "Brown Plain T-shirt 2.0", price: "₹379" },
+    //   { product: "Mauve Polo T-shirt", price: "₹549" },
+    //   { product: "Lush Green Polo T-shirt", price: "₹549" },
+    //   { product: "Thunder Grey Polo T-shirt", price: "₹549" },
+    //   { product: "French Wine Polo T-shirt", price: "₹549" },
+    //   { product: "Plain Black Full Sleeves T-shirt", price: "₹499" },
+    // ],
     // buttons: [
     //   { label: "View All", url: "/t-shirts/plain/all" },
     //   {
@@ -220,23 +220,23 @@ export const CATEGORY_DATA = {
         `,
 
     // ⭐️ NEW: Price Table Data Array ⭐️
-    price_table_data: [
-      { product: "Eagles Eye Printed T-shirt for Men", price: "₹399" },
-      { product: "Live Love Laugh Printed T-shirt for Men", price: "₹399" },
-      { product: "Yay Day Half Sleeve T-shirt for Men", price: "₹399" },
-      {
-        product: "Chanchal Mann Ati Random Printed T-shirt for Men",
-        price: "₹399",
-      },
-      { product: "Just Vibin Half Sleeve T-shirt for Men", price: "₹399" },
-      { product: "Emojis Printed T-shirt for Men", price: "₹399" },
-      { product: "Sun Motivation Printed T-shirt", price: "₹399" },
-      { product: "Own Every Moment Printed T-shirt for Men", price: "₹399" },
-      { product: "Winged Half Sleeve Printed T-shirt", price: "₹399" },
-      { product: "Vacation Mode T-shirts for Men", price: "₹399" },
-      { product: "Time Is Money Half Sleeve T-shirt", price: "₹399" },
-      { product: "Work Hard Printed T-shirt for Men", price: "₹399" },
-    ],
+    // price_table_data: [
+    //   { product: "Eagles Eye Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Live Love Laugh Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Yay Day Half Sleeve T-shirt for Men", price: "₹399" },
+    //   {
+    //     product: "Chanchal Mann Ati Random Printed T-shirt for Men",
+    //     price: "₹399",
+    //   },
+    //   { product: "Just Vibin Half Sleeve T-shirt for Men", price: "₹399" },
+    //   { product: "Emojis Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Sun Motivation Printed T-shirt", price: "₹399" },
+    //   { product: "Own Every Moment Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Winged Half Sleeve Printed T-shirt", price: "₹399" },
+    //   { product: "Vacation Mode T-shirts for Men", price: "₹399" },
+    //   { product: "Time Is Money Half Sleeve T-shirt", price: "₹399" },
+    //   { product: "Work Hard Printed T-shirt for Men", price: "₹399" },
+    // ],
 
     // --- Quick Links / Top Buttons (Omitted for brevity) ---
     // buttons: [
@@ -320,23 +320,23 @@ export const CATEGORY_DATA = {
     description_short:
       "Explore the ultimate collection of T-Shirts for Men at unbeatable prices. Filter by size, color, pattern, and style, from plain essentials to the latest oversized and printed designs. Find your perfect fit for every occasion!",
 
-    price_table_data: [
-      {
-        product: "Move At Your Own Pace Printed T-shirt for Men",
-        price: "₹399",
-      },
-      { product: "Monday Moody Printed T-shirt", price: "₹399" },
-      { product: "The Knight Printed T-shirt for Men", price: "₹399" },
-      { product: "Yay Day Half Sleeve T-shirt for Men", price: "₹399" },
-      { product: "Into The Wilderness Printed T-shirt for Men", price: "₹399" },
-      { product: "Emojis Printed T-shirt for Men", price: "₹399" },
-      { product: "Sun Motivation Printed T-shirt", price: "₹399" },
-      { product: "Relax Printed T-shirt for Men", price: "₹399" },
-      { product: "Born To Shine Printed T-shirt", price: "₹399" },
-      { product: "Illuminati Half Sleeve Printed T-shirt", price: "₹399" },
-      { product: "Typography Printed T-shirt for Men", price: "₹399" },
-      { product: "No Risk No Story Printed T-shirt for Men", price: "₹399" },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "Move At Your Own Pace Printed T-shirt for Men",
+    //     price: "₹399",
+    //   },
+    //   { product: "Monday Moody Printed T-shirt", price: "₹399" },
+    //   { product: "The Knight Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Yay Day Half Sleeve T-shirt for Men", price: "₹399" },
+    //   { product: "Into The Wilderness Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Emojis Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Sun Motivation Printed T-shirt", price: "₹399" },
+    //   { product: "Relax Printed T-shirt for Men", price: "₹399" },
+    //   { product: "Born To Shine Printed T-shirt", price: "₹399" },
+    //   { product: "Illuminati Half Sleeve Printed T-shirt", price: "₹399" },
+    //   { product: "Typography Printed T-shirt for Men", price: "₹399" },
+    //   { product: "No Risk No Story Printed T-shirt for Men", price: "₹399" },
+    // ],
     // buttons: [
     //   { label: "View All", url: "/products?subCategory=T-shirts" },
     //   { label: "New Drops", url: "/t-shirts/new-drops" },
@@ -531,7 +531,6 @@ export const CATEGORY_DATA = {
         <p>Plain T-Shirts| Couple T-Shirts | Mens Shirts | Urban Shirts | Formal Shirts | Plain Shirts</p>
     `,
 
-    // ❌ No Top Buttons requested
     // buttons: [
     //   {
     //     label: "Half Sleeves",
@@ -544,26 +543,26 @@ export const CATEGORY_DATA = {
     // ],
 
     // ⭐️ Price Table Data Array ⭐️
-    price_table_data: [
-      { product: "Brown Stitch In Time T-shirt", price: "₹599" },
-      {
-        product: "Electric Blue Monday Graphic HD Print T-shirt",
-        price: "₹599",
-      },
-      { product: "Hot Pink Belief Acid Wash Oversized Tshirt", price: "₹799" },
-      { product: "Red Smiley Rubber Printed T-shirt", price: "₹699" },
-      { product: "Orange Stripe Textured Oversized T-Shirt", price: "₹599" },
-      { product: "Black HD Print Patch Oversized T-Shirt", price: "₹749" },
-      { product: "Sea Green Stitch In Time T-shirt", price: "₹599" },
-      { product: "Lavender Star Patch Oversized T-Shirt", price: "₹899" },
-      { product: "Black Striped Knitted T-Shirt", price: "₹749" },
-      { product: "Off White Monday Graphic HD Print T-shirt", price: "₹599" },
-      {
-        product: "Brick Red Rock and Roll HD Printed Oversized Tshirt",
-        price: "₹699",
-      },
-      { product: "Off White Smiley Rubber Printed T-shirt", price: "₹699" },
-    ],
+    // price_table_data: [
+    //   { product: "Brown Stitch In Time T-shirt", price: "₹599" },
+    //   {
+    //     product: "Electric Blue Monday Graphic HD Print T-shirt",
+    //     price: "₹599",
+    //   },
+    //   { product: "Hot Pink Belief Acid Wash Oversized Tshirt", price: "₹799" },
+    //   { product: "Red Smiley Rubber Printed T-shirt", price: "₹699" },
+    //   { product: "Orange Stripe Textured Oversized T-Shirt", price: "₹599" },
+    //   { product: "Black HD Print Patch Oversized T-Shirt", price: "₹749" },
+    //   { product: "Sea Green Stitch In Time T-shirt", price: "₹599" },
+    //   { product: "Lavender Star Patch Oversized T-Shirt", price: "₹899" },
+    //   { product: "Black Striped Knitted T-Shirt", price: "₹749" },
+    //   { product: "Off White Monday Graphic HD Print T-shirt", price: "₹599" },
+    //   {
+    //     product: "Brick Red Rock and Roll HD Printed Oversized Tshirt",
+    //     price: "₹699",
+    //   },
+    //   { product: "Off White Smiley Rubber Printed T-shirt", price: "₹699" },
+    // ],
 
     // ⭐️ Comprehensive Unique Filters ⭐️
     filters: [
@@ -738,32 +737,32 @@ export const CATEGORY_DATA = {
     // ],
 
     // ⭐️ Price Table Data Array ⭐️
-    price_table_data: [
-      { product: "Pick Any 3- Polo T-shirt Combo", price: "₹1399" },
-      { product: "Pick Any 3- Melange Polo T-shirt Combo", price: "₹1599" },
-      {
-        product: "Sage Green Wave Jacquard Textured Polo T-Shirt",
-        price: "₹799",
-      },
-      {
-        product: "Bluish Grey Check Jacquard Textured Polo T-Shirt",
-        price: "₹799",
-      },
-      {
-        product: "Indigo Youth Embroidered Denim Polo T-shirt",
-        price: "₹1199",
-      },
-      { product: "Brown Wave Jacquard Textured Polo T-Shirt", price: "₹799" },
-      { product: "Mauve Textured Color Block Polo T-Shirt", price: "₹799" },
-      { product: "Cream Raglan Sleeve Zipper Polo T-Shirt", price: "₹799" },
-      { product: "Mauve Polo T-shirt", price: "₹549" },
-      { product: "Lush Green Polo T-shirt", price: "₹549" },
-      { product: "Black Wave Jacquard Textured Polo T-Shirt", price: "₹799" },
-      {
-        product: "Sage Green Raglan Sleeve Zipper Polo T-Shirt",
-        price: "₹799",
-      },
-    ],
+    // price_table_data: [
+    //   { product: "Pick Any 3- Polo T-shirt Combo", price: "₹1399" },
+    //   { product: "Pick Any 3- Melange Polo T-shirt Combo", price: "₹1599" },
+    //   {
+    //     product: "Sage Green Wave Jacquard Textured Polo T-Shirt",
+    //     price: "₹799",
+    //   },
+    //   {
+    //     product: "Bluish Grey Check Jacquard Textured Polo T-Shirt",
+    //     price: "₹799",
+    //   },
+    //   {
+    //     product: "Indigo Youth Embroidered Denim Polo T-shirt",
+    //     price: "₹1199",
+    //   },
+    //   { product: "Brown Wave Jacquard Textured Polo T-Shirt", price: "₹799" },
+    //   { product: "Mauve Textured Color Block Polo T-Shirt", price: "₹799" },
+    //   { product: "Cream Raglan Sleeve Zipper Polo T-Shirt", price: "₹799" },
+    //   { product: "Mauve Polo T-shirt", price: "₹549" },
+    //   { product: "Lush Green Polo T-shirt", price: "₹549" },
+    //   { product: "Black Wave Jacquard Textured Polo T-Shirt", price: "₹799" },
+    //   {
+    //     product: "Sage Green Raglan Sleeve Zipper Polo T-Shirt",
+    //     price: "₹799",
+    //   },
+    // ],
 
     // ⭐️ Comprehensive Unique Filters ⭐️
     filters: [
@@ -934,20 +933,20 @@ export const CATEGORY_DATA = {
     // ],
 
     // ⭐️ Price Table Data Array ⭐️
-    price_table_data: [
-      { product: "Pick Any 4 - Plain T-shirt Plus Size Combo", price: "₹1099" },
-      { product: "Pick Any 3- Plus Size Polo T-shirt Combo", price: "₹1399" },
-      { product: "Plain Black Plus Size T-Shirt 2.0", price: "₹379" },
-      { product: "Brown Plus Size T-shirt 2.0", price: "₹379" },
-      { product: "Bold Black Plus Size Polo T-shirt", price: "₹549" },
-      { product: "Lush Green Plus Size Polo T-shirt", price: "₹549" },
-      { product: "Plain White Plus Size T-shirt 2.0", price: "₹379" },
-      { product: "Olive Green Plus Size T-shirt 2.0", price: "₹379" },
-      { product: "Mauve Plus Size Polo T-shirt", price: "₹549" },
-      { product: "Thunder Grey Plus Size Polo T-shirt", price: "₹549" },
-      { product: "Pick Any 3 - Plain T-shirt Plus Size Combo", price: "₹899" },
-      { product: "Pick Any 2- Plus Size Polo T-shirt Combo", price: "₹998" },
-    ],
+    // price_table_data: [
+    //   { product: "Pick Any 4 - Plain T-shirt Plus Size Combo", price: "₹1099" },
+    //   { product: "Pick Any 3- Plus Size Polo T-shirt Combo", price: "₹1399" },
+    //   { product: "Plain Black Plus Size T-Shirt 2.0", price: "₹379" },
+    //   { product: "Brown Plus Size T-shirt 2.0", price: "₹379" },
+    //   { product: "Bold Black Plus Size Polo T-shirt", price: "₹549" },
+    //   { product: "Lush Green Plus Size Polo T-shirt", price: "₹549" },
+    //   { product: "Plain White Plus Size T-shirt 2.0", price: "₹379" },
+    //   { product: "Olive Green Plus Size T-shirt 2.0", price: "₹379" },
+    //   { product: "Mauve Plus Size Polo T-shirt", price: "₹549" },
+    //   { product: "Thunder Grey Plus Size Polo T-shirt", price: "₹549" },
+    //   { product: "Pick Any 3 - Plain T-shirt Plus Size Combo", price: "₹899" },
+    //   { product: "Pick Any 2- Plus Size Polo T-shirt Combo", price: "₹998" },
+    // ],
 
     // ⭐️ Comprehensive Unique Filters ⭐️
     filters: [
@@ -1143,29 +1142,29 @@ export const CATEGORY_DATA = {
     // ],
 
     // ⭐️ Price Table Data Array ⭐️
-    price_table_data: [
-      {
-        product: "Pick Any 2 - Plain Full Sleeve T-shirts Combo",
-        price: "₹699",
-      },
-      {
-        product: "Pick Any 3 - Plain Full Sleeve T-shirts Combo",
-        price: "₹1049",
-      },
-      { product: "Plain White Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Space Grey Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Olive Green Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Black Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Teal Blue Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Navy Blue Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Mauve Glow Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Burgundy Full Sleeves T-shirt", price: "₹499" },
-      { product: "Plain Violet Full Sleeves T-shirt", price: "₹499" },
-      {
-        product: "Pick Any 4 - Plain Full Sleeve T-shirts Combo",
-        price: "₹1399",
-      },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "Pick Any 2 - Plain Full Sleeve T-shirts Combo",
+    //     price: "₹699",
+    //   },
+    //   {
+    //     product: "Pick Any 3 - Plain Full Sleeve T-shirts Combo",
+    //     price: "₹1049",
+    //   },
+    //   { product: "Plain White Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Space Grey Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Olive Green Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Black Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Teal Blue Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Navy Blue Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Mauve Glow Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Burgundy Full Sleeves T-shirt", price: "₹499" },
+    //   { product: "Plain Violet Full Sleeves T-shirt", price: "₹499" },
+    //   {
+    //     product: "Pick Any 4 - Plain Full Sleeve T-shirts Combo",
+    //     price: "₹1399",
+    //   },
+    // ],
 
     // ⭐️ Comprehensive Unique Filters ⭐️
     filters: [
@@ -1411,29 +1410,29 @@ export const CATEGORY_DATA = {
     // ],
 
     // ⭐️ Price Table Data Array ⭐️
-    price_table_data: [
-      { product: "Pick Any 4 - Plain T-shirt Combo 2.0", price: "₹1099" },
-      { product: "Pick Any 3- Polo T-shirt Combo", price: "₹1399" },
-      { product: "Brown Stitch In Time T-shirt", price: "₹599" },
-      { product: "Red Smiley Rubber Printed T-shirt", price: "₹699" },
-      {
-        product: "Electric Blue Monday Graphic HD Print T-shirt",
-        price: "₹599",
-      },
-      { product: "Hot Pink Belief Acid Wash Oversized Tshirt", price: "₹799" },
-      { product: "Pick Any 3- Plain T-shirt Combo 2.0", price: "₹899" },
-      { product: "Pick Any 2- Polo T-shirt Combo", price: "₹998" },
-      { product: "Eagles Eye Printed T-shirt for Men", price: "₹399" },
-      {
-        product: "Chanchal Mann Ati Random Printed T-shirt for Men",
-        price: "₹399",
-      },
-      {
-        product: "Move At Your Own Pace Printed T-shirt for Men",
-        price: "₹399",
-      },
-      { product: "Monday Moody Printed T-shirt", price: "₹399" },
-    ],
+    // price_table_data: [
+    //   { product: "Pick Any 4 - Plain T-shirt Combo 2.0", price: "₹1099" },
+    //   { product: "Pick Any 3- Polo T-shirt Combo", price: "₹1399" },
+    //   { product: "Brown Stitch In Time T-shirt", price: "₹599" },
+    //   { product: "Red Smiley Rubber Printed T-shirt", price: "₹699" },
+    //   {
+    //     product: "Electric Blue Monday Graphic HD Print T-shirt",
+    //     price: "₹599",
+    //   },
+    //   { product: "Hot Pink Belief Acid Wash Oversized Tshirt", price: "₹799" },
+    //   { product: "Pick Any 3- Plain T-shirt Combo 2.0", price: "₹899" },
+    //   { product: "Pick Any 2- Polo T-shirt Combo", price: "₹998" },
+    //   { product: "Eagles Eye Printed T-shirt for Men", price: "₹399" },
+    //   {
+    //     product: "Chanchal Mann Ati Random Printed T-shirt for Men",
+    //     price: "₹399",
+    //   },
+    //   {
+    //     product: "Move At Your Own Pace Printed T-shirt for Men",
+    //     price: "₹399",
+    //   },
+    //   { product: "Monday Moody Printed T-shirt", price: "₹399" },
+    // ],
 
     // ⭐️ Comprehensive Unique Filters ⭐️
     filters: [
@@ -1589,20 +1588,20 @@ export const CATEGORY_DATA = {
     //     url: "/products?specificType=Plain%20Shirts&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: [
-      { product: "Pick Any 3 - Plain Cotton Shirts Combo", price: "₹1998" },
-      { product: "Pick Any 2 - Plain Cotton Shirts Combo", price: "₹1499" },
-      { product: "Dark Grey Button Down Oxford Shirts", price: "₹899" },
-      { product: "Navy Button Down Oxford Shirts", price: "₹899" },
-      { product: "Grey - Plain Cotton Shirts", price: "₹799" },
-      { product: "Pick Any 2 - Satin Shirts Combo", price: "₹1599" },
-      { product: "Silver Green Button Down Oxford Shirts", price: "₹899" },
-      { product: "Mauve Pink Satin Shirt", price: "₹998" },
-      { product: "Black Button Down Oxford Shirts", price: "₹899" },
-      { product: "Black Solid Regular Fit Shirt", price: "₹1399" },
-      { product: "Dark Grey Solid Regular Fit Shirt", price: "₹1399" },
-      { product: "White Button Down Oxford Shirts", price: "₹899" },
-    ],
+    // price_table_data: [
+    //   { product: "Pick Any 3 - Plain Cotton Shirts Combo", price: "₹1998" },
+    //   { product: "Pick Any 2 - Plain Cotton Shirts Combo", price: "₹1499" },
+    //   { product: "Dark Grey Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Navy Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Grey - Plain Cotton Shirts", price: "₹799" },
+    //   { product: "Pick Any 2 - Satin Shirts Combo", price: "₹1599" },
+    //   { product: "Silver Green Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Mauve Pink Satin Shirt", price: "₹998" },
+    //   { product: "Black Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Black Solid Regular Fit Shirt", price: "₹1399" },
+    //   { product: "Dark Grey Solid Regular Fit Shirt", price: "₹1399" },
+    //   { product: "White Button Down Oxford Shirts", price: "₹899" },
+    // ],
 
     // ⭐️ Comprehensive Unique Filters (Master List) ⭐️
     filters: [
@@ -1760,20 +1759,20 @@ export const CATEGORY_DATA = {
     // ],
 
     // ⭐️ Price Table Data Array ⭐️
-    price_table_data: [
-      { product: "Dark Grey Button Down Oxford Shirts", price: "₹899" },
-      { product: "Navy Button Down Oxford Shirts", price: "₹899" },
-      { product: "Silver Green Button Down Oxford Shirts", price: "₹899" },
-      { product: "Black Button Down Oxford Shirts", price: "₹899" },
-      { product: "Savoy Blue Oxford Kurta Shirt", price: "₹997" },
-      { product: "Brick Red Oxford Kurta Shirt", price: "₹997" },
-      { product: "White Button Down Oxford Shirts", price: "₹899" },
-      { product: "Pista Green Oxford Cotton Shirt", price: "₹899" },
-      { product: "White Oxford Cotton Shirt", price: "₹899" },
-      { product: "Light Blue Button Down Oxford Shirts", price: "₹899" },
-      { product: "Olive Button Down Oxford Shirts", price: "₹899" },
-      { product: "Lavender Mist Oxford Cotton Shirt", price: "₹899" },
-    ],
+    // price_table_data: [
+    //   { product: "Dark Grey Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Navy Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Silver Green Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Black Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Savoy Blue Oxford Kurta Shirt", price: "₹997" },
+    //   { product: "Brick Red Oxford Kurta Shirt", price: "₹997" },
+    //   { product: "White Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Pista Green Oxford Cotton Shirt", price: "₹899" },
+    //   { product: "White Oxford Cotton Shirt", price: "₹899" },
+    //   { product: "Light Blue Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Olive Button Down Oxford Shirts", price: "₹899" },
+    //   { product: "Lavender Mist Oxford Cotton Shirt", price: "₹899" },
+    // ],
 
     // ⭐️ Comprehensive Unique Filters (All relevant filters) ⭐️
     filters: [
@@ -1878,56 +1877,56 @@ export const CATEGORY_DATA = {
     //     url: "/products?specificType=Satin%20Shirts&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: [
-      {
-        product: "Pick Any 3 - Plain Cotton Shirts Combo",
-        price: "₹1998",
-      },
-      {
-        product: "Pick Any 2 - Plain Cotton Shirts Combo",
-        price: "₹1499",
-      },
-      {
-        product: "Military Green Waffle Button-Down Cotton Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Lilac Dual Over Dyed Patch Pocket Shirt",
-        price: "₹1299",
-      },
-      {
-        product: "Grey - Plain Cotton Shirts",
-        price: "₹799",
-      },
-      {
-        product: "Black Denim Zipper Shacket",
-        price: "₹1498",
-      },
-      {
-        product: "Sky Blue Denim Zipper Shacket",
-        price: "₹1498",
-      },
-      {
-        product: "Grey Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Mist Grey Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Brown Waffle Button-Down Cotton Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Beige Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "White Waffle Button-Down Cotton Shirt",
-        price: "₹998",
-      },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "Pick Any 3 - Plain Cotton Shirts Combo",
+    //     price: "₹1998",
+    //   },
+    //   {
+    //     product: "Pick Any 2 - Plain Cotton Shirts Combo",
+    //     price: "₹1499",
+    //   },
+    //   {
+    //     product: "Military Green Waffle Button-Down Cotton Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Lilac Dual Over Dyed Patch Pocket Shirt",
+    //     price: "₹1299",
+    //   },
+    //   {
+    //     product: "Grey - Plain Cotton Shirts",
+    //     price: "₹799",
+    //   },
+    //   {
+    //     product: "Black Denim Zipper Shacket",
+    //     price: "₹1498",
+    //   },
+    //   {
+    //     product: "Sky Blue Denim Zipper Shacket",
+    //     price: "₹1498",
+    //   },
+    //   {
+    //     product: "Grey Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Mist Grey Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Brown Waffle Button-Down Cotton Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Beige Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "White Waffle Button-Down Cotton Shirt",
+    //     price: "₹998",
+    //   },
+    // ],
     filters: [
       {
         id: "collection",
@@ -2031,56 +2030,56 @@ export const CATEGORY_DATA = {
     //     url: "/products?specificType=Cotton%20Shirts&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: [
-      {
-        product: "Pick Any 3 - Plain Cotton Shirts Combo",
-        price: "₹1998",
-      },
-      {
-        product: "Pick Any 2 - Plain Cotton Shirts Combo",
-        price: "₹1499",
-      },
-      {
-        product: "Military Green Waffle Button-Down Cotton Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Lilac Dual Over Dyed Patch Pocket Shirt",
-        price: "₹1299",
-      },
-      {
-        product: "Grey - Plain Cotton Shirts",
-        price: "₹799",
-      },
-      {
-        product: "Black Denim Zipper Shacket",
-        price: "₹1498",
-      },
-      {
-        product: "Sky Blue Denim Zipper Shacket",
-        price: "₹1498",
-      },
-      {
-        product: "Grey Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Mist Grey Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Brown Waffle Button-Down Cotton Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Beige Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "White Waffle Button-Down Cotton Shirt",
-        price: "₹998",
-      },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "Pick Any 3 - Plain Cotton Shirts Combo",
+    //     price: "₹1998",
+    //   },
+    //   {
+    //     product: "Pick Any 2 - Plain Cotton Shirts Combo",
+    //     price: "₹1499",
+    //   },
+    //   {
+    //     product: "Military Green Waffle Button-Down Cotton Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Lilac Dual Over Dyed Patch Pocket Shirt",
+    //     price: "₹1299",
+    //   },
+    //   {
+    //     product: "Grey - Plain Cotton Shirts",
+    //     price: "₹799",
+    //   },
+    //   {
+    //     product: "Black Denim Zipper Shacket",
+    //     price: "₹1498",
+    //   },
+    //   {
+    //     product: "Sky Blue Denim Zipper Shacket",
+    //     price: "₹1498",
+    //   },
+    //   {
+    //     product: "Grey Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Mist Grey Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Brown Waffle Button-Down Cotton Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Beige Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "White Waffle Button-Down Cotton Shirt",
+    //     price: "₹998",
+    //   },
+    // ],
     filters: [
       {
         id: "collection",
@@ -2181,56 +2180,56 @@ export const CATEGORY_DATA = {
     //     url: "/products?specificType=Flannel%20Shirts&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: [
-      {
-        product: "Beige Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Maroon Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Navy Recycled Solid Flannel Shirt",
-        price: "₹899",
-      },
-      {
-        product: "Beige Recycled Solid Flannel Shirt",
-        price: "₹899",
-      },
-      {
-        product: "Fawn Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Black Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Caramel Brown Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Olive Green Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Dark Green Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Black Recycled Solid Flannel Shirt",
-        price: "₹899",
-      },
-      {
-        product: "Off White Recycled Solid Flannel Shirt",
-        price: "₹899",
-      },
-      {
-        product: "Pink Recycled Plaid Flannel Shirt",
-        price: "₹1199",
-      },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "Beige Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Maroon Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Navy Recycled Solid Flannel Shirt",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Beige Recycled Solid Flannel Shirt",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Fawn Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Black Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Caramel Brown Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Olive Green Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Dark Green Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Black Recycled Solid Flannel Shirt",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Off White Recycled Solid Flannel Shirt",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Pink Recycled Plaid Flannel Shirt",
+    //     price: "₹1199",
+    //   },
+    // ],
     filters: [
       {
         id: "collection",
@@ -2340,56 +2339,56 @@ export const CATEGORY_DATA = {
     //     url: "/products?specificType=Festive%20Shirts&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: [
-      {
-        product: "White Fur Wave Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Mid Grey Jacquard Round Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Olive Fur Wave Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Brown Jacquard Round Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Grey Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Mist Grey Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Black Textured Western Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Brown Jacquard Cuban Shirt",
-        price: "₹997",
-      },
-      {
-        product: "Black Jacquard Round Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Beige Mandarin Collar Textured Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Pale Grey Terry Textured Shirt",
-        price: "₹1299",
-      },
-      {
-        product: "Olive Green Jacquard Round Textured Shirt",
-        price: "₹1199",
-      },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "White Fur Wave Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Mid Grey Jacquard Round Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Olive Fur Wave Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Brown Jacquard Round Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Grey Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Mist Grey Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Black Textured Western Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Brown Jacquard Cuban Shirt",
+    //     price: "₹997",
+    //   },
+    //   {
+    //     product: "Black Jacquard Round Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Beige Mandarin Collar Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Pale Grey Terry Textured Shirt",
+    //     price: "₹1299",
+    //   },
+    //   {
+    //     product: "Olive Green Jacquard Round Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    // ],
     filters: [
       {
         id: "collection",
@@ -2511,56 +2510,56 @@ export const CATEGORY_DATA = {
     //     url: "/products?specificType=Shackets&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: [
-      {
-        product: "Sky Blue Denim Zipper Shacket",
-        price: "₹1498",
-      },
-      {
-        product: "Black Denim Zipper Shacket",
-        price: "₹1498",
-      },
-      {
-        product: "Blue Zipper Cotton Flannel Shacket",
-        price: "₹1299",
-      },
-      {
-        product: "Sand Brown Chevron Printed Shacket",
-        price: "₹1199",
-      },
-      {
-        product: "Airforce Blue Color Blast Shacket",
-        price: "₹1399",
-      },
-      {
-        product: "Green And Blue Abstract Printed Shacket",
-        price: "₹1199",
-      },
-      {
-        product: "Brown Dye Effect Printed Shacket",
-        price: "₹1199",
-      },
-      {
-        product: "Savoy Blue Crush Print Shacket",
-        price: "₹1199",
-      },
-      {
-        product: "Brown Crush Print Shacket",
-        price: "₹1199",
-      },
-      {
-        product: "Mauve Color Blast Shacket",
-        price: "₹1399",
-      },
-      {
-        product: "Navy Chevron Printed Shacket",
-        price: "₹1199",
-      },
-      {
-        product: "Blue Denim Zipper Shacket",
-        price: "₹1498",
-      },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "Sky Blue Denim Zipper Shacket",
+    //     price: "₹1498",
+    //   },
+    //   {
+    //     product: "Black Denim Zipper Shacket",
+    //     price: "₹1498",
+    //   },
+    //   {
+    //     product: "Blue Zipper Cotton Flannel Shacket",
+    //     price: "₹1299",
+    //   },
+    //   {
+    //     product: "Sand Brown Chevron Printed Shacket",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Airforce Blue Color Blast Shacket",
+    //     price: "₹1399",
+    //   },
+    //   {
+    //     product: "Green And Blue Abstract Printed Shacket",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Brown Dye Effect Printed Shacket",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Savoy Blue Crush Print Shacket",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Brown Crush Print Shacket",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Mauve Color Blast Shacket",
+    //     price: "₹1399",
+    //   },
+    //   {
+    //     product: "Navy Chevron Printed Shacket",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Blue Denim Zipper Shacket",
+    //     price: "₹1498",
+    //   },
+    // ],
     filters: [
       {
         id: "collection",
@@ -2873,56 +2872,56 @@ export const CATEGORY_DATA = {
     //     url: "/products?subCategory=Shirts&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: [
-      {
-        product: "Pick Any 3 - Plain Cotton Shirts Combo",
-        price: "₹1998",
-      },
-      {
-        product: "Pick Any 2 - Plain Cotton Shirts Combo",
-        price: "₹1499",
-      },
-      {
-        product: "Navy Button Down Oxford Shirts",
-        price: "₹899",
-      },
-      {
-        product: "Dark Grey Button Down Oxford Shirts",
-        price: "₹899",
-      },
-      {
-        product: "Beige Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Maroon Recycled Checked Flannel Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Beige Utility Shirt",
-        price: "₹1199",
-      },
-      {
-        product: "Military Green Waffle Button-Down Cotton Shirt",
-        price: "₹998",
-      },
-      {
-        product: "Lilac Dual Over Dyed Patch Pocket Shirt",
-        price: "₹1299",
-      },
-      {
-        product: "Navy Recycled Solid Flannel Shirt",
-        price: "₹899",
-      },
-      {
-        product: "Beige Recycled Solid Flannel Shirt",
-        price: "₹899",
-      },
-      {
-        product: "Mid Grey Jacquard Round Textured Shirt",
-        price: "₹1199",
-      },
-    ],
+    // price_table_data: [
+    //   {
+    //     product: "Pick Any 3 - Plain Cotton Shirts Combo",
+    //     price: "₹1998",
+    //   },
+    //   {
+    //     product: "Pick Any 2 - Plain Cotton Shirts Combo",
+    //     price: "₹1499",
+    //   },
+    //   {
+    //     product: "Navy Button Down Oxford Shirts",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Dark Grey Button Down Oxford Shirts",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Beige Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Maroon Recycled Checked Flannel Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Beige Utility Shirt",
+    //     price: "₹1199",
+    //   },
+    //   {
+    //     product: "Military Green Waffle Button-Down Cotton Shirt",
+    //     price: "₹998",
+    //   },
+    //   {
+    //     product: "Lilac Dual Over Dyed Patch Pocket Shirt",
+    //     price: "₹1299",
+    //   },
+    //   {
+    //     product: "Navy Recycled Solid Flannel Shirt",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Beige Recycled Solid Flannel Shirt",
+    //     price: "₹899",
+    //   },
+    //   {
+    //     product: "Mid Grey Jacquard Round Textured Shirt",
+    //     price: "₹1199",
+    //   },
+    // ],
     filters: [
       {
         id: "collection",
@@ -3053,47 +3052,47 @@ export const CATEGORY_DATA = {
     //     url: "/products?specificType=women-topwear&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: {
-      heading: "Buy Women's Clothing at Best Price",
-      items: [
-        {
-          product: "Beige Oversized Camo Cargo Pants for Women",
-          price: "₹1399",
-        },
-        {
-          product: "Black Rugged Hem Denim Jorts for Women",
-          price: "₹1199",
-        },
-        {
-          product: "Dark Blue Rugged Hem Denim Jorts for Women",
-          price: "₹1199",
-        },
-        {
-          product: "Plain Navy Blue Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Grizzle Gray Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Burgundy Womens Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Sage Green Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Bottle Green Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Black Women Boxer",
-          price: "₹349",
-        },
-      ],
-    },
+    // price_table_data: {
+    //   heading: "Buy Women's Clothing at Best Price",
+    //   items: [
+    //     {
+    //       product: "Beige Oversized Camo Cargo Pants for Women",
+    //       price: "₹1399",
+    //     },
+    //     {
+    //       product: "Black Rugged Hem Denim Jorts for Women",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Dark Blue Rugged Hem Denim Jorts for Women",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Plain Navy Blue Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Grizzle Gray Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Burgundy Womens Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Sage Green Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Bottle Green Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Black Women Boxer",
+    //       price: "₹349",
+    //     },
+    //   ],
+    // },
     filters: [
       {
         id: "type",
@@ -3193,47 +3192,47 @@ export const CATEGORY_DATA = {
     //   },
     //   // Bottomwear does not have sleeve buttons, keeping other logical filters here for completeness
     // ],
-    price_table_data: {
-      heading: "Buy Women's Clothing at Best Price",
-      items: [
-        {
-          product: "Beige Oversized Camo Cargo Pants for Women",
-          price: "₹1399",
-        },
-        {
-          product: "Black Rugged Hem Denim Jorts for Women",
-          price: "₹1199",
-        },
-        {
-          product: "Dark Blue Rugged Hem Denim Jorts for Women",
-          price: "₹1199",
-        },
-        {
-          product: "Plain Navy Blue Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Grizzle Gray Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Burgundy Womens Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Sage Green Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Bottle Green Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Black Women Boxer",
-          price: "₹349",
-        },
-      ],
-    },
+    // price_table_data: {
+    //   heading: "Buy Women's Clothing at Best Price",
+    //   items: [
+    //     {
+    //       product: "Beige Oversized Camo Cargo Pants for Women",
+    //       price: "₹1399",
+    //     },
+    //     {
+    //       product: "Black Rugged Hem Denim Jorts for Women",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Dark Blue Rugged Hem Denim Jorts for Women",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Plain Navy Blue Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Grizzle Gray Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Burgundy Womens Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Sage Green Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Bottle Green Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Black Women Boxer",
+    //       price: "₹349",
+    //     },
+    //   ],
+    // },
     filters: [
       {
         id: "type",
@@ -3340,47 +3339,47 @@ export const CATEGORY_DATA = {
     //     url: "/products?category=women&sleeves=Full%20Sleeves",
     //   },
     // ],
-    price_table_data: {
-      heading: "Buy Women's Clothing at Best Price",
-      items: [
-        {
-          product: "Beige Oversized Camo Cargo Pants for Women",
-          price: "₹1399",
-        },
-        {
-          product: "Black Rugged Hem Denim Jorts for Women",
-          price: "₹1199",
-        },
-        {
-          product: "Dark Blue Rugged Hem Denim Jorts for Women",
-          price: "₹1199",
-        },
-        {
-          product: "Plain Navy Blue Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Grizzle Gray Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Burgundy Womens Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Sage Green Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Bottle Green Women Boxer",
-          price: "₹349",
-        },
-        {
-          product: "Plain Black Women Boxer",
-          price: "₹349",
-        },
-      ],
-    },
+    // price_table_data: {
+    //   heading: "Buy Women's Clothing at Best Price",
+    //   items: [
+    //     {
+    //       product: "Beige Oversized Camo Cargo Pants for Women",
+    //       price: "₹1399",
+    //     },
+    //     {
+    //       product: "Black Rugged Hem Denim Jorts for Women",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Dark Blue Rugged Hem Denim Jorts for Women",
+    //       price: "₹1199",
+    //     },
+    //     {
+    //       product: "Plain Navy Blue Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Grizzle Gray Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Burgundy Womens Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Sage Green Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Bottle Green Women Boxer",
+    //       price: "₹349",
+    //     },
+    //     {
+    //       product: "Plain Black Women Boxer",
+    //       price: "₹349",
+    //     },
+    //   ],
+    // },
     filters: [
       {
         id: "type",

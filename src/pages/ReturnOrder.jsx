@@ -3,21 +3,29 @@ import { Link } from "react-router-dom";
 
 const ReturnOrder = () => {
   return (
-    <section className="px-38 space-y-4">
+    // Adjusted padding: large padding (px-38) for desktop,
+    // and smaller, more appropriate padding (px-4 or px-6) for mobile.
+    // Using `px-4 sm:px-6 lg:px-38` (assuming px-38 is a custom value
+    // that translates to a very large screen padding).
+    // I'll use a more standard large screen utility like lg:px-32
+    // or keep the original px-38 but ensure mobile view uses px-4.
+    <section className="px-4 sm:px-6 lg:px-38 space-y-4">
       {/* Heading */}
       <div>
-        <h1 className=" py-2">
+        {/* Breadcrumb style text */}
+        <h1 className="py-2 text-sm sm:text-base">
           Home Return <span className="px-1">{">"}</span> Refund And
           Cancellation{" "}
         </h1>
-        <p className="font-bold text-2xl">
+        {/* Main Title */}
+        <p className="font-bold text-xl sm:text-2xl">
           Return, Exchange, and Refund Policy
         </p>
       </div>
 
       {/* Refund & Exchange */}
       <div className="py-3 space-y-3">
-        <h1 className="text-xl underline underline-offset-4 decoration-yellow-400">
+        <h1 className="text-lg sm:text-xl underline underline-offset-4 decoration-yellow-400">
           Refund and Exchange
         </h1>
 
@@ -63,25 +71,24 @@ const ReturnOrder = () => {
       </div>
 
       {/* Reverse Pickup */}
-      <div className="py-3 px-3 space-y-3 bg-gray-100">
-        <h1 className="underline underline-offset-4 decoration-yellow-400">
+      <div className="py-3 px-3 space-y-3 bg-gray-100 rounded-lg">
+        {" "}
+        {/* Added rounded corners for better appearance */}
+        <h1 className="text-base sm:text-lg underline underline-offset-4 decoration-yellow-400">
           Reverse Pickup Services
         </h1>
-
         <p>
           • We provide a reverse pickup service for your convenience. The
           product(s) must pass quality inspection for instant return or
           exchange. Reverse shipment is free of cost. Each order will have two
           reverse pickup attempts.
         </p>
-
         <p>
           • Self-ship in case of non-serviceable areas: If your Pincode is
           non-serviceable, please self-ship the product(s) to our warehouse.
           Address: Beyoung Folks Pvt Ltd, Khasra No. 3881/2188, Rani Ji Bawri,
           Eklingpura, Jamar Kotda Road, Udaipur - 313001.
         </p>
-
         <p>
           • Refund for Self-Shipping: Refunds will be processed within 48 hours
           of receiving the product(s) at our warehouse after quality check. You
@@ -94,7 +101,7 @@ const ReturnOrder = () => {
 
       {/* Refunds */}
       <div className="py-3 space-y-3">
-        <h1 className="underline underline-offset-4 decoration-yellow-400">
+        <h1 className="text-lg sm:text-xl underline underline-offset-4 decoration-yellow-400">
           Refunds
         </h1>
 
@@ -124,7 +131,7 @@ const ReturnOrder = () => {
 
       {/* Cancellation */}
       <div className="py-3 space-y-3">
-        <h1 className="underline underline-offset-4 decoration-yellow-400">
+        <h1 className="text-lg sm:text-xl underline underline-offset-4 decoration-yellow-400">
           Cancellations/Modifications
         </h1>
 
@@ -138,7 +145,7 @@ const ReturnOrder = () => {
 
       {/* Damaged Product */}
       <div className="py-3 space-y-3">
-        <h1 className="underline underline-offset-4 decoration-yellow-400">
+        <h1 className="text-lg sm:text-xl underline underline-offset-4 decoration-yellow-400">
           Defective/Damaged Product(s) or Parcel
         </h1>
 
@@ -160,7 +167,7 @@ const ReturnOrder = () => {
 
       {/* T&C */}
       <div className="py-3 space-y-3">
-        <h1 className="underline underline-offset-4 decoration-yellow-400">
+        <h1 className="text-lg sm:text-xl underline underline-offset-4 decoration-yellow-400">
           Terms & Conditions
         </h1>
 
@@ -205,6 +212,7 @@ const ReturnOrder = () => {
             here
           </Link>
           <span className="font-bold">
+            {" "}
             My Account → Track Your Order section.{" "}
           </span>
         </p>
@@ -212,7 +220,7 @@ const ReturnOrder = () => {
 
       {/*Shipping policy */}
       <div className="py-3 space-y-3">
-        <h1 className="underline underline-offset-4 decoration-yellow-400">
+        <h1 className="text-lg sm:text-xl underline underline-offset-4 decoration-yellow-400">
           Shipping Policy
         </h1>
 
@@ -238,7 +246,7 @@ const ReturnOrder = () => {
 
       {/* Contact */}
       <div className="py-3 space-y-3">
-        <h1 className="underline underline-offset-4 decoration-yellow-400">
+        <h1 className="text-lg sm:text-xl underline underline-offset-4 decoration-yellow-400">
           Reach Us Out - We're all ears!
         </h1>
 
@@ -250,7 +258,7 @@ const ReturnOrder = () => {
       </div>
 
       <div className="mb-8">
-        <h1 className="text-xl ">
+        <h1 className="text-base sm:text-xl">
           Working Hours: 9am - 5pm IST Monday to Saturday.
         </h1>
       </div>
