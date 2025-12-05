@@ -59,7 +59,7 @@ const MyAccount = () => {
       condition: "10% off on min shopping of ₹2499",
     },
     {
-      code: "BEYOUNG50",
+      code: " Elegante50",
       description: "Save ₹50 on this order!",
       condition: "₹50 off on orders above ₹999",
     },
@@ -297,8 +297,8 @@ const MyAccount = () => {
                 <div
                   key={idx}
                   className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
-                  <div className="bg-yellow-400 text-black font-bold px-3 py-8 rounded transform -rotate-90 origin-center whitespace-nowrap text-sm">
-                    BEYOUNG
+                  <div className="bg-yellow-400 text-black font-bold px-3 py-8 rounded  transform -rotate-90 origin-center whitespace-nowrap text-sm">
+                     Elegante
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-1">{coupon.code}</h3>

@@ -39,7 +39,7 @@ export default function BlogDetailPage() {
   const relatedPosts = [
     {
       title: "Travel Packing Made Easy: From Beaches to Forts in Style...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 10, 2025",
       image:
         "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=300&fit=crop",
@@ -47,7 +47,7 @@ export default function BlogDetailPage() {
     {
       title:
         "Rain-Proof Your Wardrobe: 7 Essentials for Monsoon Fashion in 2025...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 4, 2025",
       image:
         "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop",
@@ -55,7 +55,7 @@ export default function BlogDetailPage() {
     {
       title:
         "Rakhi Gifts for Brothers Who Have Everything (But Still Deserve More)...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 4, 2025",
       image:
         "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=300&fit=crop",
@@ -120,9 +120,9 @@ export default function BlogDetailPage() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-3xl font-bold">The Beyoung Blog</h1>
+          <h1 className="text-3xl font-bold">The  Elegante Blog</h1>
           <button className="bg-yellow-400 hover:bg-yellow-500 px-6 py-2 rounded font-semibold transition">
-            Shop At Beyoung
+            Shop At  Elegante
           </button>
         </div>
       </header>
@@ -182,7 +182,7 @@ export default function BlogDetailPage() {
                   <span className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm">
                     👤
                   </span>
-                  By Beyoung
+                  By  Elegante
                 </span>
                 <span>Apr 25, 2025</span>
               </div>
@@ -402,7 +402,7 @@ export default function BlogDetailPage() {
                   Start curating your summer essentials list today, and enjoy
                   the season with the perfect blend of style and comfort with{" "}
                   <a href="#" className="text-blue-600 hover:underline">
-                    Beyoung
+                     Elegante
                   </a>
                   !
                 </p>
@@ -427,8 +427,8 @@ export default function BlogDetailPage() {
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mt-8 pt-8 border-t">
                 {[
-                  "#beyoung",
-                  "#beyoung_blog",
+                  "# Elegante",
+                  "# Elegante_blog",
                   "#Fashion",
                   "#Lifestyle",
                   "#Men's Fashion",
@@ -453,7 +453,7 @@ export default function BlogDetailPage() {
                 <div className="w-20 h-20 bg-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">
                   👤
                 </div>
-                <h3 className="text-xl font-bold">By Beyoung</h3>
+                <h3 className="text-xl font-bold">By  Elegante</h3>
               </div>
 
               {/* Related Posts */}
@@ -579,11 +579,11 @@ export default function BlogDetailPage() {
         </div>
       </div>
 
-      {/* Join Beyoung Family */}
+      {/* Join  Elegante Family */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">
-            Join Beyoung Family
+            Join  Elegante Family
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobListings.map((job, idx) => (
@@ -661,10 +661,10 @@ export default function BlogDetailPage() {
                 <p className="flex items-center gap-2">
                   <Mail size={18} />
                   <a
-                    href="mailto:support@beyoung.in"
+                    href="mailto:support@ Elegante.in"
                     className="hover:text-yellow-400 transition"
                   >
-                    support@beyoung.in
+                    support@ Elegante.in
                   </a>
                 </p>
               </div>
@@ -720,7 +720,7 @@ export default function BlogDetailPage() {
           </div>
 
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-            Copyright © 2025 Beyoung. All rights reserved.
+            Copyright © 2025  Elegante. All rights reserved.
           </div>
         </div>
       </footer>

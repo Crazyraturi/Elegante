@@ -15,7 +15,7 @@ const Footer = () => {
   const notifications = [
     {
       id: 1,
-      title: "The Beyoung Fashion For Nation Sale Is LIVE🤩",
+      title: "The  Elegante Fashion For Nation Sale Is LIVE🤩",
       subtitle: "Get FLAT 15% OFF your favorites styles😍",
       code: "FREEDOM15",
       buttonText: "Use code: FREEDOM15",
@@ -23,7 +23,7 @@ const Footer = () => {
     },
     {
       id: 2,
-      title: "Beyoung KOREAN PANTS Restocked!✨",
+      title: " Elegante KOREAN PANTS Restocked!✨",
       subtitle: "Get yours now at a flat ₹998. 🔥",
       buttonText: "Check Korean Pants Now",
       timeAgo: "2 days",
@@ -109,7 +109,7 @@ const Footer = () => {
               <Link to="/in-the-news">Media</Link>
             </li>
             <li>
-              <Link to="/blog">Beyoung Blog</Link>
+              <Link to="/blog"> Elegante Blog</Link>
             </li>
             <li>
               <Link to="/sitemap">Sitemap</Link>
@@ -138,7 +138,7 @@ const Footer = () => {
           <h3 className="mb-3">LOCATION</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/contact">support@beyoung.in</Link>
+              <Link to="/contact">support@ Elegante.in</Link>
             </li>
             <li>
               <Link to="/location">
@@ -298,7 +298,7 @@ const Footer = () => {
         {/* COPYRIGHT */}
         <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-sm">
-            Copyright © 2025 Beyoung Folks Pvt Ltd. All rights reserved.
+            Copyright © 2025  Elegante Folks Pvt Ltd. All rights reserved.
           </p>
         </div>
       </div>

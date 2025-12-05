@@ -1,55 +1,55 @@
 export const whyChooseUsData = {
   short: `
-Beyoung - An Affordable Online Shopping Site in India
+ Elegante - An Affordable Online Shopping Site in India
 
-Online shopping was rapidly gaining popularity, yet affordable and trendy options were limited. In 2018, when “fashion” was often synonymous with high-end and pricey labels, many young minds got an idea. This idea evolved into Beyoung, which has since become one of India's best online shopping sites for stylish clothing.
+Online shopping was rapidly gaining popularity, yet affordable and trendy options were limited. In 2018, when “fashion” was often synonymous with high-end and pricey labels, many young minds got an idea. This idea evolved into  Elegante, which has since become one of India's best online shopping sites for stylish clothing.
 
-Beyoung is exactly what its name suggests—Being Young because youthfulness is a timeless concept. It’s about embracing experiments, fun, and fashion—not only.
+ Elegante is exactly what its name suggests—Being Young because youthfulness is a timeless concept. It’s about embracing experiments, fun, and fashion—not only.
 `,
 
   full: `
-Beyoung - An Affordable Online Shopping Site in India
-Online shopping was rapidly gaining popularity, yet affordable and trendy options were limited. In 2018, when “fashion” was often synonymous with high-end and pricey labels, many young minds got an idea. This idea evolved into Beyoung, which has since become one of India's best online shopping sites for stylish clothing.
-Beyoung is exactly what its name suggests—Being Young because youthfulness is a timeless concept. It’s about embracing experiments, fun, and fashion—not only in clothing but in life itself. At Beyoung, we live by this philosophy, offering a wide range of products that have earned us a reputation as one of India’s most trusted online clothing shopping destinations. You can embrace style and confidence with us, making us your go-to brand.
-At the heart of our brand is a dedication to delivering the latest trends without compromising your budget. True to our motto—Aspirational, Affordable, Convenient, we ensure that style and savings go hand in hand. Our streamlined processes, reliable delivery, and easy return policies guarantee that your shopping journey is as enjoyable and stress-free as possible. So, for an amazing online shopping experience, try Beyoung.
+ Elegante - An Affordable Online Shopping Site in India
+Online shopping was rapidly gaining popularity, yet affordable and trendy options were limited. In 2018, when “fashion” was often synonymous with high-end and pricey labels, many young minds got an idea. This idea evolved into  Elegante, which has since become one of India's best online shopping sites for stylish clothing.
+ Elegante is exactly what its name suggests—Being Young because youthfulness is a timeless concept. It’s about embracing experiments, fun, and fashion—not only in clothing but in life itself. At  Elegante, we live by this philosophy, offering a wide range of products that have earned us a reputation as one of India’s most trusted online clothing shopping destinations. You can embrace style and confidence with us, making us your go-to brand.
+At the heart of our brand is a dedication to delivering the latest trends without compromising your budget. True to our motto—Aspirational, Affordable, Convenient, we ensure that style and savings go hand in hand. Our streamlined processes, reliable delivery, and easy return policies guarantee that your shopping journey is as enjoyable and stress-free as possible. So, for an amazing online shopping experience, try  Elegante.
 Shop Smarter with the Leading Online Shopping Site for Clothes
-Beyoung is not just another online shopping site; it’s your ultimate fashion destination. Here’s why shopping at Beyoung is a smart choice:
-Your budget matters to us - Everybody deserves to look good. We understand that fashion should be accessible to all, regardless of one's budget. That's why we carry a collection tailored to suit every financial bracket. Rest assured, with Beyoung as your go-to online clothing store, revamping your wardrobe needn't come at the cost of burning a hole in your pocket.
+ Elegante is not just another online shopping site; it’s your ultimate fashion destination. Here’s why shopping at  Elegante is a smart choice:
+Your budget matters to us - Everybody deserves to look good. We understand that fashion should be accessible to all, regardless of one's budget. That's why we carry a collection tailored to suit every financial bracket. Rest assured, with  Elegante as your go-to online clothing store, revamping your wardrobe needn't come at the cost of burning a hole in your pocket.
 We deliver what you deserve - As a convenient destination for online clothing shopping, quality is our top priority. Our dedicated team carefully selects only the finest materials for our products, ensuring that their refined aesthetic endures over time. Like many others, you can count on us to deliver stylish, durable pieces that will have you turning heads and becoming the talk of the town.
-Customer-first approach - As a leading online shopping site for clothes, Beyoung works on a direct-to-consumer model. So between the two of us, you get what you need at the most reasonable prices and stay fashionable always.
+Customer-first approach - As a leading online shopping site for clothes,  Elegante works on a direct-to-consumer model. So between the two of us, you get what you need at the most reasonable prices and stay fashionable always.
 One-stop shop - Who wants to hop from brand to brand to get a proper outfit? Not you for sure. That's why just for you, from dates to boardroom meetings, we make it easy for you to order clothes online. Our range of clothes guarantees that you'll find the perfect piece to complement your unique style.
-If you’re still wondering why Beyoung is one of the most trusted online shopping sites for clothes in India, let us tell you more about what makes our brand stand out.
-Why Beyoung and Not Any Other Indian Fashion Websites?
-We hear that a lot, so let’s clear things up once and for all. As one of the most affordable online shopping stores in India, Beyoung is your go-to brand for everyday fashion. Whether you're looking for plain t-shirts, classic satin shirts, comfortable joggers, or breathable boxers – we've got it all.
+If you’re still wondering why  Elegante is one of the most trusted online shopping sites for clothes in India, let us tell you more about what makes our brand stand out.
+Why  Elegante and Not Any Other Indian Fashion Websites?
+We hear that a lot, so let’s clear things up once and for all. As one of the most affordable online shopping stores in India,  Elegante is your go-to brand for everyday fashion. Whether you're looking for plain t-shirts, classic satin shirts, comfortable joggers, or breathable boxers – we've got it all.
 Your own online fashion store - With you, For you!
-Our continuous efforts are focused on making life more convenient for our shoppers and ensuring that Beyoung becomes your go-to online shopping website. Keeping this at the core of everything we do, we've introduced a variety of shopping options, such as the make-your-own combo and shop-the-look features, to better serve our customers. With these features, you can select any size and any color, and create your own unique look.
-What started as a dream to make everyday fashion accessible has blossomed into a reality. Beyoung has become more than just an online fashion store - we've evolved into a trusted fashion companion for our valued customers. It's been an amazing ride watching this small family grow into a massive community of over 3 million satisfied customers across India. We're deeply humbled and grateful for your support.
+Our continuous efforts are focused on making life more convenient for our shoppers and ensuring that  Elegante becomes your go-to online shopping website. Keeping this at the core of everything we do, we've introduced a variety of shopping options, such as the make-your-own combo and shop-the-look features, to better serve our customers. With these features, you can select any size and any color, and create your own unique look.
+What started as a dream to make everyday fashion accessible has blossomed into a reality.  Elegante has become more than just an online fashion store - we've evolved into a trusted fashion companion for our valued customers. It's been an amazing ride watching this small family grow into a massive community of over 3 million satisfied customers across India. We're deeply humbled and grateful for your support.
 Perks of Being a Part of Our Online Clothing Shop
-By now you must have understood the assignment well, right? We're more than just an online shopping site in India selling fashionable clothing. We're truly yours, and, well, you're ours too. And let us tell you—being one of us, a Beyoungster, comes with plenty of perks!
+By now you must have understood the assignment well, right? We're more than just an online shopping site in India selling fashionable clothing. We're truly yours, and, well, you're ours too. And let us tell you—being one of us, a  Elegantester, comes with plenty of perks!
 You get to put the fab in fashion
 When you shop with the leading online clothing shopping website in India, your style gets recognized and cherished. The fashion-monger in you shines and our swanky collection of affordable fashion clothing makes heads turn in your direction.
 You save big
 We understand that your hard-earned money isn’t just for buying clothes online. That’s why our exclusive online shopping offers on every purchase won’t make you a billionaire, but they’ll certainly help you avoid unnecessary financial crunches.
 You can be picky
-With tons of styles, colors, patterns, and designs, we give you the liberty to scroll through and find your special something. Beyoung as the leading online shopping site for clothes offers you a collection of colorful shirts, t-shirts, and trendy joggers, all waiting for you to check them out.
+With tons of styles, colors, patterns, and designs, we give you the liberty to scroll through and find your special something.  Elegante as the leading online shopping site for clothes offers you a collection of colorful shirts, t-shirts, and trendy joggers, all waiting for you to check them out.
 You get COD options
-With many fake shopping websites defrauding customers online, cash on delivery gives you an extra ounce of trust and authority and you want that, understandably so. At Beyoung - a trusted online clothing store, you get what you want and how you want. We deliver pan India with COD options available.
+With many fake shopping websites defrauding customers online, cash on delivery gives you an extra ounce of trust and authority and you want that, understandably so. At  Elegante - a trusted online clothing store, you get what you want and how you want. We deliver pan India with COD options available.
 You get transparency
-Life throws many curveballs your way, we don't! With a robust and well-implementable return and refund policy in place, we aim to make your shopping experience stress-free. Beyoung, your trusted online shopping store gives you all the power to shop for clothes according to your preference.
+Life throws many curveballs your way, we don't! With a robust and well-implementable return and refund policy in place, we aim to make your shopping experience stress-free.  Elegante, your trusted online shopping store gives you all the power to shop for clothes according to your preference.
 What's New with India's Favorite Online Clothing Shopping Site?
-As India’s leading fashion shopping site, we’re buzzing with exciting updates you won’t want to miss! At Beyoung, we understand that style is personal, which is why we’ve curated a wide range of options to suit every taste and preference. From unique prints to standout designs, there's something for everyone. The best part? Our easy navigation and hassle-free return process make shopping a breeze. Stay ahead of the fashion curve and refresh your wardrobe at Beyoung. Shop now and discover why we’re India’s favorite online shopping destination!
+As India’s leading fashion shopping site, we’re buzzing with exciting updates you won’t want to miss! At  Elegante, we understand that style is personal, which is why we’ve curated a wide range of options to suit every taste and preference. From unique prints to standout designs, there's something for everyone. The best part? Our easy navigation and hassle-free return process make shopping a breeze. Stay ahead of the fashion curve and refresh your wardrobe at  Elegante. Shop now and discover why we’re India’s favorite online shopping destination!
 India's Top Online Clothing Store for You
-Wow, you've scrolled a long way—impressive! In addition to being the best website to buy clothes in India, we focus on bringing you the latest styles, quirky designs, and fabrics you'll fall in love with. Our exclusive collection of branded clothing offers great value for your money. Each item in our online store comes in a wide range of sizes and colors, from vibrant hues to classic solids, and sizes ranging from S to 5XL. Plus, every product includes a size chart for easy reference and a detailed description to help you make the best choice. So, whether you’re looking to refresh your wardrobe or find the perfect outfit for someone special, you know exactly where to go—Beyoung!
-A Variety of Fashionable Clothes at Beyoung's Online Store
-Beyoung, as your go-to online shopping destination, delivers your favorite picks right to your doorstep. Our customers rave about our collection of the latest fashion pieces, including -
+Wow, you've scrolled a long way—impressive! In addition to being the best website to buy clothes in India, we focus on bringing you the latest styles, quirky designs, and fabrics you'll fall in love with. Our exclusive collection of branded clothing offers great value for your money. Each item in our online store comes in a wide range of sizes and colors, from vibrant hues to classic solids, and sizes ranging from S to 5XL. Plus, every product includes a size chart for easy reference and a detailed description to help you make the best choice. So, whether you’re looking to refresh your wardrobe or find the perfect outfit for someone special, you know exactly where to go— Elegante!
+A Variety of Fashionable Clothes at  Elegante's Online Store
+ Elegante, as your go-to online shopping destination, delivers your favorite picks right to your doorstep. Our customers rave about our collection of the latest fashion pieces, including -
 Men's Fashion Wear for Everyday Styling
-For ages, men have been subjected to boring clothing and Beyoung is here to change that. Our range of clothing for men is designed to make you feel fashionable and boost your confidence. Here are some of our most popular menswear categories -
+For ages, men have been subjected to boring clothing and  Elegante is here to change that. Our range of clothing for men is designed to make you feel fashionable and boost your confidence. Here are some of our most popular menswear categories -
 T-shirts for Men
 T-shirts are a quintessential part of our wardrobes. You can never have enough of them, especially if you're hooked to our t-shirts for men, there is barely anything you can do except buying them more often. Some of our best-selling men's t-shirts are -
 Plain T-shirts
 Plain t-shirts at our online clothing store are evergreen pieces that give you an effortlessly fashionable look. You can wear our range of Plain T-shirts with classic denim, super cool Cargo Pants, Joggers, and even Shorts. We offer these tees as a single product and as a combo of 3 and 4, where you can pick out sizes and colors as you like.
 Printed T-shirts
-If you are in love with all things printed, our range of Printed T-shirts for men will surely get your attention. Beyoung's collection of printed tees can satisfy your hippie and urban soul and make you stand out from the crowd.
+If you are in love with all things printed, our range of Printed T-shirts for men will surely get your attention.  Elegante's collection of printed tees can satisfy your hippie and urban soul and make you stand out from the crowd.
 Oversized T-shirts
 If in 2024 you're not buying oversized t-shirts, what are you even doing? Make your life easier and shop our oversized t-shirts for men. They are not just roomy but extremely in trend. Explore our collection today!
 Polo T-shirts
@@ -63,21 +63,21 @@ Half-sleeve t-shirts don't need an introduction. These have been around us for q
 Chinos
 Chinos are your perfect buddy for a comfortable feel suitable for both formal and casual looks. With their stretchable fabric, our Chino Pants give you the ultimate comfort and class all day long.
 Jeans
-Beyoung’s online clothes shopping site has exclusively designed Jeans for Men for comfort and durability. When you buy a pair of jeans from your favorite online shopping site in India, you get the utmost quality and the coolest designs.
+ Elegante’s online clothes shopping site has exclusively designed Jeans for Men for comfort and durability. When you buy a pair of jeans from your favorite online shopping site in India, you get the utmost quality and the coolest designs.
 Shirts
 What food is to the body is what shirts are to men, essential. We offer an array of shirts that make your wardrobe better and brighter. Here are some of our customer-approved shirts for men -
 Casual Shirts
-Casual shirts are all about easygoing style, and Beyoung makes them even better with our range of stylish options. Designed for maximum comfort and versatility, these shirts are perfect for creating a relaxed yet polished look.
+Casual shirts are all about easygoing style, and  Elegante makes them even better with our range of stylish options. Designed for maximum comfort and versatility, these shirts are perfect for creating a relaxed yet polished look.
 Formal Shirts
-Good ol' formal shirts have their own unbeatable charm. Make the most of these simple yet sophisticated pieces of clothing with Beyoung. Our formal shirts are not so formal, explore our range to know how.
+Good ol' formal shirts have their own unbeatable charm. Make the most of these simple yet sophisticated pieces of clothing with  Elegante. Our formal shirts are not so formal, explore our range to know how.
 Satin Shirts
 When the weekend hits or it's time to crack a deal, dress to impress in our classic satin shirts. These are made with smooth and breathable material to keep you cool and fresh from AM to PM.
 Checked Shirts
 Saying “checked shirts are a classic” is an understatement. These fashionable clothes find their way into everybody's closet. You can pair checks shirts with a solid tee or button them up for an uber-cool look. It's all up to you.
 Plain Shirts
-Plain shirts have a timeless appeal that never goes out of style. At Beyoung, we take these classic essentials and add a modern twist. Our plain shirts are anything but ordinary—discover our collection to see how simple can be strikingly stylish.
+Plain shirts have a timeless appeal that never goes out of style. At  Elegante, we take these classic essentials and add a modern twist. Our plain shirts are anything but ordinary—discover our collection to see how simple can be strikingly stylish.
 Denim Shirts
-From casual days to smart casual nights, denim shirts never disappoint. At Beyoung, we’ve taken the classic design and added a modern flair, making it your go-to piece for effortless style.
+From casual days to smart casual nights, denim shirts never disappoint. At  Elegante, we’ve taken the classic design and added a modern flair, making it your go-to piece for effortless style.
 Urban Shirts
 Our Urban Shirts are perfect for your urban personality. We focus on style, comfort, and durability with a timeless design that is sure to give you a classic look that you can wear all day long.
 Hawaiian Shirts
@@ -85,15 +85,15 @@ Beach lovers get ready for our exclusive collection of Hawaiian shirts. Their fl
 Cargo Pants and Joggers
 When life gives you a chance, wear cargo! These comfy pants make your everyday hustle less painful. Browse through our collection of joggers and cargo pants for men today to find the best of Indian fashion online.
 Pajamas
-Pajamas for men are essential nightwear that combines comfort and style. Indeed, the right pair gives you much-needed relaxation too. Beyoung offers a standout collection that exemplifies both the luxury of comfort and the allure of style.
+Pajamas for men are essential nightwear that combines comfort and style. Indeed, the right pair gives you much-needed relaxation too.  Elegante offers a standout collection that exemplifies both the luxury of comfort and the allure of style.
 Boxers
-If you are going to purchase boxers for men online in India, then you have landed at the right place. Beyoung is your perfect destination for the latest designs and patterns in men's boxers. Whether you like simple colors or bold prints, our collection serves all tastes.
+If you are going to purchase boxers for men online in India, then you have landed at the right place.  Elegante is your perfect destination for the latest designs and patterns in men's boxers. Whether you like simple colors or bold prints, our collection serves all tastes.
 Shorts
-Why choose boring pieces when you can have Beyoung's shorts? The shorts are designed to keep you cool and comfy. You're good to go for couch sessions to weekend getaways. Colors pop, fit rock, and so forth; the Beyoung shorts are your effortless swagger.
+Why choose boring pieces when you can have  Elegante's shorts? The shorts are designed to keep you cool and comfy. You're good to go for couch sessions to weekend getaways. Colors pop, fit rock, and so forth; the  Elegante shorts are your effortless swagger.
 Women's Clothing Range
-Beyoung focuses on offering quality women's wear for everyday fashion. Some of our best sellers for women include -
+ Elegante focuses on offering quality women's wear for everyday fashion. Some of our best sellers for women include -
 Women's T-shirts
-T-shirts for women are the real fashion underdogs. There are many types of women's t-shirts available at Beyoung for you to explore and style.
+T-shirts for women are the real fashion underdogs. There are many types of women's t-shirts available at  Elegante for you to explore and style.
 Full- Sleeves T-shirts
 You can never go wrong with full-sleeve t-shirts, they are cool, fashionable, and comfortable. When in confusion grab a full-sleeves t-shirt, pair it with denims, and you're all set.
 Oversized T-shirts
@@ -103,25 +103,25 @@ Our range of half-sleeve t-shirts is the talk of the town. Their color, design, 
 Plain T-shirts
 Plain tees are your security blanket to fall on. On days when you are getting late for college or just want to go out to run some errands, plain t-shirts are your best buds. Try our latest collection today and enjoy amazing online shopping offers!
 Plus Size T-shirts
-Beyoung is not your regular online shopping store, it is a place where your style and comfort are cherished. We carry an immense catalog of women's plus-size t-shirts for your comfort. Explore and find your pick today!
+ Elegante is not your regular online shopping store, it is a place where your style and comfort are cherished. We carry an immense catalog of women's plus-size t-shirts for your comfort. Explore and find your pick today!
 Shorts
-Your wardrobe is incomplete without some cool pairs of shorts. No worries! If you don't have one yet, buy your first pair of shorts at Beyoung and get exclusive discounts on every order.
-Exclusive Combo Options at Beyoung
+Your wardrobe is incomplete without some cool pairs of shorts. No worries! If you don't have one yet, buy your first pair of shorts at  Elegante and get exclusive discounts on every order.
+Exclusive Combo Options at  Elegante
 Our combo products are a standout feature, offering you the freedom to personalize your selection. You can choose any size and color. We offer a variety of combos, including plain shirts, plain T-shirts, cargo joggers, pajamas, and much more.
 So, if you are on a tight budget or just want to save some extra cash while shopping, our combo options are perfect for you.
-Beyoung strives to make online clothing shopping a seamless and hassle-free experience for our Beyoungsters. Our user-friendly navigation, exclusive fashion clothes, and pocket-friendly prices will make you fall in love with India's favorite online shopping site for clothes.
+ Elegante strives to make online clothing shopping a seamless and hassle-free experience for our  Elegantesters. Our user-friendly navigation, exclusive fashion clothes, and pocket-friendly prices will make you fall in love with India's favorite online shopping site for clothes.
 FAQs
 Which site is best for online shopping?
-Shopping at Beyoung is effortless and convenient. We offer trendy styles at affordable prices, ensuring an exceptional online shopping experience. Explore Beyoung today and discover fashion made simple!
+Shopping at  Elegante is effortless and convenient. We offer trendy styles at affordable prices, ensuring an exceptional online shopping experience. Explore  Elegante today and discover fashion made simple!
 Is online clothing shopping good or not?
-Online clothing shopping is a lifesaver in today’s fast-paced world. It saves you the hassle of stepping out while offering endless choices from the comfort of your home. For those on a tight budget and schedule, Beyoung is the perfect solution, offering stylish clothing options at pocket-friendly prices.
-How do I know if Beyoung's online store is safe?
-Beyoung is a trusted name for online shopping in India. We prioritize your privacy and adhere to Indian laws to keep your data secure. You can also check the padlock in the URL field that says safe for you to browse.
-Is it safe to shop on Beyoung’s shopping site?
-Yes, Beyoung’s website is 100% safe and secure. Our platform is tested and protects your privacy at all times. You can browse through an array of new and trendy clothes. From uber-cool joggers to classy urban and clubwear shirts, get all in one secure shopping destination.
-Can I trust Beyoung as an online clothing website?
-Absolutely! You can trust Beyoung as your online clothing shopping destination. Our exclusive features like Shop the Look, Make Your Combo, and others give you the much-needed freedom to style your clothes, your way. With secure checkout, COD options, and hassle-free return, exchange, and refund policies, Beyoung ensures a safe and enjoyable shopping experience.
+Online clothing shopping is a lifesaver in today’s fast-paced world. It saves you the hassle of stepping out while offering endless choices from the comfort of your home. For those on a tight budget and schedule,  Elegante is the perfect solution, offering stylish clothing options at pocket-friendly prices.
+How do I know if  Elegante's online store is safe?
+ Elegante is a trusted name for online shopping in India. We prioritize your privacy and adhere to Indian laws to keep your data secure. You can also check the padlock in the URL field that says safe for you to browse.
+Is it safe to shop on  Elegante’s shopping site?
+Yes,  Elegante’s website is 100% safe and secure. Our platform is tested and protects your privacy at all times. You can browse through an array of new and trendy clothes. From uber-cool joggers to classy urban and clubwear shirts, get all in one secure shopping destination.
+Can I trust  Elegante as an online clothing website?
+Absolutely! You can trust  Elegante as your online clothing shopping destination. Our exclusive features like Shop the Look, Make Your Combo, and others give you the much-needed freedom to style your clothes, your way. With secure checkout, COD options, and hassle-free return, exchange, and refund policies,  Elegante ensures a safe and enjoyable shopping experience.
 Where can you buy clothes online for everyday fashion?
-For everyday fashion, Beyoung is your go-to destination. We bring you a curated collection of trendy clothing for both men and women at affordable prices. Browse our catalog today to upgrade your wardrobe with the latest styles!
+For everyday fashion,  Elegante is your go-to destination. We bring you a curated collection of trendy clothing for both men and women at affordable prices. Browse our catalog today to upgrade your wardrobe with the latest styles!
   `,
 };

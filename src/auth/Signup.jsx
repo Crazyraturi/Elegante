@@ -97,7 +97,7 @@ const Signup = () => {
           </div>
         <div className="text-sm">
           <p>
-            © 2025 Beyoung.in •{" "}
+            © 2025 Elegante •{" "}
             <Link to="#" className="hover:underline">
               Privacy Policy
             </Link>
@@ -210,7 +210,7 @@ const Signup = () => {
             
             {/* Terms and Privacy Policy Footer */}
             <p className="text-center text-xs text-gray-500 mt-4">
-              By continuing, you agree to Beyoung{" "}
+              By continuing, you agree to Elegante{" "}
               <Link to="#" className="hover:underline text-gray-700">
                 Terms of Service
               </Link>{" "}

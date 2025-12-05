@@ -2,7 +2,7 @@ export const NewArrival_DATA = {
   new_arrival: {
     title: "Men's New Arrival",
     description_short:
-      "Step into the season with Beyoung’s freshest drop of men’s fashion — a bold blend of comfort, style, and street-ready attitude. From newly launched cargo pants and oversized t-shirts to everyday casual shirts and premium denim jeans for men, our new arrivals are tailored for the modern man on the move. Whether you're heading out for a casual day, styling up for the weekend, or just refreshing your everyday look, these newly added styles offer the perfect balance of trend and utility. Browse the latest collection of premium polo t shirts, versatile men’s shirts, and functional bottoms — all crafted for comfort and durability.",
+      "Step into the season with  Elegante’s freshest drop of men’s fashion — a bold blend of comfort, style, and street-ready attitude. From newly launched cargo pants and oversized t-shirts to everyday casual shirts and premium denim jeans for men, our new arrivals are tailored for the modern man on the move. Whether you're heading out for a casual day, styling up for the weekend, or just refreshing your everyday look, these newly added styles offer the perfect balance of trend and utility. Browse the latest collection of premium polo t shirts, versatile men’s shirts, and functional bottoms — all crafted for comfort and durability.",
     // buttons: [
     //   {
     //     label: "VIEW ALL",

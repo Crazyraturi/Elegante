@@ -25,7 +25,7 @@ const AboutHero = () => {
             <video autoPlay muted controls={false}  loop playsInline  src={textAnimation}></video>
          </div>
 
-         <p className='max-w-6xl text-center'>Once upon a time, somewhere in the Universe, 4 dreamers (my young co-founders) met with the idea of creating a brand that offers Global Fashion. It was the year 2018 with days of hard work and nights of dreams, they started my journey, 'The Journey of Beyoung.' First order in days and lakhs of orders in years? You wanna know the drill? Well. here is my secret recipe: </p>
+         <p className='max-w-6xl text-center'>Once upon a time, somewhere in the Universe, 4 dreamers (my young co-founders) met with the idea of creating a brand that offers Global Fashion. It was the year 2018 with days of hard work and nights of dreams, they started my journey, 'The Journey of  Elegante.' First order in days and lakhs of orders in years? You wanna know the drill? Well. here is my secret recipe: </p>
 
          <img className='p-5 font-' src={gif} alt="" />
 
@@ -35,7 +35,7 @@ const AboutHero = () => {
             <video className='w-full' autoPlay muted controls={false}  loop playsInline  src={centervideo}></video>
          </div>
 
-          <p className='max-w-6xl text-center'>While others are snoozing, Beyoung (that’s me ????) is serving the youth of Bharat who want aspirational and value for money fashion. Because no one should have to compromise on fashion—I stepped in to change the game. So, in a nutshell, I want to be your Fashion Partner. From morning jogs to date nights, meetings to hangouts, I get you the look you want with sass and convenience. Yours truly offers you what nobody else does - Customizable Combos. </p>
+          <p className='max-w-6xl text-center'>While others are snoozing, Elegante (that’s me ????) is serving the youth of Bharat who want aspirational and value for money fashion. Because no one should have to compromise on fashion—I stepped in to change the game. So, in a nutshell, I want to be your Fashion Partner. From morning jogs to date nights, meetings to hangouts, I get you the look you want with sass and convenience. Yours truly offers you what nobody else does - Customizable Combos. </p>
 
         
 </p>

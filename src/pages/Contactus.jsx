@@ -32,7 +32,7 @@ export default function ContactUs() {
               </li>
               <li className="text-gray-700">
                 <span className="font-semibold">• Email Support:</span>{" "}
-                <span className="text-gray-700">support@beyoung.in</span>
+                <span className="text-gray-700">support@Elegante.in</span>
               </li>
             </ul>
 

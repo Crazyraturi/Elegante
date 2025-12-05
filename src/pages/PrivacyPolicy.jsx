@@ -23,9 +23,9 @@ const PrivacyPolicy = () => {
           Introduction
         </h2>
         <p>
-          1.1 Beyoung Folks Private Limited (“Company”, “we”, “us” and “our”)
+          1.1  Elegante Folks Private Limited (“Company”, “we”, “us” and “our”)
           respects the privacy of its users accessing its website at
-          www.beyoung.in(“Website”). For the purposes of this privacy policy
+          www. Elegante.in(“Website”). For the purposes of this privacy policy
           (“Privacy Policy”) and wherever the context so requires “you”, “your”,
           “yourself”, “user”shall mean any natural or legal person who accesses
           or uses the Website and in the event that a natural person is
@@ -341,7 +341,7 @@ const PrivacyPolicy = () => {
           6.1 All Personal Information provided to the Company by you have been
           voluntarily provided by you. You have the right to withdraw your
           consent at any time in writing by sending an e-mail to us at
-          support@beyoung.in, in accordance with the terms of this Privacy
+          support@Elegante.in, in accordance with the terms of this Privacy
           Policy. However, please note that withdrawal of consent will not be
           retrospective in nature and shall be applicable prospectively. In case
           you do not provide your Personal Information or consent for usage of
@@ -410,13 +410,13 @@ const PrivacyPolicy = () => {
         </p>
         <p>
           6.9 By signing up and ticking the consent box, the User agrees to
-          receive communications and notifications from Beyoung via SMS, Email,
-          RCS, WhatsApp, or any other electronic medium. Beyoung shall not be
+          receive communications and notifications from Elegante via SMS, Email,
+          RCS, WhatsApp, or any other electronic medium. Elegante shall not be
           responsible for any damages arising from fraudulent messages sent over
           the internet by third parties.
         </p>
         <p>
-          6.10 BEYOUNG never asks for any extra payment for delivery or
+          6.10 Elegante never asks for any extra payment for delivery or
           exchanges. If someone asks for extra payment, it is a SCAM. Do not
           make the payment under any circumstances. Stay alert & report any
           suspicious activity to our customer support immediately.
@@ -436,9 +436,9 @@ const PrivacyPolicy = () => {
         <p>
           Grievance Officer: Alisha Punjabi
           <br />
-          Email: grievance@beyoung.in
+          Email: grievance@Elegante.in
           <br />
-          Address: Beyoung Folks Pvt. Ltd. Eklingpura Chouraha NH-8, Bypass,
+          Address: Elegante Folks Pvt. Ltd. Eklingpura Chouraha NH-8, Bypass,
           near Mahadev Hotel, Udaipur, Rajasthan 313002
           <br />
           The Grievance Officer will acknowledge or respond to your
@@ -446,7 +446,7 @@ const PrivacyPolicy = () => {
           within 15 days from the date of receipt. If your issue still needs
           attention, or if you’d like to share feedback about our products and
           services, you can directly connect with our Co-founder, Shivani, at
-          shivani.connect@beyoung.in—she would love to hear from you!
+          shivani.connect@Elegante.in—she would love to hear from you!
         </p>
       </div>
     </section>

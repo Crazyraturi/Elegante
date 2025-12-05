@@ -685,7 +685,7 @@ export default function ProductPage() {
                       </li>
                       <li>
                         Refunds for prepaid orders go back to original payment.
-                        COD refunds go to Beyoung Wallet.
+                        COD refunds go to  Elegante Wallet.
                       </li>
                       <li>
                         Record an unpacking video — required for damage/missing
@@ -721,13 +721,13 @@ export default function ProductPage() {
                     </p>
                     <p className="mb-2">
                       <strong>Manufactured & Sold By:</strong> <br />
-                      Beyoung Folks Pvt. Ltd. <br />
+                       Elegante Folks Pvt. Ltd. <br />
                       Eklingpura Chouraha, Ahmedabad Main Road (NH 8 – Near
                       Mahadev Hotel) <br />
                       Udaipur, 313002
                     </p>
                     <p>
-                      <strong>Email:</strong> support@beyoung.in
+                      <strong>Email:</strong> support@ Elegante.in
                     </p>
                   </div>
                 )}

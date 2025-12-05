@@ -15,23 +15,23 @@ const More = () => {
       title: "Girdhar Chauraha, Mirzapur",
       address:
         "House No. 563, Girdhar Ka Chauraha, Badli Katra, next to Lenskart, Dankinganj, Mirzapur, Uttar Pradesh 231001",
-      email: "mirzapur.store@beyoung.in",
+      email: "mirzapur.store@Elegante.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
       image: mirzapur_store_offline,
     },
     {
       title: "Prahlad Nagar, Ahmedabad",
       address:
-        "Beyoung Store, Shop No. 1, Ground Floor, Timber Point, Prahlad Nagar, Ahmedabad, Gujarat 380015",
-      email: "store.ahmedabad@beyoung.in",
+        "Elegante Store, Shop No. 1, Ground Floor, Timber Point, Prahlad Nagar, Ahmedabad, Gujarat 380015",
+      email: "store.ahmedabad@Elegante.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
       image: Ahmedabad_store_offline,
     },
     {
       title: "Jankipuram, Lucknow",
       address:
-        "Beyoung Store, Shop No. HS-1/6, Sector-A, Sitapur Road Scheme, Jankipuram, Lucknow-226021",
-      email: "store.lucknow@beyoung.in",
+        "Elegante Store, Shop No. HS-1/6, Sector-A, Sitapur Road Scheme, Jankipuram, Lucknow-226021",
+      email: "store.lucknow@Elegante.in",
       hours: "10:30 Am To 9:30 PM (Mon-Sun)",
       image: lucknow_store,
     },
@@ -39,7 +39,7 @@ const More = () => {
       title: "Station Road, Sikar",
       address:
         "Shop No. 1, Shri Shakti Tower, Opposite Maru Mandir, Station Road, Sikar-332001",
-      email: "store.sikar@beyoung.in",
+      email: "store.sikar@Elegante.in",
       hours: "10:30 Am To 9:30 PM (Mon-Sun)",
       image: sikar_store,
     },
@@ -47,14 +47,14 @@ const More = () => {
       title: "Kotri Road, Kota",
       address:
         "Shop No. 1, Plot No. 140, Gumanpura Yojna, Kotri Road, Kota 324007",
-      email: "store.kota@beyoung.in",
+      email: "store.kota@Elegante.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
       image: kota_Store,
     },
     {
       title: "Nagori Garden, Bhilwara",
       address: "Shop no. E-6 Factory Area, Nagori Garden Bhilwara 311001",
-      email: "store.bhilwara@beyoung.in",
+      email: "store.bhilwara@Elegante.in",
       hours: "10:30 AM to 9:30 PM (Mon-Sun)",
       image: Bhilwara_Store,
     },
@@ -62,7 +62,7 @@ const More = () => {
       title: "Ayad, University Road Udaipur",
       address:
         "Jai Jinendra Complex, University Rd, Luhar Colony, Ayad, Kharakua, Udaipur, Rajasthan 313001",
-      email: "store.udr@beyoung.in",
+      email: "store.udr@Elegante.in",
       hours: "10 AM to 10 PM (Mon-Sun)",
       image: Udaipur_Store,
     },
@@ -70,7 +70,7 @@ const More = () => {
       title: "Magdalla, Surat, Gujarat",
       address:
         "Shop No-206, 2nd Floor VR Mall Dumas Rd, Magdalla, Surat, Gujarat 395007",
-      email: "vrsurat.store@beyoung.in",
+      email: "vrsurat.store@Elegante.in",
       hours: "10 AM to 10 PM (Mon-Sun)",
       image: surat_store,
     },

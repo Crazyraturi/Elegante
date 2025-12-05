@@ -53,18 +53,18 @@ export default function FAQPage() {
         question:
           "I tried placing my order using my debit card/credit card/Net Banking. The order was not successful but my money got deducted. What really happened to my money?",
         answer:
-          "Don't worry! We'll assist you in resolving this issue. First, check your bank or credit card account to confirm whether the amount was debited. If the payment was deducted but the order didn't go through, the amount will be automatically reversed by your bank within 7-10 business days. For further assistance, please contact us on WhatsApp or email us at support@beyoung.in, and we'll be happy to help",
+          "Don't worry! We'll assist you in resolving this issue. First, check your bank or credit card account to confirm whether the amount was debited. If the payment was deducted but the order didn't go through, the amount will be automatically reversed by your bank within 7-10 business days. For further assistance, please contact us on WhatsApp or email us at support@ Elegante.in, and we'll be happy to help",
       },
       {
         question: "How should I check the status of my Order?",
-        answer: `Click here to Track Your Order. If you encounter any issues or need further assistance, please contact us on WhatsApp or email us at support@beyoung.in.`,
+        answer: `Click here to Track Your Order. If you encounter any issues or need further assistance, please contact us on WhatsApp or email us at support@ Elegante.in.`,
       },
     ],
 
     "Cancellation & Related Queries Order Cancellation": [
       {
         question: "How can I cancel my order?",
-        answer: `What is Beyoung's Cancellation Policy?
+        answer: `What is  Elegante's Cancellation Policy?
 
 1. Orders can be cancelled or modified (change number, address, product style or size) if they have not yet been dispatched from our warehouse.
 2. To cancel your order, raise a cancellation request via our WhatsApp chat support.
@@ -86,7 +86,7 @@ Note: Once the order is shipped from the warehouse, it cannot be cancelled. If a
           "Is it safe to shop online if I make payment using net banking, Debit Card, or Credit Card?",
         answer: `We use 100% trusted and secure payment gateways. It is completely safe to pay online via credit card debit card, and net banking transactions.
 
-Please Note: The Beyoung team will never ask for your personal information or banking details over the phone or via email. Please do not share your details with anyone. Only follow the secure checkout process on the website.`,
+Please Note: The  Elegante team will never ask for your personal information or banking details over the phone or via email. Please do not share your details with anyone. Only follow the secure checkout process on the website.`,
       },
 
       {
@@ -105,13 +105,13 @@ Please Note: The Beyoung team will never ask for your personal information or ba
         question: "What should I do if my payment fails?",
         answer: `Make sure you have entered the correct account details and your internet connection is not disrupted during the payment process.
 
-If the amount has been debited after a payment failure, it will be automatically reversed by the respective bank within 48-72 business hours. If you do not receive the refund, please contact your bank. For any other requests or queries regarding this, please contact us on WhatsApp or email us at support@beyoung.in, and we'll be happy to help.`,
+If the amount has been debited after a payment failure, it will be automatically reversed by the respective bank within 48-72 business hours. If you do not receive the refund, please contact your bank. For any other requests or queries regarding this, please contact us on WhatsApp or email us at support@ Elegante.in, and we'll be happy to help.`,
       },
 
       {
-        question: "What is Beyoung Wallet?",
+        question: "What is  Elegante Wallet?",
         answer:
-          "Beyoung Wallet is a digital platform where COD refunds are credited. It is designed to offer flexibility and ease in redeeming benefits on future purchases. You can use this balance to shop from Beyoung within 12 months.",
+          " Elegante Wallet is a digital platform where COD refunds are credited. It is designed to offer flexibility and ease in redeeming benefits on future purchases. You can use this balance to shop from  Elegante within 12 months.",
       },
 
       {
@@ -122,28 +122,28 @@ If the amount has been debited after a payment failure, it will be automatically
 
       {
         question:
-          "Can I use my Beyoung wallet balance for offline store purchases?",
+          "Can I use my  Elegante wallet balance for offline store purchases?",
         answer:
-          "No, the Beyoung wallet balance can only be used for online purchases on the Beyoung website or app.",
+          "No, the  Elegante wallet balance can only be used for online purchases on the  Elegante website or app.",
       },
 
       {
-        question: "Does Beyoung wallet balance expire?",
+        question: "Does  Elegante wallet balance expire?",
         answer:
-          "Yes, the Beyoung wallet balance has a validity period of 12 months from the date of credit.",
+          "Yes, the  Elegante wallet balance has a validity period of 12 months from the date of credit.",
       },
 
       {
         question:
-          "Can I transfer the Beyoung wallet balance to my friend’s Beyoung Wallet?",
+          "Can I transfer the  Elegante wallet balance to my friend’s  Elegante Wallet?",
         answer:
-          "No, the Beyoung wallet balance is non-transferable and non-refundable.",
+          "No, the  Elegante wallet balance is non-transferable and non-refundable.",
       },
     ],
 
     "Shipping & Tracking": [
       {
-        question: "What is the Shipping Policy of Beyoung?",
+        question: "What is the Shipping Policy of  Elegante?",
         answer: `Here is our shipping policy:
 
 • We offer free shipping on all orders sitewide.  
@@ -191,8 +191,8 @@ Your refund request will be created.`,
         answer: `Your return request may be rejected for several reasons, such as failing the quality check or missing tags. Please reach out to our customer support team for assistance.`,
       },
       {
-        question: "Can I return an online purchase to the Beyoung Store?",
-        answer: `No, you can not return an online purchase to the Beyoung Store.`,
+        question: "Can I return an online purchase to the  Elegante Store?",
+        answer: `No, you can not return an online purchase to the  Elegante Store.`,
       },
       {
         question: "What items are eligible for return or exchange?",
@@ -245,13 +245,13 @@ Your refund request will be created.`,
       },
       {
         question: "How will I get my refund and how long will it take?",
-        answer: `For prepaid orders, you can choose between receiving a refund via your original payment method or Beyoung wallet cash. Once the product(s) pass our quality check at the warehouse, we will initiate the refund within 24-48 hours. Refunds to your payment method will be processed within 7-10 business days, depending on your bank's processing times. Alternatively, if you opt for Beyoung wallet cash, it will be credited instantly once the product clears the quality check.
+        answer: `For prepaid orders, you can choose between receiving a refund via your original payment method or  Elegante wallet cash. Once the product(s) pass our quality check at the warehouse, we will initiate the refund within 24-48 hours. Refunds to your payment method will be processed within 7-10 business days, depending on your bank's processing times. Alternatively, if you opt for  Elegante wallet cash, it will be credited instantly once the product clears the quality check.
 
-Similarly, for COD orders, once the product passes the quality check and reaches our warehouse, the refund will be issued instantly to your Beyoung Wallet. Beyoung Cash can be used for future purchases on our website or app and is valid for 12 months from the date you receive it.`,
+Similarly, for COD orders, once the product passes the quality check and reaches our warehouse, the refund will be issued instantly to your  Elegante Wallet.  Elegante Cash can be used for future purchases on our website or app and is valid for 12 months from the date you receive it.`,
       },
       {
         question: "Can I get a refund for a COD order?",
-        answer: `Yes, you can get a refund for your COD order, which will be credited to your Beyoung wallet for future purchases.`,
+        answer: `Yes, you can get a refund for your COD order, which will be credited to your  Elegante wallet for future purchases.`,
       },
       {
         question: "Will I be notified when my refund is processed?",
@@ -259,7 +259,7 @@ Similarly, for COD orders, once the product passes the quality check and reaches
       },
       {
         question: "What should I do if I haven't received my refund?",
-        answer: `Please reach out to our customer support team via email or WhatsApp. We will promptly resolve your issue. support@beyoung.in`,
+        answer: `Please reach out to our customer support team via email or WhatsApp. We will promptly resolve your issue. support@ Elegante.in`,
       },
       {
         question: "What should I do if an item is missing from my order?",
@@ -271,47 +271,47 @@ Similarly, for COD orders, once the product passes the quality check and reaches
       {
         question: "What is Wallet Credit?",
         answer:
-          "Wallet Credit is the digital money that can be used for future purchases on Beyoung. All the refunds from COD (Cash on Delivery) returns are credited to this virtual wallet.",
+          "Wallet Credit is the digital money that can be used for future purchases on  Elegante. All the refunds from COD (Cash on Delivery) returns are credited to this virtual wallet.",
       },
       {
         question:
-          "Can I transfer the Beyoung Wallet balance to my bank account?",
+          "Can I transfer the  Elegante Wallet balance to my bank account?",
         answer:
           "No, credit balance is non-transferable and cannot be withdrawn or transferred to a bank account..",
       },
       {
-        question: "Does the Beyoung Wallet balance expire?",
+        question: "Does the  Elegante Wallet balance expire?",
         answer:
           "Yes, Credit expires 12 months after it is credited. After this period, any unused balance will automatically lapse.",
       },
       {
         question: "How to check Wallet Credit balance?",
-        answer: `To check your Beyoung wallet balance 
+        answer: `To check your  Elegante wallet balance 
 
 Log into your account using your registered mobile number.
-Go to "My Account" and select "Beyoung Wallet" from the list.
+Go to "My Account" and select " Elegante Wallet" from the list.
 You will see the Available Balance, Total Purchases, and Usage History.`,
       },
       {
         question:
           "Can I buy items on other e-commerce websites with Wallet Credits?",
         answer:
-          "No, Credits can only be used on Beyoung’s website or mobile app.",
+          "No, Credits can only be used on  Elegante’s website or mobile app.",
       },
       {
-        question: "How to redeem Beyoung wallet balance?",
-        answer: `To redeem Beyoung wallet balance -
+        question: "How to redeem  Elegante wallet balance?",
+        answer: `To redeem  Elegante wallet balance -
 
 1. Add your desired product(s) to your cart and proceed to the checkout page.
-2. Click on “login to apply”. Once logged in your Beyoung wallet balance will be visible.
+2. Click on “login to apply”. Once logged in your  Elegante wallet balance will be visible.
 3. Click on the Wallet Credit option to use it as your preferred payment method.
 4. Then continue to checkout, confirm your shipping address and place your order.`,
       },
       {
         question:
-          "Can I use my Wallet balance to purchase from Beyoung’s offline store?",
+          "Can I use my Wallet balance to purchase from  Elegante’s offline store?",
         answer:
-          "No, you cannot use the credit balance to purchase from Beyoung ‘s offline stores.",
+          "No, you cannot use the credit balance to purchase from  Elegante ‘s offline stores.",
       },
     ],
 
@@ -363,10 +363,10 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
       {
         question: "Is there any trial then purchase option available?",
         answer:
-          "We currently do not offer a trial-and-buy option. To help you choose the right size, we provide a size chart with body measurements on our product pages. If you have any further questions, feel free to contact us on WhatsApp or email us at support@beyoung.in.",
+          "We currently do not offer a trial-and-buy option. To help you choose the right size, we provide a size chart with body measurements on our product pages. If you have any further questions, feel free to contact us on WhatsApp or email us at support@ Elegante.in.",
       },
       {
-        question: "How can I find a Beyoung offline store near me?",
+        question: "How can I find a  Elegante offline store near me?",
         answer:
           "We’ve made it super easy for you! Just click on view page , and you’ll find all the details of all our offline stores.",
       },
@@ -374,8 +374,8 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
 
     "Wash Care instructions": [
       {
-        question: "How should I care for my Beyoung Plain T-shirt?",
-        answer: `The Beyoung Plain T-shirt is built to last, but only if you show it some love. Here’s how to keep it looking fresh:
+        question: "How should I care for my  Elegante Plain T-shirt?",
+        answer: `The  Elegante Plain T-shirt is built to last, but only if you show it some love. Here’s how to keep it looking fresh:
 
 1. Give it a cold and gentle machine wash. No harsh spins; keep it chill.
 2. Skip the brushes. Your tee doesn’t like rough treatment.
@@ -384,8 +384,8 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
 5. Use mild detergents only. Strong ones are a big no-no.`,
       },
       {
-        question: "How do I wash and maintain my Beyoung Plain Shirt?",
-        answer: `The Beyoung Plain Shirt is made to keep you looking sharp, but only if you give it the right care. Here’s how to keep it crisp and fresh:
+        question: "How do I wash and maintain my  Elegante Plain Shirt?",
+        answer: `The  Elegante Plain Shirt is made to keep you looking sharp, but only if you give it the right care. Here’s how to keep it crisp and fresh:
  
 1. Give it a normal machine wash.
 2. Avoid bleach or fabric softeners. They are not your shirt’s friends.
@@ -393,8 +393,8 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
 4. Air dry for best results, or use a low tumble dry if you are in a hurry.`,
       },
       {
-        question: "What should I avoid while washing my Beyoung Polo T-shirt?",
-        answer: `The Beyoung Polo T-shirt deserves a little extra care to keep its classy look intact. Here’s what to avoid while washing:
+        question: "What should I avoid while washing my  Elegante Polo T-shirt?",
+        answer: `The  Elegante Polo T-shirt deserves a little extra care to keep its classy look intact. Here’s what to avoid while washing:
 
 1. Avoid hot washes. Stick to cold and gentle machine cycles.
 2. Skip bleach and fabric softeners, as they harm the fabric and color.
@@ -403,8 +403,8 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
       },
       {
         question:
-          "What should I keep in mind while washing my Beyoung Regular Fit Pyjamas?",
-        answer: `The Beyoung Regular Fit Pyjamas are made for everyday comfort, and with the right care they will stay soft and fresh. Here’s what to keep in mind:
+          "What should I keep in mind while washing my  Elegante Regular Fit Pyjamas?",
+        answer: `The  Elegante Regular Fit Pyjamas are made for everyday comfort, and with the right care they will stay soft and fresh. Here’s what to keep in mind:
 
 1. Give them a gentle machine wash to maintain the fabric quality.
 2. Do not tumble dry. Let them air dry naturally for the best comfort.
@@ -412,7 +412,7 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
 4. Do not use bleach. It can damage the fibers and fade the color.`,
       },
       {
-        question: "Will my Beyoung Cargo Joggers lose color and shape?",
+        question: "Will my  Elegante Cargo Joggers lose color and shape?",
         answer: `Yes, if you wash them the wrong way. To make sure they stay durable and stylish, follow these simple care tips:
  
 1. Give them a gentle machine wash to maintain fabric strength.
@@ -422,7 +422,7 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
       },
       {
         question:
-          "Will my Beyoung Loose Fit Pyjamas lose their softness and fit?",
+          "Will my  Elegante Loose Fit Pyjamas lose their softness and fit?",
         answer: `Yes, if you wash them the wrong way. To keep them comfortable and long-lasting, here’s what you should do:
  
 1. Give them a gentle machine wash to protect the fabric.
@@ -434,25 +434,25 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
 
     "Legitimacy & Reliability": [
       {
-        question: "Is Beyoung a Genuine and Legit Website?",
+        question: "Is  Elegante a Genuine and Legit Website?",
         answer:
-          "Yes, Beyoung is a legitimate fashion e-commerce website headquartered in Udaipur, India. With a trusted reputation among over 3 million customers across tier II, III, and IV cities, we adhere to all Indian e-commerce protocols and policies. We constantly adapt to market trends to meet your fashion needs.\n\nBeyoung ensures a secure shopping experience through advanced encryption systems that protect all transactions. In case of any issues with incorrect or damaged products, our dedicated customer service team is available to assist with returns, exchanges, or refunds according to our policy.",
+          "Yes,  Elegante is a legitimate fashion e-commerce website headquartered in Udaipur, India. With a trusted reputation among over 3 million customers across tier II, III, and IV cities, we adhere to all Indian e-commerce protocols and policies. We constantly adapt to market trends to meet your fashion needs.\n\n Elegante ensures a secure shopping experience through advanced encryption systems that protect all transactions. In case of any issues with incorrect or damaged products, our dedicated customer service team is available to assist with returns, exchanges, or refunds according to our policy.",
       },
       {
-        question: "Is Beyoung Real or Fake?",
+        question: "Is  Elegante Real or Fake?",
         answer:
-          "Beyoung is a genuine and trustworthy brand offering affordable and stylish fashion. We are committed to delivering quality products that reflect the latest trends. Shopping with us means you can expect real, high-quality items and a reliable customer experience. We recommend using Beyoung's official website or mobile app to ensure product authenticity and avoid counterfeits.",
+          " Elegante is a genuine and trustworthy brand offering affordable and stylish fashion. We are committed to delivering quality products that reflect the latest trends. Shopping with us means you can expect real, high-quality items and a reliable customer experience. We recommend using  Elegante's official website or mobile app to ensure product authenticity and avoid counterfeits.",
       },
       {
-        question: "Is Beyoung a Good Brand Worth Exploring?",
+        question: "Is  Elegante a Good Brand Worth Exploring?",
         answer:
-          "Absolutely! Beyoung is a well-regarded brand among Indian youngsters, known for transparency and customer satisfaction. Our products receive positive feedback for their quality, comfort, and style. We offer trendy fashion at reasonable prices, making Beyoung a brand worth exploring for stylish, affordable clothing.",
+          "Absolutely!  Elegante is a well-regarded brand among Indian youngsters, known for transparency and customer satisfaction. Our products receive positive feedback for their quality, comfort, and style. We offer trendy fashion at reasonable prices, making  Elegante a brand worth exploring for stylish, affordable clothing.",
       },
       {
         question:
-          "Is It Safe to Buy Clothes from the Beyoung Website? Are the Products of Premium Quality?",
+          "Is It Safe to Buy Clothes from the  Elegante Website? Are the Products of Premium Quality?",
         answer:
-          "Beyoung is committed to providing a safe and secure shopping experience. Our website and mobile app use the latest HTTPS technology and Secure Sockets Layer (SSL) encryption to protect your data and transactions. We partner with leading payment gateways to ensure your information remains confidential and secure.\n\nWe also prioritize the quality of our products, using premium materials while maintaining affordability. Our packaging ensures your orders arrive damage-free, and our customer support team is dedicated to assisting you with returns and refunds as per our policy.",
+          " Elegante is committed to providing a safe and secure shopping experience. Our website and mobile app use the latest HTTPS technology and Secure Sockets Layer (SSL) encryption to protect your data and transactions. We partner with leading payment gateways to ensure your information remains confidential and secure.\n\nWe also prioritize the quality of our products, using premium materials while maintaining affordability. Our packaging ensures your orders arrive damage-free, and our customer support team is dedicated to assisting you with returns and refunds as per our policy.",
       },
     ],
   };

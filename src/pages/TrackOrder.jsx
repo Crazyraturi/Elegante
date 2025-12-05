@@ -82,7 +82,7 @@ const TrackOrder = () => {
             size={24}
             className="inline-block text-red-500 fill-red-500 mr-2"
           />
-          Thank you for shopping at Beyoung, keep loving!
+          Thank you for shopping at Elegante, keep loving!
           <Heart
             size={24}
             className="inline-block text-red-500 fill-red-500 ml-2"

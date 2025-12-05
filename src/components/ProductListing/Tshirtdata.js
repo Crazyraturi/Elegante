@@ -2,13 +2,13 @@ export const CATEGORY_DATA = {
   "plain-t-shirts": {
     title: "Plain Tshirts for Men",
     description_short:
-      "Beyoung plain t shirts for men bring together unbeatable comfort, effortless style, and lasting quality. Crafted from premium breathable cotton, each tee offers a soft feel and a perfect fit that complements every look — from casual outings to everyday workwear. With their clean, minimal design and durable stitching, Beyoung’s plain t shirts are a must-have for every modern wardrobe.",
+      " Elegante plain t shirts for men bring together unbeatable comfort, effortless style, and lasting quality. Crafted from premium breathable cotton, each tee offers a soft feel and a perfect fit that complements every look — from casual outings to everyday workwear. With their clean, minimal design and durable stitching,  Elegante’s plain t shirts are a must-have for every modern wardrobe.",
     description_long: `
-            <h3 class="seo-h3">Beyoung Plain Tshirts for Men with Great Quality</h3>
-            <p>Plain T Shirts for Men: Timeless Basics for Everyday Wear. Good quality plain t shirts are the most basic yet staple piece every man has in their closet. They are so versatile that they can be dressed for any setting. You can easily pair them with anything without thinking much about it. When buying the best quality plain t-shirts for men online in India, fashion enthusiasts often consider essential factors and look for the best clothing store. The search for an and ideal destination ends at Beyoung. Even with a wardrobe full of fancy clothes, men’s plain t-shirts remain irresistible.</p>
-            <p>Beyoung plain t shirts high quality collection caters to all the key aspects you seek while shopping for men’s plain t-shirts online in India. With a commitment to delivering exactly what buyers want, Beyoung has become the go-to destination for style icons looking for affordable plain t-shirts for men.</p>
+            <h3 class="seo-h3"> Elegante Plain Tshirts for Men with Great Quality</h3>
+            <p>Plain T Shirts for Men: Timeless Basics for Everyday Wear. Good quality plain t shirts are the most basic yet staple piece every man has in their closet. They are so versatile that they can be dressed for any setting. You can easily pair them with anything without thinking much about it. When buying the best quality plain t-shirts for men online in India, fashion enthusiasts often consider essential factors and look for the best clothing store. The search for an and ideal destination ends at  Elegante. Even with a wardrobe full of fancy clothes, men’s plain t-shirts remain irresistible.</p>
+            <p> Elegante plain t shirts high quality collection caters to all the key aspects you seek while shopping for men’s plain t-shirts online in India. With a commitment to delivering exactly what buyers want,  Elegante has become the go-to destination for style icons looking for affordable plain t-shirts for men.</p>
             
-            <h3 class="seo-h3">Beyoung Plain Tshirts for Men | Explore All Different Types</h3>
+            <h3 class="seo-h3"> Elegante Plain Tshirts for Men | Explore All Different Types</h3>
             <p>Solid plain t-shirts are the fundamental pieces of every wardrobe due to their endless versatility and timeless appeal. Each style brings its very own charm, making the solid t-shirts an inevitable staple for men who give importance to simplicity and utility. Here are a few plain t shirts for you:</p>
             
             <div class="style-guide-section">
@@ -25,7 +25,7 @@ export const CATEGORY_DATA = {
             <h3 class="seo-h3">Style Men’s Plain T-Shirts for Different Occasions</h3>
             <p>If you think plain t-shirts are too basic to be a key wardrobe piece, then you are wrong. Men’s plain t shirts are incredibly versatile and perfect for styling, as they can easily be paired with almost anything. Here are some ways you can style basic plain t-shirts for different occasions: [List of occasions removed for brevity, but would be included here]</p>
 
-            <h3 class="seo-h3">Why Choose Beyoung High Quality Plain T shirts for Men?</h3>
+            <h3 class="seo-h3">Why Choose  Elegante High Quality Plain T shirts for Men?</h3>
             [The rest of the final descriptive paragraphs are included here...]
         `,
     price_table_data: [
@@ -106,11 +106,11 @@ export const CATEGORY_DATA = {
     faq: [
       {
         q: "Which Quality Plain T-Shirts are Best for the Rainy Season?",
-        a: "For the rainy season, go for plain t-shirts made from premium cotton fabric that are soft, breathable, and quick-drying. These fabrics help you stay comfortable and fresh even with the occasional humidity or drizzle. Beyoung offers a great collection of plain t shirts for men that are perfect for daily wear in all seasons.",
+        a: "For the rainy season, go for plain t-shirts made from premium cotton fabric that are soft, breathable, and quick-drying. These fabrics help you stay comfortable and fresh even with the occasional humidity or drizzle.  Elegante offers a great collection of plain t shirts for men that are perfect for daily wear in all seasons.",
       },
       {
         q: "What sizes are available for Men’s Plain T-Shirts?",
-        a: "At Beyoung we believe in providing fashion for all sizes. So, we provide men’s plain t-shirts in sizes from Small to 5XL.",
+        a: "At  Elegante we believe in providing fashion for all sizes. So, we provide men’s plain t-shirts in sizes from Small to 5XL.",
       },
       {
         q: "What fabrics are used for Men's Plain T-Shirts?",
@@ -126,28 +126,28 @@ export const CATEGORY_DATA = {
       },
       {
         q: "Where I can buy Plain T-shirt combo?",
-        a: "You are at the right place, Beyoung is the best brand for plain t shirts with the finest collection of men's plain t shirt combo i.e. in a pack of 2, 3, and 4. Here you have the feasibility of choosing different colors and different sizes in a single pack.",
+        a: "You are at the right place,  Elegante is the best brand for plain t shirts with the finest collection of men's plain t shirt combo i.e. in a pack of 2, 3, and 4. Here you have the feasibility of choosing different colors and different sizes in a single pack.",
       },
     ],
   },
   "printed-t-shirts": {
     title: "Printed T-Shirts for Men",
     description_short:
-      "Printed t-shirts for men from Beyoung let you upgrade your wardrobe effortlessly. Elevate your casual game with our best graphic tees, crafted with bold patterns and unique designs. Dive into a wide range of trendy printed t-shirts available in vibrant colors and fresh styles. Made with high-quality fabric, these graphic t-shirts guarantee all-day comfort. Whether you love bold graphics or subtle prints, shop premium printed T-shirts for men online in India at Beyoung—starting from just ₹399, combos at ₹998, and discounts up to 60% off! Plus, don’t miss out on our stylish printed t-shirt combos — perfect for saving more while staying stylish.",
+      "Printed t-shirts for men from  Elegante let you upgrade your wardrobe effortlessly. Elevate your casual game with our best graphic tees, crafted with bold patterns and unique designs. Dive into a wide range of trendy printed t-shirts available in vibrant colors and fresh styles. Made with high-quality fabric, these graphic t-shirts guarantee all-day comfort. Whether you love bold graphics or subtle prints, shop premium printed T-shirts for men online in India at  Elegante—starting from just ₹399, combos at ₹998, and discounts up to 60% off! Plus, don’t miss out on our stylish printed t-shirt combos — perfect for saving more while staying stylish.",
     description_long: `
-            <h3 class="seo-h3">Best Printed T-Shirts for Men Online at Beyoung</h3>
-            <p>Our collection of the best printed t-shirts for men and graphic tees online in India will surely steal your heart and get you the attention your soul craves. Whether you like to flaunt your love for Batman or want to showcase your style, our collection of funky printed t-shirts for men has everything you need to look super cool and stay super-comfortable. Made from soft, breathable cotton fabric, these cool printed men’s t-shirts offer the perfect combination of style and comfort. Featuring a classic round neck and half sleeves, they are designed to keep you feeling cool and looking fresh all day long. Explore Beyoung’s diverse collection of men’s graphic tees, made to match your unique style.</p>
+            <h3 class="seo-h3">Best Printed T-Shirts for Men Online at  Elegante</h3>
+            <p>Our collection of the best printed t-shirts for men and graphic tees online in India will surely steal your heart and get you the attention your soul craves. Whether you like to flaunt your love for Batman or want to showcase your style, our collection of funky printed t-shirts for men has everything you need to look super cool and stay super-comfortable. Made from soft, breathable cotton fabric, these cool printed men’s t-shirts offer the perfect combination of style and comfort. Featuring a classic round neck and half sleeves, they are designed to keep you feeling cool and looking fresh all day long. Explore  Elegante’s diverse collection of men’s graphic tees, made to match your unique style.</p>
             
             <h3 class="seo-h3">Steal the Best Deals on Men's Printed T-Shirts Online</h3>
-            <p>Buy printed T-shirts for men online at the best prices—stylish and affordable picks you’ll love! At Beyoung, we've got the scoop on the coolest prints at prices that won’t break the bank. Dive into our collection of best quality men’s printed T shirts before they’re out of stock.</p>
-            <p>Discover a stylish range of printed T-shirts for men at Beyoung, available online at unbeatable prices! With prices starting as low as Rs. 399 and going up to Rs. 998, enjoy up to 60% off on trendy designs. Looking for more savings? Grab a pack of 3 combo T-shirts at Rs. 998 or pick the best printed T shirts for men at Rs. 449.</p>
+            <p>Buy printed T-shirts for men online at the best prices—stylish and affordable picks you’ll love! At  Elegante, we've got the scoop on the coolest prints at prices that won’t break the bank. Dive into our collection of best quality men’s printed T shirts before they’re out of stock.</p>
+            <p>Discover a stylish range of printed T-shirts for men at  Elegante, available online at unbeatable prices! With prices starting as low as Rs. 399 and going up to Rs. 998, enjoy up to 60% off on trendy designs. Looking for more savings? Grab a pack of 3 combo T-shirts at Rs. 998 or pick the best printed T shirts for men at Rs. 449.</p>
             <p>Shop designer printed T-shirts for men online today! Trust us, you won’t find deals like these anywhere else!</p>
 
             <h3 class="seo-h3">Graphic tees for men: Shop the trendiest styles to refresh your look now!</h3>
-            <p>Aesthetic graphic tees from Beyoung to spice up your wardrobe with fresh new styles. We've got everything you need to rock your style game, from funky prints to cool designs. Whether you're chilling at home or hitting the streets, our best quality graphic printed t-shirts for men are your go-to for effortless style and maximum comfort. Additionally, to keep the spirit of offering the most convenient shopping experience, we bring you an option to create your own printed t-shirts combos. You can pick any size, and any color and make your personalized combo pack. Get ready to turn heads wherever you go with our best printed t-shirts available online in India!</p>
+            <p>Aesthetic graphic tees from  Elegante to spice up your wardrobe with fresh new styles. We've got everything you need to rock your style game, from funky prints to cool designs. Whether you're chilling at home or hitting the streets, our best quality graphic printed t-shirts for men are your go-to for effortless style and maximum comfort. Additionally, to keep the spirit of offering the most convenient shopping experience, we bring you an option to create your own printed t-shirts combos. You can pick any size, and any color and make your personalized combo pack. Get ready to turn heads wherever you go with our best printed t-shirts available online in India!</p>
 
             <h3 class="seo-h3">Types of Men’s Printed T-Shirts</h3>
-            <p>At Beyoung we carry a variety of cool and funky t-shirts for men. Some of these are listed below -</p>
+            <p>At  Elegante we carry a variety of cool and funky t-shirts for men. Some of these are listed below -</p>
 
             <div class="style-guide-section">
                 <h4>Printed Sports T-shirts:</h4>
@@ -190,14 +190,14 @@ export const CATEGORY_DATA = {
                 <p>These t-shirts feature designs or graphics related to travel, such as maps, landmarks, or adventure-themed artwork, appealing to those with a wanderlust spirit.</p>
             </div>
 
-            <h3 class="seo-h3">Buy Beyoung’s Printed T-Shirts Online: Men's Style Guide</h3>
+            <h3 class="seo-h3">Buy  Elegante’s Printed T-Shirts Online: Men's Style Guide</h3>
             <p>When it comes to buying the best printed t-shirts online, your size, style, and taste in fashion matter a lot. However, with so many options available, it's important to know how to navigate through the vast array of choices to find the perfect graphic tees that suit your style and preferences. Here are some tips to help you make informed decisions when buying men’s printed t-shirts online.</p>
 
             <h4>Define Your Style</h4>
             <p>Before diving into the ocean of options, take some time to define your personal style preferences. Are you into bold graphics, subtle patterns, or quirky slogans? Understanding your style will narrow down your search, making shopping easier for the best printed T-shirts online, while helping you find designs that match your aesthetic.</p>
 
             <h4>Men’s Graphic Tees: Don't Overlook Fabric Quality</h4>
-            <p>When buying Beyoung's best printed t-shirts online in India, prioritize quality. Look for t-shirts made from high-quality fabric that offers both comfort and durability. Cotton blends are a popular choice for their softness and breathability, ensuring that you stay comfortable all day long.</p>
+            <p>When buying  Elegante's best printed t-shirts online in India, prioritize quality. Look for t-shirts made from high-quality fabric that offers both comfort and durability. Cotton blends are a popular choice for their softness and breathability, ensuring that you stay comfortable all day long.</p>
 
             <h4>Mens Printed T Shirts in India: Explore Design Options</h4>
             <p>One of the advantages of shopping for stylish printed t-shirts for men online is the vast range of design options available. Explore different themes, graphics, and patterns to find graphic tees that reflect your personality. Whether you prefer abstract art, vintage motifs, or pop culture references, there's something for everyone.</p>
@@ -206,7 +206,7 @@ export const CATEGORY_DATA = {
             <p>For the trendiest and most stylish printed graphic T-shirts for men, finding the right fit is just as important as picking the perfect design! Always refer to the sizing chart before purchasing. Measure your chest, shoulders, and length accurately to ensure a comfortable and well-fitted look. Since sizes can differ across brands, double-checking will help you avoid any surprises. Choose the perfect size and upgrade your wardrobe effortlessly!</p>
 
             <h4>Compare Prices</h4>
-            <p>While browsing online, take the time to compare prices. Keep an eye out for sales, discounts, and promotional offers to help you score great deals on men’s printed t-shirts without compromising the quality. At Beyoung, we offer men’s printed t-shirt combos at an affordable price, and you can get graphic t-shirts at just 329.</p>
+            <p>While browsing online, take the time to compare prices. Keep an eye out for sales, discounts, and promotional offers to help you score great deals on men’s printed t-shirts without compromising the quality. At  Elegante, we offer men’s printed t-shirt combos at an affordable price, and you can get graphic t-shirts at just 329.</p>
             <p>Whether you're looking for casual everyday tees or statement designer t-shirts for men, we offer endless possibilities to express your style and individuality.</p>
             
             <h4>Check Return Policies</h4>
@@ -295,11 +295,11 @@ export const CATEGORY_DATA = {
       },
       {
         q: "Can I buy printed T-shirts for men in pack of 3?",
-        a: "Yes. Getting your hands on stylish printed t-shirts for men in combos is easy with Beyoung. Simply browse our online collection, choose your favorite designs, select your size, and proceed to checkout. Our budget-friendly combo options make your shopping experience more enjoyable and convenient.",
+        a: "Yes. Getting your hands on stylish printed t-shirts for men in combos is easy with  Elegante. Simply browse our online collection, choose your favorite designs, select your size, and proceed to checkout. Our budget-friendly combo options make your shopping experience more enjoyable and convenient.",
       },
       {
         q: "Where to buy printed t-shirts for men?",
-        a: "Beyoung is your ultimate destination for buying men’s printed t-shirts online. Explore our extensive collection of trendy designs, ranging from quirky graphics to bold slogans. With our user-friendly website and hassle-free shopping experience, you can shop for the latest trends from the comfort of your home.",
+        a: " Elegante is your ultimate destination for buying men’s printed t-shirts online. Explore our extensive collection of trendy designs, ranging from quirky graphics to bold slogans. With our user-friendly website and hassle-free shopping experience, you can shop for the latest trends from the comfort of your home.",
       },
       {
         q: "How to iron graphic t-shirts for men?",
@@ -307,11 +307,11 @@ export const CATEGORY_DATA = {
       },
       {
         q: "Where can I buy high-quality printed T-shirts online?",
-        a: "You can shop for high-quality printed T-shirts online at Beyoung, offering trendy designs and premium fabric for ultimate comfort.",
+        a: "You can shop for high-quality printed T-shirts online at  Elegante, offering trendy designs and premium fabric for ultimate comfort.",
       },
       {
-        q: "What materials are used for Beyoung’s printed T-shirts?",
-        a: "Beyoung’s printed T-shirts online are made from soft, breathable cotton fabric to ensure durability and all-day comfort.",
+        q: "What materials are used for  Elegante’s printed T-shirts?",
+        a: " Elegante’s printed T-shirts online are made from soft, breathable cotton fabric to ensure durability and all-day comfort.",
       },
     ],
   },
@@ -460,17 +460,17 @@ export const CATEGORY_DATA = {
 
     // --- Short Description ---
     description_short:
-      "Celebrate comfort and style this season with Beyoung oversized tshirts for men. Crafted from premium, breathable cotton, these tees bring together effortless fashion and everyday ease. From minimalist solids to bold statement prints, Beyoung’s oversized tshirts collection fits every vibe—perfect for lounging, layering, or stepping out in style. Plus, this Diwali, shop smart and save big with exciting offers on your favorite oversized styles!",
+      "Celebrate comfort and style this season with  Elegante oversized tshirts for men. Crafted from premium, breathable cotton, these tees bring together effortless fashion and everyday ease. From minimalist solids to bold statement prints,  Elegante’s oversized tshirts collection fits every vibe—perfect for lounging, layering, or stepping out in style. Plus, this Diwali, shop smart and save big with exciting offers on your favorite oversized styles!",
 
     // --- Long Description (Provided as is) ---
     description_long: `
-        <h3 class="seo-h3">Beyoung Oversized T shirts for Men</h3>
+        <h3 class="seo-h3"> Elegante Oversized T shirts for Men</h3>
         <h4 class="seo-h4">Buy Oversized T shirts | Explore Trendy Collection</h4>
-        <p>The beyoung oversized t shirt trend has become a go-to choice for men who value both comfort and contemporary street style. As oversized t-shirts continue to dominate casual fashion, Beyoung offers some of the best oversized t shirts for men with a range that blends relaxed fits, bold graphics, and minimal designs. Whether you’re going for a chill, everyday outfit or want to add a stylish edge to your wardrobe, these versatile pieces make it easy to express your personal style. From layering to standalone statements, Beyoung’s collection is designed to help you pull off that effortlessly cool, urban look without compromising on comfort.</p>
-        <p>Beyoung oversized tshirts are ideal for a laid-back yet stylish personality. These t-shirts, neither too tight nor too loose, allow you to lounge and move comfortably all day. Pair them with your favorite denim or cargo pants for a fashionable ensemble.</p>
+        <p>The  Elegante oversized t shirt trend has become a go-to choice for men who value both comfort and contemporary street style. As oversized t-shirts continue to dominate casual fashion,  Elegante offers some of the best oversized t shirts for men with a range that blends relaxed fits, bold graphics, and minimal designs. Whether you’re going for a chill, everyday outfit or want to add a stylish edge to your wardrobe, these versatile pieces make it easy to express your personal style. From layering to standalone statements,  Elegante’s collection is designed to help you pull off that effortlessly cool, urban look without compromising on comfort.</p>
+        <p> Elegante oversized tshirts are ideal for a laid-back yet stylish personality. These t-shirts, neither too tight nor too loose, allow you to lounge and move comfortably all day. Pair them with your favorite denim or cargo pants for a fashionable ensemble.</p>
         
         <h4 class="seo-h4">Oversized Tshirts for Men : Explore Different Types</h4>
-        <p>At Beyoung, you can explore fashionable men's oversized t-shirts in many styles. That is, plain colors, textured and graphic designs. You can also find raglan sleeve, half sleeve tee, or full sleeve t-shirts options to choose from. Want to know more? Explore our different types of oversized t-shirts for men given below:</p>
+        <p>At  Elegante, you can explore fashionable men's oversized t-shirts in many styles. That is, plain colors, textured and graphic designs. You can also find raglan sleeve, half sleeve tee, or full sleeve t-shirts options to choose from. Want to know more? Explore our different types of oversized t-shirts for men given below:</p>
 
         <div class="style-guide-section">
             <h5>Plain Oversized T-shirts:</h5>
@@ -516,15 +516,15 @@ export const CATEGORY_DATA = {
 
         <p>However you style them, loose t-shirts for men always radiate casual ease and confidence. The versatility of an oversized tee makes it a wardrobe staple-you can never go wrong with this piece of menswear. Just balance the look, you’re all set to make news with your favorite oversize t-shirts for men.</p>
 
-        <h4 class="seo-h4">Exclusive Deals on Men's Oversized T-shirts Online at Beyoung</h4>
-        <p>Beyoung is redefining casual fashion with its cutting-edge collection of men’s oversized t-shirts, designed to effortlessly blend comfort with style. Our affordable online range offers the perfect balance between laid-back vibes and a put-together look, making them a must-have for every wardrobe. Whether you're dressing for a relaxed weekend or aiming for a trendy streetwear aesthetic, these tees add a modern twist without straining your budget. Need some fashion inspiration? Check out our blog on Creative Ways to Style Oversized T-shirts and discover fresh ideas to elevate your oversized tee game.</p>
-        <p>No matter your personal style, Beyoung's selection of quality, budget-friendly, and best oversized t-shirts online is guaranteed to level up your off-duty wardrobe. Find the perfect relaxed fit today and never look back. You can always find ongoing offers on our collection. Not Only, that we also have festive discounts, offers, and coupon codes for your better experience.</p>
+        <h4 class="seo-h4">Exclusive Deals on Men's Oversized T-shirts Online at  Elegante</h4>
+        <p> Elegante is redefining casual fashion with its cutting-edge collection of men’s oversized t-shirts, designed to effortlessly blend comfort with style. Our affordable online range offers the perfect balance between laid-back vibes and a put-together look, making them a must-have for every wardrobe. Whether you're dressing for a relaxed weekend or aiming for a trendy streetwear aesthetic, these tees add a modern twist without straining your budget. Need some fashion inspiration? Check out our blog on Creative Ways to Style Oversized T-shirts and discover fresh ideas to elevate your oversized tee game.</p>
+        <p>No matter your personal style,  Elegante's selection of quality, budget-friendly, and best oversized t-shirts online is guaranteed to level up your off-duty wardrobe. Find the perfect relaxed fit today and never look back. You can always find ongoing offers on our collection. Not Only, that we also have festive discounts, offers, and coupon codes for your better experience.</p>
 
         <h4 class="seo-h4">Best Oversized T-shirts for Men Under 500</h4>
         <p>Good things don’t always have to be expensive. Our oversized T-shirts are under 500, crafted from high-quality fabric that makes them perfect for your everyday wear. Whether you love hanging by the pool or hiking in the mountains, these affordable options keep you stylish without breaking the bank. Explore our men's clothing collection of oversized T-shirts under 500 today and find your favorite today!</p>
         
-        <h4 class="seo-h4">Beyoung’s Unbeatable Oversized T-shirt Combos for Men</h4>
-        <p>Upgrade your wardrobe with Beyoung’s exclusive oversized t-shirt combos for men. Our combos blend comfort and style, providing the perfect casual wear solution. Choose any color and any size to create your own combo. Get a set of three Beyoung exclusive men’s oversized t-shirts for just Rs. 1199.</p>
+        <h4 class="seo-h4"> Elegante’s Unbeatable Oversized T-shirt Combos for Men</h4>
+        <p>Upgrade your wardrobe with  Elegante’s exclusive oversized t-shirt combos for men. Our combos blend comfort and style, providing the perfect casual wear solution. Choose any color and any size to create your own combo. Get a set of three  Elegante exclusive men’s oversized t-shirts for just Rs. 1199.</p>
         <p>Designed for a stylish and comfortable fit, our men’s oversized t-shirt combos are perfect for any occasion. Whether you're out and lounging at home, these combos have got you covered.</p>
         
         <h4 class="seo-h4">Shop by Categories</h4>
@@ -671,28 +671,28 @@ export const CATEGORY_DATA = {
 
     // --- Short Description ---
     description_short:
-      "Beyoung polo t shirts for men redefine everyday comfort and style with a perfect balance of smart design and effortless versatility. Crafted from premium, breathable fabrics and tailored with modern fits, these polos deliver a polished look that transitions seamlessly from casual outings to semi-formal occasions. From timeless solids to subtle patterns, every piece reflects Beyoung’s commitment to quality and trend-forward fashion. Explore the exclusive range, including polo t shirt combos for men, and upgrade your wardrobe with refined essentials that never go out of style.",
+      " Elegante polo t shirts for men redefine everyday comfort and style with a perfect balance of smart design and effortless versatility. Crafted from premium, breathable fabrics and tailored with modern fits, these polos deliver a polished look that transitions seamlessly from casual outings to semi-formal occasions. From timeless solids to subtle patterns, every piece reflects  Elegante’s commitment to quality and trend-forward fashion. Explore the exclusive range, including polo t shirt combos for men, and upgrade your wardrobe with refined essentials that never go out of style.",
 
     // --- Long Description (Provided as is) ---
     description_long: `
-        <h3 class="seo-h3">Beyoung Polo T shirts for Men</h3>
+        <h3 class="seo-h3"> Elegante Polo T shirts for Men</h3>
         <h4 class="seo-h4">Buy Polo T shirts for Men in India with Premium Quality</h4>
         <p>Effortless, classic, and always in style—qualities every man's wardrobe should have. A t-shirt that embodies all these is the premium polo t shirt, the single most versatile piece you could own. Whether you're dressing up or keeping it casual, the best polo t shirts for men offer the perfect balance of comfort and style. With their structured collar for a hint of sharpness and breathable knit fabric for all-day ease, polo tshirt for men India are the ideal upgrade from basic men's half-sleeves t shirts. They elevate your everyday look while being way more relaxed than a traditional button-down shirt.</p>
-        <p>Beyoung polo t shirt collection is a wardrobe essential no guy should be caught without. From weekend errand-running to casual Fridays at the office, the men's t-shirt with a collar simply works. Beyoung has curated an unbeatable selection of must-have polo collar t-shirts to cover all your style needs.</p>
+        <p> Elegante polo t shirt collection is a wardrobe essential no guy should be caught without. From weekend errand-running to casual Fridays at the office, the men's t-shirt with a collar simply works.  Elegante has curated an unbeatable selection of must-have polo collar t-shirts to cover all your style needs.</p>
         
         <h4 class="seo-h4">Types Of Polo Tshirts for Men Online</h4>
-        <p>Beyoung's premium polo t shirt collection offers an extensive range of all types of polo tees in a wide variety of colour options to choose from. Maybe you're hunting for traditional pure cotton polo t-shirts with mesh styles in timeless colorways, or prefer jersey knits with modern performance properties? We've got them both at Beyoung. From fashion-forward old-money designs to preppy stripes and solid polo t-shirts, every viable polo variation is represented.</p>
+        <p> Elegante's premium polo t shirt collection offers an extensive range of all types of polo tees in a wide variety of colour options to choose from. Maybe you're hunting for traditional pure cotton polo t-shirts with mesh styles in timeless colorways, or prefer jersey knits with modern performance properties? We've got them both at  Elegante. From fashion-forward old-money designs to preppy stripes and solid polo t-shirts, every viable polo variation is represented.</p>
         <p>Not only polo t-shirts but also other t-shirts for men are designed with the latest patterns and styles. The highlight of our collection is quirky men's printed t-shirts with trending prints. You’ll also find all the latest men's oversized t-shirts in so many cool colors that are hard to ignore. Just in case you prefer basics, then you must have a look at the men's plain t-shirts made for any occasion.</p>
-        <p>Whether you're looking for half sleeves t-shirts for men or full sleeve styles for cooler weather, we’ve got you covered. You'll find all the classic fits — regular, tailored, and muscle — plus big and tall options for most styles. For the chilly season, don’t forget to explore our latest men’s winterwear collection for cozy and trendy layering options. Basically, no matter your preferred style, Beyoung launches a new and fresh collection every month. Just have a look at the collection — we know you won’t leave without picking your favorite Beyoung polo t-shirts for men!</p>
+        <p>Whether you're looking for half sleeves t-shirts for men or full sleeve styles for cooler weather, we’ve got you covered. You'll find all the classic fits — regular, tailored, and muscle — plus big and tall options for most styles. For the chilly season, don’t forget to explore our latest men’s winterwear collection for cozy and trendy layering options. Basically, no matter your preferred style,  Elegante launches a new and fresh collection every month. Just have a look at the collection — we know you won’t leave without picking your favorite  Elegante polo t-shirts for men!</p>
         
         <h4 class="seo-h4">Buy the Best Quality Men’s Polo T shirts Online</h4>
-        <p>While our polo t-shirts for men impresses with its huge variety, Beyoung excels when it comes to quality too. We take quality standards seriously and value meticulous construction. We manufacture the best polos with reinforced collars, quality buttons, and double-stitched hems - it's all part of the premium package. Want performance fabric infused with sweat-wicking tech? We've got that as well. Men’s polo t-shirts were initially designed for sports, hence, they are built tough and comfortable. They are a great alternative to activewear t-shirts.</p>
-        <p>Polo t-shirts made from premium quality fabrics offer comfort and ease from morning to evening. But you don't have to fork over an arm and a leg for the best polo t-shirts at Beyoung. Our intelligent supply chains keep prices reasonable across the entire range of styles, fabrics, fits, and sizes. Easy care and long-lasting wear? That's the Beyoung way.</p>
+        <p>While our polo t-shirts for men impresses with its huge variety,  Elegante excels when it comes to quality too. We take quality standards seriously and value meticulous construction. We manufacture the best polos with reinforced collars, quality buttons, and double-stitched hems - it's all part of the premium package. Want performance fabric infused with sweat-wicking tech? We've got that as well. Men’s polo t-shirts were initially designed for sports, hence, they are built tough and comfortable. They are a great alternative to activewear t-shirts.</p>
+        <p>Polo t-shirts made from premium quality fabrics offer comfort and ease from morning to evening. But you don't have to fork over an arm and a leg for the best polo t-shirts at  Elegante. Our intelligent supply chains keep prices reasonable across the entire range of styles, fabrics, fits, and sizes. Easy care and long-lasting wear? That's the  Elegante way.</p>
         
-        <h4 class="seo-h4">Get The Best Deals On Beyoung Polo T shirts</h4>
-        <p>Nobody can beat Beyoung when it comes to unbeatable deals on polo t-shirts for men! Start with our best-selling bundle offers—mix and match any pack of 2, 3, or 4 in your favorite styles, colors, and sizes, all at unbeatable bulk pricing. Plus, enjoy seasonal discounts of up to 50% off on selected polo t shirts for men. Need inspiration on how to style them? Check out our latest blog on Easy Polo T-shirt Combinations to effortlessly upgrade your everyday look.</p>
+        <h4 class="seo-h4">Get The Best Deals On  Elegante Polo T shirts</h4>
+        <p>Nobody can beat  Elegante when it comes to unbeatable deals on polo t-shirts for men! Start with our best-selling bundle offers—mix and match any pack of 2, 3, or 4 in your favorite styles, colors, and sizes, all at unbeatable bulk pricing. Plus, enjoy seasonal discounts of up to 50% off on selected polo t shirts for men. Need inspiration on how to style them? Check out our latest blog on Easy Polo T-shirt Combinations to effortlessly upgrade your everyday look.</p>
         <p>But the savings don't stop there! Our customer loyalty program rewards you with so many exclusive free coupons that allow you a certain amount off on your purchase. Simply flash your unique coupon code at checkout to save more on all your orders. It is another effortless way to save a bit of your total shopping.</p>
-        <p>Finally, our clearance section is the place to find deeply discounted overstocked, and end-of-season men's polo t-shirts by the boatload. So if you're looking to score premium styles at the lowest prices available, Beyoung has you covered!</p>
+        <p>Finally, our clearance section is the place to find deeply discounted overstocked, and end-of-season men's polo t-shirts by the boatload. So if you're looking to score premium styles at the lowest prices available,  Elegante has you covered!</p>
         
         <h4 class="seo-h4">Best Polo T shirts For Men - 7 Best Ways to Style</h4>
         <p>Here are some of the best ways to style polo collar t-shirts for different occasions that you must have a look at and try:</p>
@@ -714,7 +714,7 @@ export const CATEGORY_DATA = {
         </div>
         
         <h4 class="seo-h4">Find the Right Size of Men’s Polo Tshirts Online</h4>
-        <p>With our comprehensive size guides, finding your perfect Beyoung polo tshirt is easier than ever. Our detailed size charts include garment measurements for chest, waist, and length across sizes S to XXL, helping you make the right choice. And once you’ve found your fit, don’t miss our style guide on How to Wear Polo T-Shirts for tips on making the most of this timeless wardrobe essential.</p>
+        <p>With our comprehensive size guides, finding your perfect  Elegante polo tshirt is easier than ever. Our detailed size charts include garment measurements for chest, waist, and length across sizes S to XXL, helping you make the right choice. And once you’ve found your fit, don’t miss our style guide on How to Wear Polo T-Shirts for tips on making the most of this timeless wardrobe essential.</p>
         <p>Prefer a more modern, tailored look? Check the fit description to determine if you should size down one size from your normal shirt size for a sleek, shaped cut. On the other hand, if you prefer a more relaxed, boxy fit for casual untucked wear, going up one size will help you. Big/tall sizing with generous cuts and elongated sleeves accommodates our larger customers easily and you can find xxxxl size t-shirts on the website too.</p>
     `,
 
@@ -1053,32 +1053,32 @@ export const CATEGORY_DATA = {
 
     // --- Short Description ---
     description_short:
-      "Full sleeve t-shirts for men are the perfect blend of warmth, comfort, and everyday style during winter. Beyoung’s collection of men’s full sleeve t-shirts is crafted from breathable cotton with smart fits and trendy designs to keep you stylish throughout the colder months. Perfect for layering under jackets, hoodies, or sweaters, these full sleeve t-shirts for men offer versatile styling options for casual outings or indoor comfort. Made from soft, bio-washed cotton, they ensure durability and long-lasting comfort without pilling. Available in multiple sizes and colors, these t-shirts are essential for a winter-ready wardrobe. Upgrade your winter collection with Beyoung full sleeve t-shirts for men that combine style, warmth, and effortless layering.",
+      "Full sleeve t-shirts for men are the perfect blend of warmth, comfort, and everyday style during winter.  Elegante’s collection of men’s full sleeve t-shirts is crafted from breathable cotton with smart fits and trendy designs to keep you stylish throughout the colder months. Perfect for layering under jackets, hoodies, or sweaters, these full sleeve t-shirts for men offer versatile styling options for casual outings or indoor comfort. Made from soft, bio-washed cotton, they ensure durability and long-lasting comfort without pilling. Available in multiple sizes and colors, these t-shirts are essential for a winter-ready wardrobe. Upgrade your winter collection with  Elegante full sleeve t-shirts for men that combine style, warmth, and effortless layering.",
 
     // --- Long Description (Provided as is) ---
     description_long: `
-        <h3 class="seo-h3">Full Sleeve T-Shirts for Men at Beyoung</h3>
+        <h3 class="seo-h3">Full Sleeve T-Shirts for Men at  Elegante</h3>
         
         <h4 class="seo-h4">Stylish and Trendy Men’s Full Sleeve T-Shirts Collection in India</h4>
         <p>Full sleeve t-shirts for men are an essential addition to any wardrobe because they are not only very comfortable but also very adaptable. These full-sleeve tees provide just the proper amount of covering to keep you comfortable without being overly warm, especially during the rainy season when the weather is chilly and unpredictable. These t-shirts shield your skin from unexpected cold or rain and are ideal for layering or wearing alone. Full-sleeve t-shirts are the perfect rainy-day companion, whether you are lounging around the house or going out for a quick coffee run. Rain or shine, they combine effortless style and functional comfort with a broad range of colors, fabrics, and fits.</p>
-        <p>Shopping for the latest fashion is now easier with our stylish and trendy men’s full sleeve t-shirts available in iconic designs and patterns. Choose the style that best reflects your personality and confidence. Designed with good quality fabric and a perfect fit, these full sleeve t-shirts for men bring together comfort and fashion effortlessly. Buy men’s full sleeve t-shirts online at Beyoung and enjoy affordable prices, festive offers, seasonal discounts, and more while upgrading your wardrobe with the best styles.</p>
+        <p>Shopping for the latest fashion is now easier with our stylish and trendy men’s full sleeve t-shirts available in iconic designs and patterns. Choose the style that best reflects your personality and confidence. Designed with good quality fabric and a perfect fit, these full sleeve t-shirts for men bring together comfort and fashion effortlessly. Buy men’s full sleeve t-shirts online at  Elegante and enjoy affordable prices, festive offers, seasonal discounts, and more while upgrading your wardrobe with the best styles.</p>
         
-        <h4 class="seo-h4">Full Sleeve T-shirts for Men: Explore All Types at Beyoung</h4>
-        <p>Men’s Full Sleeve T-Shirts are available in countless stylish designs at Beyoung, your one-stop shop for trendy and comfortable full sleeve t-shirts for men. Some of these include the following:</p>
+        <h4 class="seo-h4">Full Sleeve T-shirts for Men: Explore All Types at  Elegante</h4>
+        <p>Men’s Full Sleeve T-Shirts are available in countless stylish designs at  Elegante, your one-stop shop for trendy and comfortable full sleeve t-shirts for men. Some of these include the following:</p>
         
         <div class="style-guide-section">
             <h5>Plain Sleeves T-Shirts for Men</h5>
-            <p>The plain full-sleeve t-shirts at Beyoung are made to offer comfort without compromising on quality and price. These full sleeve t-shirts step up on occasion and offer versatility. Some of our best seller colors in these full t-shirts are burgundy, gray, blue, etc. Shop them now!</p>
+            <p>The plain full-sleeve t-shirts at  Elegante are made to offer comfort without compromising on quality and price. These full sleeve t-shirts step up on occasion and offer versatility. Some of our best seller colors in these full t-shirts are burgundy, gray, blue, etc. Shop them now!</p>
             
             <h5>Raglan Full Sleeves T-Shirts in Fine Colors</h5>
             <p>Raglan Full Sleeves T-shirts are all set to let you style with grace. Choose combos of blue-gray, black-yellow, and more. These can be the best full-sleeve t-shirts for men for a casual and classy appeal.</p>
             
             <h5>Funky Printed Men’s Full Sleeves T-shirts Online</h5>
-            <p>Beyoung never fails to experiment with fashion. This is why you gotta explore our funky printed full-sleeve t-shirts for men. Some of the best-sellers are Aalas se Majboor printed full-sleeve t-shirts for men, Fearless Bullet Rider full t-shirts for men, etc. For more check out our amazing range.</p>
+            <p> Elegante never fails to experiment with fashion. This is why you gotta explore our funky printed full-sleeve t-shirts for men. Some of the best-sellers are Aalas se Majboor printed full-sleeve t-shirts for men, Fearless Bullet Rider full t-shirts for men, etc. For more check out our amazing range.</p>
         </div>
         
-        <h4 class="seo-h4">Best Deals on Full Sleeve T-Shirt for Men at Beyoung</h4>
-        <p>Looking to elevate your wardrobe with some cool and comfortable full sleeve t-shirts? Beyoung has you covered with its exclusive deals and offers. When you buy t-shirts online, you can take advantage of seasonal sales and festive offers, where you’ll find discounts on your favorite full sleeve t-shirts. Additionally, check for available coupon codes to enjoy extra savings on your purchase.</p>
+        <h4 class="seo-h4">Best Deals on Full Sleeve T-Shirt for Men at  Elegante</h4>
+        <p>Looking to elevate your wardrobe with some cool and comfortable full sleeve t-shirts?  Elegante has you covered with its exclusive deals and offers. When you buy t-shirts online, you can take advantage of seasonal sales and festive offers, where you’ll find discounts on your favorite full sleeve t-shirts. Additionally, check for available coupon codes to enjoy extra savings on your purchase.</p>
         
         <h4 class="seo-h4">Make Your Combo - Full Sleeve T-Shirt for Men</h4>
         <p>Elevate your wardrobe with our exclusive full sleeve t-shirt combo, perfect for every season. Our full sleeve t-shirt for men combo offers a variety of styles and colors, ensuring you have the right look for any occasion. We offer 3 combo options-</p>
@@ -1098,7 +1098,7 @@ export const CATEGORY_DATA = {
             <p>For a more smart and casual look, you can pair a long sleeves t-shirt with a blazer. Use a very neutral color for a sleek look. You can also pair a full-sleeve t-shirt with chinos for a stylish look.</p>
             
             <h5>Pair it with shorts for mixed-weather</h5>
-            <p>Wearing gym shorts with Beyoung full sleeves t-shirt for men is a great way to find balance in both comfort and style. Feel cozy with a t-shirt on top and boxers below. You are going to love this fit. So, grab the coolest color and pair it with denim shorts or printed boxers.</p>
+            <p>Wearing gym shorts with  Elegante full sleeves t-shirt for men is a great way to find balance in both comfort and style. Feel cozy with a t-shirt on top and boxers below. You are going to love this fit. So, grab the coolest color and pair it with denim shorts or printed boxers.</p>
             
             <h5>Layer a long sleeve t-shirt under a denim jacket</h5>
             <p>A denim jacket is a key to the latest fashion. That's why it's a must-have, especially when you pair it with a quirky printed stylish full-sleeves t-shirt for men. This combination is perfect for a cool evening out. Give it a try!</p>
@@ -1122,7 +1122,7 @@ export const CATEGORY_DATA = {
             <h5>Versatility</h5>
             <p>Full-sleeve t-shirts are incredibly versatile. They can be styled up or down depending on the occasion. Pair them with jeans or chinos for a relaxed look, or layer them with a blazer for a smart-casual appearance. They also work well under a lightweight jacket or shirt for added style and comfort.</p>
         </div>
-        <p>At Beyoung you will find such phenomenal quality full sleeve t-shirts for men that you do not need to think twice. Apart from these you will also get the best polo t-shirts for men to nail a smart-casual look, or you're into the relaxed vibe of oversized t-shirts for men, Beyoung offers a perfect blend of comfort and style.</p>
+        <p>At  Elegante you will find such phenomenal quality full sleeve t-shirts for men that you do not need to think twice. Apart from these you will also get the best polo t-shirts for men to nail a smart-casual look, or you're into the relaxed vibe of oversized t-shirts for men,  Elegante offers a perfect blend of comfort and style.</p>
         <p>Shop by categories in Clothing for Men and Women's Clothing, Activewear T-shirts, Trackpants for Men, Cargo Pants for Men, Best Joggers for Men, Men Sweatpants, Checks Shirts for Men, Formal Shirts for Men, Party T-shirts, Pyjamas for Men, Army T-shirts, Plus Size Store, XXXL Size T-shirts, Oversized T-Shirts for Women, T-shirts for Women, Matching T-shirts for Couples, etc.</p>
     `,
 
@@ -1247,15 +1247,15 @@ export const CATEGORY_DATA = {
     faq: [
       {
         q: "Where to Buy Full Sleeve T-Shirts for Men Online?",
-        a: "You can shop the latest collection of trendy full-sleeve t-shirts from Beyoung. Here you get your favorite t-shirts and more in a variety of sizes starting from S to XXL, and colors of your choice. Check them out and shop the latest look for yourself.",
+        a: "You can shop the latest collection of trendy full-sleeve t-shirts from  Elegante. Here you get your favorite t-shirts and more in a variety of sizes starting from S to XXL, and colors of your choice. Check them out and shop the latest look for yourself.",
       },
       {
         q: "What kind of materials are long-sleeve t-shirts for men made from?",
         a: "Full-sleeve t-shirts are made from a range of high-quality materials including soft, breathable cotton, jersey, and durable blends, ensuring comfort and easy maintenance.",
       },
       {
-        q: "What is the price range for full sleeve t-shirts for men at Beyoung?",
-        a: "At Beyoung, premium quality full-sleeve t-shirts are available at prices starting from Rs. 425/-, up to Rs. 1099-/. With a range of colors, designs, and patterns, we offer affordable tees to suit every taste and budget. Beyoung makes it easy to buy stylish and comfortable long-sleeved t-shirts without breaking the bank. Shop Now!",
+        q: "What is the price range for full sleeve t-shirts for men at  Elegante?",
+        a: "At  Elegante, premium quality full-sleeve t-shirts are available at prices starting from Rs. 425/-, up to Rs. 1099-/. With a range of colors, designs, and patterns, we offer affordable tees to suit every taste and budget.  Elegante makes it easy to buy stylish and comfortable long-sleeved t-shirts without breaking the bank. Shop Now!",
       },
       {
         q: "Are long-sleeved T-shirts suitable for all seasons?",
@@ -1271,7 +1271,7 @@ export const CATEGORY_DATA = {
       },
       {
         q: "Are there any deals or combo packs available for full-sleeve t-shirts?",
-        a: "Yes! It is even simpler to stock up on your favorite men's long sleeve t-shirts without going over budget since Beyoung regularly provides combo discounts.",
+        a: "Yes! It is even simpler to stock up on your favorite men's long sleeve t-shirts without going over budget since  Elegante regularly provides combo discounts.",
       },
     ],
   },
@@ -1281,19 +1281,19 @@ export const CATEGORY_DATA = {
 
     // --- Short Description ---
     description_short:
-      "T-shirts for men just got a major upgrade with Beyoung’s latest collection. From timeless solids to bold printed styles, every Beyoung men’s t-shirt is designed for comfort, smart fit, and effortless fashion. Whether you’re keeping it casual for a relaxed day or adding an edge to your outfit, these best t-shirts for men deliver on all fronts. Discover versatile, stylish options at Beyoung that keep your wardrobe fresh and always on-trend. With breathable fabrics, durable quality, and standout designs, Beyoung t-shirts for men strike the perfect balance between casual and cool—making them the go-to tees men actually want to wear every day.",
+      "T-shirts for men just got a major upgrade with  Elegante’s latest collection. From timeless solids to bold printed styles, every  Elegante men’s t-shirt is designed for comfort, smart fit, and effortless fashion. Whether you’re keeping it casual for a relaxed day or adding an edge to your outfit, these best t-shirts for men deliver on all fronts. Discover versatile, stylish options at  Elegante that keep your wardrobe fresh and always on-trend. With breathable fabrics, durable quality, and standout designs,  Elegante t-shirts for men strike the perfect balance between casual and cool—making them the go-to tees men actually want to wear every day.",
 
     // --- Long Description (Provided as is) ---
     description_long: `
         <h3 class="seo-h3">Tshirts for Men Online in India</h3>
         <h4 class="seo-h4">Shop Mens Tshirts: Style, Comfort & Fit Combined</h4>
-        <p>Looking for the best t-shirts for men in 2025? You’re in the right place. At Beyoung, find a wide range of stylish t-shirts for men that perfectly blend comfort, quality, and trend. Whether you're into minimalist looks or bold prints, our collection of men's t-shirts has something to suit every mood and moment.</p>
-        <p>Mens tshirts at Beyoung bring together style, comfort, and versatility. From everyday basics to standout designs, these t-shirts are crafted with breathable fabric and a tailored fit for all-day wear. Choose from solid colors, graphic tees, oversized fits, or slogan styles — each mens t-shirt is designed to keep you looking sharp and feeling comfortable.</p>
+        <p>Looking for the best t-shirts for men in 2025? You’re in the right place. At  Elegante, find a wide range of stylish t-shirts for men that perfectly blend comfort, quality, and trend. Whether you're into minimalist looks or bold prints, our collection of men's t-shirts has something to suit every mood and moment.</p>
+        <p>Mens tshirts at  Elegante bring together style, comfort, and versatility. From everyday basics to standout designs, these t-shirts are crafted with breathable fabric and a tailored fit for all-day wear. Choose from solid colors, graphic tees, oversized fits, or slogan styles — each mens t-shirt is designed to keep you looking sharp and feeling comfortable.</p>
         <p>Why settle for less when you can shop the best tee shirts for men online at unbeatable prices? Our range of tshirts for men is curated to reflect the latest fashion while maintaining everyday ease. Whether you're heading out with friends or just keeping it casual, these branded t-shirts give you that polished, effortless edge.</p>
-        <p>So, if you’ve been searching for tshirt men collections that actually deliver on quality and fit, Beyoung is your go-to destination. From premium feel to modern styling, these are the best t-shirts to upgrade your wardrobe in 2025.</p>
+        <p>So, if you’ve been searching for tshirt men collections that actually deliver on quality and fit,  Elegante is your go-to destination. From premium feel to modern styling, these are the best t-shirts to upgrade your wardrobe in 2025.</p>
         
-        <h4 class="seo-h4">Discover Trendy T-Shirts for Men – Only at Beyoung</h4>
-        <p>T-Shirts for Men are the foundation of every stylish wardrobe, and Beyoung brings you a collection that combines comfort, trend, and versatility. Whether you're looking for casual everyday wear or something more eye-catching, men's t-shirts from Beyoung are designed to keep you on point. From classic solids to graphic prints and oversized fits, there's a perfect piece for every mood and moment. With high-quality fabrics and flattering fits, these t-shirts for men ensure you stay comfortable while looking effortlessly cool. Refresh your style with Beyoung’s latest range of men’s t-shirts, made to match every vibe and season.</p>
+        <h4 class="seo-h4">Discover Trendy T-Shirts for Men – Only at  Elegante</h4>
+        <p>T-Shirts for Men are the foundation of every stylish wardrobe, and  Elegante brings you a collection that combines comfort, trend, and versatility. Whether you're looking for casual everyday wear or something more eye-catching, men's t-shirts from  Elegante are designed to keep you on point. From classic solids to graphic prints and oversized fits, there's a perfect piece for every mood and moment. With high-quality fabrics and flattering fits, these t-shirts for men ensure you stay comfortable while looking effortlessly cool. Refresh your style with  Elegante’s latest range of men’s t-shirts, made to match every vibe and season.</p>
         
         <div class="style-guide-section">
             <h5>Premium Range for Every Personality:</h5>
@@ -1315,11 +1315,11 @@ export const CATEGORY_DATA = {
             <p>From funky to motivational quotes, our tshirts let you showcase your personality. Crafted with amazing fabric quality for style and comfort.</p>
             
             <h5>Browse 300+ Designs:</h5>
-            <p>Choose from premium-quality mens t shirts online at Beyoung and redefine your wardrobe with trendy and comfortable options.</p>
+            <p>Choose from premium-quality mens t shirts online at  Elegante and redefine your wardrobe with trendy and comfortable options.</p>
         </div>
         
-        <h4 class="seo-h4">Styling Tips for Trendy Men's T-Shirts from Beyoung Collection</h4>
-        <p>T shirts for men from Beyoung are a must-have for every modern wardrobe. Perfect for casual brunches, hangouts, or music festivals, these stylish men’s t-shirts offer both comfort and flair. Whether you're into solid basics or bold graphic designs, the collection is versatile enough to match any vibe. Best tshirts for men to elevate your everyday style—effortlessly cool, always comfortable.</p>
+        <h4 class="seo-h4">Styling Tips for Trendy Men's T-Shirts from  Elegante Collection</h4>
+        <p>T shirts for men from  Elegante are a must-have for every modern wardrobe. Perfect for casual brunches, hangouts, or music festivals, these stylish men’s t-shirts offer both comfort and flair. Whether you're into solid basics or bold graphic designs, the collection is versatile enough to match any vibe. Best tshirts for men to elevate your everyday style—effortlessly cool, always comfortable.</p>
 
         <div class="style-guide-section">
             <h5>Printed T-Shirts for a Brunch Look:</h5>
@@ -1329,7 +1329,7 @@ export const CATEGORY_DATA = {
             <p>Level up your style by pairing a plain t-shirt with an open shirt or a jacket. Combine it with chinos or jeans for a clean, effortless vibe that’s perfect for slaying any party scene.</p>
             
             <h5>Round Neck T-Shirts for Summer BBQs:</h5>
-            <p>Add a relaxed, fun touch to your summer barbecues with Beyoung’s playful round-neck t-shirts. Opt for prints or witty slogans and team them up with chinos or shorts. Complete the look with sneakers or boat shoes for a chill, laid-back style.</p>
+            <p>Add a relaxed, fun touch to your summer barbecues with  Elegante’s playful round-neck t-shirts. Opt for prints or witty slogans and team them up with chinos or shorts. Complete the look with sneakers or boat shoes for a chill, laid-back style.</p>
             
             <h5>Cotton T Shirts for a Music Fest Look:</h5>
             <p>Music festivals are all about energy and self-expression—so go bold with a cotton t-shirt featuring vibrant prints that showcase your personality. Pair it with shorts, jeans, or lightweight pants, and don’t forget comfy footwear to keep you dancing all day long.</p>
@@ -1362,22 +1362,22 @@ export const CATEGORY_DATA = {
             <p><strong>Yellow T-shirts:</strong> Cheerful and lively, yellow t-shirts bring warmth and positivity.</p>
         </div>
         
-        <h4 class="seo-h4">Shop Your Favorite TShirt For Men at Beyoung</h4>
-        <p>At Beyoung, finding your perfect men’s t-shirt is just a click away! Made with care, our tshirts have the right necklines, well-fitted shoulders, and ideal lengths to keep you looking good and feeling comfortable.</p>
+        <h4 class="seo-h4">Shop Your Favorite TShirt For Men at  Elegante</h4>
+        <p>At  Elegante, finding your perfect men’s t-shirt is just a click away! Made with care, our tshirts have the right necklines, well-fitted shoulders, and ideal lengths to keep you looking good and feeling comfortable.</p>
         <p>Check out our latest collection of branded t shirts for men, with trendy designs that everyone loves. Don’t forget to use the size guide for a smooth shopping experience and grab our exclusive offers.</p>
-        <p>What are you waiting for? Shop your favorite men’s t-shirts online at Beyoung and upgrade your wardrobe today!</p>
+        <p>What are you waiting for? Shop your favorite men’s t-shirts online at  Elegante and upgrade your wardrobe today!</p>
         
-        <h4 class="seo-h4">Reasons to Buy T Shirt for Men Online at Beyoung</h4>
-        <p>Different types of tshirts for men available online at Beyoung come with irresistible benefits that combine comfort, style, and affordability. Designed with premium-quality cotton fabric and matte-finished prints, these t-shirts ensure a soft and stylish experience without compromising on durability.</p>
-        <p>Even though they boast superior quality, you don’t have to spend a fortune. At Beyoung, you’ll find a high-quality range of affordable men's t-shirts that suit every budget. Yes, you heard it right!</p>
+        <h4 class="seo-h4">Reasons to Buy T Shirt for Men Online at  Elegante</h4>
+        <p>Different types of tshirts for men available online at  Elegante come with irresistible benefits that combine comfort, style, and affordability. Designed with premium-quality cotton fabric and matte-finished prints, these t-shirts ensure a soft and stylish experience without compromising on durability.</p>
+        <p>Even though they boast superior quality, you don’t have to spend a fortune. At  Elegante, you’ll find a high-quality range of affordable men's t-shirts that suit every budget. Yes, you heard it right!</p>
         <p>Discover an unlimited variety of the coolest t-shirts for men online, perfect for any occasion. From travel t-shirts and biker t-shirts to gym t-shirts and more, there’s a style for everyone. Available in alluring colors and eye-catching themes, these designs set the tone for effortless style.</p>
-        <p>Worried about sizes? Beyoung has got you covered! Our men’s t-shirts are available in sizes ranging from S to 5XL, ensuring a perfect fit for everyone. Want something trendy? Take it a step further with oversized t-shirts, where you can create your designs and stand out.</p>
-        <p>So, what are you waiting for? These reasons are your cue to shop the best quality men’s t-shirts online at Beyoung. Pick your favorites today!</p>
+        <p>Worried about sizes?  Elegante has got you covered! Our men’s t-shirts are available in sizes ranging from S to 5XL, ensuring a perfect fit for everyone. Want something trendy? Take it a step further with oversized t-shirts, where you can create your designs and stand out.</p>
+        <p>So, what are you waiting for? These reasons are your cue to shop the best quality men’s t-shirts online at  Elegante. Pick your favorites today!</p>
         
         <h4 class="seo-h4">T-Shirts for Men at Unbeatable Prices – Shop Premium Quality Now</h4>
-        <p>T-Shirts for Men that strike the perfect balance between comfort, style, and affordability are just a click away at Beyoung. Whether you're searching for the best t-shirt for men or looking to upgrade your wardrobe with fresh staples, our collection has something for every vibe.</p>
+        <p>T-Shirts for Men that strike the perfect balance between comfort, style, and affordability are just a click away at  Elegante. Whether you're searching for the best t-shirt for men or looking to upgrade your wardrobe with fresh staples, our collection has something for every vibe.</p>
         <p>Crafted from premium-quality cotton and finished with stylish matte prints, these men’s t-shirts not only feel soft on the skin but also deliver long-lasting durability. From everyday basics to standout designs, we’ve got trendy t-shirts for men that match your mood and style.</p>
-        <p>Worried about price? Don’t be. Beyoung brings you stylish t-shirts for men at budget-friendly rates, along with exciting coupons and combo offers. Enjoy up to 60\% OFF and save more with exclusive deals on the most fashionable men's t-shirts online.</p>
+        <p>Worried about price? Don’t be.  Elegante brings you stylish t-shirts for men at budget-friendly rates, along with exciting coupons and combo offers. Enjoy up to 60\% OFF and save more with exclusive deals on the most fashionable men's t-shirts online.</p>
         <p>More popular categories to explore on our online shopping site - Couple T Shirts | Back Print T Shirts | Shirts For Men | Joggers for Men | Cargo Pants for Men | Chinos for Men | Boxers for Men | T shirts for Women | Oversized T shirts for Women</p>
     `,
 
@@ -1541,19 +1541,19 @@ export const CATEGORY_DATA = {
       },
       {
         q: "Which brand is best for men's t-shirts?",
-        a: "Beyoung is a top choice for men’s T-shirts, offering quality fabrics, trendy prints, and affordable pricing. With a range of styles, from basics to statement pieces, it suits diverse fashion needs perfectly.",
+        a: " Elegante is a top choice for men’s T-shirts, offering quality fabrics, trendy prints, and affordable pricing. With a range of styles, from basics to statement pieces, it suits diverse fashion needs perfectly.",
       },
       {
-        q: "How many types of t-shirts for men are available at Beyoung?",
-        a: "Beyoung offers various types of men’s t-shirts, including graphic, plain, oversized, full sleeve, half sleeve, and polo t-shirts. Catering to diverse styles, from casual basics to bold statement pieces..",
+        q: "How many types of t-shirts for men are available at  Elegante?",
+        a: " Elegante offers various types of men’s t-shirts, including graphic, plain, oversized, full sleeve, half sleeve, and polo t-shirts. Catering to diverse styles, from casual basics to bold statement pieces..",
       },
       {
         q: "How can I buy a trendy t-shirt for men online?",
-        a: "To buy a trendy t-shirt online, visit sites like Beyoung, browse categories for styles like graphic or oversized. Select your size, add to cart, and complete the purchase with secure payment.",
+        a: "To buy a trendy t-shirt online, visit sites like  Elegante, browse categories for styles like graphic or oversized. Select your size, add to cart, and complete the purchase with secure payment.",
       },
       {
         q: "Where to buy men's t-shirts online?",
-        a: "Beyoung is your go-to destination for stylish, comfortable, and the best men's t-shirts in India. You will get various options in size, patterns and colors.",
+        a: " Elegante is your go-to destination for stylish, comfortable, and the best men's t-shirts in India. You will get various options in size, patterns and colors.",
       },
       {
         q: "How to style t-shirts for men?",
@@ -1568,7 +1568,7 @@ export const CATEGORY_DATA = {
   "plain-shirts": {
     title: "Plain Shirts",
     description_short:
-      "Explore Beyoung's complete collection of men's shirts. Crafted from diverse fabrics and tailored in multiple fits, find everything from essential Plain shirts and classic Oxfords to trend-forward Flannels and Shackets. Effortlessly stylish and always comfortable.",
+      "Explore  Elegante's complete collection of men's shirts. Crafted from diverse fabrics and tailored in multiple fits, find everything from essential Plain shirts and classic Oxfords to trend-forward Flannels and Shackets. Effortlessly stylish and always comfortable.",
     description_long: "", // Empty as per request structure
     faq: [], // Empty as per request structure
     // buttons: [
@@ -1715,8 +1715,8 @@ export const CATEGORY_DATA = {
       "Explore the iconic Oxford Shirts collection. Crafted from durable basket-weave cotton, these shirts offer a perfect balance of casual texture and sharp structure. Featuring the classic button-down collar, they are ideal for smart-casual, office, or everyday wear.",
     description_long: `
         <h3 class="seo-h3">Timeless Oxford Shirts: The Ultimate Smart-Casual Staple</h3>
-        <p>Oxford shirts for men are recognized globally for their versatility and robust, textured fabric. Made from a premium cotton Oxford weave, these shirts are renowned for their durability, breathability, and ability to resist wrinkles, making them a cornerstone of any professional or smart-casual wardrobe. Beyoung offers a wide selection of Oxford shirts in various colors, fits, and collar styles.</p>
-        <h4 class="seo-h4">Key Features of Beyoung Oxford Shirts:</h4>
+        <p>Oxford shirts for men are recognized globally for their versatility and robust, textured fabric. Made from a premium cotton Oxford weave, these shirts are renowned for their durability, breathability, and ability to resist wrinkles, making them a cornerstone of any professional or smart-casual wardrobe.  Elegante offers a wide selection of Oxford shirts in various colors, fits, and collar styles.</p>
+        <h4 class="seo-h4">Key Features of  Elegante Oxford Shirts:</h4>
         <ul>
             <li><strong>Classic Look:</strong> Features a button-down collar and a single chest pocket, providing a universally flattering, structured look.</li>
             <li><strong>Premium Fabric:</strong> Uses high-quality Oxford Cotton that is soft to the touch and built to last.</li>
@@ -2473,7 +2473,7 @@ export const CATEGORY_DATA = {
   shackets: {
     title: "Shackets for Men",
     description_short:
-      "Explore Beyoung's cutting-edge Shacket collection. Blending the style of a shirt with the warmth of a light jacket, these versatile pieces are perfect for layering. Find trendy designs in denim, flannel, and unique textured fabrics.",
+      "Explore  Elegante's cutting-edge Shacket collection. Blending the style of a shirt with the warmth of a light jacket, these versatile pieces are perfect for layering. Find trendy designs in denim, flannel, and unique textured fabrics.",
     description_long: "",
     faq: [],
     // buttons: [
@@ -2671,12 +2671,12 @@ export const CATEGORY_DATA = {
   shirts: {
     title: "Shirts for Men",
     description_short:
-      'Shirts for men at just ₹699 - Buy best Shirts for men online in India at affordable prices with Beyoung. Explore a range of stylish shirts for men, from classic Oxford men’s shirts to rugged denim shirts and cozy flannel options that never go out of fashion. Our collection of branded shirts for men, including XXL sizes, offers a wide range of designs, fits, and styles perfect for any occasion. Get ₹50 OFF on men’s shirts when you spend more than ₹999, use code "BEYOUNG50". Shop now!',
+      'Shirts for men at just ₹699 - Buy best Shirts for men online in India at affordable prices with  Elegante. Explore a range of stylish shirts for men, from classic Oxford men’s shirts to rugged denim shirts and cozy flannel options that never go out of fashion. Our collection of branded shirts for men, including XXL sizes, offers a wide range of designs, fits, and styles perfect for any occasion. Get ₹50 OFF on men’s shirts when you spend more than ₹999, use code " Elegante50". Shop now!',
     description_long: `
             <h3 class="seo-h3">Best Stylish Shirts for Men Online</h3>
             <h4 class="seo-h4">Buy Men’s Trendy Shirts: Casual, Oversized & Printed</h4>
-            <p>Buy shirts for men and revamp your style with Beyoung's latest collection of men's shirts online, where fashion meets affordability. Starting at just ₹699, our diverse range of men’s shirts caters to every occasion, ensuring you look your best without breaking the bank. The era when men’s shirts were limited to formal wear is long gone. Today, in a rapidly evolving fashion world, shirts have become one of the most versatile wardrobe choices. Men’s shirts, especially, have won fashion lovers with their refined style and perfect fit.</p>
-            <p>Shirts for men have become a wardrobe essential thanks to their timeless appeal, refined designs, and premium feel. If you want to add premium options to your collection, Beyoung offers a wide range of branded shirts for men including embroidered shirts, classic solids, and elegant stripes—all crafted to suit your personality and comfort. So, why wait? Discover the latest collection and bring home the perfect shirt to express your unique style.</p>
+            <p>Buy shirts for men and revamp your style with  Elegante's latest collection of men's shirts online, where fashion meets affordability. Starting at just ₹699, our diverse range of men’s shirts caters to every occasion, ensuring you look your best without breaking the bank. The era when men’s shirts were limited to formal wear is long gone. Today, in a rapidly evolving fashion world, shirts have become one of the most versatile wardrobe choices. Men’s shirts, especially, have won fashion lovers with their refined style and perfect fit.</p>
+            <p>Shirts for men have become a wardrobe essential thanks to their timeless appeal, refined designs, and premium feel. If you want to add premium options to your collection,  Elegante offers a wide range of branded shirts for men including embroidered shirts, classic solids, and elegant stripes—all crafted to suit your personality and comfort. So, why wait? Discover the latest collection and bring home the perfect shirt to express your unique style.</p>
             
             <h4 class="seo-h4">Buy Stylish Shirts for Men; Perfect for Every Occasion</h4>
             <p>Explore our stylish shirts for men collection and discover a range of options featuring various fabrics, patterns, styles, and designs. Whether you're searching for casual shirts, formal shirts, embroidered shirts, plain shirts, satin shirts, check shirts, or printed shirts, we have something for every taste and occasion. Here are some of the shirt styles for men we offer, along with their distinctive features:</p>
@@ -2723,7 +2723,7 @@ export const CATEGORY_DATA = {
             </div>
             
             <h4 class="seo-h4">How to Style Men’s Shirts: Easy Outfit Ideas with Different Bottomwear</h4>
-            <p>Styling men’s shirts becomes effortless when you pair them with the right bottomwear. Whether you’re going for a casual street look or a clean, polished vibe, the right combination can completely elevate your outfit. At Beyoung, men’s shirts are designed to mix and match seamlessly with everyday essentials making them a reliable option for smart, modern dressing.</p>
+            <p>Styling men’s shirts becomes effortless when you pair them with the right bottomwear. Whether you’re going for a casual street look or a clean, polished vibe, the right combination can completely elevate your outfit. At  Elegante, men’s shirts are designed to mix and match seamlessly with everyday essentials making them a reliable option for smart, modern dressing.</p>
             
             <div class="style-guide-section">
                 <h5>1. Shirts with Jeans - The Classic Daily Look</h5>
@@ -2739,11 +2739,11 @@ export const CATEGORY_DATA = {
                 <p>Shorts and shirts make a great warm-weather combo. Roll up the sleeves for a breezy finish, and go for solid or printed shorts depending on how playful you want the outfit to feel.</p>
             </div>
             
-            <h4 class="seo-h4">Why Beyoung Shirts Work With Every Bottomwear</h4>
-            <p>Beyoung focuses on comfortable fits, breathable fabrics, and versatile designs, making their shirts easy to pair with jeans, joggers, chinos, or shorts without overthinking your outfit. Whether you're building a casual or semi-casual wardrobe, the mix-and-match potential makes styling effortless.</p>
+            <h4 class="seo-h4">Why  Elegante Shirts Work With Every Bottomwear</h4>
+            <p> Elegante focuses on comfortable fits, breathable fabrics, and versatile designs, making their shirts easy to pair with jeans, joggers, chinos, or shorts without overthinking your outfit. Whether you're building a casual or semi-casual wardrobe, the mix-and-match potential makes styling effortless.</p>
             
             <h4 class="seo-h4">Choose Shirts for Men Based on Your Skin Tone</h4>
-            <p>Selecting the perfect shirt for men isn't just about style—it's about complementing your natural complexion. At Beyoung, we understand that every skin tone is unique, and the right shirt can enhance your appearance effortlessly. Here's a guide to help you choose the best men's shirts that suit your skin tone:</p>
+            <p>Selecting the perfect shirt for men isn't just about style—it's about complementing your natural complexion. At  Elegante, we understand that every skin tone is unique, and the right shirt can enhance your appearance effortlessly. Here's a guide to help you choose the best men's shirts that suit your skin tone:</p>
             
             <div class="style-guide-section">
                 <h5>Fair to Light Skin Tones</h5>
@@ -2759,40 +2759,40 @@ export const CATEGORY_DATA = {
                 <p>White Shirts: A classic choice that suits all skin tones, offering a clean and sophisticated look. Black Shirts: Timeless and versatile, black shirts add a touch of elegance to any outfit.</p>
             </div>
             
-            <h4 class="seo-h4">Why Shop Men’s Shirts at Beyoung?</h4>
-            <p>Shirts for men that blend style, comfort, and affordability are easy to find with Beyoung, making it a top choice for men across India. Here’s why:</p>
+            <h4 class="seo-h4">Why Shop Men’s Shirts at  Elegante?</h4>
+            <p>Shirts for men that blend style, comfort, and affordability are easy to find with  Elegante, making it a top choice for men across India. Here’s why:</p>
             
             <div class="style-guide-section">
                 <h5>Diverse Range of Styles</h5>
-                <p>Beyoung offers an extensive collection of men's shirts, catering to various preferences and occasions. Whether you're looking for: Formal Shirts: Ideal for office wear or formal events. Casual Shirts: Perfect for everyday outings or relaxed gatherings. Trendy Designs: Stay ahead in fashion with the latest patterns and cuts. Each shirt is crafted to ensure you look your best, no matter the setting.</p>
+                <p> Elegante offers an extensive collection of men's shirts, catering to various preferences and occasions. Whether you're looking for: Formal Shirts: Ideal for office wear or formal events. Casual Shirts: Perfect for everyday outings or relaxed gatherings. Trendy Designs: Stay ahead in fashion with the latest patterns and cuts. Each shirt is crafted to ensure you look your best, no matter the setting.</p>
                 
                 <h5>Quality Fabric at Affordable Prices</h5>
-                <p>Quality doesn’t have to come at a high price. Beyoung offers affordable shirts for men that don’t compromise on durability or comfort. Every piece in our men's shirt collection is crafted from premium fabrics. Customers often praise the impressive quality of these men’s shirts, especially given their budget-friendly pricing.</p>
+                <p>Quality doesn’t have to come at a high price.  Elegante offers affordable shirts for men that don’t compromise on durability or comfort. Every piece in our men's shirt collection is crafted from premium fabrics. Customers often praise the impressive quality of these men’s shirts, especially given their budget-friendly pricing.</p>
                 
                 <h5>Size Inclusivity</h5>
-                <p>Shirts for men at Beyoung come in a wide range of sizes, from S to XXL shirts, because one size doesn’t fit all. This inclusive approach ensures every man finds the right fit for enhanced comfort and style.</p>
+                <p>Shirts for men at  Elegante come in a wide range of sizes, from S to XXL shirts, because one size doesn’t fit all. This inclusive approach ensures every man finds the right fit for enhanced comfort and style.</p>
                 
                 <h5>Attractive Deals and Combos</h5>
-                <p>Beyoung frequently offers deals that provide great value for money. For instance, their \"Pick Any 3 Plain Cotton Shirts Combo\" allows customers to select multiple shirts at a discounted rate, making wardrobe upgrades both easy and economical.</p>
+                <p> Elegante frequently offers deals that provide great value for money. For instance, their \"Pick Any 3 Plain Cotton Shirts Combo\" allows customers to select multiple shirts at a discounted rate, making wardrobe upgrades both easy and economical.</p>
                 
                 <h5>Positive Customer Feedback</h5>
-                <p>Many customers have shared their satisfaction with Beyoung's products, highlighting the balance between quality and affordability. Such feedback underscores the brand's commitment to delivering value to its patrons.</p>
+                <p>Many customers have shared their satisfaction with  Elegante's products, highlighting the balance between quality and affordability. Such feedback underscores the brand's commitment to delivering value to its patrons.</p>
             </div>
             
             <h4 class="seo-h4">Shop the Latest Shirts for Men Online - Find the Perfect Fit</h4>
-            <p>Whether you are going out on that date, stepping into a business meeting, or enjoying a night out, we have the perfect branded shirts for men to match the occasion. Our versatile collection includes casual shirts, denim shirts, linen shirts, formal shirts, stain shirts, and more. No matter where life takes you, we ensure you always look and feel your best. Beyoung brings you the best shirts for men, crafted from premium fabric. Our fashionable shirt designs embody the perfect blend of quality and style. From timeless designs to modern favorites, our collection caters to every taste and occasion. Upgrade your wardrobe with Beyoung’s premium men's shirts for unmatched comfort and sophistication.</p>
+            <p>Whether you are going out on that date, stepping into a business meeting, or enjoying a night out, we have the perfect branded shirts for men to match the occasion. Our versatile collection includes casual shirts, denim shirts, linen shirts, formal shirts, stain shirts, and more. No matter where life takes you, we ensure you always look and feel your best.  Elegante brings you the best shirts for men, crafted from premium fabric. Our fashionable shirt designs embody the perfect blend of quality and style. From timeless designs to modern favorites, our collection caters to every taste and occasion. Upgrade your wardrobe with  Elegante’s premium men's shirts for unmatched comfort and sophistication.</p>
             
-            <h4 class="seo-h4">Get Exciting Offers on Men’s Shirts at Beyoung</h4>
-            <p>Buy shirts for men at Beyoung and enjoy up to 60% off! Along with that, enjoy free shipping, easy returns, secure payments, and unbeatable deals. With a wide range of colors, sizes, and styles, you're sure to find your new favorite shirt. Explore our collection today and discover men's trendy shirts at your fingertips. Beyoung also offers a combo deal. Make your own combo—pick any 2, 3, or 4 shirts in your favorite colors and sizes. For instance, the \"Pick Any 2 - Satin Shirts Combo\" is available at ₹1,649, reduced from ₹3,599, a 54% discount. Additionally, use the code \"BEYOUNG100\" to get ₹100 off on men's shirts when you spend more than ₹999. Our deals and coupons ensure you always get the best value while shopping. Find slim-fit, stylish shirts that match your unique style, all from the best online shopping site for clothes in India—Beyoung! See Less</p>
+            <h4 class="seo-h4">Get Exciting Offers on Men’s Shirts at  Elegante</h4>
+            <p>Buy shirts for men at  Elegante and enjoy up to 60% off! Along with that, enjoy free shipping, easy returns, secure payments, and unbeatable deals. With a wide range of colors, sizes, and styles, you're sure to find your new favorite shirt. Explore our collection today and discover men's trendy shirts at your fingertips.  Elegante also offers a combo deal. Make your own combo—pick any 2, 3, or 4 shirts in your favorite colors and sizes. For instance, the \"Pick Any 2 - Satin Shirts Combo\" is available at ₹1,649, reduced from ₹3,599, a 54% discount. Additionally, use the code \" Elegante100\" to get ₹100 off on men's shirts when you spend more than ₹999. Our deals and coupons ensure you always get the best value while shopping. Find slim-fit, stylish shirts that match your unique style, all from the best online shopping site for clothes in India— Elegante! See Less</p>
         `,
     faq: [
       {
-        q: "What sizes are available for Beyoung men's shirts?",
-        a: "Beyoung Men’s shirts are typically available in sizes ranging from S to 2XL and beyond, ensuring options for a comfortable and tailored fit for every body type.",
+        q: "What sizes are available for  Elegante men's shirts?",
+        a: " Elegante Men’s shirts are typically available in sizes ranging from S to 2XL and beyond, ensuring options for a comfortable and tailored fit for every body type.",
       },
       {
-        q: "What types of shirts are available at Beyoung?",
-        a: "At Beyoung, you will get various types of shirts, including embroidered shirts, casual button-downs, flannel shirts, and linen shirts, offering options for both formal and casual occasions.",
+        q: "What types of shirts are available at  Elegante?",
+        a: "At  Elegante, you will get various types of shirts, including embroidered shirts, casual button-downs, flannel shirts, and linen shirts, offering options for both formal and casual occasions.",
       },
       {
         q: "Which fabric is best for men’s shirts?",
@@ -2808,27 +2808,27 @@ export const CATEGORY_DATA = {
       },
       {
         q: "Where can I buy stylish yet affordable shirts for men?",
-        a: "You can buy trendy shirts online on Beyoung, which offers a wide range of stylish and affordable options.",
+        a: "You can buy trendy shirts online on  Elegante, which offers a wide range of stylish and affordable options.",
       },
       {
-        q: "Are Beyoung shirts for men good for daily wear?",
-        a: "Yes, Beyoung’s shirts are made with soft, breathable fabrics that make them perfect for daily wear whether you’re at work, college, or on a casual outing.",
+        q: "Are  Elegante shirts for men good for daily wear?",
+        a: "Yes,  Elegante’s shirts are made with soft, breathable fabrics that make them perfect for daily wear whether you’re at work, college, or on a casual outing.",
       },
       {
-        q: "Can I wear Beyoung shirts for both casual and formal occasions?",
-        a: "Yes! Beyoung’s collection includes shirts suitable for office wear, weekend getaways, or festive looks, making them versatile wardrobe essentials.",
+        q: "Can I wear  Elegante shirts for both casual and formal occasions?",
+        a: "Yes!  Elegante’s collection includes shirts suitable for office wear, weekend getaways, or festive looks, making them versatile wardrobe essentials.",
       },
       {
-        q: "How do I care for my Beyoung shirts?",
-        a: "Machine wash in cold water, avoid bleach, and dry in shade to keep your Beyoung shirts looking fresh and lasting longer.",
+        q: "How do I care for my  Elegante shirts?",
+        a: "Machine wash in cold water, avoid bleach, and dry in shade to keep your  Elegante shirts looking fresh and lasting longer.",
       },
       {
-        q: "Are Beyoung shirts for men affordable?",
-        a: "Yes, Beyoung combines quality with affordability, offering stylish men’s shirts at pocket-friendly prices without compromising on comfort or design.",
+        q: "Are  Elegante shirts for men affordable?",
+        a: "Yes,  Elegante combines quality with affordability, offering stylish men’s shirts at pocket-friendly prices without compromising on comfort or design.",
       },
       {
-        q: "Where can I buy Beyoung shirts for men online?",
-        a: "You can shop the latest collection of men’s shirts by Beyoung directly, where you’ll find exclusive offers and fast delivery options.",
+        q: "Where can I buy  Elegante shirts for men online?",
+        a: "You can shop the latest collection of men’s shirts by  Elegante directly, where you’ll find exclusive offers and fast delivery options.",
       },
     ],
     // buttons: [
@@ -3032,7 +3032,7 @@ export const CATEGORY_DATA = {
   "women-topwear": {
     title: "Women's Clothing",
     description_short:
-      "Explore Beyoung's comprehensive collection for Women, featuring both stylish Topwear and essential Bottomwear. Filter by color, size, category, and fit to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our latest selection of comfy full-sleeve, oversized, and boxer styles.",
+      "Explore  Elegante's comprehensive collection for Women, featuring both stylish Topwear and essential Bottomwear. Filter by color, size, category, and fit to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our latest selection of comfy full-sleeve, oversized, and boxer styles.",
     description_long: "",
     // buttons: [
     //   {
@@ -3180,7 +3180,7 @@ export const CATEGORY_DATA = {
   "women-bottomwear": {
     title: "Women's Bottomwear",
     description_short:
-      "Explore Beyoung's essential collection of **Women's Bottomwear**, featuring versatile pieces like Cargo Pants, Denim Jorts, and comfortable Boxers. Filter by color, size, fit, and pattern to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our selection of stylish and comfy bottoms.",
+      "Explore  Elegante's essential collection of **Women's Bottomwear**, featuring versatile pieces like Cargo Pants, Denim Jorts, and comfortable Boxers. Filter by color, size, fit, and pattern to find the perfect blend of casual and lounge wear. Upgrade your wardrobe with our selection of stylish and comfy bottoms.",
     description_long: "",
     // buttons: [
     //   {
@@ -3320,7 +3320,7 @@ export const CATEGORY_DATA = {
   "women-clothing-view-all": {
     title: "Women's Clothing | View All",
     description_short:
-      "Explore Beyoung's complete collection of trendy and comfortable Women's Clothing. Find everything from stylish topwear like oversized tees and full-sleeve shirts to essential bottomwear like cargo pants, denim jorts, and comfortable boxers. Our collection is designed for a perfect blend of casual and lounge wear, available in all popular sizes and colors.",
+      "Explore  Elegante's complete collection of trendy and comfortable Women's Clothing. Find everything from stylish topwear like oversized tees and full-sleeve shirts to essential bottomwear like cargo pants, denim jorts, and comfortable boxers. Our collection is designed for a perfect blend of casual and lounge wear, available in all popular sizes and colors.",
     // buttons: [
     //   {
     //     label: "View All Topwear",

@@ -35,19 +35,19 @@ const Media = () => {
   const newsItems = [
     {
       logo: yourstory,
-      title: "FASHION ECOMMERCE STARTUP BEYOUNG RAISES RS 40 CR FROM KLUB",
+      title: "FASHION ECOMMERCE STARTUP Elegante RAISES RS 40 CR FROM KLUB",
       date: "29 Apr 2023",
     },
     {
       logo: startup_story,
       title:
-        "BeYoung secures Rs 40 crore funding from Klub for expansion plans",
+        "Elegante secures Rs 40 crore funding from Klub for expansion plans",
       date: "29 Apr 2023",
     },
     {
       logo: smestreetlogo,
       title:
-        "BeYoung Aims to Open 100+ Stores in Tier 2 and 3 Cities after Raising 40 Cr Funding through Klub",
+        "Elegante Aims to Open 100+ Stores in Tier 2 and 3 Cities after Raising 40 Cr Funding through Klub",
       date: "27 Apr 2023",
     },
     {
@@ -59,12 +59,12 @@ const Media = () => {
     {
       logo: indiaretail,
       title:
-        "Online fashion brand Beyoung crosses Rs 100 crore in FY 2022-2023",
+        "Online fashion brand Elegante crosses Rs 100 crore in FY 2022-2023",
       date: "26 Apr 2023",
     },
     {
       logo: vccircle,
-      title: "E-Commerce Firm Beyoung Raises Close To $5 Mn In Funding Round",
+      title: "E-Commerce Firm Elegante Raises Close To $5 Mn In Funding Round",
       date: "28 Apr 2023",
     },
     {
@@ -74,12 +74,12 @@ const Media = () => {
     },
     {
       logo: hrworld,
-      title: "BeYoung to hire over 150 professionals",
+      title: "Elegante to hire over 150 professionals",
       date: "21 Oct 2021",
     },
     {
       logo: indianretailer,
-      title: "Youth Apparel Startup Beyoung Forays into Semi-Premium Segment",
+      title: "Youth Apparel Startup Elegante Forays into Semi-Premium Segment",
       date: "20 Oct 2021",
     },
     {
@@ -99,7 +99,7 @@ const Media = () => {
             <span className="hover:text-gray-900 cursor-pointer">HOME</span>
             <span>›</span>
             <span className="text-gray-900 font-medium">
-              BEYOUNG - IN THE NEWS
+              Elegante - IN THE NEWS
             </span>
           </div>
         </div>

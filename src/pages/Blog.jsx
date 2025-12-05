@@ -9,7 +9,7 @@ const Blog = () => {
       id: 1,
       title:
         "Rain-Proof Your Wardrobe: 7 Essentials for Monsoon Fashion in 2025",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 3, 2025",
       image:
         "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?w=800&h=600&fit=crop",
@@ -19,7 +19,7 @@ const Blog = () => {
     {
       id: 2,
       title: "Travel Packing Made Easy: From Beaches to Forts in Style",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 8, 2025",
       image:
         "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -29,7 +29,7 @@ const Blog = () => {
     {
       id: 3,
       title: "Rain-Proof Your Wardrobe: 7 Essentials for Monsoon Fashion...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 4, 2025",
       image:
         "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=600&fit=crop",
@@ -42,7 +42,7 @@ const Blog = () => {
     {
       id: 4,
       title: "Rain-Proof Your Wardrobe: 7 Essentials for Monsoon...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 3, 2025",
       image:
         "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=300&fit=crop",
@@ -51,7 +51,7 @@ const Blog = () => {
     {
       id: 5,
       title: "Rakhi Gifts for Brothers Who Have Everything [But the...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 3, 2025",
       image:
         "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop",
@@ -60,7 +60,7 @@ const Blog = () => {
     {
       id: 6,
       title: "RCB vs PBKS IPL Finals 2025: The Ultimate Men's...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Nov 7, 2025",
       image:
         "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop",
@@ -72,7 +72,7 @@ const Blog = () => {
     {
       id: 7,
       title: "Travel Packing Made Easy: From Beaches to Forts in Style",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 10, 2025",
       image:
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop",
@@ -82,7 +82,7 @@ const Blog = () => {
     {
       id: 8,
       title: "Rain-Proof Your Wardrobe: 7 Essentials for Monsoon Fashi...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 8, 2025",
       image:
         "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=400&h=500&fit=crop",
@@ -92,7 +92,7 @@ const Blog = () => {
     {
       id: 9,
       title: "Rakhi Gifts for Brothers Who Have Everything [But the...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Jul 6, 2025",
       image:
         "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=500&fit=crop",
@@ -102,7 +102,7 @@ const Blog = () => {
     {
       id: 10,
       title: "RCB vs PBKS IPL Finals 2025: The Ultimate Men's Fashion...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Nov 7, 2025",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=500&fit=crop",
@@ -112,7 +112,7 @@ const Blog = () => {
     {
       id: 11,
       title: "Final Results: World Fashion Inspired by IPL 2024's Final...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Nov 7, 2025",
       image:
         "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=500&fit=crop",
@@ -122,7 +122,7 @@ const Blog = () => {
     {
       id: 12,
       title: "Shirt Colour Guide: Pick the Best Shirt Colours for Your Sk...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Apr 18, 2025",
       image:
         "https://images.unsplash.com/photo-1602810316498-ab67cf68c8e1?w=400&h=500&fit=crop",
@@ -132,7 +132,7 @@ const Blog = () => {
     {
       id: 13,
       title: "6 Must-Have Types of Pants in Every Modern Men's Wardrobe",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Apr 10, 2025",
       image:
         "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&h=500&fit=crop",
@@ -142,7 +142,7 @@ const Blog = () => {
     {
       id: 14,
       title: "Summer Styling Guide: How to Stay Cool & Stylish",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Apr 10, 2025",
       image:
         "https://images.unsplash.com/photo-1621607428893-24399b31d7e2?w=400&h=500&fit=crop",
@@ -152,7 +152,7 @@ const Blog = () => {
     {
       id: 15,
       title: "Layering Is the Habit: How to Ace Light Layers in Summer",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Nov 7, 2025",
       image:
         "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop",
@@ -162,7 +162,7 @@ const Blog = () => {
     {
       id: 16,
       title: "Men's Summer Beachwear 2025: Must-Have Outfits &...",
-      author: "Beyoung",
+      author: " Elegante",
       date: "Nov 7, 2025",
       image:
         "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?w=400&h=500&fit=crop",
