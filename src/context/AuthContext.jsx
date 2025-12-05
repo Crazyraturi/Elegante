@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
     !!localStorage.getItem("token")
   );
   // NEW STATE: To hold user data
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState(null);
 
   // Function to save user data and token on login
   const login = (token, userData) => {
@@ -37,7 +37,6 @@ const AuthProvider = ({ children }) => {
       setUser(JSON.parse(storedUser));
     }
   }, []);
-
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>

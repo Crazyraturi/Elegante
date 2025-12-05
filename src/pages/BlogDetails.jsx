@@ -21,7 +21,6 @@ export default function BlogDetailPage() {
   const handleCommentSubmit = () => {
     if (comment && name && email) {
       console.log({ comment, name, email, website, saveInfo });
-      // Reset fields
       setComment("");
       setName("");
       setEmail("");
@@ -120,9 +119,9 @@ export default function BlogDetailPage() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-3xl font-bold">The  Elegante Blog</h1>
+          <h1 className="text-3xl font-bold">The Elegante Blog</h1>
           <button className="bg-yellow-400 hover:bg-yellow-500 px-6 py-2 rounded font-semibold transition">
-            Shop At  Elegante
+            Shop At Elegante
           </button>
         </div>
       </header>
@@ -182,7 +181,7 @@ export default function BlogDetailPage() {
                   <span className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm">
                     👤
                   </span>
-                  By  Elegante
+                  By Elegante
                 </span>
                 <span>Apr 25, 2025</span>
               </div>
@@ -402,7 +401,7 @@ export default function BlogDetailPage() {
                   Start curating your summer essentials list today, and enjoy
                   the season with the perfect blend of style and comfort with{" "}
                   <a href="#" className="text-blue-600 hover:underline">
-                     Elegante
+                    Elegante
                   </a>
                   !
                 </p>
@@ -453,7 +452,7 @@ export default function BlogDetailPage() {
                 <div className="w-20 h-20 bg-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">
                   👤
                 </div>
-                <h3 className="text-xl font-bold">By  Elegante</h3>
+                <h3 className="text-xl font-bold">By Elegante</h3>
               </div>
 
               {/* Related Posts */}
@@ -583,7 +582,7 @@ export default function BlogDetailPage() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">
-            Join  Elegante Family
+            Join Elegante Family
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobListings.map((job, idx) => (
@@ -720,7 +719,7 @@ export default function BlogDetailPage() {
           </div>
 
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-            Copyright © 2025  Elegante. All rights reserved.
+            Copyright © 2025 Elegante. All rights reserved.
           </div>
         </div>
       </footer>

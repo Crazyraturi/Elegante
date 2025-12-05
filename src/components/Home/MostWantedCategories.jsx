@@ -100,7 +100,7 @@ const MostWantedCategories = () => {
               <img
                 src={category.image}
                 alt={category.name}
-                className="w-full h-full object-contain   transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
               />
             </Link>
           ))}

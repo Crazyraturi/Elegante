@@ -6,7 +6,7 @@ export default function FAQPage() {
     "My Account & My Order"
   );
   const [openQuestion, setOpenQuestion] = useState(null);
-  const [sidebarOpen, setSidebarOpen] = useState(false); // for mobile toggle
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleQuestion = (index) => {
     setOpenQuestion(openQuestion === index ? null : index);
@@ -393,7 +393,8 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
 4. Air dry for best results, or use a low tumble dry if you are in a hurry.`,
       },
       {
-        question: "What should I avoid while washing my  Elegante Polo T-shirt?",
+        question:
+          "What should I avoid while washing my  Elegante Polo T-shirt?",
         answer: `The  Elegante Polo T-shirt deserves a little extra care to keep its classy look intact. Here’s what to avoid while washing:
 
 1. Avoid hot washes. Stick to cold and gentle machine cycles.

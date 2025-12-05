@@ -2,19 +2,20 @@ import { useContext } from "react";
 import Cart from "../assets/Add to Cart-cuate.svg";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../src/context/CartContext";
-import { Check, Trash2, Heart, Tag, ChevronRight } from "lucide-react";
+import { Check, Trash2, Heart } from "lucide-react";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
-
-  // If cart is empty
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="min-h-screen bg-[#E5E7EB] flex items-center justify-center">
         <main className="max-w-4xl mx-auto px-4 py-16 text-center">
           <div className="w-full flex justify-center mb-12">
             <div className="w-120 h-120 bg-gray-200 rounded-lg flex items-center justify-center">
-              <img src={Cart} alt="Cart Empty" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931279/Cart_d9z9b6.png"
+                alt="Cart Empty"
+              />
             </div>
           </div>
           <Link to="/">
@@ -27,7 +28,6 @@ export default function CartPage() {
     );
   }
 
-  // Calculate totals dynamically
   const totalMRP = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0

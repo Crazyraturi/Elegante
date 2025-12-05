@@ -9,12 +9,6 @@ import {
   ChevronUp,
   CheckCircle,
 } from "lucide-react";
-
-// --- Asset Imports (Assumed Paths) ---
-import FreeShipping from "../../assets/FreeShipping.svg";
-import offer_pop from "../../assets/offer_pop.svg";
-import PDI from "../../assets/PDI.svg";
-import Reward from "../../assets/Reward.jpg";
 import RecentlyViewed from "../Home/RecentlyViewed";
 import FeaturesSection from "../ProductDetails/FeaturesSection";
 import Loader from "../common/Loader";
@@ -34,12 +28,9 @@ const StarIcon = (props) => (
   </svg>
 );
 
-// --- NEW: ComboSelector Component ---
-function ComboSelector({ product, addToCart, navigate }) {
-  // Determine the number of selections needed based on the combo title (e.g., "Pick Any 4")
+function ComboSelector({ product, addToCart }) {
   const comboCountMatch = product.title.match(/Pick Any (\d+)/i);
   const comboCount = comboCountMatch ? parseInt(comboCountMatch[1], 10) : 4;
-
   const initialSelections = Array.from({ length: comboCount }, (_, i) => ({
     color: "",
     size: "",
@@ -75,15 +66,11 @@ function ComboSelector({ product, addToCart, navigate }) {
       return;
     }
 
-    // Find the price data (using the first variant as combo prices are usually uniform)
     const priceData = product.variants[0]?.price || {};
     const totalDiscountedPrice = priceData.discounted;
     const totalOriginalPrice = priceData.original;
-
-    // Calculate price per item
     const pricePerItem = totalDiscountedPrice / comboCount;
     const originalPricePerItem = totalOriginalPrice / comboCount;
-
     const comboItems = selections.map((selection, index) => {
       const variantImage = product.images.preview;
       const uniqueId = `${selection.productId}-${selection.color}-${selection.size}-${index}`;
@@ -105,12 +92,6 @@ function ComboSelector({ product, addToCart, navigate }) {
     });
 
     comboItems.forEach((item) => addToCart(item));
-
-    // Show a success pop-up (This requires passing setShowPopup from ProductPage)
-    // Since setShowPopup is not passed down, we use the simple alert for functionality
-    // alert(`${comboCount} items added to cart!`);
-
-    // Re-trigger the parent's pop-up state if needed (not implemented here for simplicity)
   };
 
   const itemNumbers = Array.from({ length: comboCount }, (_, i) => i + 1);
@@ -436,7 +417,7 @@ export default function ProductPage() {
               <div className="mb-2 pl-2 pr-2 flex items-center justify-between">
                 <div className="flex items-baseline-start gap-1">
                   <img
-                    src={offer_pop}
+                    src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764929180/offer_pop_oigfkq.svg"
                     className="h-[25px] w-[25px]"
                     alt="offer"
                   />
@@ -454,7 +435,10 @@ export default function ProductPage() {
 
             {/* Payment */}
             <div className="mt-6 mb-2 p-3 rounded-xl flex items-center justify-center">
-              <img src={PDI} className="w-full h-auto object-contain" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930452/PDI_lnw33r.svg"
+                className="w-full h-auto object-contain"
+              />
             </div>
 
             {/* --- Conditional Rendering for Combo vs. Single Product --- */}
@@ -579,7 +563,7 @@ export default function ProductPage() {
               <div className="flex items-center gap-6 mt-3 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <img
-                    src={FreeShipping}
+                    src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928987/FreeShipping_keskkg.svg"
                     className="h-8 w-8"
                     alt="Free Shipping Icon"
                   />
@@ -597,7 +581,10 @@ export default function ProductPage() {
 
             {/* Reward */}
             <div className="mt-5">
-              <img src={Reward} alt="Reward Image" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930503/Reward_k4wnz0.jpg"
+                alt="Reward Image"
+              />
             </div>
 
             {/* PRODUCT DETAILS Sections */}

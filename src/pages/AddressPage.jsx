@@ -2,17 +2,6 @@ import { useState, useContext } from "react";
 import { Plus } from "lucide-react";
 import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
-import AddSecurity from "../assets/AddSecurity.png";
-import Addquality from "../assets/Addquality.png";
-import AddIndia from "../assets/AddIndia.png";
-import AddImg1 from "../assets/AddImg1.png";
-import AddImg2 from "../assets/AddImg2.png";
-import AddImg3 from "../assets/AddImg3.png";
-import AddImg4 from "../assets/AddImg4.png";
-import AddImg5 from "../assets/AddImg5.png";
-import AddImg6 from "../assets/AddImg6.png";
-import AddImg7 from "../assets/AddImg7.png";
-import AddImg8 from "../assets/AddImg8.png";
 
 export default function AddressPage() {
   const { cartItems } = useContext(CartContext);
@@ -253,7 +242,7 @@ export default function AddressPage() {
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 bg-gray-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
                 <img
-                  src={Addquality}
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930970/Addquality_ow5byd.png"
                   alt="Quality"
                   className="w-20 h-20 object-contain"
                 />
@@ -264,7 +253,7 @@ export default function AddressPage() {
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 bg-gray-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
                 <img
-                  src={AddIndia}
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930966/AddIndia_q4n5qi.png"
                   alt="Made in India"
                   className="w-20 h-20 object-contain"
                 />
@@ -275,7 +264,7 @@ export default function AddressPage() {
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 bg-gray-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
                 <img
-                  src={AddSecurity}
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930927/AddSecurity_uznknt.png"
                   alt="Secure Payment"
                   className="w-20 h-20 object-contain"
                 />
@@ -288,14 +277,14 @@ export default function AddressPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-8 justify-center items-center gap-6">
             {[
-              AddImg1,
-              AddImg2,
-              AddImg3,
-              AddImg4,
-              AddImg5,
-              AddImg6,
-              AddImg7,
-              AddImg8,
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931033/AddImg1_ka1eck.png",
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931037/AddImg2_c81rwc.png",
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931042/AddImg3_qlfflv.png",
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931046/AddImg4_byjldq.png",
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931050/AddImg5_iod4q5.png",
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931054/AddImg6_du4m44.png",
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931058/AddImg7_rmwhl9.png",
+              "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931062/AddImg8_q2ahem.png",
             ].map((img, index) => (
               <div key={index} className="flex justify-center items-center">
                 <img

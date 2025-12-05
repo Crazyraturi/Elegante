@@ -3,12 +3,6 @@ import { Link } from "react-router-dom";
 
 const ReturnOrder = () => {
   return (
-    // Adjusted padding: large padding (px-38) for desktop,
-    // and smaller, more appropriate padding (px-4 or px-6) for mobile.
-    // Using `px-4 sm:px-6 lg:px-38` (assuming px-38 is a custom value
-    // that translates to a very large screen padding).
-    // I'll use a more standard large screen utility like lg:px-32
-    // or keep the original px-38 but ensure mobile view uses px-4.
     <section className="px-4 sm:px-6 lg:px-38 space-y-4">
       {/* Heading */}
       <div>
@@ -119,8 +113,8 @@ const ReturnOrder = () => {
         <p>
           <span className="font-bold">• COD Orders: &nbsp; </span> If the
           product(s) passes the quality check once it reaches our warehouse, the
-          refund will be issued instantly in your Elegante Wallet. Credits can be
-          used for future purchases on websites or apps. It is valid for 12
+          refund will be issued instantly in your Elegante Wallet. Credits can
+          be used for future purchases on websites or apps. It is valid for 12
           months from the date you receive it.
           <br />
           <span className="font-bold">Note:&nbsp; </span>

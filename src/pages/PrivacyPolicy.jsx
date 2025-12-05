@@ -23,9 +23,9 @@ const PrivacyPolicy = () => {
           Introduction
         </h2>
         <p>
-          1.1  Elegante Folks Private Limited (“Company”, “we”, “us” and “our”)
-          respects the privacy of its users accessing its website at
-          www. Elegante.in(“Website”). For the purposes of this privacy policy
+          1.1 Elegante Folks Private Limited (“Company”, “we”, “us” and “our”)
+          respects the privacy of its users accessing its website at www.
+          Elegante.in(“Website”). For the purposes of this privacy policy
           (“Privacy Policy”) and wherever the context so requires “you”, “your”,
           “yourself”, “user”shall mean any natural or legal person who accesses
           or uses the Website and in the event that a natural person is

@@ -1,51 +1,45 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import re1 from "../../assets/ayan_review.png";
-import re2 from "../../assets/hemant_review.png";
-import re3 from "../../assets/katen_review.png";
-import re4 from "../../assets/arman_review.png";
-import re5 from "../../assets/mohit_review.png";
-import re6 from "../../assets/rohit_review.png";
-import re7 from "../../assets/manoj_review.png";
-import re8 from "../../assets/harsul_review.png";
-import re9 from "../../assets/ayan_review.png";
-import logo1 from "../../assets/ist_logo.png";
-import logo2 from "../../assets/inc42_logo.png";
-import logo3 from "../../assets/bwdisrupt_logo.png";
-import logo4 from "../../assets/theeconomics_logo.png";
-import logo5 from "../../assets/timesofindia_logo.png";
-import logo6 from "../../assets/fasionnetwork_logo.png";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Testemonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const reviews = [
     {
-      image: re1,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764926313/ayan_review_vqyuvm.png",
     },
     {
-      image: re2,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928085/hemant_review_jyhpb4.png",
     },
     {
-      image: re3,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928154/ketan_review_retnmm.png",
     },
     {
-      image: re4,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928186/arman_review_crpsbk.png",
     },
     {
-      image: re5,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928217/mohit_review_huu23m.png",
     },
     {
-      image: re6,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928259/rohit_review_rb0yk0.png",
     },
     {
-      image: re7,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928300/manoj_review_huhooa.png",
     },
     {
-      image: re8,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928326/harsul_review_fcbjqm.png",
     },
     {
-      image: re9,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764926313/ayan_review_vqyuvm.png",
     },
   ];
 
@@ -127,22 +121,40 @@ const Testemonials = () => {
           </div>
           <div className="flex items-center gap-8 overflow-x-auto">
             <span className="w-[8vw]">
-              <img src={logo1} alt="" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928455/ist_logo_jw88uw.png"
+                alt=""
+              />
             </span>
             <span className="w-[5vw]">
-              <img src={logo2} alt="" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928503/inc42_logo_nevult.png"
+                alt=""
+              />
             </span>
             <span className="w-[5vw]">
-              <img src={logo3} alt="" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928537/bwdisrupt_logo_yecmkt.png"
+                alt=""
+              />
             </span>
             <span className="w-[8vw]">
-              <img src={logo4} alt="" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928580/theeconomics_logo_barisk.png"
+                alt=""
+              />
             </span>
             <span className="w-[8vw]">
-              <img src={logo5} alt="" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928627/timesofindia_logo_pwwhav.png"
+                alt=""
+              />
             </span>
             <span className="w-[8vw]">
-              <img src={logo6} alt="" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928635/fasionnetwork_logo_lg3tos.png"
+                alt=""
+              />
             </span>
           </div>
         </div>

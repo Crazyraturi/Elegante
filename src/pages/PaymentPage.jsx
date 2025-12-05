@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import {
   Lock,
-  Phone,
   CreditCard,
   Wallet,
   Banknote,
@@ -13,59 +12,58 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
 import { CartContext } from "../context/CartContext";
-
-import Phone_pe from "../assets/Phone_pe.svg";
-import Paytm from "../assets/Paytm.svg";
-import UPI from "../assets/UPI.png";
-import Google_pay from "../assets/Google_pay.svg";
-import visa from "../assets/visa.svg";
-import MasterCard from "../assets/MasterCard.png";
-import amazon from "../assets/amazon.svg";
-
-import India_map from "../assets/India_map.png";
-import Secure from "../assets/Secure.jpeg";
-import Original from "../assets/Original.png";
-import upiLogo from "../assets/upiLogo.svg";
-
-import SBI from "../assets/SBI.svg";
-import Kotak from "../assets/Kotak.png";
-import IndusLand from "../assets/Indusland.png";
-import ICICI from "../assets/ICICI.png";
-import HDFC from "../assets/HDFC.png";
-import AXIS from "../assets/Axis.png";
-
-import PNB from "../assets/PNB.png";
-import YesBank from "../assets/Yes_Bank.png";
-import IDFC from "../assets/IDFC.png";
-import BOI from "../assets/BOI.png";
-import Mobikwi from "../assets/Mobikwi.png";
-import OlaMoney from "../assets/OlaMoney.png";
-import Airtel from "../assets/Airtel.png";
-import Jio from "../assets/Jio.png";
 
 export default function PaymentPage() {
   const [active, setActive] = useState("upi");
   const { cartItems } = useContext(CartContext);
   const [showMoreBanks, setShowMoreBanks] = useState(false);
 
-  // ⭐ DEFINE NetBankingSection INSIDE PaymentPage
   function NetBankingSection() {
     const topBanks = [
-      { name: "SBI", logo: SBI },
-      { name: "Kotak", logo: Kotak },
-      { name: "IndusLand", logo: IndusLand },
-      { name: "ICICI", logo: ICICI },
-      { name: "HDFC", logo: HDFC },
-      { name: "AXIS", logo: AXIS },
+      {
+        name: "SBI",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932853/SBI_abmj1a.svg",
+      },
+      {
+        name: "Kotak",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932847/Kotak_kvow16.png",
+      },
+      {
+        name: "IndusLand",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932862/Indusland_ytlgbp.png",
+      },
+      {
+        name: "ICICI",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932941/ICICI_l6un3q.png",
+      },
+      {
+        name: "HDFC",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932879/HDFC_e4ltth.png",
+      },
+      {
+        name: "AXIS",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932872/Axis_ensi9o.png",
+      },
     ];
 
     const moreBanks = [
-      { name: "PNB", logo: PNB },
-      { name: "Yes Bank", logo: YesBank },
-      { name: "IDFC", logo: IDFC },
-      { name: "Bank of India", logo: BOI },
+      {
+        name: "PNB",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933010/PNB_nbhpmh.png",
+      },
+      {
+        name: "Yes Bank",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933025/Yes_Bank_afby6f.png",
+      },
+      {
+        name: "IDFC",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933033/IDFC_m2izkl.png",
+      },
+      {
+        name: "Bank of India",
+        logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933055/BOI_thkggn.png",
+      },
     ];
 
     return (
@@ -188,7 +186,11 @@ export default function PaymentPage() {
             </div>
 
             <div className="flex gap-3 mt-2">
-              <img src={upiLogo} alt="upiLogo" className="text-green-600" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932713/upiLogo_jbjdeq.svg"
+                alt="upiLogo"
+                className="text-green-600"
+              />
               <div>
                 <p className="font-semibold flex justify-between items-center">
                   <span>Preferred UPI</span>
@@ -277,10 +279,10 @@ export default function PaymentPage() {
               </div>
 
               <div className="flex gap-2 text-xs">
-                <img src={Phone_pe} />
-                <img src={Paytm} />
-                <img src={Google_pay} />
-                <img src={UPI} />
+                <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932372/Phone_pe_eopj3j.svg" />
+                <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932381/Paytm_xbc6eb.svg" />
+                <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932398/Google_pay_rf3zwp.svg" />
+                <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932389/UPI_sdfnqf.png" />
               </div>
 
               <div className="flex items-center w-full gap-3">
@@ -370,12 +372,30 @@ export default function PaymentPage() {
               <p className="font-semibold text-lg">Wallets</p>
 
               {[
-                { name: "PhonePe", img: Phone_pe },
-                { name: "MobiKwik", img: Mobikwi },
-                { name: "AmazonPay", img: amazon },
-                { name: "OlaMoney", img: OlaMoney },
-                { name: "AirtelMoney", img: Airtel },
-                { name: "JioMoney", img: Jio },
+                {
+                  name: "PhonePe",
+                  img: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932372/Phone_pe_eopj3j.svg",
+                },
+                {
+                  name: "MobiKwik",
+                  img: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933045/Mobikwi_buw0wb.png",
+                },
+                {
+                  name: "AmazonPay",
+                  img: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932412/amazon_lnlq2h.svg",
+                },
+                {
+                  name: "OlaMoney",
+                  img: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933074/OlaMoney_qzorko.png",
+                },
+                {
+                  name: "AirtelMoney",
+                  img: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933083/Airtel_g3cf69.png",
+                },
+                {
+                  name: "JioMoney",
+                  img: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764933066/Jio_ohjosr.png",
+                },
               ].map((w) => (
                 <div
                   key={w.name}
@@ -481,19 +501,28 @@ export default function PaymentPage() {
 
           <div className="flex justify-between items-center text-xs py-4 border-t border-b">
             <div className="flex flex-col items-center">
-              <img src={India_map} className="w-10" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932690/India_map_vsfjqe.png"
+                className="w-10"
+              />
               <span>Made in India</span>
             </div>
 
             <div className="flex flex-col items-center">
-              <img src={Original} className="w-16" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932707/Original_zzcjse.png"
+                className="w-16"
+              />
               <span className="text-center">
                 100% <br /> Original
               </span>
             </div>
 
             <div className="flex flex-col items-center">
-              <img src={Secure} className="w-10" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932700/Secure_yb5fqy.jpg"
+                className="w-10"
+              />
               <span className="text-center">
                 Secure <br /> Payments
               </span>
@@ -501,13 +530,13 @@ export default function PaymentPage() {
           </div>
 
           <div className="flex gap-3 pt-5 w-10">
-            <img src={Phone_pe} />
-            <img src={Paytm} />
-            <img src={Google_pay} />
-            <img src={UPI} />
-            <img src={visa} />
-            <img src={MasterCard} />
-            <img src={amazon} />
+            <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932372/Phone_pe_eopj3j.svg" />
+            <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932381/Paytm_xbc6eb.svg" />
+            <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932398/Google_pay_rf3zwp.svg" />
+            <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932389/UPI_sdfnqf.png" />
+            <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932404/visa_akcdid.svg" />
+            <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932417/MasterCard_d2s3vg.png" />
+            <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932412/amazon_lnlq2h.svg" />
           </div>
         </div>
       </div>

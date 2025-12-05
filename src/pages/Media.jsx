@@ -1,14 +1,3 @@
-import yourstory from "../assets/yourstory.png";
-import startup_story from "../assets/startup_story.png";
-import smestreetlogo from "../assets/smestreetlogo.jpg";
-import cnbc from "../assets/cnbc-news.png";
-import indiaretail from "../assets/indiaretail-logo-23.png";
-import vccircle from "../assets/vccircle.png";
-import indiantoday from "../assets/logo_indiatoday.png";
-import hrworld from "../assets/logo-hr-header.png";
-import indianretailer from "../assets/indian-retailer.png";
-import zeebusiness from "../assets/zee-business_logo1.png";
-
 const NewsItem = ({ logo, title, date }) => (
   <div className="border-b border-gray-200 py-4 md:py-6 hover:bg-gray-50 transition-colors">
     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6 px-4 md:px-0">
@@ -34,56 +23,56 @@ const NewsItem = ({ logo, title, date }) => (
 const Media = () => {
   const newsItems = [
     {
-      logo: yourstory,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931484/yourstory_r3odxn.png",
       title: "FASHION ECOMMERCE STARTUP Elegante RAISES RS 40 CR FROM KLUB",
       date: "29 Apr 2023",
     },
     {
-      logo: startup_story,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931517/startup_story_xxayao.png",
       title:
         "Elegante secures Rs 40 crore funding from Klub for expansion plans",
       date: "29 Apr 2023",
     },
     {
-      logo: smestreetlogo,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931546/smestreetlogo_ltcsfu.jpg",
       title:
         "Elegante Aims to Open 100+ Stores in Tier 2 and 3 Cities after Raising 40 Cr Funding through Klub",
       date: "27 Apr 2023",
     },
     {
-      logo: cnbc,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931597/cnbc-news_plizay.png",
       title:
         "Startup Digest: Ohmium raises $250M, PhonePe may waive off ZestMoney's debt, Uber expands 'Reserve' option & more",
       date: "26 Apr 2023",
     },
     {
-      logo: indiaretail,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931649/indiaretail-logo-23_lcz6sj.png",
       title:
         "Online fashion brand Elegante crosses Rs 100 crore in FY 2022-2023",
       date: "26 Apr 2023",
     },
     {
-      logo: vccircle,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931702/vccircle_bwanwz.png",
       title: "E-Commerce Firm Elegante Raises Close To $5 Mn In Funding Round",
       date: "28 Apr 2023",
     },
     {
-      logo: indiantoday,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931739/logo_indiatoday_pomupv.png",
       title: "Different career options in online fashion market",
       date: "30 Oct 2021",
     },
     {
-      logo: hrworld,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931775/logo-hr-header_zczekv.png",
       title: "Elegante to hire over 150 professionals",
       date: "21 Oct 2021",
     },
     {
-      logo: indianretailer,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931825/indian-retailer_lteuqv.png",
       title: "Youth Apparel Startup Elegante Forays into Semi-Premium Segment",
       date: "20 Oct 2021",
     },
     {
-      logo: zeebusiness,
+      logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931861/zee-business_logo1_wx7pxc.png",
       title:
         "Textile Retail Segment: What consumers are looking for – Expert decodes",
       date: "15 Oct 2021",

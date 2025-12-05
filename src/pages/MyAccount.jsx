@@ -21,8 +21,8 @@ import { useEffect } from "react";
 const MyAccount = () => {
   const { logout, user } = useAuth();
   const [activeSection, setActiveSection] = useState("orders");
-  const [isEditingProfile, setIsEditingProfile] = useState(false); // 🔑 State for profile edit mode
-  const fullName = (user?.firstName || '') + ' ' + (user?.lastName || '');
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const fullName = (user?.firstName || "") + " " + (user?.lastName || "");
 
   const [userProfile, setUserProfile] = useState({
     name: fullName || "",
@@ -76,7 +76,8 @@ const MyAccount = () => {
       price: "₹998",
       oldPrice: "₹1798",
       discount: "55% off",
-      image: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764573435/beyoung_products/blftomf1y3lrcyep9ctb.jpg",
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764573435/beyoung_products/blftomf1y3lrcyep9ctb.jpg",
     },
     {
       id: 2,
@@ -85,7 +86,8 @@ const MyAccount = () => {
       price: "₹1199",
       oldPrice: "₹2999",
       discount: "60% off",
-      image: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764569169/beyoung_products/upwoewbgxlstodj6goeq.jpg",
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764569169/beyoung_products/upwoewbgxlstodj6goeq.jpg",
     },
     {
       id: 3,
@@ -94,7 +96,8 @@ const MyAccount = () => {
       price: "₹1499",
       oldPrice: "₹3799",
       discount: "68% off",
-      image: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764509580/beyoung_products/wgwo727yp8ul6qkh5pdf.jpg",
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764509580/beyoung_products/wgwo727yp8ul6qkh5pdf.jpg",
     },
   ];
 
@@ -163,7 +166,8 @@ const MyAccount = () => {
             {addresses.map((addr) => (
               <div
                 key={addr.id}
-                className="border border-gray-300 rounded-lg p-4 mb-4">
+                className="border border-gray-300 rounded-lg p-4 mb-4"
+              >
                 <div className="flex justify-between">
                   <div>
                     <h3 className="font-semibold mb-1">{addr.name}</h3>
@@ -178,7 +182,8 @@ const MyAccount = () => {
                     </button>
                     <button
                       onClick={() => handleDeleteAddress(addr.id)}
-                      className="text-gray-500 hover:text-red-600">
+                      className="text-gray-500 hover:text-red-600"
+                    >
                       <Trash2 size={18} />
                     </button>
                   </div>
@@ -209,7 +214,8 @@ const MyAccount = () => {
                 {recentlyViewed.map((item) => (
                   <div
                     key={item.id}
-                    className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                  >
                     <img
                       src={item.image}
                       alt={item.name}
@@ -250,7 +256,8 @@ const MyAccount = () => {
               {coupons.map((coupon, idx) => (
                 <div
                   key={idx}
-                  className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
+                  className="border border-gray-300 rounded-lg p-4 flex items-center gap-4"
+                >
                   <div className="bg-yellow-400 text-black font-bold px-3 py-8 rounded  transform -rotate-90 origin-center whitespace-nowrap text-sm">
                      ELEGANTE
                   </div>
@@ -372,7 +379,8 @@ const MyAccount = () => {
                       ? handleProfileSave()
                       : setIsEditingProfile(true)
                   }
-                  className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors">
+                  className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
+                >
                   {isEditingProfile ? (
                     <span className="text-sm font-semibold text-blue-600">
                       SAVE
@@ -448,7 +456,8 @@ const MyAccount = () => {
                             ? "text-red-600 hover:bg-red-50"
                             : ""
                         }
-                      `}>
+                      `}
+                    >
                       <Icon size={20} />
                       <span className="flex-1 text-left">{item.label}</span>
                       {/* Hide arrow for Logout button */}
@@ -459,7 +468,8 @@ const MyAccount = () => {
                           }`}
                           fill="none"
                           stroke="currentColor"
-                          viewBox="0 0 24 24">
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"

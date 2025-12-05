@@ -1,5 +1,3 @@
-import contact_Image from "../assets/contact_Image.png";
-
 export default function ContactUs() {
   return (
     <div className="bg-white  py-8 px-4">
@@ -57,7 +55,7 @@ export default function ContactUs() {
           {/* Right Illustration */}
           <div className="shrink-0">
             <img
-              src={contact_Image}
+              src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931336/contact_Image_sc7voz.png"
               alt="Contact illustration"
               className="w-30 md:w-40"
             />

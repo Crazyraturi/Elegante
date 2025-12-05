@@ -1,13 +1,4 @@
 import { MapPin, Clock, Navigation } from "lucide-react";
-import MainHeaderBanner from "../assets/MainHeaderBanner.jpg";
-import mirzapur_store_offline from "../assets/mirzapur_store_offline.jpg";
-import Ahmedabad_store_offline from "../assets/Ahmedabad_store_offline.jpg";
-import lucknow_store from "../assets/lucknow_store.jpg";
-import sikar_store from "../assets/sikar_store.jpg";
-import kota_Store from "../assets/kota_Store.jpg";
-import Bhilwara_Store from "../assets/Bhilwara_Store.jpg";
-import Udaipur_Store from "../assets/Udaipur_Store.jpg";
-import surat_store from "../assets/surat_store.png";
 
 const More = () => {
   const stores = [
@@ -17,7 +8,8 @@ const More = () => {
         "House No. 563, Girdhar Ka Chauraha, Badli Katra, next to Lenskart, Dankinganj, Mirzapur, Uttar Pradesh 231001",
       email: "mirzapur.store@Elegante.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
-      image: mirzapur_store_offline,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931984/mirzapur_store_offline_rrwoti.jpg",
     },
     {
       title: "Prahlad Nagar, Ahmedabad",
@@ -25,7 +17,8 @@ const More = () => {
         "Elegante Store, Shop No. 1, Ground Floor, Timber Point, Prahlad Nagar, Ahmedabad, Gujarat 380015",
       email: "store.ahmedabad@Elegante.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
-      image: Ahmedabad_store_offline,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932018/Ahmedabad_store_offline_opswqv.jpg",
     },
     {
       title: "Jankipuram, Lucknow",
@@ -33,7 +26,8 @@ const More = () => {
         "Elegante Store, Shop No. HS-1/6, Sector-A, Sitapur Road Scheme, Jankipuram, Lucknow-226021",
       email: "store.lucknow@Elegante.in",
       hours: "10:30 Am To 9:30 PM (Mon-Sun)",
-      image: lucknow_store,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932059/lucknow_store_kmexow.jpg",
     },
     {
       title: "Station Road, Sikar",
@@ -41,7 +35,8 @@ const More = () => {
         "Shop No. 1, Shri Shakti Tower, Opposite Maru Mandir, Station Road, Sikar-332001",
       email: "store.sikar@Elegante.in",
       hours: "10:30 Am To 9:30 PM (Mon-Sun)",
-      image: sikar_store,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932089/sikar_store_qj31g5.jpg",
     },
     {
       title: "Kotri Road, Kota",
@@ -49,14 +44,16 @@ const More = () => {
         "Shop No. 1, Plot No. 140, Gumanpura Yojna, Kotri Road, Kota 324007",
       email: "store.kota@Elegante.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
-      image: kota_Store,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932127/kota_Store_r7nwk9.jpg",
     },
     {
       title: "Nagori Garden, Bhilwara",
       address: "Shop no. E-6 Factory Area, Nagori Garden Bhilwara 311001",
       email: "store.bhilwara@Elegante.in",
       hours: "10:30 AM to 9:30 PM (Mon-Sun)",
-      image: Bhilwara_Store,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932163/Bhilwara_Store_hxxmmm.jpg",
     },
     {
       title: "Ayad, University Road Udaipur",
@@ -64,7 +61,8 @@ const More = () => {
         "Jai Jinendra Complex, University Rd, Luhar Colony, Ayad, Kharakua, Udaipur, Rajasthan 313001",
       email: "store.udr@Elegante.in",
       hours: "10 AM to 10 PM (Mon-Sun)",
-      image: Udaipur_Store,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932239/Udaipur_Store_rx7duh.jpg",
     },
     {
       title: "Magdalla, Surat, Gujarat",
@@ -72,7 +70,8 @@ const More = () => {
         "Shop No-206, 2nd Floor VR Mall Dumas Rd, Magdalla, Surat, Gujarat 395007",
       email: "vrsurat.store@Elegante.in",
       hours: "10 AM to 10 PM (Mon-Sun)",
-      image: surat_store,
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932273/surat_store_r1buur.png",
     },
   ];
 
@@ -80,7 +79,7 @@ const More = () => {
     <div className="min-h-screen">
       <header className="w-full">
         <img
-          src={MainHeaderBanner}
+          src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931944/MainHeaderBanner_zmzxy5.jpg"
           className="w-full h-auto"
           alt="Header Banner"
         />
