@@ -1,11 +1,10 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
-import { Eye, EyeOff, ShoppingBag, ArrowRight, Mail, Lock, Loader2 } from 'lucide-react';
-import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
-import axios from 'axios';
-import { Toaster, toast } from 'sonner';
-import { useAuth } from '@/context/AuthContext';
-
-  import Logo from '@/components/icons/Logo';
+import React, { useState, useEffect } from "react";
+import { Eye, EyeOff, ArrowRight, Mail, Lock, Loader2 } from "lucide-react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+import { toast } from "sonner";
+import { useAuth } from "@/context/AuthContext";
+import Logo from "@/components/icons/Logo";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -26,7 +25,9 @@ const Login = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get("verifyEmail") === "sent") {
-      toast.success("A verification email has been sent. Please check your inbox.");
+      toast.success(
+        "A verification email has been sent. Please check your inbox."
+      );
     }
     if (params.get("verified") === "true") {
       toast.success("Your email has been verified! You can now login.");
@@ -60,17 +61,18 @@ const Login = () => {
 
       if (res.data.success) {
         toast.success(res.data.message || "Login successful!");
-        
+
         if (res.data.accessToken && res.data.user) {
           login(res.data.accessToken, res.data.user);
         }
 
-        navigate("/"); 
+        navigate("/");
       }
     } catch (error) {
       console.error(error);
-      const errorMessage = error.response?.data?.message || "Something went wrong.";
-      
+      const errorMessage =
+        error.response?.data?.message || "Something went wrong.";
+
       if (errorMessage.includes("verify your account")) {
         toast.error("Please verify your email before logging in.");
       } else {
@@ -83,16 +85,28 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex bg-gray-50 font-sans text-gray-900 selection:bg-yellow-200">
-      
       {/* LEFT SIDE - VISUAL BANNER */}
-      <div className={`hidden lg:flex lg:w-1/2 relative overflow-hidden bg-yellow-400 transition-all duration-1000 ease-out ${animate ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-        
+      <div
+        className={`hidden lg:flex lg:w-1/2 relative overflow-hidden bg-yellow-400 transition-all duration-1000 ease-out ${
+          animate ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+        }`}
+      >
         {/* Abstract Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"/>
+              <pattern
+                id="grid"
+                width="40"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 40 0 L 0 0 0 40"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -102,25 +116,30 @@ const Login = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-between w-full p-12 text-gray-900">
           <div className="flex items-center space-x-2">
-             <Link to="/" className="text-2xl font-bold">
+            <Link to="/" className="text-2xl font-bold">
               <Logo />
             </Link>
           </div>
 
           <div className="space-y-6">
             <h1 className="text-5xl font-extrabold leading-tight">
-              Welcome Back to  <br />
-              <span className="bg-white px-2 italic text-yellow-500">Future Fashion.</span>
+              Welcome Back to <br />
+              <span className="bg-white px-2 italic text-yellow-500">
+                Future Fashion.
+              </span>
             </h1>
             <p className="text-lg font-medium max-w-md opacity-80">
-              Discover the latest trends in streetwear and high fashion, exclusively curated for the bold and the brave.
+              Discover the latest trends in streetwear and high fashion,
+              exclusively curated for the bold and the brave.
             </p>
           </div>
 
           <div className="flex items-center space-x-4 text-sm font-semibold">
             <span>© 2025 Beyoung.in</span>
             <span className="w-1 h-1 bg-gray-900 rounded-full"></span>
-            <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
+            <Link to="/privacy" className="hover:underline">
+              Privacy Policy
+            </Link>
           </div>
         </div>
 
@@ -131,25 +150,27 @@ const Login = () => {
 
       {/* RIGHT SIDE - FORM AREA */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 lg:p-12 relative bg-white">
-        
         {/* Mobile Logo */}
         <div className="absolute top-6 left-6 lg:hidden flex items-center space-x-2">
-              <div className="flex items-center space-x-2">
-             <Link to="/" className="text-2xl font-bold">
+          <div className="flex items-center space-x-2">
+            <Link to="/" className="text-2xl font-bold">
               <Logo />
             </Link>
           </div>
         </div>
 
-        <div className={`w-full max-w-md space-y-8 transition-all duration-700 delay-100 ${animate ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          
+        <div
+          className={`w-full max-w-md space-y-8 transition-all duration-700 delay-100 ${
+            animate ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+        >
           <div className="text-center lg:text-left">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-              Login  to your account
+              Login to your account
             </h2>
             <p className="mt-2 text-sm text-gray-500">
               New to Beyoung ?
-              <Link 
+              <Link
                 to="/signup"
                 className="ml-1 font-semibold text-yellow-500 hover:text-yellow-600 transition-colors focus:outline-none focus:underline"
               >
@@ -205,7 +226,10 @@ const Login = () => {
             </div>
 
             <div className="flex items-center justify-end">
-              <Link to="/forgot-password" className="text-sm font-medium text-gray-500 hover:text-yellow-600 transition-colors">
+              <Link
+                to="/forgot-password"
+                className="text-sm font-medium text-gray-500 hover:text-yellow-600 transition-colors"
+              >
                 Forgot your password?
               </Link>
             </div>
@@ -217,8 +241,8 @@ const Login = () => {
             >
               {loading ? (
                 <div className="flex items-center">
-                   <Loader2 className="h-5 w-5 animate-spin mr-2 text-gray-800" />
-                   <span>Please wait...</span>
+                  <Loader2 className="h-5 w-5 animate-spin mr-2 text-gray-800" />
+                  <span>Please wait...</span>
                 </div>
               ) : (
                 <>
@@ -233,7 +257,15 @@ const Login = () => {
 
           <div className="mt-6">
             <p className="text-center text-xs text-gray-400">
-              By continuing, you agree to Beyoung <Link to="/terms" className="underline hover:text-gray-600">Terms of Service</Link> and <Link to="/privacy" className="underline hover:text-gray-600">Privacy Policy</Link>.
+              By continuing, you agree to Beyoung{" "}
+              <Link to="/terms" className="underline hover:text-gray-600">
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link to="/privacy" className="underline hover:text-gray-600">
+                Privacy Policy
+              </Link>
+              .
             </p>
           </div>
         </div>

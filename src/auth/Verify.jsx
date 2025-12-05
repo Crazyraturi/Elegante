@@ -20,7 +20,6 @@ const Verify = () => {
           and click the **verification link** to complete your setup.
         </p>
 
-
         {/* <div className='mt-6 pt-4 border-t border-gray-100'>
             <p className='text-sm text-indigo-600 font-medium hover:text-indigo-500 cursor-pointer'>
                 Didn't receive the email? Resend link
