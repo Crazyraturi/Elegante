@@ -1,3 +1,10 @@
+import React, { useState, useEffect } from "react";
+import { Eye, EyeOff, ArrowRight, Mail, Lock, Loader2 } from "lucide-react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+import { toast } from "sonner";
+import { useAuth } from "@/context/AuthContext";
+import Logo from "@/components/icons/Logo";
 import React, { useState, useEffect, createContext, useContext } from "react";
 import {
   Eye,
@@ -106,6 +113,8 @@ const Login = () => {
       <div
         className={`hidden lg:flex lg:w-1/2 relative overflow-hidden bg-yellow-400 transition-all duration-1000 ease-out ${
           animate ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+        }`}
+      >
         }`}>
         {/* Abstract Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -115,7 +124,8 @@ const Login = () => {
                 id="grid"
                 width="40"
                 height="40"
-                patternUnits="userSpaceOnUse">
+                patternUnits="userSpaceOnUse"
+              >
                 <path
                   d="M 40 0 L 0 0 0 40"
                   fill="none"
@@ -177,6 +187,8 @@ const Login = () => {
         <div
           className={`w-full max-w-md space-y-8 transition-all duration-700 delay-100 ${
             animate ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+        >
           }`}>
           <div className="text-center lg:text-left">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">

@@ -1,6 +1,4 @@
 import React from "react";
-import bottomvideo from "../../assets/videos/About_Us_Last_Bottom_Video.mp4";
-import news  from "../../assets/news-desktop.jpg"
 
 const Teams = () => {
   return (
@@ -35,7 +33,8 @@ const Teams = () => {
           controls={false}
           loop
           playsInline
-          src={bottomvideo}></video>
+          src="https://res.cloudinary.com/dj9tpadhk/video/upload/v1764917858/About_Us_Last_Bottom_Video_vwhwge.mp4"
+        ></video>
       </div>
 
       <p className="text-center max-w-6xl m-auto">
@@ -49,8 +48,14 @@ const Teams = () => {
       </p>
 
       <div className="m-auto max-w-6xl mt-5">
-        <h2 className=" text-2xl font-bold text-center">Together We Have Achieved</h2>
-        <img className="object-cover mt-5" src={news} alt="news-desktop" />
+        <h2 className=" text-2xl font-bold text-center">
+          Together We Have Achieved
+        </h2>
+        <img
+          className="object-cover mt-5"
+          src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764918863/news-desktop_tfcwiy.jpg"
+          alt="news-desktop"
+        />
       </div>
     </div>
   );

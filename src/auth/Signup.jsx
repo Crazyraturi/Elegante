@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-// Removed Card, CardHeader, CardTitle, CardContent, CardFooter imports
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Loader2, ArrowRight } from "lucide-react";
@@ -8,9 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
 import Logo from "@/components/icons/Logo";
-import Loader from "@/components/common/Loder";
-// Import the logo if available, or just use the text
-// import Logo from "./path/to/Logo"; 
 
 const Signup = () => {
   const [showPassword, setshowPassword] = useState(false);
@@ -62,7 +58,8 @@ const Signup = () => {
       );
       if (res.data.success) {
         toast.success(
-          res.data.message || "Registration successful! Check your email for verification."
+          res.data.message ||
+            "Registration successful! Check your email for verification."
         );
         navigate("/login?verifyEmail=sent");
       }
@@ -80,21 +77,24 @@ const Signup = () => {
       {/* 1. Left Section (Yellow Background) */}
       <div className="flex flex-col justify-between p-10 bg-yellow-400 text-black">
         <div>
-            <div className="flex items-center space-x-2">
-             <Link to="/" className="text-2xl font-bold">
+          <div className="flex items-center space-x-2">
+            <Link to="/" className="text-2xl font-bold">
               <Logo />
             </Link>
           </div>
         </div>
-         <div className="space-y-6">
-            <h1 className="text-5xl font-extrabold leading-tight">
-              Welcome to  <br />
-              <span className="bg-white px-2 italic text-yellow-500">Future Fashion.</span>
-            </h1>
-            <p className="text-lg font-medium max-w-md opacity-80">
-              Discover the latest trends in streetwear and high fashion, exclusively curated for the bold and the brave.
-            </p>
-          </div>
+        <div className="space-y-6">
+          <h1 className="text-5xl font-extrabold leading-tight">
+            Welcome to <br />
+            <span className="bg-white px-2 italic text-yellow-500">
+              Future Fashion.
+            </span>
+          </h1>
+          <p className="text-lg font-medium max-w-md opacity-80">
+            Discover the latest trends in streetwear and high fashion,
+            exclusively curated for the bold and the brave.
+          </p>
+        </div>
         <div className="text-sm">
           <p>
             © 2025 Elegante •{" "}
@@ -207,7 +207,7 @@ const Signup = () => {
                 </>
               )}
             </Button>
-            
+
             {/* Terms and Privacy Policy Footer */}
             <p className="text-center text-xs text-gray-500 mt-4">
               By continuing, you agree to Elegante{" "}

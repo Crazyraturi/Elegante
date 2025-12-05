@@ -5,11 +5,9 @@ import { CheckCircle, XCircle, Loader } from "lucide-react";
 
 const Verifyemail = () => {
   const { token } = useParams();
-  // Initialize status to 'verifying'
   const [status, setStatus] = useState("verifying");
   const navigate = useNavigate();
 
-  // Helper function to get status-specific styles
   const getStatusStyles = () => {
     switch (status) {
       case "success":
@@ -33,7 +31,9 @@ const Verifyemail = () => {
       default:
         return {
           //  loader icon
-          icon: <Loader className="h-12 w-12 text-amber-200-500 animate-spin" />,
+          icon: (
+            <Loader className="h-12 w-12 text-amber-200-500 animate-spin" />
+          ),
           title: "Verifying Email...",
           bgColor: "bg-blue-50",
           textColor: "text-blue-700",
@@ -51,7 +51,6 @@ const Verifyemail = () => {
         {},
         {
           headers: {
-           
             Authorization: `Bearer ${token}`,
           },
         }
@@ -61,10 +60,10 @@ const Verifyemail = () => {
         setStatus("success");
         setTimeout(() => {
           navigate("/login");
-        }, 3000); 
+        }, 3000);
       }
     } catch (error) {
-      console.error("Verification error:", error); 
+      console.error("Verification error:", error);
       setStatus("failed");
     }
   };
@@ -73,21 +72,18 @@ const Verifyemail = () => {
     if (token) {
       verifyEmail();
     } else {
-     URL
+      URL;
       setStatus("failed");
     }
   }, [token]);
 
   return (
-    
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-    
       <div
-        className={`p-10 rounded-xl shadow-xl w-full max-w-sm text-center transition-colors duration-500 ${bgColor}`}>
-      
+        className={`p-10 rounded-xl shadow-xl w-full max-w-sm text-center transition-colors duration-500 ${bgColor}`}
+      >
         <div className="flex justify-center mb-6">{icon}</div>
 
-  
         <h2 className={`text-2xl font-bold mb-3 ${textColor}`}>{title}</h2>
 
         {/* Message */}
