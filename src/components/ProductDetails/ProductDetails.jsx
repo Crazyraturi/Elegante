@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useSearchParams, useLocation } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import { CartContext } from "../../../src/context/CartContext";
+import { WishlistContext } from "@/context/WishlistContext";
+import { useAuth } from "@/context/AuthContext";
+import { toast } from "sonner";
 import {
   Heart,
   ShoppingCart,
@@ -8,6 +12,7 @@ import {
   ChevronDown,
   ChevronUp,
   CheckCircle,
+  X,
 } from "lucide-react";
 import RecentlyViewed from "../Home/RecentlyViewed";
 import FeaturesSection from "../ProductDetails/FeaturesSection";
@@ -22,8 +27,7 @@ const StarIcon = (props) => (
     stroke="currentColor"
     strokeWidth="0"
     strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+    strokeLinejoin="round">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
   </svg>
 );
@@ -114,8 +118,7 @@ function ComboSelector({ product, addToCart }) {
         {itemNumbers.map((num, index) => (
           <div
             key={index}
-            className="grid grid-cols-2 gap-4 border-b pb-4 last:border-b-0 last:pb-0"
-          >
+            className="grid grid-cols-2 gap-4 border-b pb-4 last:border-b-0 last:pb-0">
             <h3 className="col-span-2 text-md font-medium text-gray-700">
               Item {num}
             </h3>
@@ -129,8 +132,7 @@ function ComboSelector({ product, addToCart }) {
                 <select
                   value={selections[index].color}
                   onChange={(e) => handleChange(index, "color", e.target.value)}
-                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm"
-                >
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm">
                   <option value="">Select Color</option>
                   {allColors.map((color) => (
                     <option key={color} value={color}>
@@ -153,8 +155,7 @@ function ComboSelector({ product, addToCart }) {
                 <select
                   value={selections[index].size}
                   onChange={(e) => handleChange(index, "size", e.target.value)}
-                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm"
-                >
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm">
                   <option value="">Select Size</option>
                   {uniqueSizes.map((size) => (
                     <option key={size} value={size}>
@@ -180,8 +181,7 @@ function ComboSelector({ product, addToCart }) {
             !isComboValid
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-[#212121] hover:bg-black"
-          }`}
-        >
+          }`}>
           <ShoppingCart className="inline w-5 h-5 mr-2" />
           {`ADD ${comboCount} ITEMS TO CART`}
         </button>
@@ -192,8 +192,7 @@ function ComboSelector({ product, addToCart }) {
             !isComboValid
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-[#ffdd00] hover:bg-[#e6c700]"
-          }`}
-        >
+          }`}>
           BUY NOW
         </button>
       </div>
@@ -205,7 +204,12 @@ export default function ProductPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart, cartItems } = useContext(CartContext);
+  const { wishlistItems, addToWishlist, removeFromWishlist } =
+    useContext(WishlistContext);
 
+  const { isAuthenticated } = useAuth();
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -302,6 +306,46 @@ export default function ProductPage() {
     availableSizes.find((s) => s.size === selectedSize)?._id?.$oid ||
     `${id}-${selectedColor}-${selectedSize}`;
 
+  const isWished = wishlistItems.some((item) => item.id === product._id);
+  // Product object for Wishlist (streamlined data for context)
+  const wishlistProductData = {
+    id: product._id,
+    name: product.title || product.name,
+    price: priceData.discounted || 0,
+    originalPrice: priceData.original || 0,
+    offPercent: priceData.offPercent || 0,
+    category: product.subCategory,
+    image: product.images.preview,
+    slug: product.slug || product._id,
+  };
+
+  // Handlers for Login Modal (for unauthenticated users)
+  const handleCloseLoginModal = () => {
+    setShowLoginModal(false);
+    setPhoneNumber("");
+  };
+
+  const handleLogin = () => {
+    console.log("Login with phone:", phoneNumber);
+    // Add real login/OTP logic here in a production app
+    handleCloseLoginModal();
+  };
+
+  const handleWishlistClick = () => {
+    if (isAuthenticated) {
+      if (isWished) {
+        removeFromWishlist(product._id);
+        toast.info("Removed from Wishlist");
+      } else {
+        addToWishlist(wishlistProductData);
+        toast.success("Added to Wishlist");
+      }
+    } else {
+      setShowLoginModal(true);
+      toast.warning("Login First to add to wishlist");
+    }
+  };
+
   // --- ADD TO CART HANDLER FUNCTION (FOR NON-COMBO PRODUCTS) ---
   const handleAddToCart = () => {
     // 1. Validation check
@@ -359,16 +403,26 @@ export default function ProductPage() {
                     selectedImageIndex === idx
                       ? "border-black"
                       : "border-gray-200"
-                  }`}
-                >
+                  }`}>
                   <img src={img} className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
 
             <div className="flex-1 h-[650px] relative bg-gray-100">
-              <button className="absolute top-4 right-4 bg-white rounded-full p-2 shadow z-10">
-                <Heart className="w-5 h-5" />
+              <button
+                onClick={handleWishlistClick}
+                aria-label={
+                  isWished ? "Remove from Wishlist" : "Add to Wishlist"
+                }
+                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow hover:shadow-lg transition-all z-10">
+                <Heart
+                  className={`w-5 h-5 transition-colors ${
+                    isWished
+                      ? "text-red-500 fill-red-500"
+                      : "text-gray-700 hover:text-red-500 hover:fill-red-500/20"
+                  }`}
+                />
               </button>
               <img
                 src={imageList[selectedImageIndex]}
@@ -481,8 +535,9 @@ export default function ProductPage() {
                             ? "border-black ring-2 ring-offset-1 ring-gray-300"
                             : "border-gray-300"
                         }`}
-                        style={{ backgroundColor: variant.color.toLowerCase() }}
-                      ></button>
+                        style={{
+                          backgroundColor: variant.color.toLowerCase(),
+                        }}></button>
                     ))}
                   </div>
                 </div>
@@ -507,8 +562,7 @@ export default function ProductPage() {
                             sizeObj.stock <= 0
                               ? "opacity-50 cursor-not-allowed bg-gray-100 line-through"
                               : ""
-                          }`}
-                        >
+                          }`}>
                           {sizeObj.size}
                         </button>
                       ))
@@ -529,8 +583,7 @@ export default function ProductPage() {
                       !isAvailable
                         ? "bg-gray-400 cursor-not-allowed"
                         : "bg-[#212121] hover:bg-black"
-                    }`}
-                  >
+                    }`}>
                     <ShoppingCart className="inline w-5 h-5 mr-2" />
                     {isAvailable ? "ADD TO CART" : "SELECT SIZE"}
                   </button>
@@ -596,8 +649,7 @@ export default function ProductPage() {
               <div className="border-b py-4">
                 <div
                   className="flex justify-between items-center cursor-pointer"
-                  onClick={() => toggle("spec")}
-                >
+                  onClick={() => toggle("spec")}>
                   <h3 className=" text-lg">Specifications</h3>
                   {openSection === "spec" ? <ChevronUp /> : <ChevronDown />}
                 </div>
@@ -612,8 +664,7 @@ export default function ProductPage() {
                           .map((spec, index) => (
                             <div
                               key={index}
-                              className="flex justify-between border-b pb-2"
-                            >
+                              className="flex justify-between border-b pb-2">
                               <span className="font-medium">{spec.key}</span>
                               <span>{spec.value}</span>
                             </div>
@@ -632,8 +683,7 @@ export default function ProductPage() {
               <div className="border-b py-4">
                 <div
                   className="flex justify-between items-center cursor-pointer"
-                  onClick={() => toggle("desc")}
-                >
+                  onClick={() => toggle("desc")}>
                   <h3 className=" text-lg">Description</h3>
                   {openSection === "desc" ? <ChevronUp /> : <ChevronDown />}
                 </div>
@@ -649,8 +699,7 @@ export default function ProductPage() {
               <div className="border-b py-4">
                 <div
                   className="flex justify-between items-center cursor-pointer"
-                  onClick={() => toggle("policy")}
-                >
+                  onClick={() => toggle("policy")}>
                   <h3 className=" text-lg">
                     Returns, Exchange, & Refund Policy
                   </h3>
@@ -695,8 +744,7 @@ export default function ProductPage() {
               <div className="border-b py-4">
                 <div
                   className="flex justify-between items-center cursor-pointer"
-                  onClick={() => toggle("market")}
-                >
+                  onClick={() => toggle("market")}>
                   <h3 className=" text-lg">Marketed By</h3>
                   {openSection === "market" ? <ChevronUp /> : <ChevronDown />}
                 </div>
@@ -724,8 +772,7 @@ export default function ProductPage() {
               <div className="border-b py-4" id="ratings-reviews-anchor">
                 <div
                   className="flex justify-between items-center cursor-pointer"
-                  onClick={() => toggle("reviews")}
-                >
+                  onClick={() => toggle("reviews")}>
                   <h3 className=" text-lg">Ratings & Reviews</h3>
                   {openSection === "reviews" ? <ChevronUp /> : <ChevronDown />}
                 </div>
@@ -758,8 +805,7 @@ export default function ProductPage() {
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
           } 
-          bg-green-600 text-white flex items-center gap-3`}
-      >
+           text-white flex items-center gap-3`}>
         <CheckCircle className="w-6 h-6" />
         <div>
           <p className="font-bold text-lg">Product Added!</p>
@@ -769,11 +815,11 @@ export default function ProductPage() {
         </div>
         <button
           onClick={() => navigate("/cart")}
-          className="ml-4 bg-white text-green-600 font-semibold px-3 py-1 rounded hover:bg-gray-100"
-        >
+          className="ml-4 bg-white text-green-600 font-semibold px-3 py-1 rounded hover:bg-gray-100">
           View Cart ({cartItems.length})
         </button>
       </div>
+    
     </div>
   );
 }

@@ -14,10 +14,8 @@ import {
 } from "lucide-react";
 import { useContext } from "react";
 import { WishlistContext } from "@/context/WishlistContext";
+import { Link } from "react-router-dom";
 
-import empty_order from "../assets/Empty-cuate.svg";
-import wishlist from "../assets/Online wishes list-cuate.svg";
-import contact_svg from "../assets/brand communication-cuate.svg";
 import { useAuth } from "@/context/AuthContext";
 import { useEffect } from "react";
 
@@ -174,8 +172,7 @@ const MyAccount = () => {
             {addresses.map((addr) => (
               <div
                 key={addr.id}
-                className="border border-gray-300 rounded-lg p-4 mb-4"
-              >
+                className="border border-gray-300 rounded-lg p-4 mb-4">
                 <div className="flex justify-between">
                   <div>
                     <h3 className="font-semibold mb-1">{addr.name}</h3>
@@ -190,8 +187,7 @@ const MyAccount = () => {
                     </button>
                     <button
                       onClick={() => handleDeleteAddress(addr.id)}
-                      className="text-gray-500 hover:text-red-600"
-                    >
+                      className="text-gray-500 hover:text-red-600">
                       <Trash2 size={18} />
                     </button>
                   </div>
@@ -205,22 +201,13 @@ const MyAccount = () => {
         return (
           <div className="bg-white rounded-lg p-8">
             <h2 className="text-xl font-semibold mb-6">Your Wishlist</h2>
-            <div className="flex flex-col items-center justify-center mb-8">
-              <div className="w-48 h-48 mb-6">
-                <img
-                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934077/Online_wishes_list-cuate_n0yxrb.svg"
-                  alt="wishlist_items"
-                />
-              </div>
-              <p className="text-gray-700 text-center italic mb-8">
-                "Add your must-have clothes to your favorites and never miss a
-                stylish beat."
-              </p>
-            </div>
 
             {wishlistItems.length === 0 ? (
               <div className="flex flex-col items-center justify-center">
-                <img src={wishlist} className="w-60 h-60 mb-4" />
+                <img
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934077/Online_wishes_list-cuate_n0yxrb.svg"
+                  className="w-60 h-60 mb-4"
+                />
                 <p className="text-gray-700 italic text-center mb-6">
                   Your wishlist is empty! Add your favourite fashion items ♥
                 </p>
@@ -231,28 +218,37 @@ const MyAccount = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {wishlistItems.map((item) => (
-                  <div
+                  <Link
+                    to={`/product/${item.id}`} // Assuming the product detail route is /product/:id
                     key={item.id}
-                    className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-                  >
+                    // Apply card styling to the Link component
+                    className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group relative">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-top object-cover"
                     />
                     <div className="p-3">
                       <h4 className="font-semibold">{item.name}</h4>
                       <p className="text-sm text-gray-600">{item.category}</p>
                       <div className="flex justify-between items-center mt-2">
-                        <span className="font-bold">{item.price}</span>
+                        {/* Assuming item.price needs currency (e.g., ₹) for display */}
+                        <span className="font-bold">₹{item.price}</span>
+
+                        {/* 🚨 CHANGE 2: Ensure the button click prevents navigation */}
                         <button
-                          onClick={() => removeFromWishlist(item.id)}
-                          className="text-red-500 hover:text-red-700">
+                          onClick={(e) => {
+                            e.preventDefault(); // Prevent Link navigation
+                            e.stopPropagation(); // Stop event from bubbling up to the Link
+                            removeFromWishlist(item.id);
+                          }}
+                          className="text-red-500 hover:text-red-700 p-1 rounded-full bg-white/50 group-hover:bg-white transition-colors"
+                          aria-label={`Remove ${item.name} from wishlist`}>
                           <Trash2 size={18} />
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
@@ -267,8 +263,7 @@ const MyAccount = () => {
               {coupons.map((coupon, idx) => (
                 <div
                   key={idx}
-                  className="border border-gray-300 rounded-lg p-4 flex items-center gap-4"
-                >
+                  className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
                   <div className="bg-yellow-400 text-black font-bold px-3 py-8 rounded  transform -rotate-90 origin-center whitespace-nowrap text-sm">
                     ELEGANTE
                   </div>
@@ -393,8 +388,7 @@ const MyAccount = () => {
                       ? handleProfileSave()
                       : setIsEditingProfile(true)
                   }
-                  className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
-                >
+                  className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors">
                   {isEditingProfile ? (
                     <span className="text-sm font-semibold text-blue-600">
                       SAVE
@@ -470,8 +464,7 @@ const MyAccount = () => {
                             ? "text-red-600 hover:bg-red-50"
                             : ""
                         }
-                      `}
-                    >
+                      `}>
                       <Icon size={20} />
                       <span className="flex-1 text-left">{item.label}</span>
                       {/* Hide arrow for Logout button */}
@@ -482,8 +475,7 @@ const MyAccount = () => {
                           }`}
                           fill="none"
                           stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
+                          viewBox="0 0 24 24">
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"

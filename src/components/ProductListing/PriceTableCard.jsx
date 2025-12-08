@@ -34,14 +34,12 @@ const PriceTableCard = ({ data }) => {
               <tr>
                 <th
                   scope="col"
-                  className="px-4 py-3 text-left text-sm font-semibold text-gray-700"
-                >
+                  className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
                   Product
                 </th>
                 <th
                   scope="col"
-                  className="px-4 py-3 text-right text-sm font-semibold text-gray-700 w-2/4"
-                >
+                  className="px-4 py-3 text-right text-sm font-semibold text-gray-700 w-2/4">
                   Best Price
                 </th>
               </tr>
@@ -72,8 +70,7 @@ const PriceTableCard = ({ data }) => {
                       // Use window.location.href for immediate navigation
                       // In a real React app, you might prefer the useNavigate hook from react-router-dom
                       window.location.href = detailPageUrl;
-                    }}
-                  >
+                    }}>
                     <td className="px-4 py-2 whitespace-nowrap text-sm text-gray-700">
                       {/* Use a <span> for the title. The <a> tag is removed as navigation is handled by the row's onClick. */}
                       <span className="text-blue-600 hover:text-blue-800 font-medium">

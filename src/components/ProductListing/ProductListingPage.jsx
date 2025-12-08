@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useMemo, useCallback, useContext } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import { X } from "lucide-react";
@@ -13,7 +13,10 @@ import { BOTTOMWEAR_DATA } from "./Bottomwear.js";
 import { Combos_DATA } from "./Combos.js";
 import { WinterWear_DATA } from "./WinterWear.js";
 import { NewArrival_DATA } from "./NewArrival.js";
+import { WishlistContext } from "@/context/WishlistContext";
+import { useAuth } from "@/context/AuthContext";
 import Loader from "../common/Loader";
+import { toast } from "sonner";
 
 const API_BASE_URL = "https://beyoung-backend.onrender.com/api/v1/product";
 
@@ -44,16 +47,26 @@ const getNestedValue = (obj, path) => {
 
 export default function ProductListingPage() {
   const [searchParams] = useSearchParams();
+
   const location = useLocation();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { addToWishlist, wishlistItems } = useContext(WishlistContext);
+  const { isAuthenticated } = useAuth();
   const [sortOption, setSortOption] = useState("Recommended");
   const [showPopup, setShowPopup] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedFilters, setSelectedFilters] = useState({});
 
-  const handleHeartClick = () => setShowPopup(true);
+  const handleHeartClick = (product) => {
+    if (isAuthenticated) {
+      addToWishlist(product);
+    } else {
+      setShowPopup(true);
+      toast.warning("Login First to add to wishlist");
+    }
+  };
   const handleSortChange = (newSort) => setSortOption(newSort);
 
   const handleClosePopup = () => {
@@ -404,17 +417,33 @@ export default function ProductListingPage() {
             </div>
             {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
-                {filteredProducts.map((product) => (
-                  <ProductCard
-                    key={product._id}
-                    product={product}
-                    handleHeartClick={handleHeartClick}
-                  />
-                ))}
+                {filteredProducts.map((product) => {
+                  const isWished = wishlistItems.some(
+                    (item) => item.id === product._id
+                  );
+                  const wishlistProductData = {
+                    id: product._id,
+                    name: product.name,
+                    price: product.price?.final,
+                    category: product.subCategory,
+                    image: product.image?.[0]?.url,
+                    slug: product.slug,
+                  };
+                  return (
+                    <ProductCard
+                      key={product._id}
+                      product={product}
+                      handleHeartClick={() =>
+                        handleHeartClick(wishlistProductData)
+                      }
+                      isWished={isWished}
+                    />
+                  );
+                })}
               </div>
             ) : (
               <div className="text-center py-10 text-gray-500 border rounded-lg bg-gray-50">
-                🤷‍♂️ No products found for the current selection.
+                No products found for the current selection.
               </div>
             )}
           </div>
@@ -425,47 +454,6 @@ export default function ProductListingPage() {
           priceTableData={finalPriceTableData}
         />
       </div>
-      {showPopup && (
-        <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4"
-          onClick={handleClosePopup}
-        >
-          <div
-            className="bg-white p-8 rounded-lg shadow-2xl max-w-sm w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-bold text-gray-900">
-                Login/Signup Required
-              </h3>
-              <button
-                onClick={handleClosePopup}
-                className="text-gray-400 hover:text-gray-600"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <p className="mb-4 text-sm text-gray-600">
-              Please enter your phone number to login or signup and add items to
-              your wishlist.
-            </p>
-            <input
-              type="tel"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="Enter 10-digit Phone Number"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 mb-4"
-            />
-            <button
-              onClick={handleLogin}
-              disabled={phoneNumber.length !== 10}
-              className="w-full bg-yellow-400 text-gray-900 font-semibold py-3 rounded-lg hover:bg-yellow-500 transition-colors disabled:opacity-60"
-            >
-              CONTINUE
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

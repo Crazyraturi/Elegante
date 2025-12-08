@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 
-const ProductCard = ({ product, handleHeartClick }) => {
+const ProductCard = ({ product, handleHeartClick, isWished }) => {
   // Ensure product.images exists, otherwise set to an empty object for safe destructuring
   const images = product.images || {};
 
@@ -51,11 +51,9 @@ const ProductCard = ({ product, handleHeartClick }) => {
 
   return (
     <Link
-      // 🚨 FINAL FIX: Changed the path from /product-details/:id to /product/:id
       to={`/product/${product._id}`}
       key={product._id}
-      className="bg-white rounded-lg overflow-hidden block group"
-    >
+      className="bg-white rounded-lg overflow-hidden block group">
       <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
         {/* Wishlist Button */}
         <button
@@ -64,9 +62,14 @@ const ProductCard = ({ product, handleHeartClick }) => {
             e.stopPropagation();
             handleHeartClick();
           }}
-          className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
-        >
-          <Heart className="w-4 h-4 text-gray-700" />
+          className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10">
+          <Heart
+            className={`w-4 h-4 transition-colors ${
+              isWished
+                ? "text-red-500 fill-red-500"
+                : "text-gray-700 hover:text-red-500 hover:fill-red-500/20"
+            }`}
+          />
         </button>
         {/* Main Image */}
         <img

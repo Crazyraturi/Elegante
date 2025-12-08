@@ -1,7 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Heart, X } from "lucide-react";
 import Loader from "../common/Loader";
+// 🚨 NEW IMPORTS
+import { WishlistContext } from "@/context/WishlistContext";
+import { useAuth } from "@/context/AuthContext";
+import { toast } from "sonner";
 
 const NewArrival = () => {
   const [activeTab, setActiveTab] = useState("viewAll");
@@ -11,6 +15,10 @@ const NewArrival = () => {
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(12);
   const observerTarget = useRef(null);
+
+  // 🚨 CONTEXT CONSUMPTION
+  const { addToWishlist, wishlistItems } = useContext(WishlistContext);
+  const { isAuthenticated } = useAuth();
 
   const shuffleArray = (array) => {
     let shuffled = [...array];
@@ -94,7 +102,15 @@ const NewArrival = () => {
     };
   }, [observerTarget, filteredProducts]);
 
-  const handleHeartClick = () => setShowPopup(true);
+  // 🚨 MODIFIED: Logic to use Auth and Wishlist contexts
+  const handleHeartClick = (productData) => {
+    if (isAuthenticated) {
+      addToWishlist(productData);
+    } else {
+      setShowPopup(true);
+     toast.warning("Login First to add to wishlist");
+    }
+  };
 
   const handleClosePopup = () => {
     setShowPopup(false);
@@ -113,8 +129,7 @@ const NewArrival = () => {
           ? "bg-black text-white shadow-md"
           : "bg-gray-100 text-gray-600 hover:bg-gray-200"
       }`}
-      onClick={() => setActiveTab(tabValue)}
-    >
+      onClick={() => setActiveTab(tabValue)}>
       {label}
     </button>
   );
@@ -177,13 +192,32 @@ const NewArrival = () => {
               const originalPrice = priceInfo.original || 0;
               const offPercent = priceInfo.offPercent || 0;
 
+              // 🚨 NEW: Calculate isWished status
+              const isWished = wishlistItems.some(
+                (item) => item.id === product._id
+              );
+
+              // 🚨 NEW: Construct streamlined product object for context
+              const wishlistProductData = {
+                id: product._id,
+                name: product.title || product.name,
+                price: price,
+                category: product.subCategory,
+                image: mainImage,
+                slug: product.slug,
+              };
+
               return (
                 <Link
-                  // 🚨 FIX APPLIED HERE: Change the path to the correct, working route
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // 🚨 MODIFIED: Pass the full product data to the handler
+                    handleHeartClick(wishlistProductData);
+                  }}
                   to={`/product/${product._id}`}
                   key={product._id}
-                  className="bg-white rounded-lg overflow-hidden block group"
-                >
+                  className="bg-white rounded-lg overflow-hidden block group">
                   <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
                     <img
                       src={mainImage}
@@ -203,11 +237,21 @@ const NewArrival = () => {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        handleHeartClick();
+                        // 🚨 MODIFIED: Pass the product data to the handler
+                        handleHeartClick(wishlistProductData);
                       }}
                       className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
-                    >
-                      <Heart className="w-4 h-4 text-gray-700" />
+                      aria-label={
+                        isWished ? "Remove from Wishlist" : "Add to Wishlist"
+                      }>
+                      {/* 🚨 MODIFIED: Dynamic styling for the heart icon */}
+                      <Heart
+                        className={`w-4 h-4 transition-colors ${
+                          isWished
+                            ? "text-red-500 fill-red-500"
+                            : "text-gray-700 hover:text-red-500 hover:fill-red-500/20"
+                        }`}
+                      />
                     </button>
                   </div>
 
@@ -245,51 +289,16 @@ const NewArrival = () => {
           {displayedProducts.length < filteredProducts.length && (
             <div
               ref={observerTarget}
-              className="h-20 flex justify-center items-center w-full mt-4"
-            >
-              <Loader className="w-6 h-6  text-gray-400" />
+              className="h-20 flex justify-center items-center w-full mt-4">
+              <Loader className="w-6 h-6  text-gray-400" />
             </div>
           )}
         </div>
       )}
 
-      {showPopup && (
-        <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4"
-          onClick={handleClosePopup}
-        >
-          <div
-            className="bg-white rounded-2xl w-full max-w-sm overflow-hidden relative shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={handleClosePopup}
-              className="absolute top-3 right-3 z-10 bg-white/80 rounded-full p-1 hover:bg-gray-100"
-            >
-              <X className="w-5 h-5 text-gray-600" />
-            </button>
-            <div className="p-8 text-center">
-              <h2 className="text-xl font-bold mb-4">Login to continue</h2>
-              <p className="mb-4 text-gray-600 text-sm">
-                Please enter your phone number to add items to your wishlist.
-              </p>
-              <input
-                className="w-full border p-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="Phone Number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                type="tel"
-              />
-              <button
-                onClick={handleLogin}
-                className="w-full bg-yellow-400 py-2 rounded font-bold hover:bg-yellow-500 transition-colors"
-              >
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+       
+     
+      
     </section>
   );
 };
