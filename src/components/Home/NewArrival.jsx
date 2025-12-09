@@ -10,14 +10,13 @@ import { toast } from "sonner";
 const NewArrival = () => {
   const [activeTab, setActiveTab] = useState("viewAll");
   const [showPopup, setShowPopup] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(12);
   const observerTarget = useRef(null);
 
   // 🚨 CONTEXT CONSUMPTION
-  const { addToWishlist, wishlistItems } = useContext(WishlistContext);
+  const { addToWishlist, wishlistItems,removeFromWishlist } = useContext(WishlistContext);
   const { isAuthenticated } = useAuth();
 
   const shuffleArray = (array) => {
@@ -103,12 +102,19 @@ const NewArrival = () => {
   }, [observerTarget, filteredProducts]);
 
   // 🚨 MODIFIED: Logic to use Auth and Wishlist contexts
-  const handleHeartClick = (productData) => {
-    if (isAuthenticated) {
-      addToWishlist(productData);
-    } else {
+  const handleHeartClick = (productData,isWished) => {
+    if (!isAuthenticated){
       setShowPopup(true);
-     toast.warning("Login First to add to wishlist");
+      toast.warning("Login First to add to wishlist")
+      return;
+    } 
+
+    if (isWished) {
+      removeFromWishlist(productData.id);
+      toast.info("removed from Wishlist");
+    } else {
+      addToWishlist(productData);
+      toast.success("Added to Wishlist")
     }
   };
 
@@ -117,11 +123,7 @@ const NewArrival = () => {
     setPhoneNumber("");
   };
 
-  const handleLogin = () => {
-    console.log("Login with phone:", phoneNumber);
-    handleClosePopup();
-  };
-
+ 
   const tabButton = (tabValue, label) => (
     <button
       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
@@ -209,12 +211,6 @@ const NewArrival = () => {
 
               return (
                 <Link
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    // 🚨 MODIFIED: Pass the full product data to the handler
-                    handleHeartClick(wishlistProductData);
-                  }}
                   to={`/product/${product._id}`}
                   key={product._id}
                   className="bg-white rounded-lg overflow-hidden block group">
@@ -238,7 +234,7 @@ const NewArrival = () => {
                         e.preventDefault();
                         e.stopPropagation();
                         // 🚨 MODIFIED: Pass the product data to the handler
-                        handleHeartClick(wishlistProductData);
+                        handleHeartClick(wishlistProductData , isWished);
                       }}
                       className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
                       aria-label={
