@@ -819,7 +819,6 @@ export default function ProductPage() {
           View Cart ({cartItems.length})
         </button>
       </div>
-    
     </div>
   );
 }

@@ -52,21 +52,29 @@ export default function ProductListingPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { addToWishlist, wishlistItems } = useContext(WishlistContext);
+  const { addToWishlist, wishlistItems, removeFromWishlist } =
+    useContext(WishlistContext);
   const { isAuthenticated } = useAuth();
   const [sortOption, setSortOption] = useState("Recommended");
   const [showPopup, setShowPopup] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedFilters, setSelectedFilters] = useState({});
 
-  const handleHeartClick = (product) => {
-    if (isAuthenticated) {
-      addToWishlist(product);
-    } else {
+  const handleHeartClick = (productData, isWished) => {
+    if (!isAuthenticated) {
       setShowPopup(true);
       toast.warning("Login First to add to wishlist");
+      return;
+    }
+    if (isWished) {
+      removeFromWishlist(productData.id);
+      toast.info("Removed from Wishlist");
+    } else {
+      addToWishlist(productData);
+      toast.success("Added to Wishlist!");
     }
   };
+
   const handleSortChange = (newSort) => setSortOption(newSort);
 
   const handleClosePopup = () => {
@@ -418,15 +426,23 @@ export default function ProductListingPage() {
             {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
                 {filteredProducts.map((product) => {
+                  const priceInfo = product.variants?.[0]?.price || {};
+                  const finalPrice =
+                    product.price?.final || priceInfo.discounted || 0;
+
+                  const mainImage =
+                    product.images?.preview ||
+                    product.image?.[0]?.url ||
+                    "https://via.placeholder.com/300x400?text=No+Image";
                   const isWished = wishlistItems.some(
                     (item) => item.id === product._id
                   );
                   const wishlistProductData = {
                     id: product._id,
-                    name: product.name,
-                    price: product.price?.final,
+                    name: product.title || product.name,
+                    price: finalPrice,
                     category: product.subCategory,
-                    image: product.image?.[0]?.url,
+                    image: mainImage,
                     slug: product.slug,
                   };
                   return (
@@ -434,7 +450,7 @@ export default function ProductListingPage() {
                       key={product._id}
                       product={product}
                       handleHeartClick={() =>
-                        handleHeartClick(wishlistProductData)
+                        handleHeartClick(wishlistProductData, isWished)
                       }
                       isWished={isWished}
                     />
