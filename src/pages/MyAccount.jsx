@@ -10,7 +10,10 @@ import {
   LogOut,
   Edit2,
   Plus,
-  Trash2,
+  Trash2, // Used for Delete icon
+  XCircle, // Used for Cancel icon
+  CheckCircle, // Used for success notification
+  ChevronDown, // Used for reason modal
 } from "lucide-react";
 import { useContext } from "react";
 import { WishlistContext } from "@/context/WishlistContext";
@@ -71,39 +74,6 @@ const MyAccount = () => {
     },
   ];
 
-  const recentlyViewed = [
-    {
-      id: 1,
-      name: "Pack Of 4 - Chill Vibe Boxers",
-      category: "Boxers",
-      price: "₹998",
-      oldPrice: "₹1798",
-      discount: "55% off",
-      image:
-        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764573435/beyoung_products/blftomf1y3lrcyep9ctb.jpg",
-    },
-    {
-      id: 2,
-      name: "Pecan Brown Elbow Patch Sweatshirt",
-      category: "Sweatshirts",
-      price: "₹1199",
-      oldPrice: "₹2999",
-      discount: "60% off",
-      image:
-        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764569169/beyoung_products/upwoewbgxlstodj6goeq.jpg",
-    },
-    {
-      id: 3,
-      name: "Beige Turtle Neck Sweatshirt",
-      category: "Sweatshirts",
-      price: "₹1499",
-      oldPrice: "₹3799",
-      discount: "68% off",
-      image:
-        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764509580/beyoung_products/wgwo727yp8ul6qkh5pdf.jpg",
-    },
-  ];
-
   const menuItems = [
     { id: "orders", icon: ShoppingCart, label: "My Orders" },
     { id: "address", icon: MapPin, label: "My Address" },
@@ -115,16 +85,109 @@ const MyAccount = () => {
     { id: "logout", icon: LogOut, label: "Logout" },
   ];
 
+  // CANCELLATION STATE
+  const [showCancelModal, setShowCancelModal] = useState(false);
+  const [orderToCancelId, setOrderToCancelId] = useState(null);
+  const [cancelReason, setCancelReason] = useState("");
+  const [showCancelSuccess, setShowCancelSuccess] = useState(false);
+
+  // ⭐ DELETE STATE ADDED
+  const [showDeleteSuccess, setShowDeleteSuccess] = useState(false);
+
+  const cancelReasons = [
+    "Changed my mind",
+    "Ordered wrong size/color",
+    "Found cheaper elsewhere",
+    "Delivery date is too long",
+    "Other reasons",
+  ];
+
+  // Function to open the cancellation modal
+  const handleOpenCancelModal = (orderId) => {
+    setOrderToCancelId(orderId);
+    setCancelReason(""); // Reset reason
+    setShowCancelModal(true);
+  };
+
+  // ⭐ FUNCTION: Handle Permanent Delete
+  const handlePermanentDelete = (orderId) => {
+    if (
+      window.confirm(
+        "Are you sure you want to permanently delete this order record? This action cannot be undone."
+      )
+    ) {
+      // 1. Get existing orders
+      const existingOrders = JSON.parse(
+        localStorage.getItem("beyoung_orders") || "[]"
+      );
+
+      // 2. Filter out the order to be deleted
+      const updatedOrders = existingOrders.filter(
+        (order) => order.id !== orderId
+      );
+
+      // 3. Save the filtered list back to localStorage
+      localStorage.setItem("beyoung_orders", JSON.stringify(updatedOrders));
+
+      // 4. Show success notification
+      setShowDeleteSuccess(true);
+
+      // 5. Force re-render of orders section
+      // Note: Using a non-changing value to force re-render, useful when state data changes but active section doesn't
+      setActiveSection(null);
+      setTimeout(() => setActiveSection("orders"), 50);
+
+      // Hide success notification after 3 seconds
+      setTimeout(() => setShowDeleteSuccess(false), 3000);
+    }
+  };
+
+  // FUNCTION: Handle Order Cancellation (Status Update)
+  const handleCancelOrder = () => {
+    if (!orderToCancelId || !cancelReason) return;
+
+    // 1. Get existing orders
+    const existingOrders = JSON.parse(
+      localStorage.getItem("beyoung_orders") || "[]"
+    );
+
+    // 2. Update the status of the specific order
+    const updatedOrders = existingOrders.map((order) =>
+      order.id === orderToCancelId
+        ? {
+            ...order,
+            status: "Cancelled",
+            cancellationReason: cancelReason,
+            cancellationDate: new Date().toLocaleDateString(),
+          }
+        : order
+    );
+
+    // 3. Save the updated list back to localStorage
+    localStorage.setItem("beyoung_orders", JSON.stringify(updatedOrders));
+
+    // 4. Close modal and show success notification
+    setShowCancelModal(false);
+    setShowCancelSuccess(true);
+
+    // 5. Force re-render of orders section
+    setActiveSection(null);
+    setTimeout(() => setActiveSection("orders"), 50);
+
+    // Hide success notification after 3 seconds
+    setTimeout(() => setShowCancelSuccess(false), 3000);
+  };
+
+  // --- Standard Handlers (Kept as is) ---
   const handleDeleteAddress = (id) => {
     setAddresses(addresses.filter((addr) => addr.id !== id));
   };
 
   const handleLogout = () => {
-    logout(); // 🔑 Call the imported logout functionm
+    logout();
   };
 
   const handleProfileSave = () => {
-    // 🚨 Add API call here to persist changes
     console.log("Saving profile:", userProfile);
     setIsEditingProfile(false);
   };
@@ -140,25 +203,141 @@ const MyAccount = () => {
   const renderContent = () => {
     switch (activeSection) {
       case "orders":
+        // Fetching orders from LocalStorage
+        const storedOrders = JSON.parse(
+          localStorage.getItem("beyoung_orders") || "[]"
+        );
+
         return (
-          <div className="bg-white rounded-lg p-8 flex flex-col items-center justify-center min-h-[570px]">
-            <div className="w-64 h-64 mb-6 relative">
-              <img
-                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934070/Empty-cuate_ax4cwi.svg"
-                alt=""
-              />
-            </div>
-            <h2 className="text-2xl font-semibold mb-3">No Order Placed Yet</h2>
-            <p className="text-gray-600 text-center mb-6 max-w-md">
-              You have not placed an order yet! please add items to your cart
-              and checkout when you are ready
-            </p>
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-12 rounded-full transition-colors">
-              Explore products
-            </button>
+          <div className="space-y-6">
+            {storedOrders.length === 0 ? (
+              // Empty State UI
+              <div className="bg-white rounded-lg p-8 flex flex-col items-center justify-center min-h-[570px]">
+                <div className="w-64 h-64 mb-6 relative">
+                  <img
+                    src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934070/Empty-cuate_ax4cwi.svg"
+                    alt="No Orders"
+                  />
+                </div>
+                <h2 className="text-2xl font-semibold mb-3">
+                  No Order Placed Yet
+                </h2>
+                <p className="text-gray-600 text-center mb-6 max-w-md">
+                  You have not placed an order yet! please add items to your
+                  cart and checkout when you are ready
+                </p>
+                <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-12 rounded-full transition-colors">
+                  Explore products
+                </button>
+              </div>
+            ) : (
+              // Orders List UI
+              storedOrders.map((order) => (
+                <div
+                  key={order.id}
+                  className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
+                >
+                  {/* Order Header */}
+                  <div className="flex justify-between items-start border-b pb-4 mb-4">
+                    <div>
+                      <p className="font-bold text-lg">Order ID: {order.id}</p>
+                      <p className="text-sm text-gray-500">
+                        Ordered on: {order.date}
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <span
+                        className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-1 ${
+                          order.status === "Confirmed"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-red-100 text-red-700"
+                        }`}
+                      >
+                        {order.status}
+                      </span>
+                      <p className="font-bold text-xl">Total: ₹{order.total}</p>
+                    </div>
+                  </div>
+
+                  {/* Items List (Simplified for brevity) */}
+                  <div className="space-y-4">
+                    {order.items.map((item, index) => (
+                      <div key={index} className="flex gap-4 items-start">
+                        <div className="w-16 h-20 bg-gray-100 rounded-md overflow-hidden flex-shrink-0">
+                          <img
+                            src={
+                              item.image ||
+                              "https://via.placeholder.com/80?text=Product"
+                            }
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-800">
+                            {item.name}
+                          </h4>
+                          <p className="text-sm text-gray-500">
+                            Qty: {item.quantity || 1}
+                          </p>
+                          <p className="font-medium mt-1">₹{item.price}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Footer/Details */}
+                  <div className="mt-4 pt-4 border-t flex justify-between items-center text-sm">
+                    <div className="text-gray-600">
+                      Payment:{" "}
+                      <span className="font-medium text-black">
+                        {order.paymentMethod}
+                      </span>
+                    </div>
+                    {order.status === "Confirmed" ? (
+                      <div className="text-gray-600">
+                        Delivery:{" "}
+                        <span className="font-medium text-black">
+                          {order.deliveryDate}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-gray-600 text-red-600">
+                        Reason:{" "}
+                        <span className="font-medium">
+                          {order.cancellationReason}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* ⭐ ACTION BUTTONS */}
+                  <div className="mt-4 pt-3 border-t flex justify-start gap-4">
+                    {/* Cancel Button (Only if confirmed) */}
+                    {order.status === "Confirmed" && (
+                      <button
+                        onClick={() => handleOpenCancelModal(order.id)}
+                        className="flex items-center gap-2 text-sm font-semibold text-red-600 border border-red-300 px-4 py-2 rounded-lg hover:bg-red-50 transition-colors"
+                      >
+                        <XCircle size={16} /> Cancel Order
+                      </button>
+                    )}
+
+                    {/* Permanent Delete Button */}
+                    <button
+                      onClick={() => handlePermanentDelete(order.id)}
+                      className="flex items-center gap-2 text-sm font-semibold text-gray-600 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <Trash2 size={16} /> Delete Record
+                    </button>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         );
 
+      // ... (Other cases remain as they are)
       case "address":
         return (
           <div className="bg-white rounded-lg p-8">
@@ -172,7 +351,8 @@ const MyAccount = () => {
             {addresses.map((addr) => (
               <div
                 key={addr.id}
-                className="border border-gray-300 rounded-lg p-4 mb-4">
+                className="border border-gray-300 rounded-lg p-4 mb-4"
+              >
                 <div className="flex justify-between">
                   <div>
                     <h3 className="font-semibold mb-1">{addr.name}</h3>
@@ -187,7 +367,8 @@ const MyAccount = () => {
                     </button>
                     <button
                       onClick={() => handleDeleteAddress(addr.id)}
-                      className="text-gray-500 hover:text-red-600">
+                      className="text-gray-500 hover:text-red-600"
+                    >
                       <Trash2 size={18} />
                     </button>
                   </div>
@@ -219,10 +400,9 @@ const MyAccount = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {wishlistItems.map((item) => (
                   <Link
-                    to={`/product/${item.id}`} // Assuming the product detail route is /product/:id
                     key={item.id}
-                    // Apply card styling to the Link component
-                    className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group relative">
+                    className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group relative"
+                  >
                     <img
                       src={item.image}
                       alt={item.name}
@@ -232,18 +412,17 @@ const MyAccount = () => {
                       <h4 className="font-semibold">{item.name}</h4>
                       <p className="text-sm text-gray-600">{item.category}</p>
                       <div className="flex justify-between items-center mt-2">
-                        {/* Assuming item.price needs currency (e.g., ₹) for display */}
                         <span className="font-bold">₹{item.price}</span>
 
-                        {/* 🚨 CHANGE 2: Ensure the button click prevents navigation */}
                         <button
                           onClick={(e) => {
-                            e.preventDefault(); // Prevent Link navigation
-                            e.stopPropagation(); // Stop event from bubbling up to the Link
+                            e.preventDefault();
+                            e.stopPropagation();
                             removeFromWishlist(item.id);
                           }}
                           className="text-red-500 hover:text-red-700 p-1 rounded-full bg-white/50 group-hover:bg-white transition-colors"
-                          aria-label={`Remove ${item.name} from wishlist`}>
+                          aria-label={`Remove ${item.name} from wishlist`}
+                        >
                           <Trash2 size={18} />
                         </button>
                       </div>
@@ -263,8 +442,9 @@ const MyAccount = () => {
               {coupons.map((coupon, idx) => (
                 <div
                   key={idx}
-                  className="border border-gray-300 rounded-lg p-4 flex items-center gap-4">
-                  <div className="bg-yellow-400 text-black font-bold px-3 py-8 rounded  transform -rotate-90 origin-center whitespace-nowrap text-sm">
+                  className="border border-gray-300 rounded-lg p-4 flex items-center gap-4"
+                >
+                  <div className="bg-yellow-400 text-black font-bold px-3 py-8 rounded  transform -rotate-90 origin-center whitespace-nowrap text-sm">
                     ELEGANTE
                   </div>
                   <div className="flex-1">
@@ -367,6 +547,89 @@ const MyAccount = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* CANCELLATION REASON MODAL */}
+      {showCancelModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-4">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-2xl">
+            <h2 className="text-xl font-bold mb-4">Why are you cancelling?</h2>
+
+            <div className="relative mb-6">
+              <select
+                value={cancelReason}
+                onChange={(e) => setCancelReason(e.target.value)}
+                className="w-full border border-gray-300 rounded-lg py-3 px-4 appearance-none pr-10 focus:ring-yellow-400 focus:border-yellow-400 cursor-pointer"
+              >
+                <option value="" disabled>
+                  Select a reason...
+                </option>
+                {cancelReasons.map((reason) => (
+                  <option key={reason} value={reason}>
+                    {reason}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+            </div>
+
+            <div className="flex justify-end gap-3">
+              <button
+                onClick={() => setShowCancelModal(false)}
+                className="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100"
+              >
+                Go Back
+              </button>
+              <button
+                onClick={handleCancelOrder}
+                disabled={!cancelReason}
+                className={`px-4 py-2 rounded-lg text-white font-semibold transition-colors ${
+                  !cancelReason
+                    ? "bg-red-300 cursor-not-allowed"
+                    : "bg-red-600 hover:bg-red-700"
+                }`}
+              >
+                Confirm Cancellation
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CANCELLATION SUCCESS TOAST */}
+      <div
+        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-500 transform z-50 
+          ${
+            showCancelSuccess
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0"
+          } 
+          bg-red-600 text-white flex items-center gap-3`}
+      >
+        <XCircle className="w-6 h-6" />
+        <div>
+          <p className="font-bold text-lg">Order Cancelled!</p>
+          <p className="text-sm">Your order has been successfully cancelled.</p>
+        </div>
+      </div>
+
+      {/* ⭐ DELETE SUCCESS TOAST (NEW) */}
+      <div
+        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-500 transform z-50 
+          ${
+            showDeleteSuccess
+              ? "translate-x-0 opacity-100 bg-gray-700"
+              : "translate-x-full opacity-0 bg-gray-700"
+          } 
+          text-white flex items-center gap-3`}
+      >
+        <Trash2 className="w-5 h-5 text-red-400" />
+        <div>
+          <p className="font-bold text-lg">Record Deleted</p>
+          <p className="text-sm">
+            The order record has been permanently removed.
+          </p>
+        </div>
+      </div>
+
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -388,7 +651,8 @@ const MyAccount = () => {
                       ? handleProfileSave()
                       : setIsEditingProfile(true)
                   }
-                  className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors">
+                  className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
+                >
                   {isEditingProfile ? (
                     <span className="text-sm font-semibold text-blue-600">
                       SAVE
@@ -440,12 +704,11 @@ const MyAccount = () => {
                   const Icon = item.icon;
                   const isActive = activeSection === item.id;
 
-                  // 🔑 Determine the action based on the menu item
                   const handleClick = () => {
                     if (item.id === "logout") {
-                      handleLogout(); // Call the logout function
+                      handleLogout();
                     } else {
-                      setActiveSection(item.id); // Change the dashboard section
+                      setActiveSection(item.id);
                     }
                   };
 
@@ -464,7 +727,8 @@ const MyAccount = () => {
                             ? "text-red-600 hover:bg-red-50"
                             : ""
                         }
-                      `}>
+                      `}
+                    >
                       <Icon size={20} />
                       <span className="flex-1 text-left">{item.label}</span>
                       {/* Hide arrow for Logout button */}
@@ -475,7 +739,8 @@ const MyAccount = () => {
                           }`}
                           fill="none"
                           stroke="currentColor"
-                          viewBox="0 0 24 24">
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"

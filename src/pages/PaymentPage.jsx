@@ -10,14 +10,69 @@ import {
   RotateCcw,
   Truck,
   ChevronDown,
+  CheckCircle,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+// ⭐ 1. Correct Import: Ensure CartContext is imported correctly.
 import { CartContext } from "../context/CartContext";
 
 export default function PaymentPage() {
   const [active, setActive] = useState("upi");
-  const { cartItems } = useContext(CartContext);
+  // ⭐ 2. DESTRUCTURE clearCart from CartContext
+  const { cartItems, clearCart } = useContext(CartContext);
   const [showMoreBanks, setShowMoreBanks] = useState(false);
+
+  // ⭐ UPDATED STATE AND HOOKS
+  const [showSuccessNotification, setShowSuccessNotification] = useState(false);
+  const navigate = useNavigate();
+
+  const totalMRP =
+    cartItems?.reduce(
+      (sum, item) => sum + (item.price * item.quantity || item.price || 0),
+      0
+    ) || 0;
+
+  // ⭐ 3. UPDATED FUNCTION: Saves Order and CLEARS CART
+  const handleCODConfirm = () => {
+    // 1. Create Order Data
+    const newOrder = {
+      id: "ORD" + Date.now(),
+      date: new Date().toLocaleDateString(),
+      items: cartItems || [],
+      total: totalMRP + 100, // Total + COD charge
+      paymentMethod: "Cash On Delivery",
+      status: "Confirmed",
+      deliveryDate: new Date(
+        Date.now() + 5 * 24 * 60 * 60 * 1000
+      ).toLocaleDateString(),
+    };
+
+    // 2. Get Old Orders and Save New Order
+    const existingOrders = JSON.parse(
+      localStorage.getItem("beyoung_orders") || "[]"
+    );
+
+    localStorage.setItem(
+      "beyoung_orders",
+      JSON.stringify([newOrder, ...existingOrders])
+    );
+
+    // ⭐ 3. CLEAR CART: This is the crucial step to remove items from the cart.
+    if (clearCart) {
+      clearCart();
+    }
+
+    // 4. Show Notification
+    setShowSuccessNotification(true);
+
+    // 5. Auto-Redirect after 3 seconds
+    setTimeout(() => {
+      setShowSuccessNotification(false); // Hide the notification
+      navigate("/my-account"); // Redirect to My Orders page
+    }, 3000);
+  };
+
+  // Removed handleClosePopup as we are using auto-redirect
 
   function NetBankingSection() {
     const topBanks = [
@@ -71,10 +126,7 @@ export default function PaymentPage() {
         <div className="bg-green-50 py-2 text-center text-sm font-semibold text-green-700">
           No Delivery Charges
         </div>
-
         <p className="font-semibold text-lg">Net Banking</p>
-
-        {/* ⭐ TOP BANKS GRID (3 x 3) */}
         <div className="grid grid-cols-3 gap-4">
           {topBanks.map((bank) => (
             <div
@@ -88,8 +140,6 @@ export default function PaymentPage() {
             </div>
           ))}
         </div>
-
-        {/* BUTTON */}
         <button
           onClick={() => setShowMoreBanks(!showMoreBanks)}
           className="w-full border p-4 rounded-lg text-sm font-semibold flex justify-between items-center"
@@ -97,8 +147,6 @@ export default function PaymentPage() {
           Select Different Bank
           {showMoreBanks ? <ChevronDown /> : <ChevronRight />}
         </button>
-
-        {/* ⭐ MORE BANKS SCROLLABLE LIST */}
         {showMoreBanks && (
           <div className="max-h-48 overflow-y-auto border rounded-lg p-2 space-y-3">
             {moreBanks.map((bank) => (
@@ -118,12 +166,6 @@ export default function PaymentPage() {
       </div>
     );
   }
-
-  const totalMRP =
-    cartItems?.reduce(
-      (sum, item) => sum + (item.price * item.quantity || item.price || 0),
-      0
-    ) || 0;
 
   const messages = [
     {
@@ -153,8 +195,35 @@ export default function PaymentPage() {
     return () => clearInterval(interval);
   }, []);
 
+  const finalAmount = active === "cod" ? totalMRP + 100 : totalMRP - 29;
+
   return (
-    <div className="bg-white min-h-screen px-4 py-6 lg:px-10">
+    <div className="bg-white min-h-screen px-4 py-6 lg:px-10 relative">
+      {/* ⭐ NEW FLOATING SUCCESS NOTIFICATION (Toast Style) */}
+      <div
+        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-500 transform z-50 
+          ${
+            showSuccessNotification
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0"
+          } 
+          bg-green-600 text-white flex items-center gap-3`}
+      >
+        <CheckCircle className="w-6 h-6" />
+        <div>
+          <p className="font-bold text-lg">Order Confirmed!</p>
+          <p className="text-sm">
+            Your COD order has been placed successfully and cart cleared.
+          </p>
+        </div>
+        <button
+          onClick={() => navigate("/myaccount")}
+          className="ml-4 bg-white text-green-600 font-semibold px-3 py-1 rounded hover:bg-gray-100 whitespace-nowrap"
+        >
+          Go to Orders
+        </button>
+      </div>
+
       {/* STEP INDICATOR */}
       <div className="max-w-6xl mx-auto px-4 mb-6 flex justify-center gap-4 text-sm">
         <Link to="/cart">
@@ -194,7 +263,6 @@ export default function PaymentPage() {
               <div>
                 <p className="font-semibold flex justify-between items-center">
                   <span>Preferred UPI</span>
-
                   <span className="flex items-center gap-2">
                     <span className="line-through text-gray-500 text-sm">
                       {totalMRP}
@@ -307,18 +375,27 @@ export default function PaymentPage() {
             </div>
           )}
 
-          {/* COD UI */}
+          {/* COD UI - CONNECTED TO handleCODConfirm */}
           {active === "cod" && (
             <div className="text-center space-y-4">
               <p className="text-sm">COD charges applied</p>
-              <button className="bg-black text-white w-full py-3 rounded-lg">
-                Confirm
+
+              {/* Button now calls the handleCODConfirm function */}
+              <button
+                onClick={handleCODConfirm}
+                className="bg-black text-white w-full py-3 rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                Confirm Order
               </button>
+
               <div className="flex items-center gap-2 justify-center text-xs">
                 <span className="flex-1 h-px bg-gray-300"></span>OR
                 <span className="flex-1 h-px bg-gray-300"></span>
               </div>
-              <button className="border px-6 w-full py-3 rounded-lg">
+              <button
+                onClick={() => setActive("upi")}
+                className="border px-6 w-full py-3 rounded-lg hover:bg-gray-50"
+              >
                 Pay Online & Save ₹129
               </button>
             </div>
@@ -362,7 +439,6 @@ export default function PaymentPage() {
           )}
 
           {/* WALLET UI */}
-
           {active === "wallet" && (
             <div className="space-y-5">
               <div className="bg-green-50 py-1 text-center text-sm font-semibold text-green-700">
@@ -409,20 +485,18 @@ export default function PaymentPage() {
                         className="w-8 h-8 object-contain"
                       />
                     </div>
-
                     <p className="text-sm font-semibold">{w.name}</p>
                   </div>
-
                   <ChevronRight size={18} />
                 </div>
               ))}
             </div>
           )}
 
-          {/* ⭐ NET BANKING UI (Placed AFTER Wallet as requested) */}
+          {/* NET BANKING UI */}
           {active === "netbanking" && <NetBankingSection />}
 
-          {/* ⭐ EPAY UI */}
+          {/* EPAY UI */}
           {active === "epay" && (
             <div className="space-y-5">
               <div className="bg-green-50 py-2 text-center text-sm font-semibold text-green-700">
@@ -480,7 +554,7 @@ export default function PaymentPage() {
 
             <div className="border-t pt-3 flex justify-between font-semibold">
               <span>Total Amount</span>
-              <span>₹{active === "cod" ? totalMRP + 100 : totalMRP - 29}</span>
+              <span>₹{finalAmount}</span>
             </div>
           </div>
 
