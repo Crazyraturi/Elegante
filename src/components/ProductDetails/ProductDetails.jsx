@@ -376,6 +376,7 @@ export default function ProductPage() {
 
     // 3. Show Pop-up and hide it after 3 seconds
     setShowPopup(true);
+    toast.success("Product added to cart"); 
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
@@ -798,27 +799,7 @@ export default function ProductPage() {
       </div>
 
       {/* --- Product Added Pop-up --- */}
-      <div
-        className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-300 transform z-9999 
-          ${
-            showPopup
-              ? "translate-x-0 opacity-100"
-              : "translate-x-full opacity-0"
-          } 
-           text-white flex items-center gap-3`}>
-        <CheckCircle className="w-6 h-6" />
-        <div>
-          <p className="font-bold text-lg">Product Added!</p>
-          <p className="text-sm">
-            {product.title} has been added to your cart.
-          </p>
-        </div>
-        <button
-          onClick={() => navigate("/cart")}
-          className="ml-4 bg-white text-green-600 font-semibold px-3 py-1 rounded hover:bg-gray-100">
-          View Cart ({cartItems.length})
-        </button>
-      </div>
+  
     </div>
   );
 }
