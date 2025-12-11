@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Heart, X } from "lucide-react";
 import Loader from "../common/Loader";
 import { toast } from "sonner";
 // 🚨 NEW IMPORTS
-import { WishlistContext } from "@/context/WishlistContext";
+import { useWishlist } from "@/context/WishlistContext";
 import { useAuth } from "@/context/AuthContext";
 
 const RecentlyViewed = () => {
@@ -15,7 +15,7 @@ const RecentlyViewed = () => {
   const [loading, setLoading] = useState(true);
 
   // 🚨 CONTEXT CONSUMPTION
-  const { addToWishlist, wishlistItems } = useContext(WishlistContext);
+const { addToWishlist, wishlistItems } = useWishlist();
   const { isAuthenticated } = useAuth();
 
   useEffect(() => {

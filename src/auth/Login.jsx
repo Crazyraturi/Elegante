@@ -5,6 +5,8 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useAuth } from "@/context/AuthContext";
 import Logo from "@/components/icons/Logo";
+import { useWishlist } from "@/context/WishlistContext"; 
+import { useCart } from "@/context/CartContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -15,6 +17,9 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { login } = useAuth();
+
+  const { fetchWishlist } = useWishlist(); 
+  const { fetchCart } = useCart();
 
   useEffect(() => {
     setAnimate(true);
@@ -62,6 +67,8 @@ const Login = () => {
         }
 
         navigate("/");
+        await fetchCart();
+        await fetchWishlist();
       }
     } catch (error) {
       console.error(error);

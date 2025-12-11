@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
-import { CartContext } from "../../../src/context/CartContext";
-import { WishlistContext } from "@/context/WishlistContext";
+import { useCart } from "../../../src/context/CartContext"; // Corrects CartContext import error
+import { useWishlist } from "@/context/WishlistContext"; // Corrects the named import error for isWishlisted;
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "sonner";
 import {
@@ -203,10 +203,9 @@ function ComboSelector({ product, addToCart }) {
 export default function ProductPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addToCart, cartItems } = useContext(CartContext);
-  const { wishlistItems, addToWishlist, removeFromWishlist } =
-    useContext(WishlistContext);
-
+  const { addToCart } = useCart();
+  const { addToWishlist, wishlistItems, removeFromWishlist, isWishlisted } =
+    useWishlist();
   const { isAuthenticated } = useAuth();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [showLoginModal, setShowLoginModal] = useState(false);

@@ -1,10 +1,12 @@
-import { useState, useContext } from "react";
+import { useState} from "react";
 import { Plus } from "lucide-react";
-import { CartContext } from "../context/CartContext";
+import { CartContext, useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
+import { useCart } from "../context/CartContext";
+
 export default function AddressPage() {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCart(CartContext);
 
   const totalMRP = cartItems?.reduce(
     (acc, item) => acc + item.price * (item.quantity || 1),

@@ -7,6 +7,7 @@ const Verifyemail = () => {
   const { token } = useParams();
   const [status, setStatus] = useState("verifying");
   const navigate = useNavigate();
+  
 
   // Define visual states
   const getStatusContent = () => {

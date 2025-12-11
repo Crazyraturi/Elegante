@@ -12,15 +12,20 @@ import {
   Plus,
   Trash2,
 } from "lucide-react";
-import { useContext } from "react";
-import { WishlistContext } from "@/context/WishlistContext";
+
+import { WishlistContext, useWishlist } from "@/context/WishlistContext"; 
 import { Link } from "react-router-dom";
 
 import { useAuth } from "@/context/AuthContext";
 import { useEffect } from "react";
+import { useCart } from "@/context/CartContext"; // ✅ IMPORT useCart
 
 const MyAccount = () => {
   const { logout, user } = useAuth();
+  const auth = useAuth(); // Use auth object to access logout
+  // ✅ Use both hooks
+  const { fetchWishlist } = useWishlist();
+  const { fetchCart } = useCart();
   const [activeSection, setActiveSection] = useState("orders");
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const fullName = (user?.firstName || "") + " " + (user?.lastName || "");
@@ -31,7 +36,7 @@ const MyAccount = () => {
     phone: user?.phone || "",
   });
 
-  const { wishlistItems, removeFromWishlist } = useContext(WishlistContext);
+  const { wishlistItems, removeFromWishlist } = useWishlist();
 
   useEffect(() => {
     if (user) {
@@ -119,9 +124,24 @@ const MyAccount = () => {
     setAddresses(addresses.filter((addr) => addr.id !== id));
   };
 
-  const handleLogout = () => {
-    logout(); // 🔑 Call the imported logout functionm
-  };
+const handleLogout = async () => {
+  try {
+    // Optional: Call a backend logout API if you have one to clear server session
+    // await axios.post("/api/v1/user/logout");
+
+    // Pass the fetch functions as callbacks to clear the state
+    // The fetch functions will see isAuthenticated=false and clear their local state.
+    auth.logout(
+      () => fetchCart(),
+      () => fetchWishlist()
+    );
+
+    toast.success("Logged out successfully.");
+    // navigate to login or home if needed
+  } catch (error) {
+    toast.error("Logout failed. Please try again.");
+  }
+};
 
   const handleProfileSave = () => {
     // 🚨 Add API call here to persist changes

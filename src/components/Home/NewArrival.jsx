@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, useRef} from "react";
+import { Link, useNavigate } from "react-router-dom"; // Added useNavigate for potential redirects
 import { Heart, X } from "lucide-react";
 import Loader from "../common/Loader";
 // 🚨 NEW IMPORTS
-import { WishlistContext } from "@/context/WishlistContext";
+import { useWishlist } from "@/context/WishlistContext"; //
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "sonner";
 
@@ -14,9 +14,10 @@ const NewArrival = () => {
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(12);
   const observerTarget = useRef(null);
+  const navigate = useNavigate(); // For redirecting to login
 
   // 🚨 CONTEXT CONSUMPTION
-  const { addToWishlist, wishlistItems,removeFromWishlist } = useContext(WishlistContext);
+  const { addToWishlist, wishlistItems, removeFromWishlist } = useWishlist();
   const { isAuthenticated } = useAuth();
 
   const shuffleArray = (array) => {
@@ -83,7 +84,11 @@ const NewArrival = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        // Only load more if not already loading and if there are more products
+        if (
+          entries[0].isIntersecting &&
+          displayedProducts.length < filteredProducts.length
+        ) {
           setVisibleCount((prev) => prev + 8);
         }
       },
@@ -99,31 +104,31 @@ const NewArrival = () => {
         observer.unobserve(observerTarget.current);
       }
     };
-  }, [observerTarget, filteredProducts]);
+  }, [observerTarget, displayedProducts.length, filteredProducts.length]);
 
   // 🚨 MODIFIED: Logic to use Auth and Wishlist contexts
-  const handleHeartClick = (productData,isWished) => {
-    if (!isAuthenticated){
+  const handleHeartClick = (productData, isWished) => {
+    if (!isAuthenticated) {
       setShowPopup(true);
-      toast.warning("Login First to add to wishlist")
+      toast.warning("Login First to add to wishlist");
       return;
-    } 
+    }
 
     if (isWished) {
+      // productData.id is product._id
       removeFromWishlist(productData.id);
-      toast.info("removed from Wishlist");
+      toast.info("Removed from Wishlist");
     } else {
       addToWishlist(productData);
-      toast.success("Added to Wishlist")
+      toast.success("Added to Wishlist");
     }
   };
 
   const handleClosePopup = () => {
     setShowPopup(false);
-    setPhoneNumber("");
+    // 🧹 CLEANUP: Removed setPhoneNumber("") since phoneNumber state is not defined here.
   };
 
- 
   const tabButton = (tabValue, label) => (
     <button
       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
@@ -194,9 +199,11 @@ const NewArrival = () => {
               const originalPrice = priceInfo.original || 0;
               const offPercent = priceInfo.offPercent || 0;
 
-              // 🚨 NEW: Calculate isWished status
+              // 🚨 CORRECTED: Calculate isWished status.
+              // Assumes wishlistItems array now contains objects like
+              // { productId: { _id: '...', ... } } from the backend context.
               const isWished = wishlistItems.some(
-                (item) => item.id === product._id
+                (item) => item.productId && item.productId._id === product._id
               );
 
               // 🚨 NEW: Construct streamlined product object for context
@@ -234,7 +241,7 @@ const NewArrival = () => {
                         e.preventDefault();
                         e.stopPropagation();
                         // 🚨 MODIFIED: Pass the product data to the handler
-                        handleHeartClick(wishlistProductData , isWished);
+                        handleHeartClick(wishlistProductData, isWished);
                       }}
                       className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
                       aria-label={
@@ -292,9 +299,37 @@ const NewArrival = () => {
         </div>
       )}
 
-       
-     
-      
+      {/* 🚨 ADDED: JSX for the "Login First" Popup Modal */}
+      {showPopup && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity duration-300"
+          onClick={handleClosePopup} // Close when clicking backdrop
+        >
+          <div
+            className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm text-center transform scale-100 transition-transform duration-300"
+            onClick={(e) => e.stopPropagation()} // Prevent closing on click inside modal
+          >
+            <button
+              onClick={handleClosePopup}
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+              <X className="w-5 h-5" />
+            </button>
+            <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
+            <h2 className="text-xl font-bold mb-2">Login Required</h2>
+            <p className="text-gray-600 mb-6">
+              Please log in or sign up to manage your wishlist.
+            </p>
+            <button
+              onClick={() => {
+                handleClosePopup();
+                navigate("/login");
+              }}
+              className="w-full bg-black text-white py-2 rounded-lg font-semibold hover:bg-gray-800 transition">
+              Log In / Sign Up
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

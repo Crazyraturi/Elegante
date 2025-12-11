@@ -5,7 +5,7 @@ const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
-const AuthProvider = ({ children }) => {
+export function AuthProvider({ children }){
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!localStorage.getItem("token")
   );
@@ -21,11 +21,15 @@ const AuthProvider = ({ children }) => {
   };
 
   // Function to clear user data and token on logout
-  const logout = () => {
+  const logout = (onClearCart = () => {}, onClearWishlist = () => {}) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsAuthenticated(false);
-    setUser(null); // Clear user state
+    setUser(null);
+
+    // Execute the clearing functions passed from the consuming component
+    onClearCart();
+    onClearWishlist();
   };
 
   // Effect to load user data from localStorage on mount

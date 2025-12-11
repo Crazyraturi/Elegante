@@ -1,10 +1,13 @@
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
-import { CartContext } from "../../src/context/CartContext";
+import { useCart } from "../../src/context/CartContext";
+import { useWishlist } from "../../src/context/WishlistContext";
 import { Check, Trash2, Heart } from "lucide-react";
 
 export default function CartPage() {
-  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
+ const { cartItems, removeFromCart, updateQuantity } = useCart();
+ const { addToWishlist } = useWishlist();
+
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="min-h-screen bg-[#E5E7EB] flex items-center justify-center">
@@ -31,6 +34,14 @@ export default function CartPage() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  // Handler to move an item from cart to wishlist
+  const handleMoveToWishlist = (item) => {
+    // 1. Add the item to the wishlist
+    addToWishlist(item);
+    // 2. Remove the item from the cart
+    removeFromCart(item.id);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
@@ -86,8 +97,7 @@ export default function CartPage() {
                         onChange={(e) =>
                           updateQuantity(item.id, Number(e.target.value))
                         }
-                        className="border border-gray-300 rounded px-7 py-2"
-                      >
+                        className="border border-gray-300 rounded px-7 py-2">
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                           <option key={num} value={num}>
                             {num}
@@ -128,15 +138,17 @@ export default function CartPage() {
                 <div className="flex items-center justify-center gap-8 mt-5 pt-5 border-t border-gray-200">
                   <button
                     className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition"
-                    onClick={() => removeFromCart(item.id)}
-                  >
+                    onClick={() => removeFromCart(item.id)}>
                     <Trash2 className="w-5 h-5" />
                     <span>Remove</span>
                   </button>
 
                   <div className="w-px h-6 bg-gray-300"></div>
 
-                  <button className="flex items-center gap-2 text-gray-600 hover:text-pink-600 transition">
+                  <button
+                    className="flex items-center gap-2 text-gray-600 hover:text-pink-600 transition"
+                    onClick={() => handleMoveToWishlist(item)} // Attach the handler
+                  >
                     <Heart className="w-5 h-5" />
                     <span>Move To Wishlist</span>
                   </button>
