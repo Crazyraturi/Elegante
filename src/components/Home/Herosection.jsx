@@ -5,7 +5,7 @@ const CarouselSlide = ({ slide }) => (
     <img
       src={slide.image}
       alt={slide.alt || "Carousel slide"}
-      className="w-full h-full object-contain"
+      className="w-full h-full object-contain md:object-cover"
     />
     <div className="absolute inset-0 bg-opacity-20" />
   </div>
