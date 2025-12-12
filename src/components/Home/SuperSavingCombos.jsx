@@ -2,8 +2,8 @@ import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ComboCard = ({ title, image }) => (
-  <div className="shrink-0 w-72 mx-3">
-    <div className={`h-96 w-96  flex items-center justify-center p-2`}>
+  <div className="shrink-0 w-96  ">
+    <div className={`h-96 w-96  flex items-center justify-center `}>
       <img
         src={image}
         alt={title}
@@ -50,11 +50,26 @@ const SuperSavingCombos = () => {
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924727/image7_pg2v0r.png",
     },
+    {
+      title: "SATIN SHIRTS",
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924725/image3_qcbxpp.png",
+    },
+    {
+      title: "SATIN SHIRTS",
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924726/image4_yz46ts.png",
+    },
+    {
+      title: "REGULAR-FIT JEANS",
+      image:
+        "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764924727/image5_qmo2cg.png",
+    },
   ];
 
   const scroll = (direction) => {
     const container = document.getElementById("combo-container");
-    const scrollAmount = 320;
+    const scrollAmount = 384;
     if (direction === "left") {
       container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
@@ -89,7 +104,7 @@ const SuperSavingCombos = () => {
           {/* Cards Container */}
           <div
             id="combo-container"
-            className="flex overflow-x-auto scrollbar-hide scroll-smooth px-12"
+            className="flex overflow-x-auto scrollbar-hide scroll-smooth "
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {combos.map((combo, index) => (

@@ -41,16 +41,18 @@ export default function Exclusive() {
 
       {/* Carousel */}
       <div className="relative px-4 md:px-12 mb-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div
+          className=" flex overflow-x-auto gap-4 
+          md:grid md:grid-cols-4 md:overflow-visible
+          scrollbar-hide">
           {visibleImages().map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-3/4 overflow-hidden rounded-lg"
-            >
+              className="relative aspect-3/4 overflow-hidden rounded-lg shrink-0 w-96 p-5 md:w-auto">
               <img
                 src={img}
                 alt={`Fashion ${idx + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
           ))}
@@ -60,16 +62,14 @@ export default function Exclusive() {
         <button
           onClick={prevSlide}
           className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-3 shadow-lg transition-all z-10"
-          aria-label="Previous"
-        >
+          aria-label="Previous">
           <ChevronLeft className="w-6 h-6 text-gray-800" />
         </button>
 
         <button
           onClick={nextSlide}
           className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-3 shadow-lg transition-all z-10"
-          aria-label="Next"
-        >
+          aria-label="Next">
           <ChevronRight className="w-6 h-6 text-gray-800" />
         </button>
       </div>
