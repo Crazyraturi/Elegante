@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 
 const CarouselSlide = ({ slide }) => (
-  <div className="relative w-full h-[600px] overflow-hidden">
+  <div className="relative w-full  md:h-[600px]  overflow-hidden">
     <img
       src={slide.image}
       alt={slide.alt || "Carousel slide"}
-      className="w-full h-full object-cover"
+      className="w-full h-full object-contain"
     />
-    <div className="absolute inset-0  bg-opacity-20" />
+    <div className="absolute inset-0 bg-opacity-20" />
   </div>
 );
 
 export default function FlannelCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
+  // Desktop Slides
   const slides = [
     {
       image:
@@ -47,33 +49,74 @@ export default function FlannelCarousel() {
     },
   ];
 
+  // Mobile Slides
+  const mobileSlides = [
+    {
+      image:
+        "https://res.cloudinary.com/dq3rbg7x3/image/upload/v1765526998/mv2_yogwdh.png",
+      alt: "Mobile Slide 1",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dq3rbg7x3/image/upload/v1765526998/mv6_xaigt8.png",
+      alt: "Mobile Slide 2",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dq3rbg7x3/image/upload/v1765526998/mv5_clg6y2.png",
+      alt: "Mobile Slide 3",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dq3rbg7x3/image/upload/v1765526998/mv1_kccepc.png",
+      alt: "Mobile Slide 4",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dq3rbg7x3/image/upload/v1765526998/mv3_aizllp.png",
+      alt: "Mobile Slide 5",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dq3rbg7x3/image/upload/v1765526998/mv7_uxeozp.png",
+      alt: "Mobile Slide 6",
+    },
+  ];
+
+  const selectedSlides = isMobile ? mobileSlides : slides;
+
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % selectedSlides.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + selectedSlides.length) % selectedSlides.length
+    );
   };
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [selectedSlides.length]);
 
   return (
     <div className="w-full bg-gray-50">
-      {/* Carousel */}
       <div className="relative">
-        <CarouselSlide slide={slides[currentSlide]} />
+        <CarouselSlide slide={selectedSlides[currentSlide]} />
 
-        {/* Dots Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
-          {slides.map((_, index) => (
+        <div className="absolute bottom-1 left-0 right-0 flex justify-center gap-3 px-4">
+          {selectedSlides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`w-3 h-3 rounded-full transition-all ${
+              className={`w-1 h-1 rounded-full transition-all ${
                 currentSlide === index
                   ? "bg-white w-8"
                   : "bg-white bg-opacity-50 hover:bg-opacity-75"
