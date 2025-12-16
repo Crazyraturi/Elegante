@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
+import ProductSkeletonCard from "../common/ProductSkeletonCard";
 import { Link } from "react-router-dom";
 import { Heart, X } from "lucide-react";
 import Loader from "../common/Loader";
@@ -155,11 +156,16 @@ const NewArrival = () => {
         {tabButton("polo", "Polo")}
       </div>
 
-      {loading ? (
-        <div className="flex justify-center items-center h-64">
-          <Loader className="item-center" />
-        </div>
-      ) : (
+     {loading ? (
+  <div className="max-w-7xl mx-auto p-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {Array.from({ length: 8 }).map((_, i) => (
+        <ProductSkeletonCard key={i} />
+      ))}
+    </div>
+  </div>
+) : (
+
         <div className="max-w-7xl mx-auto p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {displayedProducts.map((product) => {
