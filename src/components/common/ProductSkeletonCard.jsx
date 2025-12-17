@@ -1,4 +1,4 @@
-const ProductSkeletonCard = () => {
+ const ProductSkeletonCard = () => {
   return (
     <div className="bg-white rounded-lg overflow-hidden">
       {/* Image Skeleton */}
