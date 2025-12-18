@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 
 export default function PaymentPage() {
-  const { cartItems, cartTotal } = useContext(CartContext);
+  const { cartTotal } = useContext(CartContext);
   const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -13,7 +13,9 @@ export default function PaymentPage() {
 
   const [isProcessing, setIsProcessing] = useState(false);
 
-  // Redirect back if no address is found
+  // 1. DYNAMIC API URL: Points to Render in production, localhost in dev
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
   if (!addressData) {
     navigate("/address");
     return null;
@@ -23,41 +25,43 @@ export default function PaymentPage() {
     setIsProcessing(true);
     try {
       const txnid = "TXN" + Date.now();
-      const amount = cartTotal.toFixed(2);
-
+      const amount = Number(cartTotal).toFixed(2);
       const token = localStorage.getItem("token");
 
-      // 1. Get Secure Hash from your Node.js Backend
-      const { data } = await axios.post("/api/v1/payment/hash", {
-        txnid,
-        amount,
-        productinfo: "Store Order",
-        firstname: addressData.firstName,
-        email: user.email,
-      }, {
-      headers: {
-        Authorization: `Bearer ${token}` 
-      }
-    });
+      // 2. USE ABSOLUTE URL: Prevents 405 error on Vercel
+      const { data } = await axios.post(
+        `${API_BASE_URL}/api/v1/payment/hash`, 
+        {
+          txnid,
+          amount,
+          productinfo: "Store Order",
+          firstname: addressData.firstName,
+          email: user.email,
+        }, 
+        {
+          headers: {
+            Authorization: `Bearer ${token}` 
+          }
+        }
+      );
 
-      // 2. Prepare PayU Parameters
       const payuParams = {
-        key: import.meta.env.VITE_PAYU_MERCHANT_KEY, // Your Merchant Key
+        key: import.meta.env.VITE_PAYU_MERCHANT_KEY,
         txnid,
         amount,
         productinfo: "Store Order",
         firstname: addressData.firstName,
         email: user.email,
         phone: addressData.mobile,
-      surl: "https://beyoung-backend.onrender.com/v1/payment/response", 
-      furl: "https://beyoung-backend.onrender.com/api/v1/payment/response",
+        // 3. FIXED SURL/FURL: Both must use the exact backend route
+        surl: `${API_BASE_URL}/api/v1/payment/response`, 
+        furl: `${API_BASE_URL}/api/v1/payment/response`,
         hash: data.hash,
         service_provider: "payu_paisa",
       };
 
-      // 3. Create Hidden Form and Submit to PayU
       const form = document.createElement("form");
-      form.action = "https://test.payu.in/_payment"; // Use https://secure.payu.in/_payment for Live
+      form.action = "https://test.payu.in/_payment"; // Change to https://secure.payu.in/_payment for Live
       form.method = "POST";
 
       Object.entries(payuParams).forEach(([key, value]) => {
@@ -72,7 +76,7 @@ export default function PaymentPage() {
       form.submit();
     } catch (error) {
       console.error("Payment Error:", error);
-      alert("Payment failed to initialize. Please try again.");
+      alert("Payment failed to initialize. Check if backend is awake!");
     } finally {
       setIsProcessing(false);
     }
@@ -82,19 +86,16 @@ export default function PaymentPage() {
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
-        
         <div className="border-b pb-4 mb-4">
           <p className="font-semibold">Deliver to:</p>
           <p>{addressData.firstName} {addressData.lastName}</p>
           <p>{addressData.address}, {addressData.city}, {addressData.state} - {addressData.pinCode}</p>
           <p>Phone: {addressData.mobile}</p>
         </div>
-
         <div className="flex justify-between text-xl font-bold mb-8">
           <span>Total to Pay:</span>
           <span>₹{cartTotal}</span>
         </div>
-
         <button
           onClick={handlePayUPayment}
           disabled={isProcessing}
