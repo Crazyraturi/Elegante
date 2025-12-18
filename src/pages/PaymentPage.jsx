@@ -14,7 +14,7 @@ export default function PaymentPage() {
   const [isProcessing, setIsProcessing] = useState(false);
 
   // 1. DYNAMIC API URL: Points to Render in production, localhost in dev
-  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+  const API_BASE_URL="https://beyoung-backend.onrender.com";
 
   if (!addressData) {
     navigate("/address");
