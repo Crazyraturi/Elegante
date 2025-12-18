@@ -3,21 +3,28 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  // Load from localStorage
   const [cartItems, setCartItems] = useState(() => {
     const saved = localStorage.getItem("cartItems");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Save to localStorage every time cartItems changes
+  // 1. ADD THIS: Calculate total amount whenever cartItems changes
+  const [cartTotal, setCartTotal] = useState(0);
+
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+    // Calculate the sum of (price * quantity) for all items
+    const total = cartItems.reduce(
+      (acc, item) => acc + (item.price * (item.quantity || 1)), 
+      0
+    );
+    setCartTotal(total);
   }, [cartItems]);
 
   const addToCart = (product) => {
     setCartItems((prev) => {
       const existingProduct = prev.find((item) => item.id === product.id);
-
       if (existingProduct) {
         return prev.map((item) =>
           item.id === product.id
@@ -25,7 +32,6 @@ export function CartProvider({ children }) {
             : item
         );
       }
-
       return [...prev, { ...product, quantity: 1 }];
     });
   };
@@ -44,7 +50,14 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updateQuantity }}
+      // 2. ADD THIS: Include cartTotal in the value object
+      value={{ 
+        cartItems, 
+        cartTotal, 
+        addToCart, 
+        removeFromCart, 
+        updateQuantity 
+      }}
     >
       {children}
     </CartContext.Provider>

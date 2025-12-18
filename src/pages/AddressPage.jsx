@@ -57,7 +57,8 @@ export default function AddressPage() {
       return;
     }
 
-    navigate("/payment");
+    navigate("/payment", { state: { addressData: formData } }); // Pass address to next page
+
   };
 
   return (
