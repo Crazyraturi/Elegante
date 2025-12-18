@@ -49,8 +49,8 @@ export default function PaymentPage() {
         firstname: addressData.firstName,
         email: user.email,
         phone: addressData.mobile,
-      surl: "http://localhost:3000/api/v1/payment/response", 
-      furl: "http://localhost:3000/api/v1/payment/response",
+      surl: "https://beyoung-backend.onrender.com/v1/payment/response", 
+      furl: "https://beyoung-backend.onrender.com/api/v1/payment/response",
         hash: data.hash,
         service_provider: "payu_paisa",
       };
