@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import ProductSkeletonCard from "../common/ProductSkeletonCard";
 import { Link } from "react-router-dom";
-import { Heart, X } from "lucide-react";
+import { Heart } from "lucide-react";
+import { toast } from "sonner";
+import ProductSkeletonCard from "../common/ProductSkeletonCard";
 import Loader from "../common/Loader";
-// 🚨 NEW IMPORTS
 import { WishlistContext } from "@/context/WishlistContext";
 import { useAuth } from "@/context/AuthContext";
-import { toast } from "sonner";
 
 const NewArrival = () => {
   const [activeTab, setActiveTab] = useState("viewAll");
@@ -14,11 +13,11 @@ const NewArrival = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(12);
-  const observerTarget = useRef(null);
 
-  // 🚨 CONTEXT CONSUMPTION
-  const { addToWishlist, wishlistItems,removeFromWishlist } = useContext(WishlistContext);
+  const { addToWishlist, wishlistItems, removeFromWishlist } =
+    useContext(WishlistContext);
   const { isAuthenticated } = useAuth();
+  const observerTarget = useRef(null);
 
   const shuffleArray = (array) => {
     let shuffled = [...array];
@@ -38,48 +37,41 @@ const NewArrival = () => {
         );
         const data = await res.json();
         const rawProducts = data.data || data.products || [];
-        const randomProducts = shuffleArray(rawProducts);
-        setProducts(randomProducts);
+        setProducts(shuffleArray(rawProducts));
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
 
   const filteredProducts = products.filter((item) => {
-    const subCat = item.subCategory ? item.subCategory.toLowerCase() : "";
-    const specType = item.specificType ? item.specificType.toLowerCase() : "";
+    const subCat = item.subCategory?.toLowerCase() || "";
+    const specType = item.specificType?.toLowerCase() || "";
 
     switch (activeTab) {
       case "viewAll":
         return true;
-
       case "polo":
         return specType.includes("polo");
-
       case "t-shirt":
         return subCat.includes("t-shirt") && !specType.includes("polo");
-
       case "shirt":
         return subCat.includes("shirt") && !subCat.includes("t-shirt");
-
       case "trousers":
         return subCat.includes("trouser");
-
       default:
         return subCat.includes(activeTab.toLowerCase());
     }
   });
 
+  const displayedProducts = filteredProducts.slice(0, visibleCount);
+
   useEffect(() => {
     setVisibleCount(12);
   }, [activeTab]);
-
-  const displayedProducts = filteredProducts.slice(0, visibleCount);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,40 +83,29 @@ const NewArrival = () => {
       { threshold: 1.0 }
     );
 
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
-    }
+    if (observerTarget.current) observer.observe(observerTarget.current);
 
     return () => {
-      if (observerTarget.current) {
-        observer.unobserve(observerTarget.current);
-      }
+      if (observerTarget.current) observer.unobserve(observerTarget.current);
     };
-  }, [observerTarget, filteredProducts]);
+  }, [filteredProducts]);
 
-  // 🚨 MODIFIED: Logic to use Auth and Wishlist contexts
-  const handleHeartClick = (productData,isWished) => {
-    if (!isAuthenticated){
+  const handleHeartClick = (productData, isWished) => {
+    if (!isAuthenticated) {
       setShowPopup(true);
-      toast.warning("Login First to add to wishlist")
+      toast.warning("Login First to add to wishlist");
       return;
-    } 
+    }
 
     if (isWished) {
       removeFromWishlist(productData.id);
-      toast.info("removed from Wishlist");
+      toast.info("Removed from Wishlist");
     } else {
       addToWishlist(productData);
-      toast.success("Added to Wishlist")
+      toast.success("Added to Wishlist");
     }
   };
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
-    setPhoneNumber("");
-  };
-
- 
   const tabButton = (tabValue, label) => (
     <button
       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
@@ -132,14 +113,15 @@ const NewArrival = () => {
           ? "bg-black text-white shadow-md"
           : "bg-gray-100 text-gray-600 hover:bg-gray-200"
       }`}
-      onClick={() => setActiveTab(tabValue)}>
+      onClick={() => setActiveTab(tabValue)}
+    >
       {label}
     </button>
   );
 
   return (
     <section className="min-h-[600px] py-10 relative">
-      <div className="mb-8 flex flex-col justify-center items-center gap-2">
+      <div className="mb-8 flex flex-col justify-center items-center gap-2 text-center">
         <h1 className="text-3xl font-bold tracking-wide text-gray-900">
           New Arrival
         </h1>
@@ -156,60 +138,48 @@ const NewArrival = () => {
         {tabButton("polo", "Polo")}
       </div>
 
-     {loading ? (
-  <div className="max-w-7xl mx-auto p-6">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {Array.from({ length: 8 }).map((_, i) => (
-        <ProductSkeletonCard key={i} />
-      ))}
-    </div>
-  </div>
-) : (
-
+      {loading ? (
+        <div className="max-w-7xl mx-auto p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <ProductSkeletonCard key={i} />
+            ))}
+          </div>
+        </div>
+      ) : (
         <div className="max-w-7xl mx-auto p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {displayedProducts.map((product) => {
               const gallery = product.images?.gallery || [];
               const previewImage = product.images?.preview;
+              const frontView = gallery.find(
+                (img) => img.view === "Front View"
+              )?.file;
+              const hoverView = gallery.find(
+                (img) => img.view === "Hover View"
+              )?.file;
 
-              const frontViewObj = gallery.find(
-                (item) => item.view === "Front View"
-              );
-              const hoverViewObj = gallery.find(
-                (item) => item.view === "Hover View"
-              );
+              const mainImage =
+                previewImage ||
+                frontView ||
+                gallery[0]?.file ||
+                "https://via.placeholder.com/300x400?text=No+Image";
+              const hoverImage = hoverView || mainImage;
 
-              let mainImage = previewImage;
-              if (!mainImage && frontViewObj?.file) {
-                mainImage = frontViewObj.file;
-              }
-              if (!mainImage && gallery.length > 0) {
-                const firstFile = gallery.find((item) => item.file)?.file;
-                if (firstFile) mainImage = firstFile;
-              }
-              if (!mainImage)
-                mainImage = "https://via.placeholder.com/300x400?text=No+Image";
+              const priceInfo = product.variants?.[0]?.price || {};
+              const {
+                discounted: price = 0,
+                original: originalPrice = 0,
+                offPercent = 0,
+              } = priceInfo;
 
-              let hoverImage = hoverViewObj?.file;
-              if (!hoverImage) hoverImage = mainImage;
-
-              const firstVariant = product.variants?.[0];
-              const priceInfo = firstVariant?.price || {};
-
-              const price = priceInfo.discounted || 0;
-              const originalPrice = priceInfo.original || 0;
-              const offPercent = priceInfo.offPercent || 0;
-
-              // 🚨 NEW: Calculate isWished status
               const isWished = wishlistItems.some(
                 (item) => item.id === product._id
               );
-
-              // 🚨 NEW: Construct streamlined product object for context
               const wishlistProductData = {
                 id: product._id,
                 name: product.title || product.name,
-                price: price,
+                price,
                 category: product.subCategory,
                 image: mainImage,
                 slug: product.slug,
@@ -219,7 +189,8 @@ const NewArrival = () => {
                 <Link
                   to={`/product/${product._id}`}
                   key={product._id}
-                  className="bg-white rounded-lg overflow-hidden block group">
+                  className="bg-white rounded-lg overflow-hidden block group"
+                >
                   <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
                     <img
                       src={mainImage}
@@ -227,7 +198,6 @@ const NewArrival = () => {
                       loading="lazy"
                       className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
                     />
-
                     <img
                       src={hoverImage}
                       alt={product.title}
@@ -239,19 +209,15 @@ const NewArrival = () => {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        // 🚨 MODIFIED: Pass the product data to the handler
-                        handleHeartClick(wishlistProductData , isWished);
+                        handleHeartClick(wishlistProductData, isWished);
                       }}
                       className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
-                      aria-label={
-                        isWished ? "Remove from Wishlist" : "Add to Wishlist"
-                      }>
-                      {/* 🚨 MODIFIED: Dynamic styling for the heart icon */}
+                    >
                       <Heart
                         className={`w-4 h-4 transition-colors ${
                           isWished
                             ? "text-red-500 fill-red-500"
-                            : "text-gray-700 hover:text-red-500 hover:fill-red-500/20"
+                            : "text-gray-700"
                         }`}
                       />
                     </button>
@@ -264,18 +230,15 @@ const NewArrival = () => {
                     <p className="text-gray-500 text-xs mb-2 capitalize">
                       {product.subCategory}
                     </p>
-
                     <div className="flex items-center gap-2">
                       <span className="text-md font-bold text-gray-900">
                         ₹{price}
                       </span>
-
                       {originalPrice > price && (
                         <span className="text-gray-400 line-through text-xs">
                           ₹{originalPrice}
                         </span>
                       )}
-
                       {offPercent > 0 && (
                         <span className="text-green-600 text-xs font-bold">
                           ({offPercent}% OFF)
@@ -291,16 +254,13 @@ const NewArrival = () => {
           {displayedProducts.length < filteredProducts.length && (
             <div
               ref={observerTarget}
-              className="h-20 flex justify-center items-center w-full mt-4">
-              <Loader className="w-6 h-6  text-gray-400" />
+              className="h-20 flex justify-center items-center w-full mt-4"
+            >
+              <Loader className="w-6 h-6 text-gray-400" />
             </div>
           )}
         </div>
       )}
-
-       
-     
-      
     </section>
   );
 };
