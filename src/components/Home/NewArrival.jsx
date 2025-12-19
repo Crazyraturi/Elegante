@@ -191,7 +191,7 @@ const NewArrival = () => {
                   key={product._id}
                   className="bg-white rounded-lg overflow-hidden block group"
                 >
-                  <div className="relative w-full overflow-hidden rounded-xl aspect-[3/4]">
+                  <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
                     <img
                       src={mainImage}
                       alt={product.title}
