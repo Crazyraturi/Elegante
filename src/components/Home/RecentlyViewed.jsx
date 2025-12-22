@@ -74,7 +74,8 @@ const RecentlyViewed = () => {
           ? "bg-black text-white shadow-md"
           : "bg-gray-100 text-gray-600 hover:bg-gray-200"
       }`}
-      onClick={() => setActiveTab(tabValue)}>
+      onClick={() => setActiveTab(tabValue)}
+    >
       {label}
     </button>
   );
@@ -146,7 +147,8 @@ const RecentlyViewed = () => {
                   // 🚨 FIX: Change path for consistency with other pages (e.g., /product/:id)
                   to={`/product/${product._id}`}
                   key={product._id}
-                  className="bg-white rounded-lg overflow-hidden block group">
+                  className="bg-white rounded-lg overflow-hidden block group"
+                >
                   <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
                     <img
                       src={mainImage}
@@ -170,7 +172,8 @@ const RecentlyViewed = () => {
                       className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
                       aria-label={
                         isWished ? "Remove from Wishlist" : "Add to Wishlist"
-                      }>
+                      }
+                    >
                       {/* 🚨 MODIFIED: Dynamic styling for the heart icon */}
                       <Heart
                         className={`w-4 h-4 transition-colors ${
@@ -214,8 +217,6 @@ const RecentlyViewed = () => {
           </div>
         </div>
       )}
-
-     
     </section>
   );
 };
