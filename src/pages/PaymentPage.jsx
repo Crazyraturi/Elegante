@@ -1,11 +1,11 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext, useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 
 export default function PaymentPage() {
-  const { cartTotal } = useContext(CartContext);
+  const { cartTotal } = useCart();
   const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();

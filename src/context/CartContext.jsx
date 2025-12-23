@@ -1,6 +1,10 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react"; // Added useContext
 
+// ✅ This fixes the "does not provide an export named CartContext" error
 export const CartContext = createContext();
+
+// ✅ This fixes the "does not provide an export named useCart" error
+export const useCart = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState(() => {
@@ -8,15 +12,13 @@ export function CartProvider({ children }) {
     return saved ? JSON.parse(saved) : [];
   });
 
-  // 1. ADD THIS: Calculate total amount whenever cartItems changes
   const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    
-    // Calculate the sum of (price * quantity) for all items
+
     const total = cartItems.reduce(
-      (acc, item) => acc + (item.price * (item.quantity || 1)), 
+      (acc, item) => acc + item.price * (item.quantity || 1),
       0
     );
     setCartTotal(total);
@@ -42,23 +44,19 @@ export function CartProvider({ children }) {
 
   const updateQuantity = (id, qty) => {
     setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantity: qty } : item
-      )
+      prev.map((item) => (item.id === id ? { ...item, quantity: qty } : item))
     );
   };
 
   return (
     <CartContext.Provider
-      // 2. ADD THIS: Include cartTotal in the value object
-      value={{ 
-        cartItems, 
-        cartTotal, 
-        addToCart, 
-        removeFromCart, 
-        updateQuantity 
-      }}
-    >
+      value={{
+        cartItems,
+        cartTotal, // ✅ Now available to PaymentPage
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+      }}>
       {children}
     </CartContext.Provider>
   );
