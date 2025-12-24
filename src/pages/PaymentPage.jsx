@@ -46,7 +46,7 @@ export default function PaymentPage() {
       );
 
       const payuParams = {
-        key: import.meta.env.VITE_PAYU_MERCHANT_KEY,
+        key: data.key,
         txnid,
         amount,
         productinfo: "Store Order",
