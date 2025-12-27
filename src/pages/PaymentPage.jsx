@@ -46,16 +46,16 @@ export default function PaymentPage() {
       );
 
       const payuParams = {
-        key: import.meta.env.VITE_PAYU_MERCHANT_KEY,
+        key: data.key,
         txnid,
-        amount,
+        amount: data.amount,
         productinfo: "Store Order",
         firstname: addressData.firstName,
         email: user.email,
         phone: addressData.mobile,
         // 3. FIXED SURL/FURL: Both must use the exact backend route
-        surl: `${API_BASE_URL}/api/v1/payment/payment-success`, 
-        furl: `${API_BASE_URL}/api/v1/payment/payment-failure`,
+        surl: `${API_BASE_URL}/api/v1/payment/response`,
+        furl: `${API_BASE_URL}/api/v1/payment/response`,
         hash: data.hash,
         service_provider: "payu_paisa",
       };
