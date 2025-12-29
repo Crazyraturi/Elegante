@@ -47,7 +47,7 @@ export default function PaymentPage() {
 
       const payuParams = {
         key: data.key,
-        txnid,
+        txnid:data.txnid,
         amount: data.amount,
         productinfo: "Store Order",
         firstname: addressData.firstName,
