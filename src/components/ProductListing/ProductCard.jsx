@@ -1,84 +1,85 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
+import { useWishlist } from "@/context/WishlistContext";
 
-const ProductCard = ({ product, handleHeartClick, isWished }) => {
-  // Ensure product.images exists, otherwise set to an empty object for safe destructuring
+const ProductCard = ({ product }) => {
+  // Use the global context
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  // Check if THIS specific product is in the global list
+  const isWishlisted = isInWishlist(product._id);
+
+  // --- IMAGE LOGIC (Kept exactly as you had it) ---
   const images = product.images || {};
-
-  // Safely determine main and hover images using gallery/files array
   const findImageByView = (view) =>
     images.gallery?.find((item) => item.view === view)?.file;
 
-  // Primary Image Logic: Prioritize preview, then main, then front view.
   let mainImage =
     images.preview || images.main || findImageByView("Front View");
-
-  // Hover Image Logic: Use specific hover view, or fall back.
   let hoverImage = findImageByView("Hover View");
 
-  // --- START OF ROBUST FALLBACK LOGIC ---
-
-  // 1. Fallback logic for main image: Find the first item in the gallery that HAS a file URL.
   if (!mainImage) {
     mainImage = images.gallery?.find((item) => item.file)?.file;
   }
-
-  // 2. Fallback logic for hover image: Find the first VALID gallery image that isn't the main image.
   if (!hoverImage) {
     hoverImage = images.gallery?.find(
       (item) => item.file && item.file !== mainImage
     )?.file;
   }
-
-  // 3. If no separate hover image is found, use the main image for the hover state.
   if (!hoverImage) {
     hoverImage = mainImage;
   }
 
-  // --- END OF ROBUST FALLBACK LOGIC ---
-
-  // Final fallback to prevent broken image icons
   const fallbackUrl = "https://via.placeholder.com/300x400?text=No+Image+Found";
   mainImage = mainImage || fallbackUrl;
   hoverImage = hoverImage || mainImage;
 
   const firstVariant = product.variants?.[0];
   const priceInfo = firstVariant?.price || {};
-
   const price = priceInfo.discounted || 0;
   const originalPrice = priceInfo.original || 0;
   const offPercent = priceInfo.offPercent || 0;
+  // ------------------------------------------------
+
+  // Handle the Click
+  const handleHeartClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (isWishlisted) {
+      removeFromWishlist(product._id);
+    } else {
+      addToWishlist(product);
+    }
+  };
 
   return (
     <Link
       to={`/product/${product._id}`}
       key={product._id}
-      className="bg-white rounded-lg overflow-hidden block group">
+      className="bg-white rounded-lg overflow-hidden block group"
+    >
       <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
-        {/* Wishlist Button */}
+        {/* Wishlist Button - Now synced globally */}
         <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            handleHeartClick();
-          }}
-          className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10">
+          onClick={handleHeartClick}
+          className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
+        >
           <Heart
             className={`w-4 h-4 transition-colors ${
-              isWished
-                ? "text-red-500 fill-red-500"
+              isWishlisted
+                ? "text-red-500 fill-red-500" // Filled Red if synced
                 : "text-gray-700 hover:text-red-500 hover:fill-red-500/20"
             }`}
           />
         </button>
-        {/* Main Image */}
+
         <img
           src={mainImage}
           alt={product.title || product.name}
           loading="lazy"
           className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
         />
-        {/* Hover Image */}
         {hoverImage && hoverImage !== mainImage && (
           <img
             src={hoverImage}

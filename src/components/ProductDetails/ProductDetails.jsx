@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useSearchParams, useLocation } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 import { CartContext } from "../../../src/context/CartContext";
 import { WishlistContext } from "@/context/WishlistContext";
@@ -11,8 +10,6 @@ import {
   Wallet,
   ChevronDown,
   ChevronUp,
-  CheckCircle,
-  X,
 } from "lucide-react";
 import RecentlyViewed from "../Home/RecentlyViewed";
 import FeaturesSection from "../ProductDetails/FeaturesSection";
@@ -27,7 +24,8 @@ const StarIcon = (props) => (
     stroke="currentColor"
     strokeWidth="0"
     strokeLinecap="round"
-    strokeLinejoin="round">
+    strokeLinejoin="round"
+  >
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
   </svg>
 );
@@ -94,7 +92,7 @@ function ComboSelector({ product, addToCart, navigate }) {
     });
 
     comboItems.forEach((item) => addToCart(item));
-    
+
     if (shouldRedirect) {
       navigate("/cart");
     } else {
@@ -120,7 +118,8 @@ function ComboSelector({ product, addToCart, navigate }) {
         {itemNumbers.map((num, index) => (
           <div
             key={index}
-            className="grid grid-cols-2 gap-4 border-b pb-4 last:border-b-0 last:pb-0">
+            className="grid grid-cols-2 gap-4 border-b pb-4 last:border-b-0 last:pb-0"
+          >
             <h3 className="col-span-2 text-md font-medium text-gray-700">
               Item {num}
             </h3>
@@ -132,7 +131,8 @@ function ComboSelector({ product, addToCart, navigate }) {
                 <select
                   value={selections[index].color}
                   onChange={(e) => handleChange(index, "color", e.target.value)}
-                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm">
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm"
+                >
                   <option value="">Select Color</option>
                   {allColors.map((color) => (
                     <option key={color} value={color}>
@@ -153,7 +153,8 @@ function ComboSelector({ product, addToCart, navigate }) {
                 <select
                   value={selections[index].size}
                   onChange={(e) => handleChange(index, "size", e.target.value)}
-                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm">
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg appearance-none cursor-pointer text-sm"
+                >
                   <option value="">Select Size</option>
                   {uniqueSizes.map((size) => (
                     <option key={size} value={size}>
@@ -178,7 +179,8 @@ function ComboSelector({ product, addToCart, navigate }) {
             !isComboValid
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-[#212121] hover:bg-black"
-          }`}>
+          }`}
+        >
           <ShoppingCart className="inline w-5 h-5 mr-2" />
           {`ADD ${comboCount} ITEMS`}
         </button>
@@ -190,7 +192,8 @@ function ComboSelector({ product, addToCart, navigate }) {
             !isComboValid
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-[#ffdd00] hover:bg-[#e6c700]"
-          }`}>
+          }`}
+        >
           BUY NOW
         </button>
       </div>
@@ -202,7 +205,7 @@ export default function ProductPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
-  const { wishlistItems, addToWishlist, removeFromWishlist } =
+  const { addToWishlist, removeFromWishlist, isInWishlist } =
     useContext(WishlistContext);
 
   const { isAuthenticated } = useAuth();
@@ -293,8 +296,8 @@ export default function ProductPage() {
     availableSizes.find((s) => s.size === selectedSize)?._id?.$oid ||
     `${id}-${selectedColor}-${selectedSize}`;
 
-  const isWished = wishlistItems.some((item) => item.id === product._id);
-  
+  const isWished = product ? isInWishlist(product._id) : false;
+
   const wishlistProductData = {
     id: product._id,
     name: product.title || product.name,
@@ -317,7 +320,7 @@ export default function ProductPage() {
         removeFromWishlist(product._id);
         toast.info("Removed from Wishlist");
       } else {
-        addToWishlist(wishlistProductData);
+        addToWishlist(product);
         toast.success("Added to Wishlist");
       }
     } else {
@@ -355,7 +358,7 @@ export default function ProductPage() {
       navigate("/cart");
     } else {
       setShowPopup(true);
-      toast.success("Product added to cart"); 
+      toast.success("Product added to cart");
       setTimeout(() => setShowPopup(false), 3000);
     }
   };
@@ -381,7 +384,8 @@ export default function ProductPage() {
                     selectedImageIndex === idx
                       ? "border-black"
                       : "border-gray-200"
-                  }`}>
+                  }`}
+                >
                   <img src={img} className="w-full h-full object-cover" />
                 </div>
               ))}
@@ -390,7 +394,8 @@ export default function ProductPage() {
             <div className="flex-1 h-[650px] relative bg-gray-100">
               <button
                 onClick={handleWishlistClick}
-                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow hover:shadow-lg transition-all z-10">
+                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow hover:shadow-lg transition-all z-10"
+              >
                 <Heart
                   className={`w-5 h-5 transition-colors ${
                     isWished ? "text-red-500 fill-red-500" : "text-gray-700"
@@ -424,8 +429,12 @@ export default function ProductPage() {
             <p className="text-gray-500 text-sm mb-4">{product.subCategory}</p>
 
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold">₹ {priceData.discounted}</span>
-              <span className="text-[18px] text-[#A7A7A7] line-through">₹ {priceData.original}</span>
+              <span className="text-2xl font-bold">
+                ₹ {priceData.discounted}
+              </span>
+              <span className="text-[18px] text-[#A7A7A7] line-through">
+                ₹ {priceData.original}
+              </span>
               <span className="bg-[#FEE53D] text-[#49431A] text-xs px-2 py-1 rounded font-bold">
                 {priceData.offPercent}% OFF
               </span>
@@ -445,7 +454,9 @@ export default function ProductPage() {
                     </span>
                   </div>
                 </div>
-                <span className="text-sm font-bold text-green-600">FLAT 10% OFF</span>
+                <span className="text-sm font-bold text-green-600">
+                  FLAT 10% OFF
+                </span>
               </div>
             </div>
 
@@ -467,7 +478,10 @@ export default function ProductPage() {
                 <div className="mb-6">
                   <div className="flex justify-between items-center mb-2">
                     <label className="text-sm font-medium">
-                      Color: <span className="text-gray-600 font-bold">{selectedColor}</span>
+                      Color:{" "}
+                      <span className="text-gray-600 font-bold">
+                        {selectedColor}
+                      </span>
                     </label>
                   </div>
                   <div className="flex gap-3">
@@ -480,7 +494,9 @@ export default function ProductPage() {
                           setSelectedImageIndex(0);
                         }}
                         className={`w-10 h-10 rounded-full border-2 ${
-                          selectedColor === variant.color ? "border-black" : "border-gray-300"
+                          selectedColor === variant.color
+                            ? "border-black"
+                            : "border-gray-300"
                         }`}
                         style={{ backgroundColor: variant.color.toLowerCase() }}
                       ></button>
@@ -489,7 +505,9 @@ export default function ProductPage() {
                 </div>
 
                 <div className="mb-6">
-                  <label className="text-sm font-medium mb-2 block">Size:</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Size:
+                  </label>
                   <div className="flex flex-wrap gap-2">
                     {availableSizes.map((sizeObj) => (
                       <button
@@ -497,8 +515,14 @@ export default function ProductPage() {
                         onClick={() => setSelectedSize(sizeObj.size)}
                         disabled={sizeObj.stock <= 0}
                         className={`px-6 py-2 border rounded transition-all ${
-                          selectedSize === sizeObj.size ? "border-black bg-black text-white" : "border-gray-300"
-                        } ${sizeObj.stock <= 0 ? "opacity-50 cursor-not-allowed line-through" : ""}`}
+                          selectedSize === sizeObj.size
+                            ? "border-black bg-black text-white"
+                            : "border-gray-300"
+                        } ${
+                          sizeObj.stock <= 0
+                            ? "opacity-50 cursor-not-allowed line-through"
+                            : ""
+                        }`}
                       >
                         {sizeObj.size}
                       </button>
@@ -510,14 +534,16 @@ export default function ProductPage() {
                   <button
                     onClick={() => handleAddToCart(false)}
                     className={`flex-1 text-white py-3 font-semibold rounded-lg transition ${
-                      !isAvailable ? "bg-gray-400" : "bg-[#212121] hover:bg-black"
+                      !isAvailable
+                        ? "bg-gray-400"
+                        : "bg-[#212121] hover:bg-black"
                     }`}
                   >
                     <ShoppingCart className="inline w-5 h-5 mr-2" />
                     {isAvailable ? "ADD TO CART" : "SELECT SIZE"}
                   </button>
 
-                  <button 
+                  <button
                     onClick={() => handleAddToCart(true)}
                     className="flex-1 bg-[#ffdd00] text-[#212121] py-3 font-semibold rounded-lg hover:bg-[#e6c700] transition"
                   >
@@ -537,44 +563,75 @@ export default function ProductPage() {
                   onChange={(e) => setPincode(e.target.value)}
                   className="border p-2 rounded w-full"
                 />
-                <button className="bg-black text-white px-4 rounded">Check</button>
+                <button className="bg-black text-white px-4 rounded">
+                  Check
+                </button>
               </div>
               <div className="flex items-center gap-6 mt-3 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
-                  <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928987/FreeShipping_keskkg.svg" className="h-8 w-8" alt="Free Shipping" />
+                  <img
+                    src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764928987/FreeShipping_keskkg.svg"
+                    className="h-8 w-8"
+                    alt="Free Shipping"
+                  />
                   <span>Free Shipping Available</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Wallet size={18} />
-                  <span className="font-semibold">Cash on Delivery Available</span>
+                  <span className="font-semibold">
+                    Cash on Delivery Available
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="mt-5">
-              <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930503/Reward_k4wnz0.jpg" alt="Reward" />
+              <img
+                src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930503/Reward_k4wnz0.jpg"
+                alt="Reward"
+              />
             </div>
 
             <div className="mt-10">
               <h2 className="text-xl font-bold mb-4">Product Details</h2>
               {/* Sections for Spec, Desc, Policy, Market, Reviews */}
-              {["spec", "desc", "policy", "market", "reviews"].map((section) => (
-                <div key={section} className="border-b py-4">
-                  <div className="flex justify-between items-center cursor-pointer" onClick={() => toggle(section)}>
-                    <h3 className="text-lg capitalize">{section === "spec" ? "Specifications" : section === "desc" ? "Description" : section === "policy" ? "Returns & Refund" : section === "market" ? "Marketed By" : "Ratings & Reviews"}</h3>
-                    {openSection === section ? <ChevronUp /> : <ChevronDown />}
-                  </div>
-                  {openSection === section && (
-                    <div className="border-t pt-5 mt-4 text-sm text-gray-600">
-                      {section === "spec" && "Product specifications details..."}
-                      {section === "desc" && product.description}
-                      {section === "policy" && "Return policy details..."}
-                      {section === "market" && "Manufacturer details..."}
-                      {section === "reviews" && "Rating: 4.8 | 336 ratings"}
+              {["spec", "desc", "policy", "market", "reviews"].map(
+                (section) => (
+                  <div key={section} className="border-b py-4">
+                    <div
+                      className="flex justify-between items-center cursor-pointer"
+                      onClick={() => toggle(section)}
+                    >
+                      <h3 className="text-lg capitalize">
+                        {section === "spec"
+                          ? "Specifications"
+                          : section === "desc"
+                          ? "Description"
+                          : section === "policy"
+                          ? "Returns & Refund"
+                          : section === "market"
+                          ? "Marketed By"
+                          : "Ratings & Reviews"}
+                      </h3>
+                      {openSection === section ? (
+                        <ChevronUp />
+                      ) : (
+                        <ChevronDown />
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
+                    {openSection === section && (
+                      <div className="border-t pt-5 mt-4 text-sm text-gray-600">
+                        {section === "spec" &&
+                          "Product specifications details..."}
+                        {section === "desc" && product.description}
+                        {section === "policy" && "Return policy details..."}
+                        {section === "market" && "Manufacturer details..."}
+                        {section === "reviews" && "Rating: 4.8 | 336 ratings"}
+                      </div>
+                    )}
+                  </div>
+                )
+              )}
             </div>
             <div className="h-40 lg:h-96"></div>
           </div>
