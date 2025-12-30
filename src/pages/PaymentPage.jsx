@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
+import { toast } from "sonner";
 
 export default function PaymentPage() {
   const { cartTotal } = useContext(CartContext);
@@ -52,7 +53,7 @@ export default function PaymentPage() {
      }
    } catch (error) {
      console.error("Payment Error:", error);
-     alert("Check if backend is awake!");
+     toast.alert("Check if backend is awake!");
    } finally {
      setIsProcessing(false);
    }
