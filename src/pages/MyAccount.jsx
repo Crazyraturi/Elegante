@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   ShoppingCart,
   MapPin,
@@ -10,22 +10,20 @@ import {
   LogOut,
   Edit2,
   Plus,
-  Trash2, // Used for Delete icon
-  XCircle, // Used for Cancel icon
-  CheckCircle, // Used for success notification
-  ChevronDown, // Used for reason modal
+  Trash2,
+  XCircle,
+  ChevronDown,
 } from "lucide-react";
-import { useContext } from "react";
-import { WishlistContext } from "@/context/WishlistContext";
 import { Link } from "react-router-dom";
-
+import { WishlistContext } from "@/context/WishlistContext";
 import { useAuth } from "@/context/AuthContext";
-import { useEffect } from "react";
+import ProductCard from "@/components/ProductListing/ProductCard";
 
 const MyAccount = () => {
   const { logout, user } = useAuth();
   const [activeSection, setActiveSection] = useState("orders");
   const [isEditingProfile, setIsEditingProfile] = useState(false);
+
   const fullName = (user?.firstName || "") + " " + (user?.lastName || "");
 
   const [userProfile, setUserProfile] = useState({
@@ -34,7 +32,7 @@ const MyAccount = () => {
     phone: user?.phone || "",
   });
 
-  const { wishlistItems, removeFromWishlist } = useContext(WishlistContext);
+  const { wishlistItems } = useContext(WishlistContext);
 
   useEffect(() => {
     if (user) {
@@ -85,15 +83,11 @@ const MyAccount = () => {
     { id: "logout", icon: LogOut, label: "Logout" },
   ];
 
-  // CANCELLATION STATE
   const [showCancelModal, setShowCancelModal] = useState(false);
   const [orderToCancelId, setOrderToCancelId] = useState(null);
   const [cancelReason, setCancelReason] = useState("");
   const [showCancelSuccess, setShowCancelSuccess] = useState(false);
-
-  // ⭐ DELETE STATE ADDED
   const [showDeleteSuccess, setShowDeleteSuccess] = useState(false);
-
   const cancelReasons = [
     "Changed my mind",
     "Ordered wrong size/color",
@@ -102,56 +96,41 @@ const MyAccount = () => {
     "Other reasons",
   ];
 
-  // Function to open the cancellation modal
   const handleOpenCancelModal = (orderId) => {
     setOrderToCancelId(orderId);
-    setCancelReason(""); // Reset reason
+    setCancelReason("");
     setShowCancelModal(true);
   };
 
-  // ⭐ FUNCTION: Handle Permanent Delete
   const handlePermanentDelete = (orderId) => {
     if (
       window.confirm(
         "Are you sure you want to permanently delete this order record? This action cannot be undone."
       )
     ) {
-      // 1. Get existing orders
       const existingOrders = JSON.parse(
         localStorage.getItem("beyoung_orders") || "[]"
       );
 
-      // 2. Filter out the order to be deleted
       const updatedOrders = existingOrders.filter(
         (order) => order.id !== orderId
       );
 
-      // 3. Save the filtered list back to localStorage
       localStorage.setItem("beyoung_orders", JSON.stringify(updatedOrders));
 
-      // 4. Show success notification
       setShowDeleteSuccess(true);
-
-      // 5. Force re-render of orders section
-      // Note: Using a non-changing value to force re-render, useful when state data changes but active section doesn't
       setActiveSection(null);
       setTimeout(() => setActiveSection("orders"), 50);
-
-      // Hide success notification after 3 seconds
       setTimeout(() => setShowDeleteSuccess(false), 3000);
     }
   };
 
-  // FUNCTION: Handle Order Cancellation (Status Update)
   const handleCancelOrder = () => {
     if (!orderToCancelId || !cancelReason) return;
-
-    // 1. Get existing orders
     const existingOrders = JSON.parse(
       localStorage.getItem("beyoung_orders") || "[]"
     );
 
-    // 2. Update the status of the specific order
     const updatedOrders = existingOrders.map((order) =>
       order.id === orderToCancelId
         ? {
@@ -163,22 +142,14 @@ const MyAccount = () => {
         : order
     );
 
-    // 3. Save the updated list back to localStorage
     localStorage.setItem("beyoung_orders", JSON.stringify(updatedOrders));
-
-    // 4. Close modal and show success notification
     setShowCancelModal(false);
     setShowCancelSuccess(true);
-
-    // 5. Force re-render of orders section
     setActiveSection(null);
     setTimeout(() => setActiveSection("orders"), 50);
-
-    // Hide success notification after 3 seconds
     setTimeout(() => setShowCancelSuccess(false), 3000);
   };
 
-  // --- Standard Handlers (Kept as is) ---
   const handleDeleteAddress = (id) => {
     setAddresses(addresses.filter((addr) => addr.id !== id));
   };
@@ -203,7 +174,6 @@ const MyAccount = () => {
   const renderContent = () => {
     switch (activeSection) {
       case "orders":
-        // Fetching orders from LocalStorage
         const storedOrders = JSON.parse(
           localStorage.getItem("beyoung_orders") || "[]"
         );
@@ -211,7 +181,6 @@ const MyAccount = () => {
         return (
           <div className="space-y-6">
             {storedOrders.length === 0 ? (
-              // Empty State UI
               <div className="bg-white rounded-lg p-8 flex flex-col items-center justify-center min-h-[570px]">
                 <div className="w-64 h-64 mb-6 relative">
                   <img
@@ -231,13 +200,11 @@ const MyAccount = () => {
                 </button>
               </div>
             ) : (
-              // Orders List UI
               storedOrders.map((order) => (
                 <div
                   key={order.id}
                   className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
                 >
-                  {/* Order Header */}
                   <div className="flex justify-between items-start border-b pb-4 mb-4">
                     <div>
                       <p className="font-bold text-lg">Order ID: {order.id}</p>
@@ -259,11 +226,10 @@ const MyAccount = () => {
                     </div>
                   </div>
 
-                  {/* Items List (Simplified for brevity) */}
                   <div className="space-y-4">
                     {order.items.map((item, index) => (
                       <div key={index} className="flex gap-4 items-start">
-                        <div className="w-16 h-20 bg-gray-100 rounded-md overflow-hidden flex-shrink-0">
+                        <div className="w-16 h-20 bg-gray-100 rounded-md overflow-hidden shrink-0">
                           <img
                             src={
                               item.image ||
@@ -286,7 +252,6 @@ const MyAccount = () => {
                     ))}
                   </div>
 
-                  {/* Footer/Details */}
                   <div className="mt-4 pt-4 border-t flex justify-between items-center text-sm">
                     <div className="text-gray-600">
                       Payment:{" "}
@@ -311,9 +276,7 @@ const MyAccount = () => {
                     )}
                   </div>
 
-                  {/* ⭐ ACTION BUTTONS */}
                   <div className="mt-4 pt-3 border-t flex justify-start gap-4">
-                    {/* Cancel Button (Only if confirmed) */}
                     {order.status === "Confirmed" && (
                       <button
                         onClick={() => handleOpenCancelModal(order.id)}
@@ -323,7 +286,6 @@ const MyAccount = () => {
                       </button>
                     )}
 
-                    {/* Permanent Delete Button */}
                     <button
                       onClick={() => handlePermanentDelete(order.id)}
                       className="flex items-center gap-2 text-sm font-semibold text-gray-600 border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -337,7 +299,6 @@ const MyAccount = () => {
           </div>
         );
 
-      // ... (Other cases remain as they are)
       case "address":
         return (
           <div className="bg-white rounded-lg p-8">
@@ -381,53 +342,34 @@ const MyAccount = () => {
       case "wishlist":
         return (
           <div className="bg-white rounded-lg p-8">
-            <h2 className="text-xl font-semibold mb-6">Your Wishlist</h2>
+            <h2 className="text-xl font-semibold mb-6">
+              Your Wishlist ({wishlistItems.length})
+            </h2>
 
             {wishlistItems.length === 0 ? (
               <div className="flex flex-col items-center justify-center">
                 <img
                   src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764934077/Online_wishes_list-cuate_n0yxrb.svg"
                   className="w-60 h-60 mb-4"
+                  alt="Empty Wishlist"
                 />
                 <p className="text-gray-700 italic text-center mb-6">
                   Your wishlist is empty! Add your favourite fashion items ♥
                 </p>
-                <button className="bg-yellow-400 px-6 py-3 rounded-full font-semibold">
+                <Link
+                  to="/"
+                  className="bg-yellow-400 px-6 py-3 rounded-full font-semibold"
+                >
                   Continue Shopping
-                </button>
+                </Link>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {wishlistItems.map((item) => (
-                  <Link
-                    key={item.id}
-                    className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group relative"
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-48 object-top object-cover"
-                    />
-                    <div className="p-3">
-                      <h4 className="font-semibold">{item.name}</h4>
-                      <p className="text-sm text-gray-600">{item.category}</p>
-                      <div className="flex justify-between items-center mt-2">
-                        <span className="font-bold">₹{item.price}</span>
-
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            removeFromWishlist(item.id);
-                          }}
-                          className="text-red-500 hover:text-red-700 p-1 rounded-full bg-white/50 group-hover:bg-white transition-colors"
-                          aria-label={`Remove ${item.name} from wishlist`}
-                        >
-                          <Trash2 size={18} />
-                        </button>
-                      </div>
-                    </div>
-                  </Link>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {wishlistItems.map((product) => (
+                  <ProductCard
+                    key={product._id || product.id}
+                    product={product}
+                  />
                 ))}
               </div>
             )}
@@ -547,7 +489,6 @@ const MyAccount = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* CANCELLATION REASON MODAL */}
       {showCancelModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-4">
           <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-2xl">
@@ -594,7 +535,6 @@ const MyAccount = () => {
         </div>
       )}
 
-      {/* CANCELLATION SUCCESS TOAST */}
       <div
         className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-500 transform z-50 
           ${
@@ -611,7 +551,6 @@ const MyAccount = () => {
         </div>
       </div>
 
-      {/* ⭐ DELETE SUCCESS TOAST (NEW) */}
       <div
         className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-xl transition-all duration-500 transform z-50 
           ${
@@ -644,7 +583,6 @@ const MyAccount = () => {
                   </span>
                 </div>
 
-                {/* 🔑 Edit/Save Button */}
                 <button
                   onClick={() =>
                     isEditingProfile
