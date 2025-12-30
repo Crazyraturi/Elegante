@@ -51,9 +51,13 @@ export default function PaymentPage() {
        // The SDK generates a form named 'payuForm' or simply the first form
        container.querySelector("form").submit();
      }
+     // Replace your catch block with this to see the REAL error
    } catch (error) {
-     console.error("Payment Error:", error);
-     toast.alert("Check if backend is awake!");
+     console.error(
+       "AXIOS ERROR DETAILS:",
+       error.response?.data || error.message
+     );
+     toast.error(error.response?.data?.message || "Connection failed");
    } finally {
      setIsProcessing(false);
    }
