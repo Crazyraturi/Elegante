@@ -267,7 +267,7 @@ const MyAccount = () => {
                         </span>
                       </div>
                     ) : (
-                      <div className="text-gray-600 text-red-600">
+                      <div className="text-gray-600">
                         Reason:{" "}
                         <span className="font-medium">
                           {order.cancellationReason}
