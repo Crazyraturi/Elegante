@@ -1,22 +1,21 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
-import { Heart } from "lucide-react";
-import { toast } from "sonner";
+// import { Link } from "react-router-dom";
+// import { Heart } from "lucide-react";
+// import { toast } from "sonner";
+
 import ProductSkeletonCard from "../common/ProductSkeletonCard";
 import Loader from "../common/Loader";
-import { WishlistContext } from "@/context/WishlistContext";
-import { useAuth } from "@/context/AuthContext";
+import ProductCard from "../ProductListing/ProductCard";
+
+// import { WishlistContext } from "@/context/WishlistContext";
+// import { useAuth } from "@/context/AuthContext";
 
 const NewArrival = () => {
   const [activeTab, setActiveTab] = useState("viewAll");
-  const [showPopup, setShowPopup] = useState(false);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(12);
 
-  const { addToWishlist, wishlistItems, removeFromWishlist } =
-    useContext(WishlistContext);
-  const { isAuthenticated } = useAuth();
   const observerTarget = useRef(null);
 
   const shuffleArray = (array) => {
@@ -90,22 +89,6 @@ const NewArrival = () => {
     };
   }, [filteredProducts]);
 
-  const handleHeartClick = (productData, isWished) => {
-    if (!isAuthenticated) {
-      setShowPopup(true);
-      toast.warning("Login First to add to wishlist");
-      return;
-    }
-
-    if (isWished) {
-      removeFromWishlist(productData.id);
-      toast.info("Removed from Wishlist");
-    } else {
-      addToWishlist(productData);
-      toast.success("Added to Wishlist");
-    }
-  };
-
   const tabButton = (tabValue, label) => (
     <button
       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
@@ -149,106 +132,9 @@ const NewArrival = () => {
       ) : (
         <div className="max-w-7xl mx-auto p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {displayedProducts.map((product) => {
-              const gallery = product.images?.gallery || [];
-              const previewImage = product.images?.preview;
-              const frontView = gallery.find(
-                (img) => img.view === "Front View"
-              )?.file;
-              const hoverView = gallery.find(
-                (img) => img.view === "Hover View"
-              )?.file;
-
-              const mainImage =
-                previewImage ||
-                frontView ||
-                gallery[0]?.file ||
-                "https://via.placeholder.com/300x400?text=No+Image";
-              const hoverImage = hoverView || mainImage;
-
-              const priceInfo = product.variants?.[0]?.price || {};
-              const {
-                discounted: price = 0,
-                original: originalPrice = 0,
-                offPercent = 0,
-              } = priceInfo;
-
-              const isWished = wishlistItems.some(
-                (item) => item.id === product._id
-              );
-              const wishlistProductData = {
-                id: product._id,
-                name: product.title || product.name,
-                price,
-                category: product.subCategory,
-                image: mainImage,
-                slug: product.slug,
-              };
-
-              return (
-                <Link
-                  to={`/product/${product._id}`}
-                  key={product._id}
-                  className="bg-white rounded-lg overflow-hidden block group"
-                >
-                  <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
-                    <img
-                      src={mainImage}
-                      alt={product.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                    />
-                    <img
-                      src={hoverImage}
-                      alt={product.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        handleHeartClick(wishlistProductData, isWished);
-                      }}
-                      className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
-                    >
-                      <Heart
-                        className={`w-4 h-4 transition-colors ${
-                          isWished
-                            ? "text-red-500 fill-red-500"
-                            : "text-gray-700"
-                        }`}
-                      />
-                    </button>
-                  </div>
-
-                  <div className="pt-4 px-1">
-                    <h3 className="text-gray-900 font-semibold text-base mb-1 line-clamp-1">
-                      {product.title}
-                    </h3>
-                    <p className="text-gray-500 text-xs mb-2 capitalize">
-                      {product.subCategory}
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <span className="text-md font-bold text-gray-900">
-                        ₹{price}
-                      </span>
-                      {originalPrice > price && (
-                        <span className="text-gray-400 line-through text-xs">
-                          ₹{originalPrice}
-                        </span>
-                      )}
-                      {offPercent > 0 && (
-                        <span className="text-green-600 text-xs font-bold">
-                          ({offPercent}% OFF)
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+            {displayedProducts.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
           </div>
 
           {displayedProducts.length < filteredProducts.length && (
