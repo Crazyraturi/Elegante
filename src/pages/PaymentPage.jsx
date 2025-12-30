@@ -28,20 +28,19 @@ export default function PaymentPage() {
       const amount = Number(cartTotal).toFixed(2);
       const token = localStorage.getItem("token");
 
-      // 2. USE ABSOLUTE URL: Prevents 405 error on Vercel
       const { data } = await axios.post(
-        `${API_BASE_URL}/api/v1/payment/hash`, 
+        `${API_BASE_URL}/api/v1/payment/initiate-payment`,
         {
           txnid,
           amount,
           productinfo: "Store Order",
           firstname: addressData.firstName,
           email: user.email,
-        }, 
+        },
         {
           headers: {
-            Authorization: `Bearer ${token}` 
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
