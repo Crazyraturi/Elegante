@@ -21,65 +21,42 @@ export default function PaymentPage() {
     return null;
   }
 
-  const handlePayUPayment = async () => {
-    setIsProcessing(true);
-    try {
-      const txnid = "TXN" + Date.now();
-      const amount = Number(cartTotal).toFixed(2);
-      const token = localStorage.getItem("token");
+ const handlePayUPayment = async () => {
+   setIsProcessing(true);
+   try {
+     const txnid = "TXN" + Date.now();
+     const token = localStorage.getItem("token");
 
-      const { data } = await axios.post(
-        `${API_BASE_URL}/api/v1/payment/initiate-payment`,
-        {
-          txnid,
-          amount,
-          productinfo: "Store Order",
-          firstname: addressData.firstName,
-          email: user.email,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+     const { data } = await axios.post(
+       `${API_BASE_URL}/api/v1/payment/initiate-payment`,
+       {
+         txnid,
+         amount: Number(cartTotal).toFixed(2),
+         productinfo: "Store Order",
+         firstname: addressData.firstName,
+         email: user.email,
+         phone: addressData.mobile,
+       },
+       { headers: { Authorization: `Bearer ${token}` } }
+     );
 
-      const payuParams = {
-        key: data.key,
-        txnid:data.txnid,
-        amount: data.amount,
-        productinfo: "Store Order",
-        firstname: addressData.firstName,
-        email: user.email,
-        phone: addressData.mobile,
-        // 3. FIXED SURL/FURL: Both must use the exact backend route
-        surl: `${API_BASE_URL}/api/v1/payment/response`,
-        furl: `${API_BASE_URL}/api/v1/payment/response`,
-        hash: data.hash,
-        service_provider: "payu_paisa",
-      };
+     if (data.success && data.form) {
+       // Create a hidden div, inject the SDK's form, and submit it
+       const container = document.createElement("div");
+       container.style.display = "none";
+       container.innerHTML = data.form;
+       document.body.appendChild(container);
 
-      const form = document.createElement("form");
-      form.action = "https://test.payu.in/_payment"; // Change to https://secure.payu.in/_payment for Live
-      form.method = "POST";
-
-      Object.entries(payuParams).forEach(([key, value]) => {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = value;
-        form.appendChild(input);
-      });
-
-      document.body.appendChild(form);
-      form.submit();
-    } catch (error) {
-      console.error("Payment Error:", error);
-      alert("Payment failed to initialize. Check if backend is awake!");
-    } finally {
-      setIsProcessing(false);
-    }
-  };
+       // The SDK generates a form named 'payuForm' or simply the first form
+       container.querySelector("form").submit();
+     }
+   } catch (error) {
+     console.error("Payment Error:", error);
+     alert("Check if backend is awake!");
+   } finally {
+     setIsProcessing(false);
+   }
+ };
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
