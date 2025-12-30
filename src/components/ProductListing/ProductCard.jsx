@@ -1,15 +1,26 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { useWishlist } from "@/context/WishlistContext";
+import { toast } from "sonner";
 
 const ProductCard = ({ product }) => {
-  // Use the global context
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const productId = product._id || product.id;
+  const isWishlisted = isInWishlist(productId);
 
-  // Check if THIS specific product is in the global list
-  const isWishlisted = isInWishlist(product._id);
+  const handleHeartClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-  // --- IMAGE LOGIC (Kept exactly as you had it) ---
+    if (isWishlisted) {
+      removeFromWishlist(productId);
+      toast.info("Removed from Wishlist");
+    } else {
+      addToWishlist({ ...product, _id: productId });
+      toast.success("Added to Wishlist");
+    }
+  };
+
   const images = product.images || {};
   const findImageByView = (view) =>
     images.gallery?.find((item) => item.view === view)?.file;
@@ -39,28 +50,14 @@ const ProductCard = ({ product }) => {
   const price = priceInfo.discounted || 0;
   const originalPrice = priceInfo.original || 0;
   const offPercent = priceInfo.offPercent || 0;
-  // ------------------------------------------------
-
-  // Handle the Click
-  const handleHeartClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (isWishlisted) {
-      removeFromWishlist(product._id);
-    } else {
-      addToWishlist(product);
-    }
-  };
 
   return (
     <Link
-      to={`/product/${product._id}`}
-      key={product._id}
+      to={`/product/${productId}`}
+      key={productId}
       className="bg-white rounded-lg overflow-hidden block group"
     >
       <div className="relative w-full overflow-hidden rounded-xl aspect-3/4">
-        {/* Wishlist Button - Now synced globally */}
         <button
           onClick={handleHeartClick}
           className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm hover:bg-white transition-all z-10"
@@ -68,7 +65,7 @@ const ProductCard = ({ product }) => {
           <Heart
             className={`w-4 h-4 transition-colors ${
               isWishlisted
-                ? "text-red-500 fill-red-500" // Filled Red if synced
+                ? "text-red-500 fill-red-500"
                 : "text-gray-700 hover:text-red-500 hover:fill-red-500/20"
             }`}
           />
