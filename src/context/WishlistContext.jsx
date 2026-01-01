@@ -5,7 +5,7 @@ export const WishlistContext = createContext();
 
 export function WishlistProvider({ children }) {
   const [wishlistItems, setWishlistItems] = useState([]);
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const getToken = () =>
     localStorage.getItem("accessToken") || localStorage.getItem("token");
 
@@ -18,15 +18,16 @@ export function WishlistProvider({ children }) {
 
     try {
       const res = await axios.get(
-        "http://localhost:8000/api/v1/user/wishlist",
-        { headers: { Authorization: `Bearer ${token}` } }
+        `${backendUrl}/api/v1/user/wishlist`, 
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
-
+      
       if (res.data?.wishlist?.items) {
         const products = res.data.wishlist.items
           .map((item) => item.productId)
           .filter((product) => product !== null);
-
         setWishlistItems(products);
       } else {
         setWishlistItems([]);
@@ -43,12 +44,11 @@ export function WishlistProvider({ children }) {
   const addToWishlist = async (product) => {
     const token = getToken();
     if (!token) return alert("Please login first");
-
     setWishlistItems((prev) => [...prev, product]);
 
     try {
       await axios.post(
-        "http://localhost:8000/api/v1/user/wishlist",
+        `${backendUrl}/api/v1/user/wishlist`,
         { productId: product._id || product.id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -61,16 +61,15 @@ export function WishlistProvider({ children }) {
   const removeFromWishlist = async (productId) => {
     const token = getToken();
     if (!token) return;
-    setWishlistItems((prev) =>
-      prev.filter((item) => {
+
+    setWishlistItems((prev) => prev.filter((item) => {
         const id = item._id || item.id;
         return id !== productId;
-      })
-    );
+    }));
 
     try {
       await axios.delete(
-        `http://localhost:8000/api/v1/user/wishlist/${productId}`,
+        `${backendUrl}/api/v1/user/wishlist/${productId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
     } catch (error) {
