@@ -5,17 +5,17 @@ import App from "./App.jsx";
 import { CartProvider } from "../src/context/CartContext.jsx";
 import { Toaster } from "./components/ui/sonner";
 import AuthProvider from "./context/AuthContext";
-import { WishlistProvider } from "./context/WishlistContext";  // FIXED
+import { WishlistProvider } from "./context/WishlistContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <CartProvider>
-      <AuthProvider>
-        <WishlistProvider>   {/* FIXED */}
+    <AuthProvider>
+      <CartProvider>
+        <WishlistProvider>
           <App />
         </WishlistProvider>
-        <Toaster />
-      </AuthProvider>
-    </CartProvider>
+      </CartProvider>
+      <Toaster />
+    </AuthProvider>
   </StrictMode>
 );

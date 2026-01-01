@@ -1,65 +1,131 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { toast } from "sonner";
+import { useAuth } from "./AuthContext";
 
 export const CartContext = createContext();
 
-export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState(() => {
-    const saved = localStorage.getItem("cartItems");
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  // 1. ADD THIS: Calculate total amount whenever cartItems changes
+export const CartProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const { isAuthenticated } = useAuth(); 
+
+  const getToken = () => localStorage.getItem("accessToken") || localStorage.getItem("token");
+
+  const fetchCart = async () => {
+    const token = getToken();
+    if (!token) return;
+
+    try {
+      const res = await axios.get("http://localhost:8000/api/v1/user/cart", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (res.data.success) {
+        setCartItems(res.data.cart.items || []);
+        const total = res.data.cart.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        setCartTotal(total);
+      }
+    } catch (error) {
+      console.error("Failed to fetch cart:", error);
+    }
+  };
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    if (isAuthenticated) {
+      fetchCart();
+    } else {
+      setCartItems([]); 
+    }
+  }, [isAuthenticated]);
+
+  const addToCart = async (product) => {
+    const token = getToken();
     
-    // Calculate the sum of (price * quantity) for all items
-    const total = cartItems.reduce(
-      (acc, item) => acc + (item.price * (item.quantity || 1)), 
-      0
-    );
-    setCartTotal(total);
-  }, [cartItems]);
+    if (!token) {
+      toast.warning("Please login to add items to cart");
+      return;
+    }
 
-  const addToCart = (product) => {
-    setCartItems((prev) => {
-      const existingProduct = prev.find((item) => item.id === product.id);
-      if (existingProduct) {
-        return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
+    try {
+      const res = await axios.post(
+        "http://localhost:8000/api/v1/user/cart", 
+        {
+           productId: product.productId,
+           varientId: product.id, 
+           size: product.size,
+           quantity: product.quantity || 1,
+           title: product.title,
+           image: product.image,
+           color: product.color,
+           originalPrice: product.originalPrice
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      if (res.data.success) {
+        toast.success("Added to Cart");
+        setCartItems(res.data.cart.items);
+        const total = res.data.cart.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        setCartTotal(total);
       }
-      return [...prev, { ...product, quantity: 1 }];
-    });
+    } catch (error) {
+      console.error("Add to cart error:", error);
+      toast.error(error.response?.data?.message || "Failed to add to cart");
+    }
   };
 
-  const removeFromCart = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  const removeFromCart = async (itemId) => {
+    const token = getToken();
+    if (!token) return;
+    const previousItems = [...cartItems];
+    setCartItems(prev => prev.filter(item => item._id !== itemId));
+
+    try {
+      await axios.delete(`http://localhost:8000/api/v1/user/cart/${itemId}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      fetchCart(); 
+      toast.success("Item removed");
+    } catch (error) {
+      console.error("Remove error:", error);
+      setCartItems(previousItems); 
+      toast.error("Failed to remove item");
+    }
   };
 
-  const updateQuantity = (id, qty) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantity: qty } : item
-      )
-    );
+  const updateQuantity = async (itemId, newQuantity) => {
+    const token = getToken();
+    if (!token || newQuantity < 1) return;
+    setCartItems(prev => prev.map(item => 
+      item._id === itemId ? { ...item, quantity: newQuantity } : item
+    ));
+
+    try {
+      await axios.put(
+        `http://localhost:8000/api/v1/user/cart/${itemId}`,
+        { quantity: newQuantity },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      fetchCart();
+    } catch (error) {
+      console.error("Update quantity error:", error);
+      fetchCart();
+    }
   };
 
   return (
     <CartContext.Provider
-      // 2. ADD THIS: Include cartTotal in the value object
-      value={{ 
-        cartItems, 
-        cartTotal, 
-        addToCart, 
-        removeFromCart, 
-        updateQuantity 
+      value={{
+        cartItems,
+        cartTotal,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        fetchCart
       }}
     >
       {children}
     </CartContext.Provider>
   );
-}
+};

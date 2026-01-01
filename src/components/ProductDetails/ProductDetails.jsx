@@ -342,23 +342,25 @@ export default function ProductPage() {
       toast.error("The selected size is out of stock.");
       return;
     }
+    const finalProductId = product._id?.$oid || product._id;
+    const variantId = activeVariant._id?.$oid || activeVariant._id;
 
     addToCart({
-      id: selectedVariantId,
-      productId: product._id,
+      productId: finalProductId,  
+      id: variantId,
       title: product.title,
       price: priceData.discounted,
       originalPrice: priceData.original,
       image: imageList[selectedImageIndex] || product.images.preview,
       color: selectedColor,
       size: selectedSize,
+      quantity: 1
     });
 
     if (shouldRedirect) {
       navigate("/cart");
     } else {
       setShowPopup(true);
-      toast.success("Product added to cart");
       setTimeout(() => setShowPopup(false), 3000);
     }
   };
@@ -487,7 +489,7 @@ export default function ProductPage() {
                   <div className="flex gap-3">
                     {product.variants.map((variant) => (
                       <button
-                        key={variant._id.$oid}
+                        key={variant._id}
                         onClick={() => {
                           setSelectedColor(variant.color);
                           setSelectedSize("");
@@ -511,7 +513,7 @@ export default function ProductPage() {
                   <div className="flex flex-wrap gap-2">
                     {availableSizes.map((sizeObj) => (
                       <button
-                        key={sizeObj._id?.$oid || sizeObj.size}
+                        key={sizeObj._id || sizeObj.size}
                         onClick={() => setSelectedSize(sizeObj.size)}
                         disabled={sizeObj.stock <= 0}
                         className={`px-6 py-2 border rounded transition-all ${
