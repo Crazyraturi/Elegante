@@ -70,7 +70,7 @@ export default function CartPage() {
 
             {/* Loop Cart Products */}
             {cartItems.map((item) => (
-              <div key={item.id} className="bg-white rounded-lg shadow-sm p-6">
+              <div key={item._id} className="bg-white rounded-lg shadow-sm p-6">
                 <div className="flex gap-4">
                   <div className="relative">
                     <img
