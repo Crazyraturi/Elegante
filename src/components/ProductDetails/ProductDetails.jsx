@@ -342,10 +342,12 @@ export default function ProductPage() {
       toast.error("The selected size is out of stock.");
       return;
     }
+    const finalProductId = product._id?.$oid || product._id;
+    const variantId = activeVariant._id?.$oid || activeVariant._id;
 
     addToCart({
-      productId: product._id,
-      id: selectedVariantId,
+      productId: finalProductId,  
+      id: variantId,
       title: product.title,
       price: priceData.discounted,
       originalPrice: priceData.original,
@@ -359,7 +361,6 @@ export default function ProductPage() {
       navigate("/cart");
     } else {
       setShowPopup(true);
-      toast.success("Product added to cart");
       setTimeout(() => setShowPopup(false), 3000);
     }
   };
