@@ -6,7 +6,7 @@ const More = () => {
       title: "Girdhar Chauraha, Mirzapur",
       address:
         "House No. 563, Girdhar Ka Chauraha, Badli Katra, next to Lenskart, Dankinganj, Mirzapur, Uttar Pradesh 231001",
-      email: "mirzapur.store@Elegante.in",
+      email: "mirzapur.store@Straticrestedge.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931984/mirzapur_store_offline_rrwoti.jpg",
@@ -14,8 +14,8 @@ const More = () => {
     {
       title: "Prahlad Nagar, Ahmedabad",
       address:
-        "Elegante Store, Shop No. 1, Ground Floor, Timber Point, Prahlad Nagar, Ahmedabad, Gujarat 380015",
-      email: "store.ahmedabad@Elegante.in",
+        "Straticrestedge Store, Shop No. 1, Ground Floor, Timber Point, Prahlad Nagar, Ahmedabad, Gujarat 380015",
+      email: "store.ahmedabad@Straticrestedge.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932018/Ahmedabad_store_offline_opswqv.jpg",
@@ -23,8 +23,8 @@ const More = () => {
     {
       title: "Jankipuram, Lucknow",
       address:
-        "Elegante Store, Shop No. HS-1/6, Sector-A, Sitapur Road Scheme, Jankipuram, Lucknow-226021",
-      email: "store.lucknow@Elegante.in",
+        "Straticrestedge Store, Shop No. HS-1/6, Sector-A, Sitapur Road Scheme, Jankipuram, Lucknow-226021",
+      email: "store.lucknow@Straticrestedge.in",
       hours: "10:30 Am To 9:30 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932059/lucknow_store_kmexow.jpg",
@@ -33,7 +33,7 @@ const More = () => {
       title: "Station Road, Sikar",
       address:
         "Shop No. 1, Shri Shakti Tower, Opposite Maru Mandir, Station Road, Sikar-332001",
-      email: "store.sikar@Elegante.in",
+      email: "store.sikar@Straticrestedge.in",
       hours: "10:30 Am To 9:30 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932089/sikar_store_qj31g5.jpg",
@@ -42,7 +42,7 @@ const More = () => {
       title: "Kotri Road, Kota",
       address:
         "Shop No. 1, Plot No. 140, Gumanpura Yojna, Kotri Road, Kota 324007",
-      email: "store.kota@Elegante.in",
+      email: "store.kota@Straticrestedge.in",
       hours: "10:30 Am To 10 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932127/kota_Store_r7nwk9.jpg",
@@ -50,7 +50,7 @@ const More = () => {
     {
       title: "Nagori Garden, Bhilwara",
       address: "Shop no. E-6 Factory Area, Nagori Garden Bhilwara 311001",
-      email: "store.bhilwara@Elegante.in",
+      email: "store.bhilwara@Straticrestedge.in",
       hours: "10:30 AM to 9:30 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932163/Bhilwara_Store_hxxmmm.jpg",
@@ -59,7 +59,7 @@ const More = () => {
       title: "Ayad, University Road Udaipur",
       address:
         "Jai Jinendra Complex, University Rd, Luhar Colony, Ayad, Kharakua, Udaipur, Rajasthan 313001",
-      email: "store.udr@Elegante.in",
+      email: "store.udr@Straticrestedge.in",
       hours: "10 AM to 10 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932239/Udaipur_Store_rx7duh.jpg",
@@ -68,7 +68,7 @@ const More = () => {
       title: "Magdalla, Surat, Gujarat",
       address:
         "Shop No-206, 2nd Floor VR Mall Dumas Rd, Magdalla, Surat, Gujarat 395007",
-      email: "vrsurat.store@Elegante.in",
+      email: "vrsurat.store@Straticrestedge.in",
       hours: "10 AM to 10 PM (Mon-Sun)",
       image:
         "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764932273/surat_store_r1buur.png",

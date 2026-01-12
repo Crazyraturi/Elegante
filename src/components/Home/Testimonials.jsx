@@ -64,7 +64,7 @@ const Testemonials = () => {
       {/* Header */}
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-2">
-          Elegante APPROVED
+          STRATICREST EDGE APPROVED
         </h2>
         <p className="text-gray-600">Real reviews from real people</p>
       </div>
@@ -75,8 +75,7 @@ const Testemonials = () => {
         <button
           onClick={prevSlide}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
-          aria-label="Previous review"
-        >
+          aria-label="Previous review">
           <ChevronLeft className="w-6 h-6" />
         </button>
 
@@ -86,8 +85,7 @@ const Testemonials = () => {
             {getVisibleReviews().map((review, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-lg overflow-hidden w-96 md:w-80 p-5 shrink-0"
-              >
+                className="bg-white border border-gray-200 rounded-lg overflow-hidden w-96 md:w-80 p-5 shrink-0">
                 <div className="bg-gray-100">
                   <img
                     src={review.image}
@@ -104,8 +102,7 @@ const Testemonials = () => {
         <button
           onClick={nextSlide}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
-          aria-label="Next review"
-        >
+          aria-label="Next review">
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
