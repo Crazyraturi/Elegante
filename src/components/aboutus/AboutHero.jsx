@@ -48,17 +48,16 @@ const AboutHero = () => {
             controls={false}
             loop
             playsInline
-            src="https://res.cloudinary.com/dj9tpadhk/video/upload/v1764917850/brand_story_text_animation1_ugxbhz.mp4"
-          ></video>
+            src="https://res.cloudinary.com/dj9tpadhk/video/upload/v1764917850/brand_story_text_animation1_ugxbhz.mp4"></video>
         </div>
 
         <p className="max-w-6xl text-center">
           Once upon a time, somewhere in the Universe, 4 dreamers (my young
           co-founders) met with the idea of creating a brand that offers Global
           Fashion. In 2018, after days of hard work and nights of dreams, they
-          started my journey — “The Journey of Elegante.” First order in days
-          and lakhs of orders in years. You wanna know the drill? Well… here is
-          my secret recipe:
+          started my journey — “The Journey of Straticrestedge.” First order in
+          days and lakhs of orders in years. You wanna know the drill? Well…
+          here is my secret recipe:
         </p>
 
         {/* GIF SECTION */}
@@ -79,15 +78,13 @@ const AboutHero = () => {
             controls={false}
             loop
             playsInline
-            src="https://res.cloudinary.com/dj9tpadhk/video/upload/v1764917858/About_Us_Center_Video_bwey3i.mp4"
-          ></video>
+            src="https://res.cloudinary.com/dj9tpadhk/video/upload/v1764917858/About_Us_Center_Video_bwey3i.mp4"></video>
         </div>
 
         <p className="max-w-6xl text-center mb-10">
-          While others are snoozing, Elegante is serving the youth of Bharat who
-          want aspirational and value-for-money fashion. Because no one should
-          have to compromise on fashion — I stepped in to change the game.{" "}
-          <br />
+          While others are snoozing, Straticrestedge  is serving the youth of Bharat who want aspirational and
+          value-for-money fashion. Because no one should have to compromise on
+          fashion — I stepped in to change the game. <br />
           I want to be your Fashion Partner. From morning jogs to date nights,
           meetings to hangouts, I get you the look you want with sass and
           convenience. <br /> And here's something no one else offers —

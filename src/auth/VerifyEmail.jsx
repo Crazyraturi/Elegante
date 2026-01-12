@@ -84,11 +84,11 @@ const Verifyemail = () => {
       {/* Left Side - Brand Section */}
       <div className="hidden lg:flex w-1/2 bg-yellow-400 relative flex-col justify-between p-12 lg:p-16 overflow-hidden">
         {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
+        <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size:[2rem_2rem]"></div>
 
         <div className="relative z-10">
           <h1 className="text-3xl font-black tracking-widest text-black uppercase">
-            ELEGANTE
+            Straticrestedge
           </h1>
         </div>
 
@@ -106,7 +106,7 @@ const Verifyemail = () => {
 
         <div className="relative z-10">
           <p className="text-sm font-semibold text-black">
-            © 2025 Elegante.in • Privacy Policy
+            © 2025 Straticrestedge solutions private limited • Privacy Policy
           </p>
         </div>
       </div>

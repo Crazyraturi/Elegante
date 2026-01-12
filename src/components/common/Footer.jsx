@@ -14,7 +14,7 @@ const Footer = () => {
   const notifications = [
     {
       id: 1,
-      title: "The Elegante Fashion For Nation Sale Is LIVE🤩",
+      title: "The Straticrestedge Fashion For Nation Sale Is LIVE🤩",
       subtitle: "Get FLAT 15% OFF your favorites styles😍",
       code: "FREEDOM15",
       buttonText: "Use code: FREEDOM15",
@@ -22,7 +22,7 @@ const Footer = () => {
     },
     {
       id: 2,
-      title: " Elegante KOREAN PANTS Restocked!✨",
+      title: " Straticrestedge KOREAN PANTS Restocked!✨",
       subtitle: "Get yours now at a flat ₹998. 🔥",
       buttonText: "Check Korean Pants Now",
       timeAgo: "2 days",
@@ -108,7 +108,7 @@ const Footer = () => {
               <Link to="/in-the-news">Media</Link>
             </li>
             <li>
-              <Link to="/blog"> Elegante Blog</Link>
+              <Link to="/blog"> Straticrestedge Blog</Link>
             </li>
             <li>
               <Link to="/sitemap">Sitemap</Link>
@@ -135,7 +135,9 @@ const Footer = () => {
           <h3 className="mb-3">LOCATION</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/contact">support@ Elegante.in</Link>
+              <Link to="/contact">
+                support@ Straticrestedge
+              </Link>
             </li>
             <li>
               <Link to="/location">
@@ -157,8 +159,7 @@ const Footer = () => {
             setOpenWhy(!openWhy);
             setShowFull(false);
           }}
-          className="flex justify-between items-center w-full"
-        >
+          className="flex justify-between items-center w-full">
           <h3 className="text-xl font-semibold">WHY CHOOSE US?</h3>
           {openWhy ? (
             <ChevronUp className="w-6 h-6" />
@@ -170,8 +171,7 @@ const Footer = () => {
         <div
           className={`transition-all duration-500 ease-in-out overflow-hidden ${
             openWhy ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
+          }`}>
           {/* Assuming whyChooseUsData has .full and .short properties */}
           <p className="text-gray-300 mt-4">
             {showFull ? whyChooseUsData.full : whyChooseUsData.short}
@@ -189,8 +189,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 mt-12 mb-12 border-b border-gray-600 pb-6">
         <button
           onClick={() => setOpenPopular(!openPopular)}
-          className="flex justify-between items-center w-full"
-        >
+          className="flex justify-between items-center w-full">
           <h3 className="text-xl font-semibold">POPULAR CATEGORIES</h3>
           {openPopular ? (
             <ChevronUp className="w-6 h-6" />
@@ -202,8 +201,7 @@ const Footer = () => {
         <div
           className={`transition-all duration-500 ease-in-out overflow-hidden ${
             openPopular ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
+          }`}>
           {/* Assuming popularCategories is an array of objects with title and items */}
           <div className="text-gray-300 leading-7 whitespace-pre-line mt-4">
             {popularCategories.map((section, index) => (
@@ -243,50 +241,42 @@ const Footer = () => {
               {/* Social Media Icons (Omitted for brevity) */}
               <a
                 href="#"
-                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition"
-              >
+                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition">
                 <Instagram size={24} />
               </a>
               <a
                 href="#"
-                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition"
-              >
+                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition">
                 <Linkedin size={24} />
               </a>
               <a
                 href="#"
-                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition"
-              >
+                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition">
                 <Facebook size={24} />
               </a>
               <a
                 href="#"
-                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition"
-              >
+                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
-                >
+                  className="w-6 h-6">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
               <a
                 href="#"
-                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition"
-              >
+                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="w-6 h-6"
-                >
+                  className="w-6 h-6">
                   <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
                 </svg>
               </a>
               <a
                 href="#"
-                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition"
-              >
+                className="bg-white text-gray-900 w-12 h-12 rounded flex items-center justify-center hover:bg-gray-200 transition">
                 <Youtube size={24} />
               </a>
             </div>
@@ -295,7 +285,8 @@ const Footer = () => {
         {/* COPYRIGHT */}
         <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-sm">
-            Copyright © 2025 Elegante Folks Pvt Ltd. All rights reserved.
+            Copyright © 2025 Straticrestedge. All
+            rights reserved.
           </p>
         </div>
       </div>
@@ -303,8 +294,7 @@ const Footer = () => {
       {/* --- FLOATING BUTTON --- */}
       <button
         onClick={() => setOpenBell(!openBell)}
-        className="fixed bottom-6 right-6 bg-yellow-400 text-gray-900 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-500 transition z-50"
-      >
+        className="fixed bottom-6 right-6 bg-yellow-400 text-gray-900 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-500 transition z-50">
         {openBell ? <X className="w-7 h-7" /> : <Bell className="w-7 h-7" />}
       </button>
 
@@ -326,8 +316,7 @@ const Footer = () => {
             max-sm:max-h-full 
             max-sm:rounded-b-none
             max-sm:rounded-t-2xl
-          "
-        >
+          ">
           {/* Sticky Header */}
           <div className="flex items-center justify-between p-5 border-b border-gray-200 sticky top-0 bg-white z-50">
             <h1 className="text-gray-800 font-semibold text-lg">
@@ -336,8 +325,7 @@ const Footer = () => {
             {/* The Bell icon is redundant here, let's use the X button for closing on mobile */}
             <button
               onClick={() => setOpenBell(false)}
-              className="md:hidden text-gray-400 hover:text-gray-600 p-1"
-            >
+              className="md:hidden text-gray-400 hover:text-gray-600 p-1">
               <X className="w-6 h-6" />
             </button>
             <Bell className="w-5 h-5 text-gray-600 max-md:hidden" />
@@ -348,8 +336,7 @@ const Footer = () => {
             {notifications.map((notification) => (
               <div
                 key={notification.id}
-                className="py-3 border-b last:border-b-0"
-              >
+                className="py-3 border-b last:border-b-0">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h3 className="text-sm font-medium text-gray-800">

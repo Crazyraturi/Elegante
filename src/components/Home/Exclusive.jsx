@@ -32,7 +32,7 @@ export default function Exclusive() {
       {/* Header */}
       <div className="text-center py-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-2">
-          Elegante Exclusive
+          Straticrest Edge Exclusive
         </h1>
         <p className="text-gray-600 text-lg">
           Trendy Global Styles For Extraordinary You
@@ -44,13 +44,11 @@ export default function Exclusive() {
         <div
           className=" flex overflow-x-auto gap-4 
           md:grid md:grid-cols-4 md:overflow-visible
-          scrollbar-hide"
-        >
+          scrollbar-hide">
           {visibleImages().map((img, idx) => (
             <div
               key={idx}
-              className="relative aspect-3/4 overflow-hidden rounded-lg shrink-0 w-96 p-5 md:w-auto"
-            >
+              className="relative aspect-3/4 overflow-hidden rounded-lg shrink-0 w-96 p-5 md:w-auto">
               <img
                 src={img}
                 alt={`Fashion ${idx + 1}`}
@@ -64,16 +62,14 @@ export default function Exclusive() {
         <button
           onClick={prevSlide}
           className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-3 shadow-lg transition-all z-10"
-          aria-label="Previous"
-        >
+          aria-label="Previous">
           <ChevronLeft className="w-6 h-6 text-gray-800" />
         </button>
 
         <button
           onClick={nextSlide}
           className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 rounded-full p-3 shadow-lg transition-all z-10"
-          aria-label="Next"
-        >
+          aria-label="Next">
           <ChevronRight className="w-6 h-6 text-gray-800" />
         </button>
       </div>

@@ -15,11 +15,11 @@ const TermsandCondition = () => {
         {
           title: "Terms & Conditions",
           content: [
-            `Access to and use of www.Elegante.in and the products and service
+            `Access to and use of www.Straticrestedge.in and the products and service
             available through the website are subject to the following terms,
             conditions and notices (“Terms of Service”). By browsing through
             these Terms of Service and using the services provided by our
-            website (www.Elegante.in), you agree to all Terms of Service along
+            website (www.Straticrestedge.in), you agree to all Terms of Service along
             with the Privacy Policy on our website, which may be updated by us
             from time to time. Please check this page regularly to take notice
             of any changes we may have made to the Terms of Service.`,
@@ -28,7 +28,7 @@ const TermsandCondition = () => {
         {
           title: "Introduction",
           content: [
-            `The domain name www.Elegante.in is a site operated by Elegante Folks
+            `The domain name www.Straticrestedge.in is a site operated by Straticrestedge Folks
             Pvt. Ltd., a company incorporated under laws of India with our
             registered office at Eklingpura Chouraha, Ahmedabad Main Road (NH 8
             - Near Mahadev Hotel) Udaipur, India 313002.`,
@@ -37,10 +37,10 @@ const TermsandCondition = () => {
         {
           title: "Services",
           content: [
-            `Elegante is an online retailer of apparel and lifestyle products
+            `Straticrestedge is an online retailer of apparel and lifestyle products
             offered at great values to the consumer. Membership allows customers
             to purchase a variety of products. Upon placing an order,
-            www.Elegante.in shall ship the product to you and be entitled to its
+            www.Straticrestedge.in shall ship the product to you and be entitled to its
             payment for the service.`,
           ],
         },
@@ -51,14 +51,14 @@ const TermsandCondition = () => {
             Twitter, and other such third-party websites. These are only for
             sharing and/or listing purposes, and we take no responsibility for
             the third-party websites and/or their contents listed on our website
-            (www.Elegante.in) and disclaim all our liabilities arising out of any
+            (www.Straticrestedge.in) and disclaim all our liabilities arising out of any
             or all third-party websites. We disclaim all liabilities and take no
             responsibility for the content that may be posted on such
             third-party websites by the users of such websites in their personal
             capacity on any of the above-mentioned links for sharing and/or
             listing purposes as well as any content and/or comments that may be
             posted by such users in their personal capacity on any official
-            webpage of Elegante on any social networking platform.`,
+            webpage of Straticrestedge on any social networking platform.`,
           ],
         },
         {
@@ -69,8 +69,8 @@ const TermsandCondition = () => {
             to us. By using this Website, you agree to be bound by the Privacy
             Policy, and warrant that all data provided by you is accurate and up
             to date. By signing up and ticking the consent box, the User agrees
-            to receive communications and notifications from Elegante via SMS,
-            Email, RCS, WhatsApp, or any other electronic medium. Elegante shall
+            to receive communications and notifications from Straticrestedge via SMS,
+            Email, RCS, WhatsApp, or any other electronic medium. Straticrestedge shall
             not be responsible for any damages arising from fraudulent messages
             sent over the internet by third parties.`,
           ],
@@ -156,15 +156,15 @@ const TermsandCondition = () => {
             "1 Credit = 1 INR.",
             "Credit is non-transferable and non-refundable.",
             "It is fully redeemable on the website.",
-            "A refund for COD orders is credited to your Elegante wallet.",
+            "A refund for COD orders is credited to your Straticrestedge wallet.",
             "Credit can be clubbed with gift vouchers and discount codes",
             "It is also applicable to the product(s) that are on offer or sale",
             "Credit expires 12 months from the date it is credited.",
             "After the 12 months, any unused Credit will automatically lapse and cannot be credited back to the account.",
             "There is no minimum cart value requirement to use Credit.",
             "Credit is not applicable on COD orders.",
-            "If fraudulent activity is detected, Elegante holds the right to dissolve the Credit Wallet of the concerned customer without prior notice.",
-            "Elegante will not be held accountable for any unregistered purchases or losses caused by network problems, equipment failures, service disruptions, or issues with payments from banks or payment gateways, as well as any charges imposed by network providers. Any disputes arising from such incidents must be resolved between the customer and the network provider, and Elegante assumes no responsibility for the outcome.",
+            "If fraudulent activity is detected, Straticrestedge holds the right to dissolve the Credit Wallet of the concerned customer without prior notice.",
+            "Straticrestedge will not be held accountable for any unregistered purchases or losses caused by network problems, equipment failures, service disruptions, or issues with payments from banks or payment gateways, as well as any charges imposed by network providers. Any disputes arising from such incidents must be resolved between the customer and the network provider, and Straticrestedge assumes no responsibility for the outcome.",
           ],
         },
         {
@@ -179,8 +179,8 @@ const TermsandCondition = () => {
             "After the 12 months, any unused reward points will automatically lapse and cannot be credited back to the account.",
             "There is no minimum cart value requirement to use Reward Points.",
             "Reward Points are applicable on COD orders.",
-            "If fraudulent activity is detected, Elegante holds the right to dissolve the Credit Wallet of the concerned customer without prior notice.",
-            "Elegante will not be held accountable for any unregistered purchases or losses caused by network problems, equipment failures, service disruptions, or issues with payments from banks or payment gateways, as well as any charges imposed by network providers. Any disputes arising from such incidents must be resolved between the customer and the network provider, and Elegante assumes no responsibility for the outcome.",
+            "If fraudulent activity is detected, Straticrestedge holds the right to dissolve the Credit Wallet of the concerned customer without prior notice.",
+            "Straticrestedge will not be held accountable for any unregistered purchases or losses caused by network problems, equipment failures, service disruptions, or issues with payments from banks or payment gateways, as well as any charges imposed by network providers. Any disputes arising from such incidents must be resolved between the customer and the network provider, and Straticrestedge assumes no responsibility for the outcome.",
           ],
         },
         {
@@ -189,13 +189,13 @@ const TermsandCondition = () => {
             "Products purchased during the G.O.A.T. Sale are non-returnable. However, exchanges are permitted as per our exchange policy.",
             "Two or more offers cannot be clubbed together.",
             "Only selected products are covered under the sale.",
-            "Elegante reserves the right to admission during the G.O.A.T. Sale.",
+            "Straticrestedge reserves the right to admission during the G.O.A.T. Sale.",
             "Combo products are not included in the sale.",
             "Free gifts or products offered during the sale cannot be exchanged or returned unless there is a manufacturing defect or damage caused by us.",
-            "The G.O.A.T. Sale is for a limited time only. Elegante reserves the right to modify, extend, or suspend the sale without prior notice.",
+            "The G.O.A.T. Sale is for a limited time only. Straticrestedge reserves the right to modify, extend, or suspend the sale without prior notice.",
             "Prices and discounts during the sale are final and cannot be challenged.",
             "Any fraudulent activity or misuse of the sale offers will lead to order cancellation without notice.",
-            "Elegante reserves the right to modify these Terms & Conditions at any time.",
+            "Straticrestedge reserves the right to modify these Terms & Conditions at any time.",
           ],
         },
       ].map((section, idx) => (

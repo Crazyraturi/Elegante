@@ -38,7 +38,7 @@ export default function BlogDetailPage() {
   const relatedPosts = [
     {
       title: "Travel Packing Made Easy: From Beaches to Forts in Style...",
-      author: " Elegante",
+      author: " Straticrestedge",
       date: "Jul 10, 2025",
       image:
         "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=300&fit=crop",
@@ -46,7 +46,7 @@ export default function BlogDetailPage() {
     {
       title:
         "Rain-Proof Your Wardrobe: 7 Essentials for Monsoon Fashion in 2025...",
-      author: " Elegante",
+      author: " Straticrestedge",
       date: "Jul 4, 2025",
       image:
         "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop",
@@ -54,7 +54,7 @@ export default function BlogDetailPage() {
     {
       title:
         "Rakhi Gifts for Brothers Who Have Everything (But Still Deserve More)...",
-      author: " Elegante",
+      author: " Straticrestedge",
       date: "Jul 4, 2025",
       image:
         "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=300&fit=crop",
@@ -119,9 +119,9 @@ export default function BlogDetailPage() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-3xl font-bold">The Elegante Blog</h1>
+          <h1 className="text-3xl font-bold">The Straticrestedge Blog</h1>
           <button className="bg-yellow-400 hover:bg-yellow-500 px-6 py-2 rounded font-semibold transition">
-            Shop At Elegante
+            Shop At Straticrestedge
           </button>
         </div>
       </header>
@@ -181,7 +181,7 @@ export default function BlogDetailPage() {
                   <span className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm">
                     👤
                   </span>
-                  By Elegante
+                  By Straticrestedge
                 </span>
                 <span>Apr 25, 2025</span>
               </div>
@@ -401,7 +401,7 @@ export default function BlogDetailPage() {
                   Start curating your summer essentials list today, and enjoy
                   the season with the perfect blend of style and comfort with{" "}
                   <a href="#" className="text-blue-600 hover:underline">
-                    Elegante
+                    Straticrestedge
                   </a>
                   !
                 </p>
@@ -426,8 +426,8 @@ export default function BlogDetailPage() {
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mt-8 pt-8 border-t">
                 {[
-                  "# Elegante",
-                  "# Elegante_blog",
+                  "# Straticrestedge",
+                  "# Straticrestedge_blog",
                   "#Fashion",
                   "#Lifestyle",
                   "#Men's Fashion",
@@ -440,8 +440,7 @@ export default function BlogDetailPage() {
                   <a
                     key={tag}
                     href="#"
-                    className="text-sm text-gray-600 hover:text-yellow-500 transition"
-                  >
+                    className="text-sm text-gray-600 hover:text-yellow-500 transition">
                     {tag}
                   </a>
                 ))}
@@ -452,7 +451,7 @@ export default function BlogDetailPage() {
                 <div className="w-20 h-20 bg-yellow-400 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">
                   👤
                 </div>
-                <h3 className="text-xl font-bold">By Elegante</h3>
+                <h3 className="text-xl font-bold">By Straticrestedge</h3>
               </div>
 
               {/* Related Posts */}
@@ -464,8 +463,7 @@ export default function BlogDetailPage() {
                   {relatedPosts.map((post, idx) => (
                     <div
                       key={idx}
-                      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
-                    >
+                      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
                       <img
                         src={post.image}
                         alt={post.title}
@@ -534,8 +532,7 @@ export default function BlogDetailPage() {
                   </label>
                   <button
                     onClick={handleCommentSubmit}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded font-semibold transition"
-                  >
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded font-semibold transition">
                     Post Comment
                   </button>
                 </div>
@@ -561,8 +558,7 @@ export default function BlogDetailPage() {
                 />
                 <button
                   onClick={handleNewsletterSubmit}
-                  className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition"
-                >
+                  className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition">
                   SUBSCRIBE NOW
                 </button>
               </div>
@@ -578,18 +574,17 @@ export default function BlogDetailPage() {
         </div>
       </div>
 
-      {/* Join  Elegante Family */}
+      {/* Join  Straticrestedge Family */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">
-            Join Elegante Family
+            Join Straticrestedge Family
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobListings.map((job, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition"
-              >
+                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
                 <h3 className="text-xl font-bold mb-3">{job.title}</h3>
                 <p className="text-gray-700 mb-4">{job.description}</p>
                 <button className="bg-yellow-400 hover:bg-yellow-500 px-6 py-2 rounded font-semibold transition">
@@ -638,8 +633,7 @@ export default function BlogDetailPage() {
                 {categories.map((cat) => (
                   <span
                     key={cat}
-                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded cursor-pointer transition"
-                  >
+                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded cursor-pointer transition">
                     {cat}
                   </span>
                 ))}
@@ -660,10 +654,9 @@ export default function BlogDetailPage() {
                 <p className="flex items-center gap-2">
                   <Mail size={18} />
                   <a
-                    href="mailto:support@ Elegante.in"
-                    className="hover:text-yellow-400 transition"
-                  >
-                    support@ Elegante.in
+                    href="mailto:support@  Straticrestedge solutions private limited"
+                    className="hover:text-yellow-400 transition">
+                    support@ Straticrestedge
                   </a>
                 </p>
               </div>
@@ -675,32 +668,27 @@ export default function BlogDetailPage() {
               <div className="flex gap-3 mb-6">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
-                >
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
                   <Twitter size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
-                >
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
                   <Facebook size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
-                >
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
                   <Linkedin size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
-                >
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
                   <Instagram size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
-                >
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
                   <Youtube size={18} />
                 </a>
               </div>
@@ -709,8 +697,7 @@ export default function BlogDetailPage() {
                 {shopLinks.slice(0, 6).map((link) => (
                   <span
                     key={link}
-                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs cursor-pointer transition"
-                  >
+                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs cursor-pointer transition">
                     {link}
                   </span>
                 ))}
@@ -719,7 +706,8 @@ export default function BlogDetailPage() {
           </div>
 
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-            Copyright © 2025 Elegante. All rights reserved.
+            Copyright © 2025 Straticrestedge solutions private limited. All
+            rights reserved.
           </div>
         </div>
       </footer>

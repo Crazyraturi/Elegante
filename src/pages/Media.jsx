@@ -24,19 +24,19 @@ const Media = () => {
   const newsItems = [
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931484/yourstory_r3odxn.png",
-      title: "FASHION ECOMMERCE STARTUP Elegante RAISES RS 40 CR FROM KLUB",
+      title: "FASHION ECOMMERCE STARTUP Straticrestedge RAISES RS 40 CR FROM KLUB",
       date: "29 Apr 2023",
     },
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931517/startup_story_xxayao.png",
       title:
-        "Elegante secures Rs 40 crore funding from Klub for expansion plans",
+        "Straticrestedge secures Rs 40 crore funding from Klub for expansion plans",
       date: "29 Apr 2023",
     },
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931546/smestreetlogo_ltcsfu.jpg",
       title:
-        "Elegante Aims to Open 100+ Stores in Tier 2 and 3 Cities after Raising 40 Cr Funding through Klub",
+        "Straticrestedge Aims to Open 100+ Stores in Tier 2 and 3 Cities after Raising 40 Cr Funding through Klub",
       date: "27 Apr 2023",
     },
     {
@@ -48,12 +48,12 @@ const Media = () => {
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931649/indiaretail-logo-23_lcz6sj.png",
       title:
-        "Online fashion brand Elegante crosses Rs 100 crore in FY 2022-2023",
+        "Online fashion brand Straticrestedge crosses Rs 100 crore in FY 2022-2023",
       date: "26 Apr 2023",
     },
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931702/vccircle_bwanwz.png",
-      title: "E-Commerce Firm Elegante Raises Close To $5 Mn In Funding Round",
+      title: "E-Commerce Firm Straticrestedge Raises Close To $5 Mn In Funding Round",
       date: "28 Apr 2023",
     },
     {
@@ -63,12 +63,12 @@ const Media = () => {
     },
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931775/logo-hr-header_zczekv.png",
-      title: "Elegante to hire over 150 professionals",
+      title: "Straticrestedge to hire over 150 professionals",
       date: "21 Oct 2021",
     },
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931825/indian-retailer_lteuqv.png",
-      title: "Youth Apparel Startup Elegante Forays into Semi-Premium Segment",
+      title: "Youth Apparel Startup Straticrestedge Forays into Semi-Premium Segment",
       date: "20 Oct 2021",
     },
     {
@@ -88,7 +88,7 @@ const Media = () => {
             <span className="hover:text-gray-900 cursor-pointer">HOME</span>
             <span>›</span>
             <span className="text-gray-900 font-medium">
-              Elegante - IN THE NEWS
+              Straticrestedge - IN THE NEWS
             </span>
           </div>
         </div>

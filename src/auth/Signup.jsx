@@ -93,7 +93,7 @@ const Signup = () => {
         </div>
         <div className="text-sm">
           <p>
-            © 2025 Elegante •{" "}
+            © 2025 Straticrestedge •{" "}
             <Link to="#" className="hover:underline">
               Privacy Policy
             </Link>
@@ -189,8 +189,7 @@ const Signup = () => {
               onClick={submitHandler}
               type="submit"
               className="w-full mt-4 h-10 bg-yellow-400 hover:bg-yellow-500 text-black text-base font-semibold transition duration-300"
-              disabled={loading}
-            >
+              disabled={loading}>
               {loading ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin mr-2" />
@@ -206,7 +205,7 @@ const Signup = () => {
 
             {/* Terms and Privacy Policy Footer */}
             <p className="text-center text-xs text-gray-500 mt-4">
-              By continuing, you agree to Elegante{" "}
+              By continuing, you agree to Straticrestedge{" "}
               <Link to="#" className="hover:underline text-gray-700">
                 Terms of Service
               </Link>{" "}
