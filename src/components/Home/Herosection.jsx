@@ -91,7 +91,7 @@ export default function FlannelCarousel() {
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prev) => (prev - 1 + selectedSlides.length) % selectedSlides.length
+      (prev) => (prev - 1 + selectedSlides.length) % selectedSlides.length,
     );
   };
 

@@ -33,7 +33,8 @@ const Teams = () => {
           controls={false}
           loop
           playsInline
-          src="https://res.cloudinary.com/dj9tpadhk/video/upload/v1764917858/About_Us_Last_Bottom_Video_vwhwge.mp4"></video>
+          src="https://res.cloudinary.com/dj9tpadhk/video/upload/v1764917858/About_Us_Last_Bottom_Video_vwhwge.mp4"
+        ></video>
       </div>
 
       <p className="text-center max-w-6xl m-auto">

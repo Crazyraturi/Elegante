@@ -54,7 +54,7 @@ function ComboSelector({ product, addToCart, navigate }) {
 
   const handleChange = (index, field, value) => {
     setSelections((prev) =>
-      prev.map((item, i) => (i === index ? { ...item, [field]: value } : item))
+      prev.map((item, i) => (i === index ? { ...item, [field]: value } : item)),
     );
   };
 
@@ -229,7 +229,7 @@ export default function ProductPage() {
       try {
         setLoading(true);
         const res = await fetch(
-          `https://beyoung-backend.onrender.com/api/v1/product/${id}`
+          `https://beyoung-backend.onrender.com/api/v1/product/${id}`,
         );
         const json = await res.json();
 
@@ -277,7 +277,7 @@ export default function ProductPage() {
     .filter((url) => url !== null);
 
   const imageList = [product.images?.preview, ...validGalleryImages].filter(
-    Boolean
+    Boolean,
   );
 
   const activeVariant =
@@ -346,7 +346,7 @@ export default function ProductPage() {
     const variantId = activeVariant._id?.$oid || activeVariant._id;
 
     addToCart({
-      productId: finalProductId,  
+      productId: finalProductId,
       id: variantId,
       title: product.title,
       price: priceData.discounted,
@@ -354,7 +354,7 @@ export default function ProductPage() {
       image: imageList[selectedImageIndex] || product.images.preview,
       color: selectedColor,
       size: selectedSize,
-      quantity: 1
+      quantity: 1,
     });
 
     if (shouldRedirect) {
@@ -608,12 +608,12 @@ export default function ProductPage() {
                         {section === "spec"
                           ? "Specifications"
                           : section === "desc"
-                          ? "Description"
-                          : section === "policy"
-                          ? "Returns & Refund"
-                          : section === "market"
-                          ? "Marketed By"
-                          : "Ratings & Reviews"}
+                            ? "Description"
+                            : section === "policy"
+                              ? "Returns & Refund"
+                              : section === "market"
+                                ? "Marketed By"
+                                : "Ratings & Reviews"}
                       </h3>
                       {openSection === section ? (
                         <ChevronUp />
@@ -632,7 +632,7 @@ export default function ProductPage() {
                       </div>
                     )}
                   </div>
-                )
+                ),
               )}
             </div>
             <div className="h-40 lg:h-96"></div>

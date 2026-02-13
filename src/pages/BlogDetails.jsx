@@ -440,7 +440,8 @@ export default function BlogDetailPage() {
                   <a
                     key={tag}
                     href="#"
-                    className="text-sm text-gray-600 hover:text-yellow-500 transition">
+                    className="text-sm text-gray-600 hover:text-yellow-500 transition"
+                  >
                     {tag}
                   </a>
                 ))}
@@ -463,7 +464,8 @@ export default function BlogDetailPage() {
                   {relatedPosts.map((post, idx) => (
                     <div
                       key={idx}
-                      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
+                    >
                       <img
                         src={post.image}
                         alt={post.title}
@@ -532,7 +534,8 @@ export default function BlogDetailPage() {
                   </label>
                   <button
                     onClick={handleCommentSubmit}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded font-semibold transition">
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded font-semibold transition"
+                  >
                     Post Comment
                   </button>
                 </div>
@@ -558,7 +561,8 @@ export default function BlogDetailPage() {
                 />
                 <button
                   onClick={handleNewsletterSubmit}
-                  className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition">
+                  className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 rounded transition"
+                >
                   SUBSCRIBE NOW
                 </button>
               </div>
@@ -584,7 +588,8 @@ export default function BlogDetailPage() {
             {jobListings.map((job, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition">
+                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition"
+              >
                 <h3 className="text-xl font-bold mb-3">{job.title}</h3>
                 <p className="text-gray-700 mb-4">{job.description}</p>
                 <button className="bg-yellow-400 hover:bg-yellow-500 px-6 py-2 rounded font-semibold transition">
@@ -633,7 +638,8 @@ export default function BlogDetailPage() {
                 {categories.map((cat) => (
                   <span
                     key={cat}
-                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded cursor-pointer transition">
+                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded cursor-pointer transition"
+                  >
                     {cat}
                   </span>
                 ))}
@@ -655,7 +661,8 @@ export default function BlogDetailPage() {
                   <Mail size={18} />
                   <a
                     href="mailto:support@  Straticrestedge solutions private limited"
-                    className="hover:text-yellow-400 transition">
+                    className="hover:text-yellow-400 transition"
+                  >
                     support@ Straticrestedge
                   </a>
                 </p>
@@ -668,27 +675,32 @@ export default function BlogDetailPage() {
               <div className="flex gap-3 mb-6">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
+                >
                   <Twitter size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
+                >
                   <Facebook size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
+                >
                   <Linkedin size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
+                >
                   <Instagram size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition">
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded flex items-center justify-center transition"
+                >
                   <Youtube size={18} />
                 </a>
               </div>
@@ -697,7 +709,8 @@ export default function BlogDetailPage() {
                 {shopLinks.slice(0, 6).map((link) => (
                   <span
                     key={link}
-                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs cursor-pointer transition">
+                    className="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs cursor-pointer transition"
+                  >
                     {link}
                   </span>
                 ))}
