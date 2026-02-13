@@ -89,7 +89,5 @@ export const NewArrival_DATA = {
 
     price_table_data: {},
     faq: [],
-
-   
   },
 };

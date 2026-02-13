@@ -80,8 +80,8 @@ const ReturnOrder = () => {
         <p>
           • Self-ship in case of non-serviceable areas: If your Pincode is
           non-serviceable, please self-ship the product(s) to our warehouse.
-          Address: Straticrestedge Folks Pvt Ltd, Khasra No. 3881/2188, Rani Ji Bawri,
-          Eklingpura, Jamar Kotda Road, Udaipur - 313001.
+          Address: Straticrestedge Folks Pvt Ltd, Khasra No. 3881/2188, Rani Ji
+          Bawri, Eklingpura, Jamar Kotda Road, Udaipur - 313001.
         </p>
         <p>
           • Refund for Self-Shipping: Refunds will be processed within 48 hours
@@ -113,9 +113,9 @@ const ReturnOrder = () => {
         <p>
           <span className="font-bold">• COD Orders: &nbsp; </span> If the
           product(s) passes the quality check once it reaches our warehouse, the
-          refund will be issued instantly in your Straticrestedge Wallet. Credits can
-          be used for future purchases on websites or apps. It is valid for 12
-          months from the date you receive it.
+          refund will be issued instantly in your Straticrestedge Wallet.
+          Credits can be used for future purchases on websites or apps. It is
+          valid for 12 months from the date you receive it.
           <br />
           <span className="font-bold">Note:&nbsp; </span>
           Any purchases made using Credits, if and when returned, will be
@@ -132,8 +132,8 @@ const ReturnOrder = () => {
         <p>
           • Orders can be cancelled or modified (change number, address, product
           style or size) if they have not yet been dispatched from our
-          warehouse. Contact us via WhatsApp or email us at support@Straticrestedge.in
-          to request changes.
+          warehouse. Contact us via WhatsApp or email us at
+          support@Straticrestedge.in to request changes.
         </p>
       </div>
 
@@ -189,8 +189,8 @@ const ReturnOrder = () => {
         <p>
           • If payment is made through third-party platforms and you have not
           received any updates regarding payment or cashback, please contact the
-          respective payment platform. Straticrestedge is not responsible for such
-          scenarios.
+          respective payment platform. Straticrestedge is not responsible for
+          such scenarios.
         </p>
         <p>
           • For prepaid orders, if you receive a delivery confirmation via SMS

@@ -33,7 +33,8 @@ const MenuLink = ({
   <Link
     to={`/products?${filterKey}=${encodeURIComponent(filterValue)}`}
     className={className}
-    onClick={onClick}>
+    onClick={onClick}
+  >
     {children}
   </Link>
 );
@@ -135,14 +136,14 @@ export default function EcommerceHeader() {
 
   const toggleMobileCategory = (category) => {
     setExpandedMobileCategory(
-      expandedMobileCategory === category ? null : category
+      expandedMobileCategory === category ? null : category,
     );
     setExpandedTopwearSubCategory(null);
   };
 
   const toggleTopwearSubCategory = (subCategory) => {
     setExpandedTopwearSubCategory(
-      expandedTopwearSubCategory === subCategory ? null : subCategory
+      expandedTopwearSubCategory === subCategory ? null : subCategory,
     );
   };
 
@@ -156,7 +157,8 @@ export default function EcommerceHeader() {
           <span> / </span>
           <button
             onClick={handleLogout}
-            className="hover:underline bg-transparent p-0">
+            className="hover:underline bg-transparent p-0"
+          >
             LOGOUT
           </button>
         </>
@@ -214,7 +216,8 @@ export default function EcommerceHeader() {
             filterKey={filterKey}
             filterValue={filterValue}
             onClick={closeMenu}
-            className="flex items-center w-full px-4 py-3 font-medium text-gray-800">
+            className="flex items-center w-full px-4 py-3 font-medium text-gray-800"
+          >
             {Icon && <Icon className="w-5 h-5 mr-3 text-gray-500" />}
             {category}
           </MenuLink>
@@ -230,7 +233,8 @@ export default function EcommerceHeader() {
             isActive
               ? "text-yellow-500 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-yellow-500"
               : "text-gray-800"
-          }`}>
+          }`}
+        >
           <span className="flex items-center">
             {Icon && <Icon className="w-5 h-5 mr-3 text-gray-500" />}
             {category}
@@ -253,9 +257,7 @@ export default function EcommerceHeader() {
           This website is for internal educational use only and will not be
           publicly published.
         </div>
-        <div className="block sm:hidden text-sm">
-         Education Purpose only
-        </div>
+        <div className="block sm:hidden text-sm">Education Purpose only</div>
         <TopBannerLinks />
       </div>
       <header className="bg-white shadow-sm">
@@ -281,7 +283,8 @@ export default function EcommerceHeader() {
                         <MenuLink
                           filterKey={col.key}
                           filterValue={col.title}
-                          className="font-bold mb-3 block text-sm">
+                          className="font-bold mb-3 block text-sm"
+                        >
                           {col.title}
                         </MenuLink>
 
@@ -291,7 +294,8 @@ export default function EcommerceHeader() {
                               <MenuLink
                                 filterKey={"specificType"} // Simplified filter key logic
                                 filterValue={item}
-                                className="text-sm text-gray-600 hover:text-gray-900">
+                                className="text-sm text-gray-600 hover:text-gray-900"
+                              >
                                 {item}
                               </MenuLink>
                             </li>
@@ -300,7 +304,8 @@ export default function EcommerceHeader() {
                             <MenuLink
                               filterKey={col.key}
                               filterValue={col.title}
-                              className="text-sm text-gray-600 font-semibold">
+                              className="text-sm text-gray-600 font-semibold"
+                            >
                               View All
                             </MenuLink>
                           </li>
@@ -324,7 +329,8 @@ export default function EcommerceHeader() {
                         <MenuLink
                           filterKey="subCategory"
                           filterValue={type}
-                          className="text-sm text-gray-600 hover:text-gray-900">
+                          className="text-sm text-gray-600 hover:text-gray-900"
+                        >
                           {type}
                         </MenuLink>
                       </li>
@@ -339,7 +345,8 @@ export default function EcommerceHeader() {
                   key={cat}
                   filterKey="category"
                   filterValue={cat}
-                  className="text-sm font-semibold">
+                  className="text-sm font-semibold"
+                >
                   {cat.toUpperCase()}
                 </MenuLink>
               ))}
@@ -352,7 +359,8 @@ export default function EcommerceHeader() {
               </Link>
               <Link
                 to="/cart"
-                className="relative p-2 hover:bg-gray-100 rounded-full">
+                className="relative p-2 hover:bg-gray-100 rounded-full"
+              >
                 <ShoppingCart className="w-5 h-5 text-gray-700" />
                 {cartItems.length > 0 && (
                   <span className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs font-bold rounded-full h-5 w-5 flex justify-center items-center">
@@ -362,7 +370,8 @@ export default function EcommerceHeader() {
               </Link>
               <button
                 className="md:hidden p-2"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
                 {mobileMenuOpen ? <X /> : <Menu />}
               </button>
             </div>
@@ -382,7 +391,8 @@ export default function EcommerceHeader() {
               {/* Close Button positioned absolutely on top of the image */}
               <button
                 onClick={closeMenu}
-                className="absolute top-2 right-2 p-2 bg-black/30 rounded-full text-white">
+                className="absolute top-2 right-2 p-2 bg-black/30 rounded-full text-white"
+              >
                 <X className="w-6 h-6" />
               </button>
             </div>
@@ -417,7 +427,8 @@ export default function EcommerceHeader() {
                 category="Topwear"
                 icon={getCategoryIcon("Topwear")}
                 isExpanded={expandedMobileCategory === "Topwear"}
-                toggleHandler={toggleMobileCategory}>
+                toggleHandler={toggleMobileCategory}
+              >
                 <div className="pl-6 bg-gray-50">
                   {topwearData
                     .filter((item) => item.title !== "Shop For Women")
@@ -430,7 +441,8 @@ export default function EcommerceHeader() {
                             filterKey={col.key}
                             filterValue={col.items[0]}
                             onClick={closeMenu}
-                            className="block py-3 px-4 text-sm font-medium text-gray-700 border-b border-gray-100 last:border-0">
+                            className="block py-3 px-4 text-sm font-medium text-gray-700 border-b border-gray-100 last:border-0"
+                          >
                             {col.title}
                           </MenuLink>
                         );
@@ -440,10 +452,12 @@ export default function EcommerceHeader() {
                       return (
                         <div
                           key={idx}
-                          className="border-b border-gray-100 last:border-0">
+                          className="border-b border-gray-100 last:border-0"
+                        >
                           <button
                             onClick={() => toggleTopwearSubCategory(col.title)}
-                            className="flex items-center justify-between w-full py-3 px-4 text-sm font-medium text-gray-700 text-left">
+                            className="flex items-center justify-between w-full py-3 px-4 text-sm font-medium text-gray-700 text-left"
+                          >
                             {col.title}
                             <ChevronDown
                               className={`w-4 h-4 transition-transform ${
@@ -463,7 +477,8 @@ export default function EcommerceHeader() {
                                   filterKey="specificType"
                                   filterValue={item}
                                   onClick={closeMenu}
-                                  className="block py-1 text-sm text-gray-500 hover:text-gray-800">
+                                  className="block py-1 text-sm text-gray-500 hover:text-gray-800"
+                                >
                                   {item}
                                 </MenuLink>
                               ))}
@@ -471,7 +486,8 @@ export default function EcommerceHeader() {
                                 filterKey={col.key}
                                 filterValue={col.title}
                                 onClick={closeMenu}
-                                className="block py-1 text-sm font-semibold text-gray-800">
+                                className="block py-1 text-sm font-semibold text-gray-800"
+                              >
                                 View All
                               </MenuLink>
                             </div>
@@ -487,7 +503,8 @@ export default function EcommerceHeader() {
                 category="Bottomwear"
                 icon={getCategoryIcon("Bottomwear")}
                 isExpanded={expandedMobileCategory === "Bottomwear"}
-                toggleHandler={toggleMobileCategory}>
+                toggleHandler={toggleMobileCategory}
+              >
                 <div className="px-8 pb-4 space-y-3 bg-gray-50">
                   <ul className="space-y-2">
                     {bottomwearTypes.map((type, i) => (
@@ -496,7 +513,8 @@ export default function EcommerceHeader() {
                           filterKey="subCategory"
                           filterValue={type}
                           onClick={closeMenu}
-                          className="block text-sm text-gray-600">
+                          className="block text-sm text-gray-600"
+                        >
                           {type}
                         </MenuLink>
                       </li>
@@ -509,7 +527,8 @@ export default function EcommerceHeader() {
                 category="More"
                 icon={getCategoryIcon("More")}
                 isExpanded={expandedMobileCategory === "More"}
-                toggleHandler={toggleMobileCategory}>
+                toggleHandler={toggleMobileCategory}
+              >
                 <div className="pl-12 pr-4 pb-4 space-y-3 bg-gray-50">
                   {moreLinks.map((link, index) => {
                     const Icon = link.icon;
@@ -518,7 +537,8 @@ export default function EcommerceHeader() {
                         key={index}
                         to={link.to}
                         onClick={closeMenu}
-                        className="flex items-center py-2 text-sm font-medium text-gray-600 hover:text-gray-800">
+                        className="flex items-center py-2 text-sm font-medium text-gray-600 hover:text-gray-800"
+                      >
                         <Icon className="w-5 h-5 mr-3 text-gray-500" />
                         {link.name}
                       </NavLink>
@@ -534,13 +554,15 @@ export default function EcommerceHeader() {
                     <NavLink
                       to="/my-account"
                       onClick={closeMenu}
-                      className="block py-2 font-medium text-gray-800">
+                      className="block py-2 font-medium text-gray-800"
+                    >
                       MY ACCOUNT
                     </NavLink>
 
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left py-2 font-medium text-gray-800">
+                      className="block w-full text-left py-2 font-medium text-gray-800"
+                    >
                       LOGOUT
                     </button>
                   </>
@@ -548,7 +570,8 @@ export default function EcommerceHeader() {
                   <NavLink
                     to="/login"
                     onClick={closeMenu}
-                    className="block py-2 font-medium text-gray-800">
+                    className="block py-2 font-medium text-gray-800"
+                  >
                     LOG IN / SIGNUP
                   </NavLink>
                 )}

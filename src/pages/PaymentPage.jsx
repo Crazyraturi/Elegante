@@ -15,53 +15,53 @@ export default function PaymentPage() {
   const [isProcessing, setIsProcessing] = useState(false);
 
   // 1. DYNAMIC API URL: Points to Render in production, localhost in dev
-  const API_BASE_URL="https://beyoung-backend.onrender.com";
+  const API_BASE_URL = "https://beyoung-backend.onrender.com";
 
   if (!addressData) {
     navigate("/address");
     return null;
   }
 
- const handlePayUPayment = async () => {
-   setIsProcessing(true);
-   try {
-     const txnid = "TXN" + Date.now();
-     const token = localStorage.getItem("token");
+  const handlePayUPayment = async () => {
+    setIsProcessing(true);
+    try {
+      const txnid = "TXN" + Date.now();
+      const token = localStorage.getItem("token");
 
-     const { data } = await axios.post(
-       `${API_BASE_URL}/api/v1/payment/initiate-payment`,
-       {
-         txnid,
-         amount: Number(cartTotal).toFixed(2),
-         productinfo: "Store Order",
-         firstname: addressData.firstName,
-         email: user.email,
-         phone: addressData.mobile,
-       },
-       { headers: { Authorization: `Bearer ${token}` } }
-     );
+      const { data } = await axios.post(
+        `${API_BASE_URL}/api/v1/payment/initiate-payment`,
+        {
+          txnid,
+          amount: Number(cartTotal).toFixed(2),
+          productinfo: "Store Order",
+          firstname: addressData.firstName,
+          email: user.email,
+          phone: addressData.mobile,
+        },
+        { headers: { Authorization: `Bearer ${token}` } },
+      );
 
-     if (data.success && data.form) {
-       // Create a hidden div, inject the SDK's form, and submit it
-       const container = document.createElement("div");
-       container.style.display = "none";
-       container.innerHTML = data.form;
-       document.body.appendChild(container);
+      if (data.success && data.form) {
+        // Create a hidden div, inject the SDK's form, and submit it
+        const container = document.createElement("div");
+        container.style.display = "none";
+        container.innerHTML = data.form;
+        document.body.appendChild(container);
 
-       // The SDK generates a form named 'payuForm' or simply the first form
-       container.querySelector("form").submit();
-     }
-     // Replace your catch block with this to see the REAL error
-   } catch (error) {
-     console.error(
-       "AXIOS ERROR DETAILS:",
-       error.response?.data || error.message
-     );
-     toast.error(error.response?.data?.message || "Connection failed");
-   } finally {
-     setIsProcessing(false);
-   }
- };
+        // The SDK generates a form named 'payuForm' or simply the first form
+        container.querySelector("form").submit();
+      }
+      // Replace your catch block with this to see the REAL error
+    } catch (error) {
+      console.error(
+        "AXIOS ERROR DETAILS:",
+        error.response?.data || error.message,
+      );
+      toast.error(error.response?.data?.message || "Connection failed");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -69,8 +69,13 @@ export default function PaymentPage() {
         <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
         <div className="border-b pb-4 mb-4">
           <p className="font-semibold">Deliver to:</p>
-          <p>{addressData.firstName} {addressData.lastName}</p>
-          <p>{addressData.address}, {addressData.city}, {addressData.state} - {addressData.pinCode}</p>
+          <p>
+            {addressData.firstName} {addressData.lastName}
+          </p>
+          <p>
+            {addressData.address}, {addressData.city}, {addressData.state} -{" "}
+            {addressData.pinCode}
+          </p>
           <p>Phone: {addressData.mobile}</p>
         </div>
         <div className="flex justify-between text-xl font-bold mb-8">

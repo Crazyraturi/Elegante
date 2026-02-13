@@ -54,7 +54,7 @@ const Signup = () => {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
       if (res.data.success) {
         navigate("/verify-check");
@@ -189,7 +189,8 @@ const Signup = () => {
               onClick={submitHandler}
               type="submit"
               className="w-full mt-4 h-10 bg-yellow-400 hover:bg-yellow-500 text-black text-base font-semibold transition duration-300"
-              disabled={loading}>
+              disabled={loading}
+            >
               {loading ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin mr-2" />

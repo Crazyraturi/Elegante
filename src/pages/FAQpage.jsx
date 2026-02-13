@@ -3,7 +3,7 @@ import { ChevronRight, Star } from "lucide-react";
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState(
-    "My Account & My Order"
+    "My Account & My Order",
   );
   const [openQuestion, setOpenQuestion] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -414,7 +414,8 @@ You will see the Available Balance, Total Purchases, and Usage History.`,
 4. Do not use bleach. It can damage the fibers and fade the color.`,
       },
       {
-        question: "Will my  Straticrestedge Cargo Joggers lose color and shape?",
+        question:
+          "Will my  Straticrestedge Cargo Joggers lose color and shape?",
         answer: `Yes, if you wash them the wrong way. To make sure they stay durable and stylish, follow these simple care tips:
  
 1. Give them a gentle machine wash to maintain fabric strength.

@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
   }
   if (!hoverImage) {
     hoverImage = images.gallery?.find(
-      (item) => item.file && item.file !== mainImage
+      (item) => item.file && item.file !== mainImage,
     )?.file;
   }
   if (!hoverImage) {

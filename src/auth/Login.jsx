@@ -51,7 +51,7 @@ const Login = () => {
       const res = await axios.post(
         `https://beyoung-backend.onrender.com/api/v1/user/login`,
         formData,
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" } },
       );
 
       if (res.data.success) {
@@ -84,7 +84,8 @@ const Login = () => {
       <div
         className={`hidden lg:flex lg:w-1/2 relative overflow-hidden bg-yellow-400 transition-all duration-1000 ease-out ${
           animate ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-        }`}>
+        }`}
+      >
         {/* Abstract Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +94,8 @@ const Login = () => {
                 id="grid"
                 width="40"
                 height="40"
-                patternUnits="userSpaceOnUse">
+                patternUnits="userSpaceOnUse"
+              >
                 <path
                   d="M 40 0 L 0 0 0 40"
                   fill="none"
@@ -150,7 +152,8 @@ const Login = () => {
         <div
           className={`w-full max-w-md space-y-8 transition-all duration-700 delay-100 ${
             animate ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}>
+          }`}
+        >
           <div className="text-center lg:text-left">
             <h2 className="text-3xl font-bold text-gray-900">
               Login to your account
@@ -159,7 +162,8 @@ const Login = () => {
               New to Straticrestedge ?
               <Link
                 to="/signup"
-                className="ml-1 font-semibold text-yellow-500 hover:text-yellow-600">
+                className="ml-1 font-semibold text-yellow-500 hover:text-yellow-600"
+              >
                 Create an account
               </Link>
             </p>
@@ -197,7 +201,8 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-2.5 text-gray-500">
+                className="absolute right-3 top-2.5 text-gray-500"
+              >
                 {showPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
@@ -205,7 +210,8 @@ const Login = () => {
             <div className="flex justify-end">
               <Link
                 to="/forgot-password"
-                className="text-sm font-medium text-gray-500 hover:text-yellow-600">
+                className="text-sm font-medium text-gray-500 hover:text-yellow-600"
+              >
                 Forgot your password?
               </Link>
             </div>
@@ -214,7 +220,8 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="relative w-full py-3 font-bold rounded-xl bg-yellow-400 hover:bg-yellow-500 transition shadow-lg disabled:opacity-70">
+              className="relative w-full py-3 font-bold rounded-xl bg-yellow-400 hover:bg-yellow-500 transition shadow-lg disabled:opacity-70"
+            >
               {loading ? (
                 <div className="flex items-center justify-center">
                   <Loader2 className="h-5 w-5 animate-spin mr-2" />
