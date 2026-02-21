@@ -135,19 +135,17 @@ const Footer = () => {
           <h3 className="mb-3">LOCATION</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/contact">
-                support@ Straticrestedge
-              </Link>
+              <Link to="/contact">support@ Straticrestedge</Link>
             </li>
             <li>
               <Link to="/location">
-                Eklingpura Chouraha, Ahmedabad Main Road (NH 8 - Near Mahadev
-                Hotel)
+                First Floor, Unit No. 127, Plot No. A-9, GD ITL Tower, Pitampura
+                Flyover U Turn, Netaji Subhash Place, New Delhi, North West
+                Delhi, Delhi 110034
               </Link>
             </li>
-            <li>
-              <Link to="/location">Udaipur, India - 313002</Link>
-            </li>
+            
+
           </ul>
         </div>
       </div>
@@ -285,8 +283,7 @@ const Footer = () => {
         {/* COPYRIGHT */}
         <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-sm">
-            Copyright © 2025 Straticrestedge. All
-            rights reserved.
+            Copyright © 2025 Straticrestedge. All rights reserved.
           </p>
         </div>
       </div>

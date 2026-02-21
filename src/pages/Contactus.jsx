@@ -31,7 +31,7 @@ export default function ContactUs() {
               <li className="text-gray-700">
                 <span className="font-semibold">• Email Support:</span>{" "}
                 <span className="text-gray-700">
-                  support@ Straticrestedge
+                  support@straticrestedge.in
                 </span>
               </li>
             </ul>
