@@ -32,7 +32,7 @@ const NewArrival = () => {
       try {
         setLoading(true);
         const res = await fetch(
-          "https://beyoung-backend.onrender.com/api/v1/product"
+          "https://beyoung-backend.onrender.com/api/v1/product",
         );
         const data = await res.json();
         const rawProducts = data.data || data.products || [];
@@ -79,7 +79,7 @@ const NewArrival = () => {
           setVisibleCount((prev) => prev + 8);
         }
       },
-      { threshold: 1.0 }
+      { threshold: 1.0 },
     );
 
     if (observerTarget.current) observer.observe(observerTarget.current);

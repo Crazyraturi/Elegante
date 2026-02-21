@@ -163,7 +163,7 @@ export default function ProductListingPage() {
     } else if (specificType) {
       if (specificType.toLowerCase() === "new_arrival") {
         const fifteenDaysAgo = new Date(
-          Date.now() - 15 * 24 * 60 * 60 * 1000
+          Date.now() - 15 * 24 * 60 * 60 * 1000,
         ).toISOString();
         filterParams.append("createdAt_gte", fifteenDaysAgo);
         filterParams.append("mainCategory", "New Arrivals");
@@ -209,7 +209,7 @@ export default function ProductListingPage() {
         filterParams.append("mainCategory", categoryQuery); // 🚨 NEW LOGIC: Apply 15-day filter for main New Arrivals category link // Temporarily set to 30 days to bypass the time zone error
 
         const thirtyDaysAgo = new Date(
-          Date.now() - 30 * 24 * 60 * 60 * 1000
+          Date.now() - 30 * 24 * 60 * 60 * 1000,
         ).toISOString();
         filterParams.append("createdAt_gte", thirtyDaysAgo); // The restrictive 'subCategory' filter for Winterwear has been removed.
       } else {
@@ -310,15 +310,15 @@ export default function ProductListingPage() {
           if (Array.isArray(productValue)) {
             return productValue.some((val) =>
               selectedValues.some(
-                (sel) => sel.toLowerCase() === String(val).toLowerCase()
-              )
+                (sel) => sel.toLowerCase() === String(val).toLowerCase(),
+              ),
             );
           }
 
           return selectedValues.some(
-            (sel) => sel.toLowerCase() === String(productValue).toLowerCase()
+            (sel) => sel.toLowerCase() === String(productValue).toLowerCase(),
           );
-        }
+        },
       );
     });
   }, [products, selectedFilters]);
@@ -342,7 +342,7 @@ export default function ProductListingPage() {
         if (Array.isArray(productValue)) {
           productValue.forEach((val) => {
             const matchedOption = group.options.find(
-              (opt) => opt.toLowerCase() === String(val).toLowerCase()
+              (opt) => opt.toLowerCase() === String(val).toLowerCase(),
             );
             if (matchedOption) {
               counts[`${group.id}-${matchedOption}`]++;
@@ -350,7 +350,7 @@ export default function ProductListingPage() {
           });
         } else if (productValue) {
           const matchedOption = group.options.find(
-            (opt) => opt.toLowerCase() === String(productValue).toLowerCase()
+            (opt) => opt.toLowerCase() === String(productValue).toLowerCase(),
           );
           if (matchedOption) {
             counts[`${group.id}-${matchedOption}`]++;
@@ -435,7 +435,7 @@ export default function ProductListingPage() {
                     product.image?.[0]?.url ||
                     "https://via.placeholder.com/300x400?text=No+Image";
                   const isWished = wishlistItems.some(
-                    (item) => item.id === product._id
+                    (item) => item.id === product._id,
                   );
                   const wishlistProductData = {
                     id: product._id,

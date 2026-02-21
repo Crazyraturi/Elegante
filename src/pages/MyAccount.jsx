@@ -105,15 +105,15 @@ const MyAccount = () => {
   const handlePermanentDelete = (orderId) => {
     if (
       window.confirm(
-        "Are you sure you want to permanently delete this order record? This action cannot be undone."
+        "Are you sure you want to permanently delete this order record? This action cannot be undone.",
       )
     ) {
       const existingOrders = JSON.parse(
-        localStorage.getItem("beyoung_orders") || "[]"
+        localStorage.getItem("beyoung_orders") || "[]",
       );
 
       const updatedOrders = existingOrders.filter(
-        (order) => order.id !== orderId
+        (order) => order.id !== orderId,
       );
 
       localStorage.setItem("beyoung_orders", JSON.stringify(updatedOrders));
@@ -128,7 +128,7 @@ const MyAccount = () => {
   const handleCancelOrder = () => {
     if (!orderToCancelId || !cancelReason) return;
     const existingOrders = JSON.parse(
-      localStorage.getItem("beyoung_orders") || "[]"
+      localStorage.getItem("beyoung_orders") || "[]",
     );
 
     const updatedOrders = existingOrders.map((order) =>
@@ -139,7 +139,7 @@ const MyAccount = () => {
             cancellationReason: cancelReason,
             cancellationDate: new Date().toLocaleDateString(),
           }
-        : order
+        : order,
     );
 
     localStorage.setItem("beyoung_orders", JSON.stringify(updatedOrders));
@@ -175,7 +175,7 @@ const MyAccount = () => {
     switch (activeSection) {
       case "orders":
         const storedOrders = JSON.parse(
-          localStorage.getItem("beyoung_orders") || "[]"
+          localStorage.getItem("beyoung_orders") || "[]",
         );
 
         return (

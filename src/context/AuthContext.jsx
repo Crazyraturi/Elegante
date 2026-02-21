@@ -7,7 +7,7 @@ export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("token")
+    !!localStorage.getItem("token"),
   );
   // NEW STATE: To hold user data
   const [user, setUser] = useState(null);

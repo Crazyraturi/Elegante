@@ -23,7 +23,7 @@ const RecentlyViewed = () => {
       try {
         setLoading(true);
         const res = await fetch(
-          "https://beyoung-backend.onrender.com/api/v1/product"
+          "https://beyoung-backend.onrender.com/api/v1/product",
         );
         const data = await res.json();
         setProducts(data.data || data.products || []);
@@ -100,10 +100,10 @@ const RecentlyViewed = () => {
               const previewImage = product.images?.preview;
 
               const frontViewObj = gallery.find(
-                (item) => item.view === "Front View"
+                (item) => item.view === "Front View",
               );
               const hoverViewObj = gallery.find(
-                (item) => item.view === "Hover View"
+                (item) => item.view === "Hover View",
               );
 
               let mainImage = previewImage;
@@ -129,7 +129,7 @@ const RecentlyViewed = () => {
 
               // 🚨 NEW: Calculate isWished status
               const isWished = wishlistItems.some(
-                (item) => item.id === product._id
+                (item) => item.id === product._id,
               );
 
               // 🚨 NEW: Construct streamlined product object for context
