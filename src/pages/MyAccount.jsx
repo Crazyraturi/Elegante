@@ -445,7 +445,9 @@ const MyAccount = () => {
                 </div>
                 <div>
                   <span className="font-semibold">Email Support: </span>
-                  <span className="text-gray-700">support@beyoung.in</span>
+                  <span className="text-gray-700">
+                    support@straticrestedge.in
+                  </span>
                 </div>
               </div>
 

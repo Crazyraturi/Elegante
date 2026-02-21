@@ -139,13 +139,13 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/location">
-                Eklingpura Chouraha, Ahmedabad Main Road (NH 8 - Near Mahadev
-                Hotel)
+                First Floor, Unit No. 127, Plot No. A-9, GD ITL Tower, Pitampura
+                Flyover U Turn, Netaji Subhash Place, New Delhi, North West
+                Delhi, Delhi 110034
               </Link>
             </li>
-            <li>
-              <Link to="/location">Udaipur, India - 313002</Link>
-            </li>
+            
+
           </ul>
         </div>
       </div>

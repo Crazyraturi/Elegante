@@ -201,8 +201,7 @@ const ReturnOrder = () => {
           •You can easily track your order status
           <Link
             to={"/track-order"}
-            className="font-bold text-sky-500 cursor-pointer ml-1"
-          >
+            className="font-bold text-sky-500 cursor-pointer ml-1">
             here
           </Link>
           <span className="font-bold">
@@ -248,7 +247,7 @@ const ReturnOrder = () => {
           WhatsApp Support:{" "}
           <span className="text-sky-500 cursor-pointer">Click here</span>
         </p>
-        <p>Email Support: support@Straticrestedge.in</p>
+        <p>Email Support: support@straticrestedge.in</p>
       </div>
 
       <div className="mb-8">

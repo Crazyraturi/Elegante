@@ -253,9 +253,8 @@ export default function EcommerceHeader() {
   return (
     <div className="w-full sticky top-0 z-50">
       <div className="bg-black text-white py-2 flex justify-around items-center h-[38px] text-sm">
-        <div className="hidden sm:block text-sm">
-          This website is for internal educational use only and will not be
-          publicly published.
+        <div className="hidden sm:block text-[12px]">
+        Free shipping Sitewide on Every Order, Don't Miss Out.
         </div>
         <div className="block sm:hidden text-sm">Education Purpose only</div>
         <TopBannerLinks />
