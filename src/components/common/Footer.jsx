@@ -144,8 +144,6 @@ const Footer = () => {
                 Delhi, Delhi 110034
               </Link>
             </li>
-            
-
           </ul>
         </div>
       </div>
