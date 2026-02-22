@@ -8,22 +8,29 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
-  const { isAuthenticated } = useAuth(); 
+  const { isAuthenticated } = useAuth();
 
-  const getToken = () => localStorage.getItem("accessToken") || localStorage.getItem("token");
+  const getToken = () =>
+    localStorage.getItem("accessToken") || localStorage.getItem("token");
 
   const fetchCart = async () => {
     const token = getToken();
     if (!token) return;
 
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/user/cart", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        "https://beyoung-backend.onrender.com/api/v1/user/cart",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
 
       if (res.data.success) {
         setCartItems(res.data.cart.items || []);
-        const total = res.data.cart.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        const total = res.data.cart.items.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0,
+        );
         setCartTotal(total);
       }
     } catch (error) {
@@ -35,13 +42,13 @@ export const CartProvider = ({ children }) => {
     if (isAuthenticated) {
       fetchCart();
     } else {
-      setCartItems([]); 
+      setCartItems([]);
     }
   }, [isAuthenticated]);
 
   const addToCart = async (product) => {
     const token = getToken();
-    
+
     if (!token) {
       toast.warning("Please login to add items to cart");
       return;
@@ -49,24 +56,27 @@ export const CartProvider = ({ children }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/user/cart", 
+        "https://beyoung-backend.onrender.com/api/v1/user/cart",
         {
-           productId: product.productId,
-           varientId: product.id, 
-           size: product.size,
-           quantity: product.quantity || 1,
-           title: product.title,
-           image: product.image,
-           color: product.color,
-           originalPrice: product.originalPrice
+          productId: product.productId,
+          varientId: product.id,
+          size: product.size,
+          quantity: product.quantity || 1,
+          title: product.title,
+          image: product.image,
+          color: product.color,
+          originalPrice: product.originalPrice,
         },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
 
       if (res.data.success) {
         toast.success("Added to Cart");
         setCartItems(res.data.cart.items);
-        const total = res.data.cart.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        const total = res.data.cart.items.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0,
+        );
         setCartTotal(total);
       }
     } catch (error) {
@@ -79,17 +89,20 @@ export const CartProvider = ({ children }) => {
     const token = getToken();
     if (!token) return;
     const previousItems = [...cartItems];
-    setCartItems(prev => prev.filter(item => item._id !== itemId));
+    setCartItems((prev) => prev.filter((item) => item._id !== itemId));
 
     try {
-      await axios.delete(`http://localhost:8000/api/v1/user/cart/${itemId}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      fetchCart(); 
+      await axios.delete(
+        `https://beyoung-backend.onrender.com/api/v1/user/cart/${itemId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
+      fetchCart();
       toast.success("Item removed");
     } catch (error) {
       console.error("Remove error:", error);
-      setCartItems(previousItems); 
+      setCartItems(previousItems);
       toast.error("Failed to remove item");
     }
   };
@@ -97,15 +110,17 @@ export const CartProvider = ({ children }) => {
   const updateQuantity = async (itemId, newQuantity) => {
     const token = getToken();
     if (!token || newQuantity < 1) return;
-    setCartItems(prev => prev.map(item => 
-      item._id === itemId ? { ...item, quantity: newQuantity } : item
-    ));
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item._id === itemId ? { ...item, quantity: newQuantity } : item,
+      ),
+    );
 
     try {
       await axios.put(
-        `http://localhost:8000/api/v1/user/cart/${itemId}`,
+        `https://beyoung-backend.onrender.com/api/v1/user/cart/${itemId}`,
         { quantity: newQuantity },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
       fetchCart();
     } catch (error) {
@@ -122,7 +137,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
-        fetchCart
+        fetchCart,
       }}
     >
       {children}

@@ -23,8 +23,8 @@ const PrivacyPolicy = () => {
           Introduction
         </h2>
         <p>
-          1.1 Straticrestedge Folks Private Limited (“Company”, “we”, “us” and “our”)
-          respects the privacy of its users accessing its website at www.
+          1.1 Straticrestedge Folks Private Limited (“Company”, “we”, “us” and
+          “our”) respects the privacy of its users accessing its website at www.
           Straticrestedge.in(“Website”). For the purposes of this privacy policy
           (“Privacy Policy”) and wherever the context so requires “you”, “your”,
           “yourself”, “user”shall mean any natural or legal person who accesses
@@ -341,14 +341,14 @@ const PrivacyPolicy = () => {
           6.1 All Personal Information provided to the Company by you have been
           voluntarily provided by you. You have the right to withdraw your
           consent at any time in writing by sending an e-mail to us at
-          support@Straticrestedge.in, in accordance with the terms of this Privacy
-          Policy. However, please note that withdrawal of consent will not be
-          retrospective in nature and shall be applicable prospectively. In case
-          you do not provide your Personal Information or consent for usage of
-          your Personal Information or subsequently withdraw your consent for
-          usage of the Personal Information so collected, the Company reserves
-          the right to discontinue the services for which said Information was
-          sought.
+          support@Straticrestedge.in, in accordance with the terms of this
+          Privacy Policy. However, please note that withdrawal of consent will
+          not be retrospective in nature and shall be applicable prospectively.
+          In case you do not provide your Personal Information or consent for
+          usage of your Personal Information or subsequently withdraw your
+          consent for usage of the Personal Information so collected, the
+          Company reserves the right to discontinue the services for which said
+          Information was sought.
         </p>
         <p>
           6.2 You can review, modify, add, correct or update your Personal
@@ -410,10 +410,10 @@ const PrivacyPolicy = () => {
         </p>
         <p>
           6.9 By signing up and ticking the consent box, the User agrees to
-          receive communications and notifications from Straticrestedge via SMS, Email,
-          RCS, WhatsApp, or any other electronic medium. Straticrestedge shall not be
-          responsible for any damages arising from fraudulent messages sent over
-          the internet by third parties.
+          receive communications and notifications from Straticrestedge via SMS,
+          Email, RCS, WhatsApp, or any other electronic medium. Straticrestedge
+          shall not be responsible for any damages arising from fraudulent
+          messages sent over the internet by third parties.
         </p>
         <p>
           6.10 Straticrestedge never asks for any extra payment for delivery or
@@ -438,8 +438,8 @@ const PrivacyPolicy = () => {
           <br />
           Email: grievance@Straticrestedge.in
           <br />
-          Address: Straticrestedge Folks Pvt. Ltd. Eklingpura Chouraha NH-8, Bypass,
-          near Mahadev Hotel, Udaipur, Rajasthan 313002
+          Address: Straticrestedge Folks Pvt. Ltd. Eklingpura Chouraha NH-8,
+          Bypass, near Mahadev Hotel, Udaipur, Rajasthan 313002
           <br />
           The Grievance Officer will acknowledge or respond to your
           communication within 24-48 hours, and grievances will be resolved

@@ -30,7 +30,7 @@ export default function CartPage() {
 
   const totalMRP = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
 
   return (

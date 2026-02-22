@@ -24,7 +24,8 @@ const Media = () => {
   const newsItems = [
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931484/yourstory_r3odxn.png",
-      title: "FASHION ECOMMERCE STARTUP Straticrestedge RAISES RS 40 CR FROM KLUB",
+      title:
+        "FASHION ECOMMERCE STARTUP Straticrestedge RAISES RS 40 CR FROM KLUB",
       date: "29 Apr 2023",
     },
     {
@@ -53,7 +54,8 @@ const Media = () => {
     },
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931702/vccircle_bwanwz.png",
-      title: "E-Commerce Firm Straticrestedge Raises Close To $5 Mn In Funding Round",
+      title:
+        "E-Commerce Firm Straticrestedge Raises Close To $5 Mn In Funding Round",
       date: "28 Apr 2023",
     },
     {
@@ -68,7 +70,8 @@ const Media = () => {
     },
     {
       logo: "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931825/indian-retailer_lteuqv.png",
-      title: "Youth Apparel Startup Straticrestedge Forays into Semi-Premium Segment",
+      title:
+        "Youth Apparel Startup Straticrestedge Forays into Semi-Premium Segment",
       date: "20 Oct 2021",
     },
     {

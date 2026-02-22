@@ -13,7 +13,7 @@ const Verify = () => {
         {/* Brand Logo */}
         <div className="relative z-10">
           <h1 className="text-3xl font-black tracking-widest text-black uppercase">
-            Straticrestedge
+            Straticrest edge
           </h1>
         </div>
 
@@ -75,7 +75,8 @@ const Verify = () => {
 
             <Link
               to="/login"
-              className="inline-flex items-center justify-center w-full px-6 py-4 border border-transparent text-base font-bold rounded-lg text-black bg-yellow-400 hover:bg-yellow-500 transition-all duration-200 shadow-sm hover:shadow-md">
+              className="inline-flex items-center justify-center w-full px-6 py-4 border border-transparent text-base font-bold rounded-lg text-black bg-yellow-400 hover:bg-yellow-500 transition-all duration-200 shadow-sm hover:shadow-md"
+            >
               Back to Login
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Plus } from "lucide-react";
-import { CartContext } from "../../src/context/CartContext.jsx"
+import { CartContext } from "../../src/context/CartContext.jsx";
 import { useNavigate } from "react-router-dom";
 
 export default function AddressPage() {
@@ -12,11 +12,11 @@ export default function AddressPage() {
   const [popupMessage, setPopupMessage] = useState("");
 
   // REAL AUTH LOGIC: Checks if a user token exists in storage
-  const isLoggedIn = !!localStorage.getItem("token") || false; 
+  const isLoggedIn = !!localStorage.getItem("token") || false;
 
   const totalMRP = cartItems?.reduce(
     (acc, item) => acc + item.price * (item.quantity || 1),
-    0
+    0,
   );
 
   const [formData, setFormData] = useState({
@@ -101,7 +101,9 @@ export default function AddressPage() {
       !address.trim() ||
       !locality.trim()
     ) {
-      triggerToast("⚠️ Please fill all required address fields before continuing.");
+      triggerToast(
+        "⚠️ Please fill all required address fields before continuing.",
+      );
       return;
     }
 
@@ -189,7 +191,9 @@ export default function AddressPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex gap-2">
-                    <span className="px-3 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600">+91</span>
+                    <span className="px-3 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600">
+                      +91
+                    </span>
                     <input
                       type="tel"
                       name="mobile"
@@ -254,7 +258,9 @@ export default function AddressPage() {
                     onChange={handleInputChange}
                     className="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500"
                   />
-                  <span className="text-sm text-gray-600">Make this my Default Address</span>
+                  <span className="text-sm text-gray-600">
+                    Make this my Default Address
+                  </span>
                 </div>
               </div>
             </div>
@@ -297,21 +303,35 @@ export default function AddressPage() {
           <div className="flex justify-center items-center gap-6 md:gap-12">
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 bg-gray-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
-                <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930970/Addquality_ow5byd.png" alt="Quality" className="w-20 h-20 object-contain" />
+                <img
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930970/Addquality_ow5byd.png"
+                  alt="Quality"
+                  className="w-20 h-20 object-contain"
+                />
               </div>
               <p className="text-sm font-medium text-gray-700">Quality</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 bg-gray-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
-                <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930966/AddIndia_q4n5qi.png" alt="Made in India" className="w-20 h-20 object-contain" />
+                <img
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930966/AddIndia_q4n5qi.png"
+                  alt="Made in India"
+                  className="w-20 h-20 object-contain"
+                />
               </div>
               <p className="text-sm font-medium text-gray-700">Made In India</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 bg-gray-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
-                <img src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930927/AddSecurity_uznknt.png" alt="Secure Payment" className="w-20 h-20 object-contain" />
+                <img
+                  src="https://res.cloudinary.com/dj9tpadhk/image/upload/v1764930927/AddSecurity_uznknt.png"
+                  alt="Secure Payment"
+                  className="w-20 h-20 object-contain"
+                />
               </div>
-              <p className="text-sm font-medium text-gray-700">Secure Payments</p>
+              <p className="text-sm font-medium text-gray-700">
+                Secure Payments
+              </p>
             </div>
           </div>
 
@@ -327,7 +347,11 @@ export default function AddressPage() {
               "https://res.cloudinary.com/dj9tpadhk/image/upload/v1764931062/AddImg8_q2ahem.png",
             ].map((img, index) => (
               <div key={index} className="flex justify-center items-center">
-                <img src={img} alt="payment-logo" className="w-16 h-auto object-contain" />
+                <img
+                  src={img}
+                  alt="payment-logo"
+                  className="w-16 h-auto object-contain"
+                />
               </div>
             ))}
           </div>

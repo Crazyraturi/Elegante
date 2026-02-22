@@ -17,13 +17,10 @@ export function WishlistProvider({ children }) {
     }
 
     try {
-      const res = await axios.get(
-        `${backendUrl}/api/v1/user/wishlist`, 
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      
+      const res = await axios.get(`${backendUrl}/api/v1/user/wishlist`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
       if (res.data?.wishlist?.items) {
         const products = res.data.wishlist.items
           .map((item) => item.productId)
@@ -50,7 +47,7 @@ export function WishlistProvider({ children }) {
       await axios.post(
         `${backendUrl}/api/v1/user/wishlist`,
         { productId: product._id || product.id },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
     } catch (error) {
       console.error("Add failed", error);
@@ -62,16 +59,17 @@ export function WishlistProvider({ children }) {
     const token = getToken();
     if (!token) return;
 
-    setWishlistItems((prev) => prev.filter((item) => {
+    setWishlistItems((prev) =>
+      prev.filter((item) => {
         const id = item._id || item.id;
         return id !== productId;
-    }));
+      }),
+    );
 
     try {
-      await axios.delete(
-        `${backendUrl}/api/v1/user/wishlist/${productId}`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      await axios.delete(`${backendUrl}/api/v1/user/wishlist/${productId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
     } catch (error) {
       console.error("Remove failed", error);
       fetchWishlist();
