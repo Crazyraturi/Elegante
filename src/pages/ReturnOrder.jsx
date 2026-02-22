@@ -201,7 +201,8 @@ const ReturnOrder = () => {
           •You can easily track your order status
           <Link
             to={"/track-order"}
-            className="font-bold text-sky-500 cursor-pointer ml-1">
+            className="font-bold text-sky-500 cursor-pointer ml-1"
+          >
             here
           </Link>
           <span className="font-bold">

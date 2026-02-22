@@ -46,7 +46,9 @@ export default function AddressPage() {
     // 1. Names, City, State: No numbers, No special symbols (Only a-z, A-Z, spaces)
     if (["firstName", "lastName", "city", "state"].includes(name)) {
       if (/[^a-zA-Z\s]/.test(value) && value !== "") {
-        triggerToast("Please enter valid information (Only characters allowed, no symbols or numbers)");
+        triggerToast(
+          "Please enter valid information (Only characters allowed, no symbols or numbers)",
+        );
       }
     }
 
@@ -62,7 +64,9 @@ export default function AddressPage() {
     // 3. Address & Locality: Only characters and numbers (No special symbols)
     if (["address", "locality"].includes(name)) {
       if (/[^a-zA-Z0-9\s]/.test(value) && value !== "") {
-        triggerToast("Please enter valid information (Only characters and numbers allowed, no special symbols)");
+        triggerToast(
+          "Please enter valid information (Only characters and numbers allowed, no special symbols)",
+        );
       }
     }
 
@@ -116,7 +120,12 @@ export default function AddressPage() {
 
     // 4. Character-only validation check for Names/City/State (No symbols/numbers)
     const alphaRegex = /^[a-zA-Z\s]+$/;
-    if (!alphaRegex.test(firstName) || !alphaRegex.test(lastName) || !alphaRegex.test(city) || !alphaRegex.test(state)) {
+    if (
+      !alphaRegex.test(firstName) ||
+      !alphaRegex.test(lastName) ||
+      !alphaRegex.test(city) ||
+      !alphaRegex.test(state)
+    ) {
       triggerToast("⚠️ Names, City, and State must only contain letters.");
       return;
     }
