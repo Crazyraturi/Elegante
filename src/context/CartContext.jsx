@@ -18,9 +18,12 @@ export const CartProvider = ({ children }) => {
     if (!token) return;
 
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/user/cart", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        "https://beyoung-backend.onrender.com/api/v1/user/cart",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
 
       if (res.data.success) {
         setCartItems(res.data.cart.items || []);
@@ -53,7 +56,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/user/cart",
+        "https://beyoung-backend.onrender.com/api/v1/user/cart",
         {
           productId: product.productId,
           varientId: product.id,
@@ -89,9 +92,12 @@ export const CartProvider = ({ children }) => {
     setCartItems((prev) => prev.filter((item) => item._id !== itemId));
 
     try {
-      await axios.delete(`http://localhost:8000/api/v1/user/cart/${itemId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://beyoung-backend.onrender.com/api/v1/user/cart/${itemId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
       fetchCart();
       toast.success("Item removed");
     } catch (error) {
@@ -112,7 +118,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       await axios.put(
-        `http://localhost:8000/api/v1/user/cart/${itemId}`,
+        `https://beyoung-backend.onrender.com/api/v1/user/cart/${itemId}`,
         { quantity: newQuantity },
         { headers: { Authorization: `Bearer ${token}` } },
       );

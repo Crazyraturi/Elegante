@@ -13,7 +13,7 @@ const Verify = () => {
         {/* Brand Logo */}
         <div className="relative z-10">
           <h1 className="text-3xl font-black tracking-widest text-black uppercase">
-            Straticrestedge
+            Straticrest edge
           </h1>
         </div>
 
