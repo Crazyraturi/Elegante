@@ -31,20 +31,45 @@ export default function AddressPage() {
     makeDefault: false,
   });
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
-
   const triggerToast = (message) => {
     setPopupMessage(message);
     setShowPopup(true);
     setTimeout(() => {
       setShowPopup(false);
     }, 3000);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    let val = type === "checkbox" ? checked : value;
+
+    // 1. Names, City, State: No numbers, No special symbols (Only a-z, A-Z, spaces)
+    if (["firstName", "lastName", "city", "state"].includes(name)) {
+      if (/[^a-zA-Z\s]/.test(value) && value !== "") {
+        triggerToast("Please enter valid information (Only characters allowed, no symbols or numbers)");
+      }
+    }
+
+    // 2. Mobile & PinCode: Only numbers
+    if (["mobile", "pinCode"].includes(name)) {
+      if (/[^0-9]/.test(value) && value !== "") {
+        triggerToast("Please enter valid information (Only numbers allowed)");
+      }
+      // Strictly limit entry to 10 digits for mobile
+      if (name === "mobile" && value.replace(/\D/g, "").length > 10) return;
+    }
+
+    // 3. Address & Locality: Only characters and numbers (No special symbols)
+    if (["address", "locality"].includes(name)) {
+      if (/[^a-zA-Z0-9\s]/.test(value) && value !== "") {
+        triggerToast("Please enter valid information (Only characters and numbers allowed, no special symbols)");
+      }
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: val,
+    }));
   };
 
   const handleContinue = () => {
@@ -65,16 +90,16 @@ export default function AddressPage() {
       locality,
     } = formData;
 
-    // 2. Check if address fields are filled
+    // 2. Strict Check: Every field must be filled
     if (
-      !firstName ||
-      !lastName ||
-      !mobile ||
-      !pinCode ||
-      !city ||
-      !state ||
-      !address ||
-      !locality
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !mobile.trim() ||
+      !pinCode.trim() ||
+      !city.trim() ||
+      !state.trim() ||
+      !address.trim() ||
+      !locality.trim()
     ) {
       triggerToast(
         "⚠️ Please fill all required address fields before continuing.",
@@ -82,7 +107,28 @@ export default function AddressPage() {
       return;
     }
 
-    // 3. If logged in and address filled, proceed to payment
+    // 3. Strict Mobile Validation: Only exactly 10 digits
+    const cleanMobile = mobile.replace(/\D/g, "");
+    if (cleanMobile.length !== 10) {
+      triggerToast("⚠️ Mobile number must be exactly 10 digits.");
+      return;
+    }
+
+    // 4. Character-only validation check for Names/City/State (No symbols/numbers)
+    const alphaRegex = /^[a-zA-Z\s]+$/;
+    if (!alphaRegex.test(firstName) || !alphaRegex.test(lastName) || !alphaRegex.test(city) || !alphaRegex.test(state)) {
+      triggerToast("⚠️ Names, City, and State must only contain letters.");
+      return;
+    }
+
+    // 5. Alphanumeric check for Address/Locality (No symbols allowed)
+    const alphaNumRegex = /^[a-zA-Z0-9\s]+$/;
+    if (!alphaNumRegex.test(address) || !alphaNumRegex.test(locality)) {
+      triggerToast("⚠️ Address and Locality must not contain special symbols.");
+      return;
+    }
+
+    // 6. If all validations pass, proceed
     navigate("/payment", { state: { addressData: formData } });
   };
 
@@ -90,7 +136,7 @@ export default function AddressPage() {
     <div className="min-h-screen bg-gray-50 relative">
       {/* Toast Notification */}
       {showPopup && (
-        <div className="fixed bottom-10 right-10 z-50 bg-green-600 text-white px-6 py-4 rounded-lg shadow-xl flex items-center gap-2 animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-10 right-10 z-50 bg-red-600 text-white px-6 py-4 rounded-lg shadow-xl flex items-center gap-2 animate-in fade-in slide-in-from-bottom-5 duration-300">
           <span className="font-medium">{popupMessage}</span>
         </div>
       )}
@@ -119,15 +165,9 @@ export default function AddressPage() {
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Address Form */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-sm p-6">
               <h2 className="text-xl font-bold mb-6">Delivery Address</h2>
-
-              <button className="w-full border-2 border-dashed border-gray-300 rounded-lg py-4 mb-6 flex items-center justify-center gap-2 hover:border-gray-400 transition">
-                <Plus className="w-5 h-5" />
-                <span className="font-medium">Add New Address</span>
-              </button>
 
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -226,7 +266,6 @@ export default function AddressPage() {
             </div>
           </div>
 
-          {/* Right Column - Order Summary */}
           <div className="space-y-4">
             <div className="bg-white rounded-lg shadow-sm p-4">
               <h3 className="font-semibold text-gray-900 mb-4">
@@ -255,13 +294,6 @@ export default function AddressPage() {
               >
                 Continue Payment
               </button>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-4">
-              <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-gray-500">
-                <span>🔒 256-bit SSL</span> | Visa | MasterCard | UPI | RuPay |
-                Net Banking
-              </div>
             </div>
           </div>
         </div>

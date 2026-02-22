@@ -5,6 +5,7 @@ import { Check, Trash2, Heart } from "lucide-react";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
+
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="min-h-screen bg-[#E5E7EB] flex items-center justify-center">
@@ -80,11 +81,11 @@ export default function CartPage() {
                     />
 
                     <div className="mt-3 px-4">
-                      {/* Quantity Dropdown */}
+                      {/* Quantity Dropdown - Updated to use item._id */}
                       <select
                         value={item.quantity}
                         onChange={(e) =>
-                          updateQuantity(item.id, Number(e.target.value))
+                          updateQuantity(item._id, Number(e.target.value))
                         }
                         className="border border-gray-300 rounded px-7 py-2"
                       >
@@ -128,7 +129,7 @@ export default function CartPage() {
                 <div className="flex items-center justify-center gap-8 mt-5 pt-5 border-t border-gray-200">
                   <button
                     className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition"
-                    onClick={() => removeFromCart(item.id)}
+                    onClick={() => removeFromCart(item._id)} // Updated to use item._id
                   >
                     <Trash2 className="w-5 h-5" />
                     <span>Remove</span>
