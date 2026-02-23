@@ -33,7 +33,7 @@ export default function PaymentPage() {
        `${API_BASE_URL}/api/v1/payment/initiate-payment`,
        {
          amount: Number(cartTotal).toFixed(2),
-         currency: "USD", // or "INR" if supported
+         currency: "INR",
          orderId,
          description: "Store Order",
          email: user.email,
