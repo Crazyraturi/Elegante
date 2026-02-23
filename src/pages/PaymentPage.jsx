@@ -22,46 +22,38 @@ export default function PaymentPage() {
     return null;
   }
 
-  const handlePayUPayment = async () => {
-    setIsProcessing(true);
-    try {
-      const txnid = "TXN" + Date.now();
-      const token = localStorage.getItem("token");
+ const handlePaytoworldPayment = async () => {
+   setIsProcessing(true);
 
-      const { data } = await axios.post(
-        `${API_BASE_URL}/api/v1/payment/initiate-payment`,
-        {
-          txnid,
-          amount: Number(cartTotal).toFixed(2),
-          productinfo: "Store Order",
-          firstname: addressData.firstName,
-          email: user.email,
-          phone: addressData.mobile,
-        },
-        { headers: { Authorization: `Bearer ${token}` } },
-      );
+   try {
+     const orderId = "ORDER_" + Date.now();
+     const token = localStorage.getItem("token");
 
-      if (data.success && data.form) {
-        // Create a hidden div, inject the SDK's form, and submit it
-        const container = document.createElement("div");
-        container.style.display = "none";
-        container.innerHTML = data.form;
-        document.body.appendChild(container);
+     const { data } = await axios.post(
+       `${API_BASE_URL}/api/v1/payment/initiate-payment`,
+       {
+         amount: Number(cartTotal).toFixed(2),
+         currency: "USD", // or "INR" if supported
+         orderId,
+         description: "Store Order",
+         email: user.email,
+       },
+       { headers: { Authorization: `Bearer ${token}` } },
+     );
 
-        // The SDK generates a form named 'payuForm' or simply the first form
-        container.querySelector("form").submit();
-      }
-      // Replace your catch block with this to see the REAL error
-    } catch (error) {
-      console.error(
-        "AXIOS ERROR DETAILS:",
-        error.response?.data || error.message,
-      );
-      toast.error(error.response?.data?.message || "Connection failed");
-    } finally {
-      setIsProcessing(false);
-    }
-  };
+     if (data.success && data.paymentUrl) {
+       // ✅ Redirect to PayToWorld checkout page
+       window.location.href = data.paymentUrl;
+     } else {
+       toast.error(data.message || "Payment initiation failed");
+     }
+   } catch (error) {
+     console.error("AXIOS ERROR:", error.response?.data || error.message);
+     toast.error(error.response?.data?.message || "Connection failed");
+   } finally {
+     setIsProcessing(false);
+   }
+ };
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -83,11 +75,10 @@ export default function PaymentPage() {
           <span>₹{cartTotal}</span>
         </div>
         <button
-          onClick={handlePayUPayment}
+          onClick={handlePaytoworldPayment}
           disabled={isProcessing}
-          className="w-full bg-gray-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition disabled:bg-gray-400"
-        >
-          {isProcessing ? "Redirecting to PayU..." : "PAY NOW"}
+          className="w-full bg-gray-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition disabled:bg-gray-400">
+          {isProcessing ? "Redirecting..." : "PAY NOW"}
         </button>
       </div>
     </div>
