@@ -123,7 +123,7 @@ const Signup = () => {
                   id="firstName"
                   name="firstName"
                   type="text"
-                  placeholder="jhon"
+                  placeholder=""
                   required
                   value={formData.firstName}
                   onChange={handleChange}
@@ -135,7 +135,7 @@ const Signup = () => {
                   id="lastName"
                   name="lastName"
                   type="text"
-                  placeholder="doe"
+                  placeholder=""
                   required
                   value={formData.lastName}
                   onChange={handleChange}
@@ -149,7 +149,7 @@ const Signup = () => {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="jhon@example.com"
+                placeholder=""
                 required
                 value={formData.email}
                 onChange={handleChange}
@@ -166,7 +166,7 @@ const Signup = () => {
                   name="password"
                   type={showPassword ? "text" : "password"}
                   required
-                  placeholder="create a password"
+                  placeholder=""
                   value={formData.password}
                   onChange={handleChange}
                 />
