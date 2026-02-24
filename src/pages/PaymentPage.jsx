@@ -114,7 +114,7 @@ export default function PaymentPage() {
         )}
 
         {upiLink && (
-          <div className="mt-8  items-center justify-center">
+          <div className="mt-8 flex items-center justify-center">
             <h3 className="text-lg text-center font-semibold mb-4">
               Scan QR to Pay
             </h3>
