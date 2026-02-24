@@ -114,14 +114,22 @@ export default function PaymentPage() {
         )}
 
         {upiLink && (
-          <div className="mt-8 flex items-center justify-center">
-            <h3 className="text-lg text-center font-semibold mb-4">
+          <div className="mt-10 flex flex-col items-center justify-center bg-yellow-50 py-8 px-6 rounded-2xl shadow-lg max-w-sm mx-auto border border-yellow-200">
+            <h3 className="text-xl font-bold text-black mb-6 tracking-wide">
               Scan QR to Pay
             </h3>
 
-            <QRCodeCanvas value={upiLink} size={220} />
+            <div className="bg-white p-6 rounded-2xl shadow-md border-4 border-black">
+              <QRCodeCanvas
+                value={upiLink}
+                size={220}
+                bgColor="#ffffff"
+                fgColor="#000000"
+                level="H"
+              />
+            </div>
 
-            <p className="mt-4 text-sm text-center text-gray-600">
+            <p className="mt-6 text-sm text-gray-700 text-center font-medium">
               Open any UPI app and scan this QR
             </p>
           </div>
