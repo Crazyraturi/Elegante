@@ -114,12 +114,14 @@ export default function PaymentPage() {
         )}
 
         {upiLink && (
-          <div className="mt-8 text-center">
-            <h3 className="text-lg font-semibold mb-4">Scan QR to Pay</h3>
+          <div className="mt-8  items-center justify-center">
+            <h3 className="text-lg text-center font-semibold mb-4">
+              Scan QR to Pay
+            </h3>
 
             <QRCodeCanvas value={upiLink} size={220} />
 
-            <p className="mt-4 text-sm text-gray-600">
+            <p className="mt-4 text-sm text-center text-gray-600">
               Open any UPI app and scan this QR
             </p>
           </div>
