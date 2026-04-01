@@ -31,13 +31,7 @@ export default function AddressPage() {
     makeDefault: false,
   });
 
-  const triggerToast = (message) => {
-    setPopupMessage(message);
-    setShowPopup(true);
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 3000);
-  };
+  
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -46,7 +40,7 @@ export default function AddressPage() {
     // 1. Names, City, State: No numbers, No special symbols (Only a-z, A-Z, spaces)
     if (["firstName", "lastName", "city", "state"].includes(name)) {
       if (/[^a-zA-Z\s]/.test(value) && value !== "") {
-        triggerToast(
+        toast.warning(
           "Please enter valid information (Only characters allowed, no symbols or numbers)",
         );
       }
@@ -55,7 +49,7 @@ export default function AddressPage() {
     // 2. Mobile & PinCode: Only numbers
     if (["mobile", "pinCode"].includes(name)) {
       if (/[^0-9]/.test(value) && value !== "") {
-        triggerToast("Please enter valid information (Only numbers allowed)");
+        toast.warning("Please enter valid information (Only numbers allowed)");
       }
       // Strictly limit entry to 10 digits for mobile
       if (name === "mobile" && value.replace(/\D/g, "").length > 10) return;
@@ -64,7 +58,7 @@ export default function AddressPage() {
     // 3. Address & Locality: Only characters and numbers (No special symbols)
     if (["address", "locality"].includes(name)) {
       if (/[^a-zA-Z0-9\s]/.test(value) && value !== "") {
-        triggerToast(
+        toast.warning(
           "Please enter valid information (Only characters and numbers allowed, no special symbols)",
         );
       }
@@ -79,7 +73,7 @@ export default function AddressPage() {
   const handleContinue = () => {
     // 1. Check if user is logged in first
     if (!isLoggedIn) {
-      triggerToast("Please log in first to continue.");
+      toast.warning("Please log in first to continue.");
       return;
     }
 
@@ -105,8 +99,8 @@ export default function AddressPage() {
       !address.trim() ||
       !locality.trim()
     ) {
-      triggerToast(
-        "⚠️ Please fill all required address fields before continuing.",
+      toast.warning(
+        "Please fill all required address fields before continuing.",
       );
       return;
     }
@@ -114,7 +108,7 @@ export default function AddressPage() {
     // 3. Strict Mobile Validation: Only exactly 10 digits
     const cleanMobile = mobile.replace(/\D/g, "");
     if (cleanMobile.length !== 10) {
-      triggerToast("⚠️ Mobile number must be exactly 10 digits.");
+      toast.warning("Mobile number must be exactly 10 digits.");
       return;
     }
 
@@ -126,14 +120,14 @@ export default function AddressPage() {
       !alphaRegex.test(city) ||
       !alphaRegex.test(state)
     ) {
-      triggerToast("⚠️ Names, City, and State must only contain letters.");
+      toast.warning(" Names, City, and State must only contain letters.");
       return;
     }
 
     // 5. Alphanumeric check for Address/Locality (No symbols allowed)
     const alphaNumRegex = /^[a-zA-Z0-9\s]+$/;
     if (!alphaNumRegex.test(address) || !alphaNumRegex.test(locality)) {
-      triggerToast("⚠️ Address and Locality must not contain special symbols.");
+      toast.warning("Address and Locality must not contain special symbols.");
       return;
     }
 
@@ -198,9 +192,9 @@ export default function AddressPage() {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex gap-2">
-                    <span className="px-3 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600">
+                    <span className="px-3 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600 whitespace-nowrap">
                       +91
                     </span>
                     <input
@@ -209,16 +203,17 @@ export default function AddressPage() {
                       placeholder="Mobile Number"
                       value={formData.mobile}
                       onChange={handleInputChange}
-                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="flex-1 min-w-0 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
+
                   <input
                     type="text"
                     name="pinCode"
                     placeholder="Pin Code"
                     value={formData.pinCode}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full min-w-0 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -299,8 +294,7 @@ export default function AddressPage() {
 
               <button
                 onClick={handleContinue}
-                className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-              >
+                className="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
                 Continue Payment
               </button>
             </div>
