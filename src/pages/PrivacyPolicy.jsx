@@ -162,6 +162,25 @@ const PrivacyPolicy = () => {
         </p>
       </div>
 
+      {/* Data Retention Policy  */}
+      <div className="space-y-2">
+        <h2 className="text-lg sm:text-xl font-semibold underline decoration-yellow-400">
+          Data Retention Policy
+        </h2>
+        <p>
+          We retain personal data only for as long as necessary to fulfill the
+          purposes for which it was collected, including to provide and improve
+          our services, comply with legal obligations, resolve disputes, and
+          enforce our agreements. The specific retention period depends on the
+          nature of the data and the context in which it was collected. When
+          personal data is no longer required, we securely delete, anonymize, or
+          aggregate it in accordance with applicable laws and industry
+          standards. Users may request deletion of their personal data at any
+          time, subject to certain legal or operational retention requirements.
+        </p>
+   
+      </div>
+
       {/* Purpose and Usage */}
       <div className="space-y-2">
         <h2 className="text-lg sm:text-xl font-semibold underline decoration-yellow-400">
@@ -438,15 +457,13 @@ const PrivacyPolicy = () => {
           <br />
           Email: grievance@Straticrestedge.in
           <br />
-          Address: Straticrestedge Folks Pvt. Ltd. Eklingpura Chouraha NH-8,
-          Bypass, near Mahadev Hotel, Udaipur, Rajasthan 313002
+          Address: Straticrestedge Solutions Private Limited. First Floor, Unit
+          No. 127, Plot No. A-9, GD ITL Tower, Pitampura Flyover U Turn, Netaji
+          Subhash Place, New Delhi, North West Delhi, Delhi 110034 .
           <br />
           The Grievance Officer will acknowledge or respond to your
           communication within 24-48 hours, and grievances will be resolved
-          within 15 days from the date of receipt. If your issue still needs
-          attention, or if you’d like to share feedback about our products and
-          services, you can directly connect with our Co-founder, Shivani, at
-          shivani.connect@Straticrestedge.in—she would love to hear from you!
+          within 15 days from the date of receipt.
         </p>
       </div>
     </section>
